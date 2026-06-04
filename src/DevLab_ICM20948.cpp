@@ -1,9 +1,9 @@
-#include "7Semi_ICM20948.h"
+#include "DevLab_ICM20948.h"
 
 /** - Construct with default I2C address; call begin() to attach bus */
-ICM20948_7Semi::ICM20948_7Semi() {}
+DevLab_ICM20948::DevLab_ICM20948() {}
 
-bool ICM20948_7Semi::beginI2C(uint8_t address, TwoWire &i2cPort, uint32_t i2cSpeed)
+bool DevLab_ICM20948::beginI2C(uint8_t address, TwoWire &i2cPort, uint32_t i2cSpeed)
 {
   // Free previous BusIO instance 
   if (bus)
@@ -57,7 +57,7 @@ bool ICM20948_7Semi::beginI2C(uint8_t address, TwoWire &i2cPort, uint32_t i2cSpe
   return true;
 }
 
-bool ICM20948_7Semi::beginSPI(uint8_t csPin, SPIClass &spiPort, uint32_t spiSpeed)
+bool DevLab_ICM20948::beginSPI(uint8_t csPin, SPIClass &spiPort, uint32_t spiSpeed)
 {
 // Free previous BusIO instance 
   if (bus)
@@ -115,7 +115,7 @@ bool ICM20948_7Semi::beginSPI(uint8_t csPin, SPIClass &spiPort, uint32_t spiSpee
   return true;
 }
 
-bool ICM20948_7Semi::readWhoAmI(uint8_t &whoAmI)
+bool DevLab_ICM20948::readWhoAmI(uint8_t &whoAmI)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -129,7 +129,7 @@ bool ICM20948_7Semi::readWhoAmI(uint8_t &whoAmI)
   return true;
 }
 
-bool ICM20948_7Semi::selectBank(uint8_t bank)
+bool DevLab_ICM20948::selectBank(uint8_t bank)
 {
   if (bank > 3)
     return false;
@@ -141,7 +141,7 @@ bool ICM20948_7Semi::selectBank(uint8_t bank)
   return bus->write(REG_BANK_SEL, v);
 }
 
-bool ICM20948_7Semi::softReset()
+bool DevLab_ICM20948::softReset()
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -161,7 +161,7 @@ bool ICM20948_7Semi::softReset()
   return true;
 }
 
-bool ICM20948_7Semi::sleep(bool en)
+bool DevLab_ICM20948::sleep(bool en)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -178,7 +178,7 @@ bool ICM20948_7Semi::sleep(bool en)
   return true;
 }
 
-bool ICM20948_7Semi::applyBasicDefaults()
+bool DevLab_ICM20948::applyBasicDefaults()
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -235,7 +235,7 @@ bool ICM20948_7Semi::applyBasicDefaults()
   return true;
 }
 
-bool ICM20948_7Semi::readAccel(float &x, float &y, float &z)
+bool DevLab_ICM20948::readAccel(float &x, float &y, float &z)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -255,7 +255,7 @@ bool ICM20948_7Semi::readAccel(float &x, float &y, float &z)
   return true;
 }
 
-bool ICM20948_7Semi::readGyro(float &x, float &y, float &z)
+bool DevLab_ICM20948::readGyro(float &x, float &y, float &z)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -275,7 +275,7 @@ bool ICM20948_7Semi::readGyro(float &x, float &y, float &z)
   return true;
 }
 
-bool ICM20948_7Semi::readTemperature(float &temperature)
+bool DevLab_ICM20948::readTemperature(float &temperature)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -307,7 +307,7 @@ bool ICM20948_7Semi::readTemperature(float &temperature)
 }
 
 
-bool ICM20948_7Semi::readMag(float &x, float &y, float &z)
+bool DevLab_ICM20948::readMag(float &x, float &y, float &z)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -331,7 +331,7 @@ bool ICM20948_7Semi::readMag(float &x, float &y, float &z)
   return true;
 }
 
-bool ICM20948_7Semi::initMag()
+bool DevLab_ICM20948::initMag()
 {
   if (!bus)
     return false;
@@ -405,7 +405,7 @@ bool ICM20948_7Semi::initMag()
   }
 }
 
-bool ICM20948_7Semi::setMagOpMode(ICM20948_Op_Mode opMode)
+bool DevLab_ICM20948::setMagOpMode(ICM20948_Op_Mode opMode)
 {
   // Write operation mode to magnetometer
   writeSlave4(AK_CNTL2, (uint8_t)opMode);
@@ -413,7 +413,7 @@ bool ICM20948_7Semi::setMagOpMode(ICM20948_Op_Mode opMode)
   return true;
 }
 
-bool ICM20948_7Semi::writeSlave4(uint8_t reg, uint8_t value)
+bool DevLab_ICM20948::writeSlave4(uint8_t reg, uint8_t value)
 {
   // Select USER BANK 3
   if (!selectBank(3))
@@ -448,7 +448,7 @@ bool ICM20948_7Semi::writeSlave4(uint8_t reg, uint8_t value)
   return false;
 }
 
-bool ICM20948_7Semi::readSlave4(uint8_t reg, uint8_t &value)
+bool DevLab_ICM20948::readSlave4(uint8_t reg, uint8_t &value)
 {
   // Select USER BANK 3
   if (!selectBank(3))
@@ -480,7 +480,7 @@ bool ICM20948_7Semi::readSlave4(uint8_t reg, uint8_t &value)
     return false;
 }
 
-bool ICM20948_7Semi::setLowPower(bool enable)
+bool DevLab_ICM20948::setLowPower(bool enable)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -494,7 +494,7 @@ bool ICM20948_7Semi::setLowPower(bool enable)
   return true;
 }
 
-bool ICM20948_7Semi::getLowPower(bool &enable)
+bool DevLab_ICM20948::getLowPower(bool &enable)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -512,7 +512,7 @@ bool ICM20948_7Semi::getLowPower(bool &enable)
   return true;
 }
 
-bool ICM20948_7Semi::setClock(ICM20948_Clock_Source clock)
+bool DevLab_ICM20948::setClock(ICM20948_Clock_Source clock)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -526,7 +526,7 @@ bool ICM20948_7Semi::setClock(ICM20948_Clock_Source clock)
   return true;
 }
 
-bool ICM20948_7Semi::getClock(uint8_t &clock)
+bool DevLab_ICM20948::getClock(uint8_t &clock)
 {
   // Select USER BANK 0
   if (!selectBank(0))
@@ -542,7 +542,7 @@ bool ICM20948_7Semi::getClock(uint8_t &clock)
   return true;
 }
 
-bool ICM20948_7Semi::setGyroSampleRate(float sampleRate)
+bool DevLab_ICM20948::setGyroSampleRate(float sampleRate)
 {
   // Validate sample rate range (approx 4.3 Hz to 1100 Hz)
   if ((sampleRate < 4.3f) || (sampleRate > 1100.0f))
@@ -563,7 +563,7 @@ bool ICM20948_7Semi::setGyroSampleRate(float sampleRate)
   return true;
 }
 
-bool ICM20948_7Semi::getGyroSampleRate(float &sampleRate)
+bool DevLab_ICM20948::getGyroSampleRate(float &sampleRate)
 {
   // Validate bus pointer
   if (!bus)
@@ -585,7 +585,7 @@ bool ICM20948_7Semi::getGyroSampleRate(float &sampleRate)
   return true;
 }
 
-bool ICM20948_7Semi::setDLPF(ICM20948_Gyro_DLPF dlpf, bool bypass)
+bool DevLab_ICM20948::setDLPF(ICM20948_Gyro_DLPF dlpf, bool bypass)
 {
   // Validate bus pointer
   if (!bus)
@@ -611,7 +611,7 @@ bool ICM20948_7Semi::setDLPF(ICM20948_Gyro_DLPF dlpf, bool bypass)
   return true;
 }
 
-bool ICM20948_7Semi::getDLPF(uint8_t &dlpf, bool &bypass)
+bool DevLab_ICM20948::getDLPF(uint8_t &dlpf, bool &bypass)
 {
   // Validate bus pointer
   if (!bus)
@@ -636,7 +636,7 @@ bool ICM20948_7Semi::getDLPF(uint8_t &dlpf, bool &bypass)
   return true;
 }
 
-bool ICM20948_7Semi::setGyroScale(ICM20948_Gyro_FullScale fullScale)
+bool DevLab_ICM20948::setGyroScale(ICM20948_Gyro_FullScale fullScale)
 {
   // Validate bus pointer
   if (!bus)
@@ -657,7 +657,7 @@ bool ICM20948_7Semi::setGyroScale(ICM20948_Gyro_FullScale fullScale)
   return true;
 }
 
-bool ICM20948_7Semi::getGyroScale(uint8_t &fullScale)
+bool DevLab_ICM20948::getGyroScale(uint8_t &fullScale)
 {
   // Validate bus pointer
   if (!bus)
@@ -675,7 +675,7 @@ bool ICM20948_7Semi::getGyroScale(uint8_t &fullScale)
   return true;
 }
 
-bool ICM20948_7Semi::selfTestGyro(bool x, bool y, bool z)
+bool DevLab_ICM20948::selfTestGyro(bool x, bool y, bool z)
 {
   // Validate bus pointer
   if (!bus)
@@ -701,7 +701,7 @@ bool ICM20948_7Semi::selfTestGyro(bool x, bool y, bool z)
   return true;
 }
 
-bool ICM20948_7Semi::setAccelSampleRate(uint16_t sampleRate)
+bool DevLab_ICM20948::setAccelSampleRate(uint16_t sampleRate)
 {
   // Validate bus pointer
   if (!bus)
@@ -741,7 +741,7 @@ bool ICM20948_7Semi::setAccelSampleRate(uint16_t sampleRate)
   return true;
 }
 
-bool ICM20948_7Semi::getAccelSampleRate(float &sampleRate)
+bool DevLab_ICM20948::getAccelSampleRate(float &sampleRate)
 {
   // Validate bus pointer
   if (!bus)
@@ -771,7 +771,7 @@ bool ICM20948_7Semi::getAccelSampleRate(float &sampleRate)
   return true;
 }
 
-bool ICM20948_7Semi::selfTestAccel(bool x, bool y, bool z)
+bool DevLab_ICM20948::selfTestAccel(bool x, bool y, bool z)
 {
   // Validate bus pointer
   if (!bus)
@@ -802,7 +802,7 @@ bool ICM20948_7Semi::selfTestAccel(bool x, bool y, bool z)
   return true;
 }
 
-bool ICM20948_7Semi::setAccelScale(ICM20948_Accel_FullScale fullScale)
+bool DevLab_ICM20948::setAccelScale(ICM20948_Accel_FullScale fullScale)
 {
   // Validate bus pointer
   if (!bus)
@@ -823,7 +823,7 @@ bool ICM20948_7Semi::setAccelScale(ICM20948_Accel_FullScale fullScale)
   return true;
 }
 
-bool ICM20948_7Semi::getAccelScale(uint8_t &fullScale)
+bool DevLab_ICM20948::getAccelScale(uint8_t &fullScale)
 {
   // Validate bus pointer
   if (!bus)
@@ -842,7 +842,7 @@ bool ICM20948_7Semi::getAccelScale(uint8_t &fullScale)
 }
 
 
-bool ICM20948_7Semi::setAccelDLPF(uint8_t dlpf, bool bypass)
+bool DevLab_ICM20948::setAccelDLPF(uint8_t dlpf, bool bypass)
 {
   // Validate bus pointer
   if (!bus)
@@ -871,7 +871,7 @@ bool ICM20948_7Semi::setAccelDLPF(uint8_t dlpf, bool bypass)
   return true;
 }
 
-bool ICM20948_7Semi::getAccelDLPF(uint8_t &dlpf, bool &bypass)
+bool DevLab_ICM20948::getAccelDLPF(uint8_t &dlpf, bool &bypass)
 {
   // Validate bus pointer
   if (!bus)
@@ -897,7 +897,7 @@ bool ICM20948_7Semi::getAccelDLPF(uint8_t &dlpf, bool &bypass)
 }
 
 
-bool ICM20948_7Semi::setAccelAveraging(ICM20948_Accel_Average avg)
+bool DevLab_ICM20948::setAccelAveraging(ICM20948_Accel_Average avg)
 {
   // Validate bus pointer
   if (!bus)
@@ -915,7 +915,7 @@ bool ICM20948_7Semi::setAccelAveraging(ICM20948_Accel_Average avg)
   return true;
 }
 
-bool ICM20948_7Semi::getAccelAveraging(uint8_t &avg)
+bool DevLab_ICM20948::getAccelAveraging(uint8_t &avg)
 {
   // Validate bus pointer
   if (!bus)
@@ -933,7 +933,7 @@ bool ICM20948_7Semi::getAccelAveraging(uint8_t &avg)
   return true;
 }
 
-bool ICM20948_7Semi::setSensors(bool accel_on, bool gyro_on, bool temp_on)
+bool DevLab_ICM20948::setSensors(bool accel_on, bool gyro_on, bool temp_on)
 {
   // Validate bus pointer
   if (!bus)
@@ -966,7 +966,7 @@ bool ICM20948_7Semi::setSensors(bool accel_on, bool gyro_on, bool temp_on)
   return true;
 }
 
-bool ICM20948_7Semi::getSensors(bool &accel_on, bool &gyro_on, bool &temp_on)
+bool DevLab_ICM20948::getSensors(bool &accel_on, bool &gyro_on, bool &temp_on)
 {
   // Validate bus pointer
   if (!bus)
@@ -999,7 +999,7 @@ bool ICM20948_7Semi::getSensors(bool &accel_on, bool &gyro_on, bool &temp_on)
   return true;
 }
 
-bool ICM20948_7Semi::setGyroOffset(uint16_t offsetX, uint16_t offsetY, uint16_t offsetZ)
+bool DevLab_ICM20948::setGyroOffset(uint16_t offsetX, uint16_t offsetY, uint16_t offsetZ)
 {
   // Validate bus pointer
   if (!bus)
@@ -1026,7 +1026,7 @@ bool ICM20948_7Semi::setGyroOffset(uint16_t offsetX, uint16_t offsetY, uint16_t 
   return true;
 }
 
-bool ICM20948_7Semi::getGyroOffset(int16_t &offsetX, int16_t &offsetY, int16_t &offsetZ)
+bool DevLab_ICM20948::getGyroOffset(int16_t &offsetX, int16_t &offsetY, int16_t &offsetZ)
 {
   // Validate bus pointer
   if (!bus)
@@ -1051,7 +1051,7 @@ bool ICM20948_7Semi::getGyroOffset(int16_t &offsetX, int16_t &offsetY, int16_t &
 }
 
 
-bool ICM20948_7Semi::setAccelOffset(int16_t offsetX, int16_t offsetY, int16_t offsetZ)
+bool DevLab_ICM20948::setAccelOffset(int16_t offsetX, int16_t offsetY, int16_t offsetZ)
 {
   // Validate bus pointer
   if (!bus)
@@ -1078,7 +1078,7 @@ bool ICM20948_7Semi::setAccelOffset(int16_t offsetX, int16_t offsetY, int16_t of
   return true;
 }
 
-bool ICM20948_7Semi::getAccelOffset(int16_t &offsetX, int16_t &offsetY, int16_t &offsetZ)
+bool DevLab_ICM20948::getAccelOffset(int16_t &offsetX, int16_t &offsetY, int16_t &offsetZ)
 {
   // Validate bus pointer
   if (!bus)

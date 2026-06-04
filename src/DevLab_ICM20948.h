@@ -1,5 +1,5 @@
-#ifndef ICM20948_7SEMI_H
-#define ICM20948_7SEMI_H
+#ifndef ICM20948_DEVLAB_H
+#define ICM20948_DEVLAB_H
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -75,11 +75,11 @@ enum class ICM20948_Accel_Average : uint8_t
  * - Manages ICM-20948 over I2C (SPI path disabled in this cut)
  * - Caches scale factors for LSB->physical conversions
  */
-class ICM20948_7Semi
+class DevLab_ICM20948
 {
 public:
 
-  ICM20948_7Semi();
+  DevLab_ICM20948();
 
   /**
    * beginI2C
@@ -620,8 +620,8 @@ private:
   float mg_per_lsb = 16384.0f;        // LSB/g at ±16g
   float degree_per_second = 131.072f; // LSB/dps at ±2000 dps
 
-  bool writeSlave4(uint8_t reg, uint8_t value);
+  bool writeSlave4(uint8_t reg, uint8_t value); 
   bool readSlave4(uint8_t reg, uint8_t &value);
 };
 
-#endif /* ICM20948_7SEMI_H */
+#endif /* ICM20948_DEVLAB_H */
