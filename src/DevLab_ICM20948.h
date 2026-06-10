@@ -46,6 +46,17 @@ enum class ICM20948_Gyro_DLPF : uint8_t
   DLPF_361HZ = 0x07  // BW ≈ 361.4 Hz, NBW ≈ 376.5 Hz
 };
 
+enum class ICM20948_Gyro_Average : uint8_t
+{
+  AVG_1 = 0x00,      // 1x Average (no averaging)
+  AVG_2 = 0x01,      // 2x Average
+  AVG_4 = 0x02,      // 4x Average
+  AVG_8 = 0x03,      // 8x Average 
+  AVG_16 = 0x04,     // Average 16 samples
+  AVG_32 = 0x05,      // Average 32 samples
+  AVG_64 = 0x06,     // Average 64 samples
+  AVG_128 = 0x07     // Average 128 samples
+};
 enum class ICM20948_Gyro_FullScale : uint8_t
 {
   DPS_250 = 0x00,  // ±250 dps
@@ -321,7 +332,7 @@ public:
    * - false → Operation failed
    */
   bool getGyroSampleRate(float &sampleRate);
-
+  bool setGyroDivRate(uint8_t divisor);
   /**
    * setDLPF
    *
@@ -362,7 +373,7 @@ public:
    * - false → Operation failed
    */
   bool setGyroScale(ICM20948_Gyro_FullScale fullScale);
-
+  bool setGyroAveraging(ICM20948_Gyro_Average avg);
   /**
    * getGyroScale
    *

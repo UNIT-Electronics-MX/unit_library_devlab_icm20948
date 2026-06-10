@@ -771,6 +771,23 @@ bool DevLab_ICM20948::setAccelDivRate(uint16_t divisor)
   // Success
   return true;
 }
+
+bool DevLab_ICM20948::setGyroDivRate(uint8_t divisor)
+{
+  if (!bus)
+    return false;
+  // Select USER BANK 2
+  if (!selectBank(2))
+    return false;
+
+  // Write sample rate divider
+  if (!bus->write(GYRO_SMPLRT_DIV, divisor))
+    return false;
+
+  // Success
+  return true;
+}
+
 bool DevLab_ICM20948::getAccelSampleRate(float &sampleRate)
 {
   // Validate bus pointer
@@ -939,6 +956,24 @@ bool DevLab_ICM20948::setAccelAveraging(ICM20948_Accel_Average avg)
 
   // Set DEC3 averaging bits [1:0]
   if (!bus->writeBits(ACCEL_CONFIG_2, 0, 2, (uint8_t)avg))
+    return false;
+
+  // Success
+  return true;
+}
+
+bool DevLab_ICM20948::setGyroAveraging(ICM20948_Gyro_Average avg)
+{
+  // Validate bus pointer
+  if (!bus)
+    return false;
+
+  // Select USER BANK 2
+  if (!selectBank(2))
+    return false;
+
+  // Set DEC3 averaging bits [1:0]
+  if (!bus->writeBits(GYRO_CONFIG_2, 0, 2, (uint8_t)avg))
     return false;
 
   // Success
