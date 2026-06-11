@@ -342,7 +342,7 @@ bool DevLab_ICM20948::initMag()
 
   if (!selectBank(0))
     return false;
-
+  // Enable I2C master mode and disable I2C slave mode
   if (!bus->write(USER_CTRL, (uint8_t)USER_CTRL_I2C_MST_EN))
     return false;
 
@@ -354,6 +354,7 @@ bool DevLab_ICM20948::initMag()
 
   delay(10);
 
+  //Soft Reset
   writeSlave4(AK_CNTL3, 0x01);
 
   delay(100);
@@ -364,6 +365,7 @@ bool DevLab_ICM20948::initMag()
     readSlave4(AK_WIA2, who);
     if (who == AK_WIA2_VAL)
     {
+      //Mode 3 (continuous measurement 100Hz)
       writeSlave4(AK_CNTL2, 0x08);
 
       delay(10);
@@ -419,10 +421,13 @@ bool DevLab_ICM20948::writeSlave4(uint8_t reg, uint8_t value)
   if (!selectBank(3))
     return false;
 
+  // 7 - 1:r , 0:W
+  //[6:0]: I2C slave address (AK09916_I2C_ADDR)
   // Set slave address (write)
   if (!bus->write(I2C_SLV4_ADDR, (uint8_t)AK09916_I2C_ADDR))
     return false;
-  // Set data to write
+
+  // Set data to write to slave
   if (!bus->write(I2C_SLV4_DO, value))
     return false;
 
