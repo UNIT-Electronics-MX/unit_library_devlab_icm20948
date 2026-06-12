@@ -1,0 +1,2 @@
+/home/jonathan/Arduino/libraries/unit_library_devlab_cm20948/src/DevLab_ICM20948.cpp:1200: warning: documented symbol 'bool DevLab_ICM20948::intEnableConfig' was not declared or defined.
+/home/jonathan/Arduino/libraries/unit_library_devlab_cm20948/src/ICM20948_regs.h:33: warning: explicit link request to 'defines' could not be resolved

@@ -1,0 +1,485 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Directory Hierarchy}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Directories}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Directory Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}examples Directory Reference}{9}{section.5.1}%
+\contentsline {section}{\numberline {5.2}examples/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accel Directory Reference}{9}{section.5.2}%
+\contentsline {section}{\numberline {5.3}examples/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic Directory Reference}{10}{section.5.3}%
+\contentsline {section}{\numberline {5.4}examples/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Magneto Directory Reference}{10}{section.5.4}%
+\contentsline {section}{\numberline {5.5}examples/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic Directory Reference}{11}{section.5.5}%
+\contentsline {section}{\numberline {5.6}src Directory Reference}{11}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Bus\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi$<$ Bus $>$ Class Template Reference}{13}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{13}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Constructor \& Destructor Documentation}{14}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}BusIO\_7Semi()}{14}{subsubsection.6.1.2.1}%
+\contentsline {subsection}{\numberline {6.1.3}Member Function Documentation}{14}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}read()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{14}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}read()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{14}{subsubsection.6.1.3.2}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}read()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{15}{subsubsection.6.1.3.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.4}readBit()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{15}{subsubsection.6.1.3.4}%
+\contentsline {subsubsection}{\numberline {6.1.3.5}readBit()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{15}{subsubsection.6.1.3.5}%
+\contentsline {subsubsection}{\numberline {6.1.3.6}readBits()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{16}{subsubsection.6.1.3.6}%
+\contentsline {subsubsection}{\numberline {6.1.3.7}readBits()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.6.1.3.7}%
+\contentsline {subsubsection}{\numberline {6.1.3.8}write()\hspace {0.1cm}{\footnotesize \ttfamily [1/3]}}{17}{subsubsection.6.1.3.8}%
+\contentsline {subsubsection}{\numberline {6.1.3.9}write()\hspace {0.1cm}{\footnotesize \ttfamily [2/3]}}{17}{subsubsection.6.1.3.9}%
+\contentsline {subsubsection}{\numberline {6.1.3.10}write()\hspace {0.1cm}{\footnotesize \ttfamily [3/3]}}{17}{subsubsection.6.1.3.10}%
+\contentsline {subsubsection}{\numberline {6.1.3.11}writeBit()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{18}{subsubsection.6.1.3.11}%
+\contentsline {subsubsection}{\numberline {6.1.3.12}writeBit()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.6.1.3.12}%
+\contentsline {subsubsection}{\numberline {6.1.3.13}writeBits()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{19}{subsubsection.6.1.3.13}%
+\contentsline {subsubsection}{\numberline {6.1.3.14}writeBits()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{19}{subsubsection.6.1.3.14}%
+\contentsline {section}{\numberline {6.2}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948 Class Reference}{20}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{21}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Constructor \& Destructor Documentation}{21}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}DevLab\_ICM20948()}{21}{subsubsection.6.2.2.1}%
+\contentsline {subsection}{\numberline {6.2.3}Member Function Documentation}{22}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}applyBasicDefaults()}{22}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}beginI2C()}{23}{subsubsection.6.2.3.2}%
+\contentsline {subsubsection}{\numberline {6.2.3.3}beginSPI()}{23}{subsubsection.6.2.3.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.4}checkIntStatus()}{24}{subsubsection.6.2.3.4}%
+\contentsline {subsubsection}{\numberline {6.2.3.5}getAccelAveraging()}{24}{subsubsection.6.2.3.5}%
+\contentsline {subsubsection}{\numberline {6.2.3.6}getAccelDLPF()}{25}{subsubsection.6.2.3.6}%
+\contentsline {subsubsection}{\numberline {6.2.3.7}getAccelOffset()}{25}{subsubsection.6.2.3.7}%
+\contentsline {subsubsection}{\numberline {6.2.3.8}getAccelSampleRate()}{26}{subsubsection.6.2.3.8}%
+\contentsline {subsubsection}{\numberline {6.2.3.9}getAccelScale()}{27}{subsubsection.6.2.3.9}%
+\contentsline {subsubsection}{\numberline {6.2.3.10}getClock()}{27}{subsubsection.6.2.3.10}%
+\contentsline {subsubsection}{\numberline {6.2.3.11}getDLPF()}{28}{subsubsection.6.2.3.11}%
+\contentsline {subsubsection}{\numberline {6.2.3.12}getGyroOffset()}{28}{subsubsection.6.2.3.12}%
+\contentsline {subsubsection}{\numberline {6.2.3.13}getGyroSampleRate()}{29}{subsubsection.6.2.3.13}%
+\contentsline {subsubsection}{\numberline {6.2.3.14}getGyroScale()}{30}{subsubsection.6.2.3.14}%
+\contentsline {subsubsection}{\numberline {6.2.3.15}getLowPower()}{30}{subsubsection.6.2.3.15}%
+\contentsline {subsubsection}{\numberline {6.2.3.16}getSensors()}{31}{subsubsection.6.2.3.16}%
+\contentsline {subsubsection}{\numberline {6.2.3.17}initMag()}{31}{subsubsection.6.2.3.17}%
+\contentsline {subsubsection}{\numberline {6.2.3.18}intInit()}{32}{subsubsection.6.2.3.18}%
+\contentsline {subsubsection}{\numberline {6.2.3.19}readAccel()}{32}{subsubsection.6.2.3.19}%
+\contentsline {subsubsection}{\numberline {6.2.3.20}readGyro()}{33}{subsubsection.6.2.3.20}%
+\contentsline {subsubsection}{\numberline {6.2.3.21}readMag()}{34}{subsubsection.6.2.3.21}%
+\contentsline {subsubsection}{\numberline {6.2.3.22}readTemperature()}{34}{subsubsection.6.2.3.22}%
+\contentsline {subsubsection}{\numberline {6.2.3.23}readWhoAmI()}{35}{subsubsection.6.2.3.23}%
+\contentsline {subsubsection}{\numberline {6.2.3.24}selectBank()}{36}{subsubsection.6.2.3.24}%
+\contentsline {subsubsection}{\numberline {6.2.3.25}selfTestAccel()}{37}{subsubsection.6.2.3.25}%
+\contentsline {subsubsection}{\numberline {6.2.3.26}selfTestGyro()}{38}{subsubsection.6.2.3.26}%
+\contentsline {subsubsection}{\numberline {6.2.3.27}setAccelAveraging()}{39}{subsubsection.6.2.3.27}%
+\contentsline {subsubsection}{\numberline {6.2.3.28}setAccelDivRate()}{39}{subsubsection.6.2.3.28}%
+\contentsline {subsubsection}{\numberline {6.2.3.29}setAccelDLPF()}{40}{subsubsection.6.2.3.29}%
+\contentsline {subsubsection}{\numberline {6.2.3.30}setAccelOffset()}{40}{subsubsection.6.2.3.30}%
+\contentsline {subsubsection}{\numberline {6.2.3.31}setAccelSampleRate()}{41}{subsubsection.6.2.3.31}%
+\contentsline {subsubsection}{\numberline {6.2.3.32}setAccelScale()}{42}{subsubsection.6.2.3.32}%
+\contentsline {subsubsection}{\numberline {6.2.3.33}setClock()}{42}{subsubsection.6.2.3.33}%
+\contentsline {subsubsection}{\numberline {6.2.3.34}setDLPF()}{43}{subsubsection.6.2.3.34}%
+\contentsline {subsubsection}{\numberline {6.2.3.35}setGyroAveraging()}{43}{subsubsection.6.2.3.35}%
+\contentsline {subsubsection}{\numberline {6.2.3.36}setGyroDivRate()}{44}{subsubsection.6.2.3.36}%
+\contentsline {subsubsection}{\numberline {6.2.3.37}setGyroOffset()}{44}{subsubsection.6.2.3.37}%
+\contentsline {subsubsection}{\numberline {6.2.3.38}setGyroSampleRate()}{45}{subsubsection.6.2.3.38}%
+\contentsline {subsubsection}{\numberline {6.2.3.39}setGyroScale()}{45}{subsubsection.6.2.3.39}%
+\contentsline {subsubsection}{\numberline {6.2.3.40}setLowPower()}{46}{subsubsection.6.2.3.40}%
+\contentsline {subsubsection}{\numberline {6.2.3.41}setMagOpMode()}{47}{subsubsection.6.2.3.41}%
+\contentsline {subsubsection}{\numberline {6.2.3.42}setSensors()}{47}{subsubsection.6.2.3.42}%
+\contentsline {subsubsection}{\numberline {6.2.3.43}sleep()}{48}{subsubsection.6.2.3.43}%
+\contentsline {subsubsection}{\numberline {6.2.3.44}softReset()}{49}{subsubsection.6.2.3.44}%
+\contentsline {section}{\numberline {6.3}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface Class Reference}{50}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{51}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Member Function Documentation}{51}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}beginI2C()}{51}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}beginSPI()}{51}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}read()}{52}{subsubsection.6.3.2.3}%
+\contentsline {subsubsection}{\numberline {6.3.2.4}write()}{52}{subsubsection.6.3.2.4}%
+\contentsline {subsection}{\numberline {6.3.3}Member Data Documentation}{53}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}address}{53}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}i2c}{53}{subsubsection.6.3.3.2}%
+\contentsline {section}{\numberline {6.4}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Struct Reference}{53}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{53}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Member Data Documentation}{53}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}dmpInt1En}{53}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}fifoOvfEn}{54}{subsubsection.6.4.2.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.3}fifoWmEn}{54}{subsubsection.6.4.2.3}%
+\contentsline {subsubsection}{\numberline {6.4.2.4}i2cMstIntEn}{54}{subsubsection.6.4.2.4}%
+\contentsline {subsubsection}{\numberline {6.4.2.5}pllRdyEn}{54}{subsubsection.6.4.2.5}%
+\contentsline {subsubsection}{\numberline {6.4.2.6}rawDataRdyEn}{54}{subsubsection.6.4.2.6}%
+\contentsline {subsubsection}{\numberline {6.4.2.7}wofEn}{54}{subsubsection.6.4.2.7}%
+\contentsline {subsubsection}{\numberline {6.4.2.8}womIntEn}{54}{subsubsection.6.4.2.8}%
+\contentsline {section}{\numberline {6.5}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Struct Reference}{55}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{55}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Member Data Documentation}{55}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}activeLevel}{55}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}bypassEn}{55}{subsubsection.6.5.2.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.3}clearMode}{55}{subsubsection.6.5.2.3}%
+\contentsline {subsubsection}{\numberline {6.5.2.4}driveMode}{55}{subsubsection.6.5.2.4}%
+\contentsline {subsubsection}{\numberline {6.5.2.5}fsyncActLevel}{56}{subsubsection.6.5.2.5}%
+\contentsline {subsubsection}{\numberline {6.5.2.6}fsyncIntEn}{56}{subsubsection.6.5.2.6}%
+\contentsline {subsubsection}{\numberline {6.5.2.7}latchMode}{56}{subsubsection.6.5.2.7}%
+\contentsline {section}{\numberline {6.6}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Status Struct Reference}{56}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{56}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Member Data Documentation}{56}{subsection.6.6.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.1}dmpInt1}{56}{subsubsection.6.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.6.2.2}fifoOvf}{57}{subsubsection.6.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.6.2.3}fifoWm}{57}{subsubsection.6.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.6.2.4}i2cMstInt}{57}{subsubsection.6.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.6.2.5}pllRdyInt}{57}{subsubsection.6.6.2.5}%
+\contentsline {subsubsection}{\numberline {6.6.2.6}rawDataRdy}{57}{subsubsection.6.6.2.6}%
+\contentsline {subsubsection}{\numberline {6.6.2.7}womInt}{57}{subsubsection.6.6.2.7}%
+\contentsline {section}{\numberline {6.7}icm\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}plat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{57}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{58}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Member Data Documentation}{58}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}delay\_ms}{58}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}i2c\_addr}{58}{subsubsection.6.7.2.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.3}read}{58}{subsubsection.6.7.2.3}%
+\contentsline {subsubsection}{\numberline {6.7.2.4}spi\_cs}{59}{subsubsection.6.7.2.4}%
+\contentsline {subsubsection}{\numberline {6.7.2.5}spi\_reg\_rw\_bits}{59}{subsubsection.6.7.2.5}%
+\contentsline {subsubsection}{\numberline {6.7.2.6}user}{59}{subsubsection.6.7.2.6}%
+\contentsline {subsubsection}{\numberline {6.7.2.7}write}{59}{subsubsection.6.7.2.7}%
+\contentsline {section}{\numberline {6.8}Interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi Class Reference}{60}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{60}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Constructor \& Destructor Documentation}{60}{subsection.6.8.2}%
+\contentsline {subsubsection}{\numberline {6.8.2.1}$\sim $Interface\_7Semi()}{60}{subsubsection.6.8.2.1}%
+\contentsline {subsection}{\numberline {6.8.3}Member Function Documentation}{61}{subsection.6.8.3}%
+\contentsline {subsubsection}{\numberline {6.8.3.1}beginI2C()}{61}{subsubsection.6.8.3.1}%
+\contentsline {subsubsection}{\numberline {6.8.3.2}beginSPI()}{61}{subsubsection.6.8.3.2}%
+\contentsline {subsubsection}{\numberline {6.8.3.3}delay\_us()}{61}{subsubsection.6.8.3.3}%
+\contentsline {subsubsection}{\numberline {6.8.3.4}read()}{62}{subsubsection.6.8.3.4}%
+\contentsline {subsubsection}{\numberline {6.8.3.5}write()}{62}{subsubsection.6.8.3.5}%
+\contentsline {section}{\numberline {6.9}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface Class Reference}{63}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{64}{subsection.6.9.1}%
+\contentsline {subsection}{\numberline {6.9.2}Member Function Documentation}{64}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}beginI2C()}{64}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}beginSPI()}{64}{subsubsection.6.9.2.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.3}read()}{65}{subsubsection.6.9.2.3}%
+\contentsline {subsubsection}{\numberline {6.9.2.4}write()}{65}{subsubsection.6.9.2.4}%
+\contentsline {subsection}{\numberline {6.9.3}Member Data Documentation}{65}{subsection.6.9.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.1}cs}{65}{subsubsection.6.9.3.1}%
+\contentsline {subsubsection}{\numberline {6.9.3.2}speed}{65}{subsubsection.6.9.3.2}%
+\contentsline {subsubsection}{\numberline {6.9.3.3}spi}{65}{subsubsection.6.9.3.3}%
+\contentsline {chapter}{\numberline {7}File Documentation}{67}{chapter.7}%
+\contentsline {section}{\numberline {7.1}examples/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accel/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accel.ino File Reference}{67}{section.7.1}%
+\contentsline {section}{\numberline {7.2}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Accel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{67}{section.7.2}%
+\contentsline {section}{\numberline {7.3}examples/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic.ino File Reference}{69}{section.7.3}%
+\contentsline {section}{\numberline {7.4}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{69}{section.7.4}%
+\contentsline {section}{\numberline {7.5}examples/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Magneto/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Magneto.ino File Reference}{70}{section.7.5}%
+\contentsline {section}{\numberline {7.6}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Magneto.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{70}{section.7.6}%
+\contentsline {section}{\numberline {7.7}examples/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic.ino File Reference}{72}{section.7.7}%
+\contentsline {section}{\numberline {7.8}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{72}{section.7.8}%
+\contentsline {section}{\numberline {7.9}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.h File Reference}{73}{section.7.9}%
+\contentsline {section}{\numberline {7.10}7Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{74}{section.7.10}%
+\contentsline {section}{\numberline {7.11}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.h File Reference}{75}{section.7.11}%
+\contentsline {section}{\numberline {7.12}7Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{76}{section.7.12}%
+\contentsline {section}{\numberline {7.13}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.h File Reference}{78}{section.7.13}%
+\contentsline {section}{\numberline {7.14}7Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{78}{section.7.14}%
+\contentsline {section}{\numberline {7.15}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bus\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi.h File Reference}{81}{section.7.15}%
+\contentsline {section}{\numberline {7.16}Bus\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{81}{section.7.16}%
+\contentsline {section}{\numberline {7.17}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.cpp File Reference}{84}{section.7.17}%
+\contentsline {section}{\numberline {7.18}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{84}{section.7.18}%
+\contentsline {section}{\numberline {7.19}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.h File Reference}{99}{section.7.19}%
+\contentsline {subsection}{\numberline {7.19.1}Enumeration Type Documentation}{100}{subsection.7.19.1}%
+\contentsline {subsubsection}{\numberline {7.19.1.1}ICM20948\_Accel\_Average}{100}{subsubsection.7.19.1.1}%
+\contentsline {subsubsection}{\numberline {7.19.1.2}ICM20948\_Accel\_DLPFCFG}{100}{subsubsection.7.19.1.2}%
+\contentsline {subsubsection}{\numberline {7.19.1.3}ICM20948\_Accel\_FullScale}{101}{subsubsection.7.19.1.3}%
+\contentsline {subsubsection}{\numberline {7.19.1.4}ICM20948\_Clock\_Source}{101}{subsubsection.7.19.1.4}%
+\contentsline {subsubsection}{\numberline {7.19.1.5}ICM20948\_Gyro\_Average}{102}{subsubsection.7.19.1.5}%
+\contentsline {subsubsection}{\numberline {7.19.1.6}ICM20948\_Gyro\_DLPF}{102}{subsubsection.7.19.1.6}%
+\contentsline {subsubsection}{\numberline {7.19.1.7}ICM20948\_Gyro\_FullScale}{103}{subsubsection.7.19.1.7}%
+\contentsline {subsubsection}{\numberline {7.19.1.8}ICM20948\_Op\_Mode}{103}{subsubsection.7.19.1.8}%
+\contentsline {section}{\numberline {7.20}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{103}{section.7.20}%
+\contentsline {section}{\numberline {7.21}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}platform.h File Reference}{111}{section.7.21}%
+\contentsline {section}{\numberline {7.22}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}platform.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{112}{section.7.22}%
+\contentsline {section}{\numberline {7.23}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}regs.h File Reference}{113}{section.7.23}%
+\contentsline {subsection}{\numberline {7.23.1}Macro Definition Documentation}{119}{subsection.7.23.1}%
+\contentsline {subsubsection}{\numberline {7.23.1.1}ACCEL\_BYPASS\_3DB\_BW\_HZ}{119}{subsubsection.7.23.1.1}%
+\contentsline {subsubsection}{\numberline {7.23.1.2}ACCEL\_BYPASS\_NBW\_HZ}{119}{subsubsection.7.23.1.2}%
+\contentsline {subsubsection}{\numberline {7.23.1.3}ACCEL\_BYPASS\_RATE\_HZ}{119}{subsubsection.7.23.1.3}%
+\contentsline {subsubsection}{\numberline {7.23.1.4}ACCEL\_CONFIG}{119}{subsubsection.7.23.1.4}%
+\contentsline {subsubsection}{\numberline {7.23.1.5}ACCEL\_CONFIG\_2}{119}{subsubsection.7.23.1.5}%
+\contentsline {subsubsection}{\numberline {7.23.1.6}ACCEL\_DEC3\_AVG\_16}{119}{subsubsection.7.23.1.6}%
+\contentsline {subsubsection}{\numberline {7.23.1.7}ACCEL\_DEC3\_AVG\_32}{119}{subsubsection.7.23.1.7}%
+\contentsline {subsubsection}{\numberline {7.23.1.8}ACCEL\_DEC3\_AVG\_4}{120}{subsubsection.7.23.1.8}%
+\contentsline {subsubsection}{\numberline {7.23.1.9}ACCEL\_DEC3\_AVG\_8}{120}{subsubsection.7.23.1.9}%
+\contentsline {subsubsection}{\numberline {7.23.1.10}ACCEL\_DLPF0\_3DB\_BW\_HZ}{120}{subsubsection.7.23.1.10}%
+\contentsline {subsubsection}{\numberline {7.23.1.11}ACCEL\_DLPF0\_NBW\_HZ}{120}{subsubsection.7.23.1.11}%
+\contentsline {subsubsection}{\numberline {7.23.1.12}ACCEL\_DLPF1\_3DB\_BW\_HZ}{120}{subsubsection.7.23.1.12}%
+\contentsline {subsubsection}{\numberline {7.23.1.13}ACCEL\_DLPF1\_NBW\_HZ}{120}{subsubsection.7.23.1.13}%
+\contentsline {subsubsection}{\numberline {7.23.1.14}ACCEL\_DLPF2\_3DB\_BW\_HZ}{120}{subsubsection.7.23.1.14}%
+\contentsline {subsubsection}{\numberline {7.23.1.15}ACCEL\_DLPF2\_NBW\_HZ}{120}{subsubsection.7.23.1.15}%
+\contentsline {subsubsection}{\numberline {7.23.1.16}ACCEL\_DLPF3\_3DB\_BW\_HZ}{121}{subsubsection.7.23.1.16}%
+\contentsline {subsubsection}{\numberline {7.23.1.17}ACCEL\_DLPF3\_NBW\_HZ}{121}{subsubsection.7.23.1.17}%
+\contentsline {subsubsection}{\numberline {7.23.1.18}ACCEL\_DLPF4\_3DB\_BW\_HZ}{121}{subsubsection.7.23.1.18}%
+\contentsline {subsubsection}{\numberline {7.23.1.19}ACCEL\_DLPF4\_NBW\_HZ}{121}{subsubsection.7.23.1.19}%
+\contentsline {subsubsection}{\numberline {7.23.1.20}ACCEL\_DLPF5\_3DB\_BW\_HZ}{121}{subsubsection.7.23.1.20}%
+\contentsline {subsubsection}{\numberline {7.23.1.21}ACCEL\_DLPF5\_NBW\_HZ}{121}{subsubsection.7.23.1.21}%
+\contentsline {subsubsection}{\numberline {7.23.1.22}ACCEL\_DLPF6\_3DB\_BW\_HZ}{121}{subsubsection.7.23.1.22}%
+\contentsline {subsubsection}{\numberline {7.23.1.23}ACCEL\_DLPF6\_NBW\_HZ}{121}{subsubsection.7.23.1.23}%
+\contentsline {subsubsection}{\numberline {7.23.1.24}ACCEL\_DLPF7\_3DB\_BW\_HZ}{122}{subsubsection.7.23.1.24}%
+\contentsline {subsubsection}{\numberline {7.23.1.25}ACCEL\_DLPF7\_NBW\_HZ}{122}{subsubsection.7.23.1.25}%
+\contentsline {subsubsection}{\numberline {7.23.1.26}ACCEL\_DLPF\_BASE\_HZ}{122}{subsubsection.7.23.1.26}%
+\contentsline {subsubsection}{\numberline {7.23.1.27}ACCEL\_DLPF\_ODR\_HZ}{122}{subsubsection.7.23.1.27}%
+\contentsline {subsubsection}{\numberline {7.23.1.28}ACCEL\_DLPFCFG\_0}{122}{subsubsection.7.23.1.28}%
+\contentsline {subsubsection}{\numberline {7.23.1.29}ACCEL\_DLPFCFG\_1}{122}{subsubsection.7.23.1.29}%
+\contentsline {subsubsection}{\numberline {7.23.1.30}ACCEL\_DLPFCFG\_2}{122}{subsubsection.7.23.1.30}%
+\contentsline {subsubsection}{\numberline {7.23.1.31}ACCEL\_DLPFCFG\_3}{123}{subsubsection.7.23.1.31}%
+\contentsline {subsubsection}{\numberline {7.23.1.32}ACCEL\_DLPFCFG\_4}{123}{subsubsection.7.23.1.32}%
+\contentsline {subsubsection}{\numberline {7.23.1.33}ACCEL\_DLPFCFG\_5}{123}{subsubsection.7.23.1.33}%
+\contentsline {subsubsection}{\numberline {7.23.1.34}ACCEL\_DLPFCFG\_6}{123}{subsubsection.7.23.1.34}%
+\contentsline {subsubsection}{\numberline {7.23.1.35}ACCEL\_DLPFCFG\_7}{123}{subsubsection.7.23.1.35}%
+\contentsline {subsubsection}{\numberline {7.23.1.36}ACCEL\_DLPFCFG\_MASK}{123}{subsubsection.7.23.1.36}%
+\contentsline {subsubsection}{\numberline {7.23.1.37}ACCEL\_DLPFCFG\_SHIFT}{123}{subsubsection.7.23.1.37}%
+\contentsline {subsubsection}{\numberline {7.23.1.38}ACCEL\_FCHOICE}{123}{subsubsection.7.23.1.38}%
+\contentsline {subsubsection}{\numberline {7.23.1.39}ACCEL\_FCHOICE\_BYPASS}{124}{subsubsection.7.23.1.39}%
+\contentsline {subsubsection}{\numberline {7.23.1.40}ACCEL\_FCHOICE\_DLPF}{124}{subsubsection.7.23.1.40}%
+\contentsline {subsubsection}{\numberline {7.23.1.41}ACCEL\_FS\_16G}{124}{subsubsection.7.23.1.41}%
+\contentsline {subsubsection}{\numberline {7.23.1.42}ACCEL\_FS\_2G}{124}{subsubsection.7.23.1.42}%
+\contentsline {subsubsection}{\numberline {7.23.1.43}ACCEL\_FS\_4G}{124}{subsubsection.7.23.1.43}%
+\contentsline {subsubsection}{\numberline {7.23.1.44}ACCEL\_FS\_8G}{124}{subsubsection.7.23.1.44}%
+\contentsline {subsubsection}{\numberline {7.23.1.45}ACCEL\_FS\_SEL\_MASK}{124}{subsubsection.7.23.1.45}%
+\contentsline {subsubsection}{\numberline {7.23.1.46}ACCEL\_FS\_SEL\_SHIFT}{125}{subsubsection.7.23.1.46}%
+\contentsline {subsubsection}{\numberline {7.23.1.47}ACCEL\_INTEL\_CTRL}{125}{subsubsection.7.23.1.47}%
+\contentsline {subsubsection}{\numberline {7.23.1.48}ACCEL\_INTEL\_EN}{125}{subsubsection.7.23.1.48}%
+\contentsline {subsubsection}{\numberline {7.23.1.49}ACCEL\_INTEL\_MODE\_INT}{125}{subsubsection.7.23.1.49}%
+\contentsline {subsubsection}{\numberline {7.23.1.50}ACCEL\_SMPLRT\_DIV\_1}{125}{subsubsection.7.23.1.50}%
+\contentsline {subsubsection}{\numberline {7.23.1.51}ACCEL\_SMPLRT\_DIV\_2}{125}{subsubsection.7.23.1.51}%
+\contentsline {subsubsection}{\numberline {7.23.1.52}ACCEL\_SMPLRT\_DIV\_MAX}{125}{subsubsection.7.23.1.52}%
+\contentsline {subsubsection}{\numberline {7.23.1.53}ACCEL\_SMPLRT\_DIV\_MIN}{125}{subsubsection.7.23.1.53}%
+\contentsline {subsubsection}{\numberline {7.23.1.54}ACCEL\_WOM\_THR}{126}{subsubsection.7.23.1.54}%
+\contentsline {subsubsection}{\numberline {7.23.1.55}ACCEL\_XOUT\_H}{126}{subsubsection.7.23.1.55}%
+\contentsline {subsubsection}{\numberline {7.23.1.56}ACCEL\_XOUT\_L}{126}{subsubsection.7.23.1.56}%
+\contentsline {subsubsection}{\numberline {7.23.1.57}ACCEL\_YOUT\_H}{126}{subsubsection.7.23.1.57}%
+\contentsline {subsubsection}{\numberline {7.23.1.58}ACCEL\_YOUT\_L}{126}{subsubsection.7.23.1.58}%
+\contentsline {subsubsection}{\numberline {7.23.1.59}ACCEL\_ZOUT\_H}{126}{subsubsection.7.23.1.59}%
+\contentsline {subsubsection}{\numberline {7.23.1.60}ACCEL\_ZOUT\_L}{126}{subsubsection.7.23.1.60}%
+\contentsline {subsubsection}{\numberline {7.23.1.61}AK09916\_I2C\_ADDR}{126}{subsubsection.7.23.1.61}%
+\contentsline {subsubsection}{\numberline {7.23.1.62}AK\_CNTL2}{127}{subsubsection.7.23.1.62}%
+\contentsline {subsubsection}{\numberline {7.23.1.63}AK\_CNTL3}{127}{subsubsection.7.23.1.63}%
+\contentsline {subsubsection}{\numberline {7.23.1.64}AK\_HXL}{127}{subsubsection.7.23.1.64}%
+\contentsline {subsubsection}{\numberline {7.23.1.65}AK\_ST1}{127}{subsubsection.7.23.1.65}%
+\contentsline {subsubsection}{\numberline {7.23.1.66}AK\_ST2}{127}{subsubsection.7.23.1.66}%
+\contentsline {subsubsection}{\numberline {7.23.1.67}AK\_WIA2}{127}{subsubsection.7.23.1.67}%
+\contentsline {subsubsection}{\numberline {7.23.1.68}AK\_WIA2\_VAL}{127}{subsubsection.7.23.1.68}%
+\contentsline {subsubsection}{\numberline {7.23.1.69}AUTO\_SEL}{127}{subsubsection.7.23.1.69}%
+\contentsline {subsubsection}{\numberline {7.23.1.70}AX\_ST\_EN\_REG}{128}{subsubsection.7.23.1.70}%
+\contentsline {subsubsection}{\numberline {7.23.1.71}AY\_ST\_EN\_REG}{128}{subsubsection.7.23.1.71}%
+\contentsline {subsubsection}{\numberline {7.23.1.72}AZ\_ST\_EN\_REG}{128}{subsubsection.7.23.1.72}%
+\contentsline {subsubsection}{\numberline {7.23.1.73}BANK1\_REG\_BANK\_SEL}{128}{subsubsection.7.23.1.73}%
+\contentsline {subsubsection}{\numberline {7.23.1.74}BANK2\_REG\_BANK\_SEL}{128}{subsubsection.7.23.1.74}%
+\contentsline {subsubsection}{\numberline {7.23.1.75}BANK3\_REG\_BANK\_SEL}{128}{subsubsection.7.23.1.75}%
+\contentsline {subsubsection}{\numberline {7.23.1.76}BYPASS\_EN}{128}{subsubsection.7.23.1.76}%
+\contentsline {subsubsection}{\numberline {7.23.1.77}CLK\_STOP}{128}{subsubsection.7.23.1.77}%
+\contentsline {subsubsection}{\numberline {7.23.1.78}DEC3\_CFG\_MASK}{129}{subsubsection.7.23.1.78}%
+\contentsline {subsubsection}{\numberline {7.23.1.79}DEC3\_CFG\_SHIFT}{129}{subsubsection.7.23.1.79}%
+\contentsline {subsubsection}{\numberline {7.23.1.80}DELAY\_ES\_SHADOW}{129}{subsubsection.7.23.1.80}%
+\contentsline {subsubsection}{\numberline {7.23.1.81}DELAY\_TIME\_EN}{129}{subsubsection.7.23.1.81}%
+\contentsline {subsubsection}{\numberline {7.23.1.82}DELAY\_TIMEH}{129}{subsubsection.7.23.1.82}%
+\contentsline {subsubsection}{\numberline {7.23.1.83}DELAY\_TIMEL}{129}{subsubsection.7.23.1.83}%
+\contentsline {subsubsection}{\numberline {7.23.1.84}dps1000}{129}{subsubsection.7.23.1.84}%
+\contentsline {subsubsection}{\numberline {7.23.1.85}dps2000}{129}{subsubsection.7.23.1.85}%
+\contentsline {subsubsection}{\numberline {7.23.1.86}dps250}{130}{subsubsection.7.23.1.86}%
+\contentsline {subsubsection}{\numberline {7.23.1.87}dps500}{130}{subsubsection.7.23.1.87}%
+\contentsline {subsubsection}{\numberline {7.23.1.88}EnhancedRegular}{130}{subsubsection.7.23.1.88}%
+\contentsline {subsubsection}{\numberline {7.23.1.89}EXT\_SLV\_SENS\_DATA\_00}{130}{subsubsection.7.23.1.89}%
+\contentsline {subsubsection}{\numberline {7.23.1.90}EXT\_SLV\_SENS\_DATA\_23}{130}{subsubsection.7.23.1.90}%
+\contentsline {subsubsection}{\numberline {7.23.1.91}EXT\_SYNC\_SET\_MASK}{130}{subsubsection.7.23.1.91}%
+\contentsline {subsubsection}{\numberline {7.23.1.92}FIFO\_CFG}{130}{subsubsection.7.23.1.92}%
+\contentsline {subsubsection}{\numberline {7.23.1.93}FIFO\_COUNTH}{131}{subsubsection.7.23.1.93}%
+\contentsline {subsubsection}{\numberline {7.23.1.94}FIFO\_COUNTL}{131}{subsubsection.7.23.1.94}%
+\contentsline {subsubsection}{\numberline {7.23.1.95}FIFO\_EN\_1}{131}{subsubsection.7.23.1.95}%
+\contentsline {subsubsection}{\numberline {7.23.1.96}FIFO\_EN\_2}{131}{subsubsection.7.23.1.96}%
+\contentsline {subsubsection}{\numberline {7.23.1.97}FIFO\_MODE}{131}{subsubsection.7.23.1.97}%
+\contentsline {subsubsection}{\numberline {7.23.1.98}FIFO\_R\_W}{131}{subsubsection.7.23.1.98}%
+\contentsline {subsubsection}{\numberline {7.23.1.99}FIFO\_RST}{131}{subsubsection.7.23.1.99}%
+\contentsline {subsubsection}{\numberline {7.23.1.100}FSYNC\_CONFIG}{131}{subsubsection.7.23.1.100}%
+\contentsline {subsubsection}{\numberline {7.23.1.101}FSYNC\_INT\_MODE\_EN}{132}{subsubsection.7.23.1.101}%
+\contentsline {subsubsection}{\numberline {7.23.1.102}g16}{132}{subsubsection.7.23.1.102}%
+\contentsline {subsubsection}{\numberline {7.23.1.103}g2}{132}{subsubsection.7.23.1.103}%
+\contentsline {subsubsection}{\numberline {7.23.1.104}g4}{132}{subsubsection.7.23.1.104}%
+\contentsline {subsubsection}{\numberline {7.23.1.105}g8}{132}{subsubsection.7.23.1.105}%
+\contentsline {subsubsection}{\numberline {7.23.1.106}GYRO\_AVGCFG\_MASK}{132}{subsubsection.7.23.1.106}%
+\contentsline {subsubsection}{\numberline {7.23.1.107}GYRO\_AVGCFG\_SHIFT}{132}{subsubsection.7.23.1.107}%
+\contentsline {subsubsection}{\numberline {7.23.1.108}GYRO\_BW\_MEDIUM}{133}{subsubsection.7.23.1.108}%
+\contentsline {subsubsection}{\numberline {7.23.1.109}GYRO\_BW\_NARROW}{133}{subsubsection.7.23.1.109}%
+\contentsline {subsubsection}{\numberline {7.23.1.110}GYRO\_BW\_ULTRA\_WIDE}{133}{subsubsection.7.23.1.110}%
+\contentsline {subsubsection}{\numberline {7.23.1.111}GYRO\_BW\_WIDE}{133}{subsubsection.7.23.1.111}%
+\contentsline {subsubsection}{\numberline {7.23.1.112}GYRO\_CONFIG\_1}{133}{subsubsection.7.23.1.112}%
+\contentsline {subsubsection}{\numberline {7.23.1.113}GYRO\_CONFIG\_2}{133}{subsubsection.7.23.1.113}%
+\contentsline {subsubsection}{\numberline {7.23.1.114}GYRO\_DLPF\_BASE\_HZ}{133}{subsubsection.7.23.1.114}%
+\contentsline {subsubsection}{\numberline {7.23.1.115}GYRO\_DLPF\_ODR\_HZ}{134}{subsubsection.7.23.1.115}%
+\contentsline {subsubsection}{\numberline {7.23.1.116}GYRO\_DLPFCFG\_0}{134}{subsubsection.7.23.1.116}%
+\contentsline {subsubsection}{\numberline {7.23.1.117}GYRO\_DLPFCFG\_1}{134}{subsubsection.7.23.1.117}%
+\contentsline {subsubsection}{\numberline {7.23.1.118}GYRO\_DLPFCFG\_2}{134}{subsubsection.7.23.1.118}%
+\contentsline {subsubsection}{\numberline {7.23.1.119}GYRO\_DLPFCFG\_3}{134}{subsubsection.7.23.1.119}%
+\contentsline {subsubsection}{\numberline {7.23.1.120}GYRO\_DLPFCFG\_4}{134}{subsubsection.7.23.1.120}%
+\contentsline {subsubsection}{\numberline {7.23.1.121}GYRO\_DLPFCFG\_5}{134}{subsubsection.7.23.1.121}%
+\contentsline {subsubsection}{\numberline {7.23.1.122}GYRO\_DLPFCFG\_6}{135}{subsubsection.7.23.1.122}%
+\contentsline {subsubsection}{\numberline {7.23.1.123}GYRO\_DLPFCFG\_7}{135}{subsubsection.7.23.1.123}%
+\contentsline {subsubsection}{\numberline {7.23.1.124}GYRO\_DLPFCFG\_MASK}{135}{subsubsection.7.23.1.124}%
+\contentsline {subsubsection}{\numberline {7.23.1.125}GYRO\_DLPFCFG\_SHIFT}{135}{subsubsection.7.23.1.125}%
+\contentsline {subsubsection}{\numberline {7.23.1.126}GYRO\_FCHOICE}{135}{subsubsection.7.23.1.126}%
+\contentsline {subsubsection}{\numberline {7.23.1.127}GYRO\_FCHOICE\_BYPASS}{135}{subsubsection.7.23.1.127}%
+\contentsline {subsubsection}{\numberline {7.23.1.128}GYRO\_FCHOICE\_DLPF}{135}{subsubsection.7.23.1.128}%
+\contentsline {subsubsection}{\numberline {7.23.1.129}GYRO\_FS\_1000DPS}{136}{subsubsection.7.23.1.129}%
+\contentsline {subsubsection}{\numberline {7.23.1.130}GYRO\_FS\_2000DPS}{136}{subsubsection.7.23.1.130}%
+\contentsline {subsubsection}{\numberline {7.23.1.131}GYRO\_FS\_250DPS}{136}{subsubsection.7.23.1.131}%
+\contentsline {subsubsection}{\numberline {7.23.1.132}GYRO\_FS\_500DPS}{136}{subsubsection.7.23.1.132}%
+\contentsline {subsubsection}{\numberline {7.23.1.133}GYRO\_FS\_SEL\_MASK}{136}{subsubsection.7.23.1.133}%
+\contentsline {subsubsection}{\numberline {7.23.1.134}GYRO\_FS\_SEL\_SHIFT}{136}{subsubsection.7.23.1.134}%
+\contentsline {subsubsection}{\numberline {7.23.1.135}GYRO\_SMPLRT\_DIV}{136}{subsubsection.7.23.1.135}%
+\contentsline {subsubsection}{\numberline {7.23.1.136}GYRO\_SMPLRT\_MIN\_HZ}{137}{subsubsection.7.23.1.136}%
+\contentsline {subsubsection}{\numberline {7.23.1.137}GYRO\_XOUT\_H}{137}{subsubsection.7.23.1.137}%
+\contentsline {subsubsection}{\numberline {7.23.1.138}GYRO\_XOUT\_L}{137}{subsubsection.7.23.1.138}%
+\contentsline {subsubsection}{\numberline {7.23.1.139}GYRO\_YOUT\_H}{137}{subsubsection.7.23.1.139}%
+\contentsline {subsubsection}{\numberline {7.23.1.140}GYRO\_YOUT\_L}{137}{subsubsection.7.23.1.140}%
+\contentsline {subsubsection}{\numberline {7.23.1.141}GYRO\_ZOUT\_H}{137}{subsubsection.7.23.1.141}%
+\contentsline {subsubsection}{\numberline {7.23.1.142}GYRO\_ZOUT\_L}{137}{subsubsection.7.23.1.142}%
+\contentsline {subsubsection}{\numberline {7.23.1.143}HighAccuracy}{137}{subsubsection.7.23.1.143}%
+\contentsline {subsubsection}{\numberline {7.23.1.144}Hz10}{138}{subsubsection.7.23.1.144}%
+\contentsline {subsubsection}{\numberline {7.23.1.145}Hz15}{138}{subsubsection.7.23.1.145}%
+\contentsline {subsubsection}{\numberline {7.23.1.146}Hz2}{138}{subsubsection.7.23.1.146}%
+\contentsline {subsubsection}{\numberline {7.23.1.147}Hz20}{138}{subsubsection.7.23.1.147}%
+\contentsline {subsubsection}{\numberline {7.23.1.148}Hz25}{138}{subsubsection.7.23.1.148}%
+\contentsline {subsubsection}{\numberline {7.23.1.149}Hz30}{138}{subsubsection.7.23.1.149}%
+\contentsline {subsubsection}{\numberline {7.23.1.150}Hz6}{138}{subsubsection.7.23.1.150}%
+\contentsline {subsubsection}{\numberline {7.23.1.151}Hz8}{139}{subsubsection.7.23.1.151}%
+\contentsline {subsubsection}{\numberline {7.23.1.152}I2C\_MST\_CLK\_MASK}{139}{subsubsection.7.23.1.152}%
+\contentsline {subsubsection}{\numberline {7.23.1.153}I2C\_MST\_CTRL}{139}{subsubsection.7.23.1.153}%
+\contentsline {subsubsection}{\numberline {7.23.1.154}I2C\_MST\_DELAY\_CTRL}{139}{subsubsection.7.23.1.154}%
+\contentsline {subsubsection}{\numberline {7.23.1.155}I2C\_MST\_ODR\_CONFIG}{139}{subsubsection.7.23.1.155}%
+\contentsline {subsubsection}{\numberline {7.23.1.156}I2C\_MST\_P\_NSR}{139}{subsubsection.7.23.1.156}%
+\contentsline {subsubsection}{\numberline {7.23.1.157}I2C\_MST\_STATUS}{139}{subsubsection.7.23.1.157}%
+\contentsline {subsubsection}{\numberline {7.23.1.158}I2C\_SLV0\_ADDR}{140}{subsubsection.7.23.1.158}%
+\contentsline {subsubsection}{\numberline {7.23.1.159}I2C\_SLV0\_CTRL}{140}{subsubsection.7.23.1.159}%
+\contentsline {subsubsection}{\numberline {7.23.1.160}I2C\_SLV0\_DELAY\_EN}{140}{subsubsection.7.23.1.160}%
+\contentsline {subsubsection}{\numberline {7.23.1.161}I2C\_SLV0\_DO}{140}{subsubsection.7.23.1.161}%
+\contentsline {subsubsection}{\numberline {7.23.1.162}I2C\_SLV0\_REG}{140}{subsubsection.7.23.1.162}%
+\contentsline {subsubsection}{\numberline {7.23.1.163}I2C\_SLV1\_ADDR}{140}{subsubsection.7.23.1.163}%
+\contentsline {subsubsection}{\numberline {7.23.1.164}I2C\_SLV1\_CTRL}{140}{subsubsection.7.23.1.164}%
+\contentsline {subsubsection}{\numberline {7.23.1.165}I2C\_SLV1\_DELAY\_EN}{140}{subsubsection.7.23.1.165}%
+\contentsline {subsubsection}{\numberline {7.23.1.166}I2C\_SLV1\_DO}{141}{subsubsection.7.23.1.166}%
+\contentsline {subsubsection}{\numberline {7.23.1.167}I2C\_SLV1\_REG}{141}{subsubsection.7.23.1.167}%
+\contentsline {subsubsection}{\numberline {7.23.1.168}I2C\_SLV2\_ADDR}{141}{subsubsection.7.23.1.168}%
+\contentsline {subsubsection}{\numberline {7.23.1.169}I2C\_SLV2\_CTRL}{141}{subsubsection.7.23.1.169}%
+\contentsline {subsubsection}{\numberline {7.23.1.170}I2C\_SLV2\_DELAY\_EN}{141}{subsubsection.7.23.1.170}%
+\contentsline {subsubsection}{\numberline {7.23.1.171}I2C\_SLV2\_DO}{141}{subsubsection.7.23.1.171}%
+\contentsline {subsubsection}{\numberline {7.23.1.172}I2C\_SLV2\_REG}{141}{subsubsection.7.23.1.172}%
+\contentsline {subsubsection}{\numberline {7.23.1.173}I2C\_SLV3\_ADDR}{141}{subsubsection.7.23.1.173}%
+\contentsline {subsubsection}{\numberline {7.23.1.174}I2C\_SLV3\_CTRL}{142}{subsubsection.7.23.1.174}%
+\contentsline {subsubsection}{\numberline {7.23.1.175}I2C\_SLV3\_DELAY\_EN}{142}{subsubsection.7.23.1.175}%
+\contentsline {subsubsection}{\numberline {7.23.1.176}I2C\_SLV3\_DO}{142}{subsubsection.7.23.1.176}%
+\contentsline {subsubsection}{\numberline {7.23.1.177}I2C\_SLV3\_REG}{142}{subsubsection.7.23.1.177}%
+\contentsline {subsubsection}{\numberline {7.23.1.178}I2C\_SLV4\_ADDR}{142}{subsubsection.7.23.1.178}%
+\contentsline {subsubsection}{\numberline {7.23.1.179}I2C\_SLV4\_CTRL}{142}{subsubsection.7.23.1.179}%
+\contentsline {subsubsection}{\numberline {7.23.1.180}I2C\_SLV4\_DELAY\_EN}{142}{subsubsection.7.23.1.180}%
+\contentsline {subsubsection}{\numberline {7.23.1.181}I2C\_SLV4\_DI}{142}{subsubsection.7.23.1.181}%
+\contentsline {subsubsection}{\numberline {7.23.1.182}I2C\_SLV4\_DLY\_MASK}{143}{subsubsection.7.23.1.182}%
+\contentsline {subsubsection}{\numberline {7.23.1.183}I2C\_SLV4\_DO}{143}{subsubsection.7.23.1.183}%
+\contentsline {subsubsection}{\numberline {7.23.1.184}I2C\_SLV4\_REG}{143}{subsubsection.7.23.1.184}%
+\contentsline {subsubsection}{\numberline {7.23.1.185}I2C\_SLVx\_BYTE\_SW}{143}{subsubsection.7.23.1.185}%
+\contentsline {subsubsection}{\numberline {7.23.1.186}I2C\_SLVx\_EN}{143}{subsubsection.7.23.1.186}%
+\contentsline {subsubsection}{\numberline {7.23.1.187}I2C\_SLVx\_GRP}{143}{subsubsection.7.23.1.187}%
+\contentsline {subsubsection}{\numberline {7.23.1.188}I2C\_SLVx\_LENG\_MASK}{143}{subsubsection.7.23.1.188}%
+\contentsline {subsubsection}{\numberline {7.23.1.189}I2C\_SLVx\_REG\_DIS}{143}{subsubsection.7.23.1.189}%
+\contentsline {subsubsection}{\numberline {7.23.1.190}I2C\_SLVx\_RNW}{144}{subsubsection.7.23.1.190}%
+\contentsline {subsubsection}{\numberline {7.23.1.191}INT1\_ACTL}{144}{subsubsection.7.23.1.191}%
+\contentsline {subsubsection}{\numberline {7.23.1.192}INT1\_LATCH\_INT\_EN}{144}{subsubsection.7.23.1.192}%
+\contentsline {subsubsection}{\numberline {7.23.1.193}INT1\_OPEN}{144}{subsubsection.7.23.1.193}%
+\contentsline {subsubsection}{\numberline {7.23.1.194}INT\_ACTL\_FSYNC}{144}{subsubsection.7.23.1.194}%
+\contentsline {subsubsection}{\numberline {7.23.1.195}INT\_ANYRD\_2CLEAR}{144}{subsubsection.7.23.1.195}%
+\contentsline {subsubsection}{\numberline {7.23.1.196}INT\_DMP\_INT1\_EN}{144}{subsubsection.7.23.1.196}%
+\contentsline {subsubsection}{\numberline {7.23.1.197}INT\_ENABLE}{144}{subsubsection.7.23.1.197}%
+\contentsline {subsubsection}{\numberline {7.23.1.198}INT\_ENABLE\_1}{145}{subsubsection.7.23.1.198}%
+\contentsline {subsubsection}{\numberline {7.23.1.199}INT\_ENABLE\_2}{145}{subsubsection.7.23.1.199}%
+\contentsline {subsubsection}{\numberline {7.23.1.200}INT\_ENABLE\_3}{145}{subsubsection.7.23.1.200}%
+\contentsline {subsubsection}{\numberline {7.23.1.201}INT\_I2C\_MST\_INT\_EN}{145}{subsubsection.7.23.1.201}%
+\contentsline {subsubsection}{\numberline {7.23.1.202}INT\_PIN\_CFG}{145}{subsubsection.7.23.1.202}%
+\contentsline {subsubsection}{\numberline {7.23.1.203}INT\_PLL\_RDY\_EN}{145}{subsubsection.7.23.1.203}%
+\contentsline {subsubsection}{\numberline {7.23.1.204}INT\_RAW\_DATA\_0\_RDY\_EN}{145}{subsubsection.7.23.1.204}%
+\contentsline {subsubsection}{\numberline {7.23.1.205}INT\_REG\_WOF\_EN}{146}{subsubsection.7.23.1.205}%
+\contentsline {subsubsection}{\numberline {7.23.1.206}INT\_STATUS}{146}{subsubsection.7.23.1.206}%
+\contentsline {subsubsection}{\numberline {7.23.1.207}INT\_STATUS\_1}{146}{subsubsection.7.23.1.207}%
+\contentsline {subsubsection}{\numberline {7.23.1.208}INT\_STATUS\_2}{146}{subsubsection.7.23.1.208}%
+\contentsline {subsubsection}{\numberline {7.23.1.209}INT\_STATUS\_3}{146}{subsubsection.7.23.1.209}%
+\contentsline {subsubsection}{\numberline {7.23.1.210}INT\_WOM\_INT\_EN}{146}{subsubsection.7.23.1.210}%
+\contentsline {subsubsection}{\numberline {7.23.1.211}INTERNAL\_20MHZ}{146}{subsubsection.7.23.1.211}%
+\contentsline {subsubsection}{\numberline {7.23.1.212}LowPower}{147}{subsubsection.7.23.1.212}%
+\contentsline {subsubsection}{\numberline {7.23.1.213}LP\_ACCEL\_CYCLE}{147}{subsubsection.7.23.1.213}%
+\contentsline {subsubsection}{\numberline {7.23.1.214}LP\_CONFIG}{147}{subsubsection.7.23.1.214}%
+\contentsline {subsubsection}{\numberline {7.23.1.215}LP\_GYRO\_CYCLE}{147}{subsubsection.7.23.1.215}%
+\contentsline {subsubsection}{\numberline {7.23.1.216}LP\_I2C\_MST\_CYCLE}{147}{subsubsection.7.23.1.216}%
+\contentsline {subsubsection}{\numberline {7.23.1.217}MOD\_CTRL\_USR}{147}{subsubsection.7.23.1.217}%
+\contentsline {subsubsection}{\numberline {7.23.1.218}MST\_LOST\_ARB}{147}{subsubsection.7.23.1.218}%
+\contentsline {subsubsection}{\numberline {7.23.1.219}MST\_ODR\_CFG\_MASK}{148}{subsubsection.7.23.1.219}%
+\contentsline {subsubsection}{\numberline {7.23.1.220}MST\_PASS\_THROUGH}{148}{subsubsection.7.23.1.220}%
+\contentsline {subsubsection}{\numberline {7.23.1.221}MST\_SLV0\_NACK}{148}{subsubsection.7.23.1.221}%
+\contentsline {subsubsection}{\numberline {7.23.1.222}MST\_SLV1\_NACK}{148}{subsubsection.7.23.1.222}%
+\contentsline {subsubsection}{\numberline {7.23.1.223}MST\_SLV2\_NACK}{148}{subsubsection.7.23.1.223}%
+\contentsline {subsubsection}{\numberline {7.23.1.224}MST\_SLV3\_NACK}{148}{subsubsection.7.23.1.224}%
+\contentsline {subsubsection}{\numberline {7.23.1.225}MST\_SLV4\_DONE}{148}{subsubsection.7.23.1.225}%
+\contentsline {subsubsection}{\numberline {7.23.1.226}MST\_SLV4\_NACK}{148}{subsubsection.7.23.1.226}%
+\contentsline {subsubsection}{\numberline {7.23.1.227}MULT\_MST\_EN}{149}{subsubsection.7.23.1.227}%
+\contentsline {subsubsection}{\numberline {7.23.1.228}ODR\_ALIGN\_EN}{149}{subsubsection.7.23.1.228}%
+\contentsline {subsubsection}{\numberline {7.23.1.229}ODR\_ALIGN\_EN\_BIT}{149}{subsubsection.7.23.1.229}%
+\contentsline {subsubsection}{\numberline {7.23.1.230}PWR\_CLKSEL\_AUTO}{149}{subsubsection.7.23.1.230}%
+\contentsline {subsubsection}{\numberline {7.23.1.231}PWR\_CLKSEL\_INT\_20MHZ}{149}{subsubsection.7.23.1.231}%
+\contentsline {subsubsection}{\numberline {7.23.1.232}PWR\_CLKSEL\_MASK}{149}{subsubsection.7.23.1.232}%
+\contentsline {subsubsection}{\numberline {7.23.1.233}PWR\_DEVICE\_RESET}{149}{subsubsection.7.23.1.233}%
+\contentsline {subsubsection}{\numberline {7.23.1.234}PWR\_DISABLE\_ACCEL}{149}{subsubsection.7.23.1.234}%
+\contentsline {subsubsection}{\numberline {7.23.1.235}PWR\_DISABLE\_GYRO}{150}{subsubsection.7.23.1.235}%
+\contentsline {subsubsection}{\numberline {7.23.1.236}PWR\_LP\_EN}{150}{subsubsection.7.23.1.236}%
+\contentsline {subsubsection}{\numberline {7.23.1.237}PWR\_MGMT\_1}{150}{subsubsection.7.23.1.237}%
+\contentsline {subsubsection}{\numberline {7.23.1.238}PWR\_MGMT\_2}{150}{subsubsection.7.23.1.238}%
+\contentsline {subsubsection}{\numberline {7.23.1.239}PWR\_SLEEP}{150}{subsubsection.7.23.1.239}%
+\contentsline {subsubsection}{\numberline {7.23.1.240}PWR\_TEMP\_DIS}{150}{subsubsection.7.23.1.240}%
+\contentsline {subsubsection}{\numberline {7.23.1.241}REG\_BANK\_SEL}{150}{subsubsection.7.23.1.241}%
+\contentsline {subsubsection}{\numberline {7.23.1.242}REG\_BANK\_SEL\_USER\_BANK\_MASK}{150}{subsubsection.7.23.1.242}%
+\contentsline {subsubsection}{\numberline {7.23.1.243}REG\_BANK\_SEL\_USER\_BANK\_SHIFT}{151}{subsubsection.7.23.1.243}%
+\contentsline {subsubsection}{\numberline {7.23.1.244}REG\_LP\_DMP\_EN}{151}{subsubsection.7.23.1.244}%
+\contentsline {subsubsection}{\numberline {7.23.1.245}Regular}{151}{subsubsection.7.23.1.245}%
+\contentsline {subsubsection}{\numberline {7.23.1.246}SELF\_TEST\_X\_ACCEL}{151}{subsubsection.7.23.1.246}%
+\contentsline {subsubsection}{\numberline {7.23.1.247}SELF\_TEST\_X\_GYRO}{151}{subsubsection.7.23.1.247}%
+\contentsline {subsubsection}{\numberline {7.23.1.248}SELF\_TEST\_Y\_ACCEL}{151}{subsubsection.7.23.1.248}%
+\contentsline {subsubsection}{\numberline {7.23.1.249}SELF\_TEST\_Y\_GYRO}{151}{subsubsection.7.23.1.249}%
+\contentsline {subsubsection}{\numberline {7.23.1.250}SELF\_TEST\_Z\_ACCEL}{152}{subsubsection.7.23.1.250}%
+\contentsline {subsubsection}{\numberline {7.23.1.251}SELF\_TEST\_Z\_GYRO}{152}{subsubsection.7.23.1.251}%
+\contentsline {subsubsection}{\numberline {7.23.1.252}STS\_DMP\_INT1}{152}{subsubsection.7.23.1.252}%
+\contentsline {subsubsection}{\numberline {7.23.1.253}STS\_I2C\_MST\_INT}{152}{subsubsection.7.23.1.253}%
+\contentsline {subsubsection}{\numberline {7.23.1.254}STS\_PLL\_RDY\_INT}{152}{subsubsection.7.23.1.254}%
+\contentsline {subsubsection}{\numberline {7.23.1.255}STS\_RAW\_DATA\_0\_RDY\_INT}{152}{subsubsection.7.23.1.255}%
+\contentsline {subsubsection}{\numberline {7.23.1.256}STS\_WOM\_INT}{152}{subsubsection.7.23.1.256}%
+\contentsline {subsubsection}{\numberline {7.23.1.257}TEMP\_CONFIG}{152}{subsubsection.7.23.1.257}%
+\contentsline {subsubsection}{\numberline {7.23.1.258}TEMP\_DLPFCFG\_MASK}{153}{subsubsection.7.23.1.258}%
+\contentsline {subsubsection}{\numberline {7.23.1.259}TEMP\_DLPFCFG\_SHIFT}{153}{subsubsection.7.23.1.259}%
+\contentsline {subsubsection}{\numberline {7.23.1.260}TEMP\_OUT\_H}{153}{subsubsection.7.23.1.260}%
+\contentsline {subsubsection}{\numberline {7.23.1.261}TEMP\_OUT\_L}{153}{subsubsection.7.23.1.261}%
+\contentsline {subsubsection}{\numberline {7.23.1.262}TIMEBASE\_CORRECTION\_PLL}{153}{subsubsection.7.23.1.262}%
+\contentsline {subsubsection}{\numberline {7.23.1.263}USER\_BANK\_0}{153}{subsubsection.7.23.1.263}%
+\contentsline {subsubsection}{\numberline {7.23.1.264}USER\_BANK\_1}{153}{subsubsection.7.23.1.264}%
+\contentsline {subsubsection}{\numberline {7.23.1.265}USER\_BANK\_2}{153}{subsubsection.7.23.1.265}%
+\contentsline {subsubsection}{\numberline {7.23.1.266}USER\_BANK\_3}{154}{subsubsection.7.23.1.266}%
+\contentsline {subsubsection}{\numberline {7.23.1.267}USER\_CTRL}{154}{subsubsection.7.23.1.267}%
+\contentsline {subsubsection}{\numberline {7.23.1.268}USER\_CTRL\_DMP\_EN}{154}{subsubsection.7.23.1.268}%
+\contentsline {subsubsection}{\numberline {7.23.1.269}USER\_CTRL\_DMP\_RST}{154}{subsubsection.7.23.1.269}%
+\contentsline {subsubsection}{\numberline {7.23.1.270}USER\_CTRL\_FIFO\_EN}{154}{subsubsection.7.23.1.270}%
+\contentsline {subsubsection}{\numberline {7.23.1.271}USER\_CTRL\_I2C\_IF\_DIS}{154}{subsubsection.7.23.1.271}%
+\contentsline {subsubsection}{\numberline {7.23.1.272}USER\_CTRL\_I2C\_MST\_EN}{154}{subsubsection.7.23.1.272}%
+\contentsline {subsubsection}{\numberline {7.23.1.273}USER\_CTRL\_I2C\_MST\_RST}{155}{subsubsection.7.23.1.273}%
+\contentsline {subsubsection}{\numberline {7.23.1.274}USER\_CTRL\_SRAM\_RST}{155}{subsubsection.7.23.1.274}%
+\contentsline {subsubsection}{\numberline {7.23.1.275}WHO\_AM\_I}{155}{subsubsection.7.23.1.275}%
+\contentsline {subsubsection}{\numberline {7.23.1.276}WHO\_AM\_I\_VAL}{155}{subsubsection.7.23.1.276}%
+\contentsline {subsubsection}{\numberline {7.23.1.277}WOF\_DEGLITCH\_EN}{155}{subsubsection.7.23.1.277}%
+\contentsline {subsubsection}{\numberline {7.23.1.278}WOF\_EDGE\_INT}{156}{subsubsection.7.23.1.278}%
+\contentsline {subsubsection}{\numberline {7.23.1.279}XA\_OFFS\_H}{156}{subsubsection.7.23.1.279}%
+\contentsline {subsubsection}{\numberline {7.23.1.280}XA\_OFFS\_L}{156}{subsubsection.7.23.1.280}%
+\contentsline {subsubsection}{\numberline {7.23.1.281}XG\_OFFS\_USRH}{156}{subsubsection.7.23.1.281}%
+\contentsline {subsubsection}{\numberline {7.23.1.282}XG\_OFFS\_USRL}{156}{subsubsection.7.23.1.282}%
+\contentsline {subsubsection}{\numberline {7.23.1.283}XGYRO\_CTEN}{156}{subsubsection.7.23.1.283}%
+\contentsline {subsubsection}{\numberline {7.23.1.284}YA\_OFFS\_H}{156}{subsubsection.7.23.1.284}%
+\contentsline {subsubsection}{\numberline {7.23.1.285}YA\_OFFS\_L}{156}{subsubsection.7.23.1.285}%
+\contentsline {subsubsection}{\numberline {7.23.1.286}YG\_OFFS\_USRH}{157}{subsubsection.7.23.1.286}%
+\contentsline {subsubsection}{\numberline {7.23.1.287}YG\_OFFS\_USRL}{157}{subsubsection.7.23.1.287}%
+\contentsline {subsubsection}{\numberline {7.23.1.288}YGYRO\_CTEN}{157}{subsubsection.7.23.1.288}%
+\contentsline {subsubsection}{\numberline {7.23.1.289}ZA\_OFFS\_H}{157}{subsubsection.7.23.1.289}%
+\contentsline {subsubsection}{\numberline {7.23.1.290}ZA\_OFFS\_L}{157}{subsubsection.7.23.1.290}%
+\contentsline {subsubsection}{\numberline {7.23.1.291}ZG\_OFFS\_USRH}{157}{subsubsection.7.23.1.291}%
+\contentsline {subsubsection}{\numberline {7.23.1.292}ZG\_OFFS\_USRL}{157}{subsubsection.7.23.1.292}%
+\contentsline {subsubsection}{\numberline {7.23.1.293}ZGYRO\_CTEN}{157}{subsubsection.7.23.1.293}%
+\contentsline {section}{\numberline {7.24}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}regs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{158}{section.7.24}%
