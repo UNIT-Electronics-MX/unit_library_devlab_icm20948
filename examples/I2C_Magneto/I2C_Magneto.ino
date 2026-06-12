@@ -30,18 +30,22 @@
  * Author  : 7Semi 
  * License : MIT
  ***************************************************************/
-#include <7Semi_ICM20948.h>
+#include <Wire.h>
+#include <DevLab_ICM20948.h>
 
 /* ====================== User Config ======================= */
-#define ICM_ADDR 0x69
+#define SDA_PIN   6
+#define SCL_PIN   7
+#define I2C_FREQ  400000UL
+#define ICM_ADDR  0x69
 
-ICM20948_7Semi imu;
+DevLab_ICM20948 imu;
 
 void setup() {
   Serial.begin(115200);
   delay(200);
   Serial.println(F("ICM-20948 (I2C) — Magnetometer Example"));
-  
+  Wire.begin(SDA_PIN, SCL_PIN);
   /** Initialize IMU */
   if (!imu.beginI2C(ICM_ADDR, Wire, 400000)) {
     Serial.println(F("ERROR: beginI2C() failed."));

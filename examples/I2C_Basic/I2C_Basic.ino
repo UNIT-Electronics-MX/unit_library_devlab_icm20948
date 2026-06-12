@@ -24,19 +24,22 @@
  * - SDA -> GPIO21
  * - SCL -> GPIO22
  ***************************************************************/
-#include <7Semi_ICM20948.h>
+#include <Wire.h>
+#include <DevLab_ICM20948.h>
 
-/** User config */
-#define ICM_ADDR 0x69  // 0x68 (AD0=LOW) or 0x69 (AD0=HIGH)
+/* ====================== User Config ======================= */
+#define SDA_PIN   6
+#define SCL_PIN   7
+#define I2C_FREQ  400000UL
+#define ICM_ADDR  0x69
 
-/** IMU instance */
-ICM20948_7Semi imu;
+DevLab_ICM20948 imu;
 
 void setup() {
   Serial.begin(115200);
   delay(200);
   Serial.println(F("ICM-20948 — I2C Basic"));
-
+  Wire.begin(SDA_PIN, SCL_PIN);
   /** Initialize IMU */
   if (!imu.beginI2C(ICM_ADDR, Wire, 400000)) {
     Serial.println(F("ERROR: beginI2C() failed"));

@@ -60,6 +60,7 @@
 #define PWR_DISABLE_ACCEL BIT(3)
 #define PWR_DISABLE_GYRO BIT(0)
 
+//Interrupt Configs register
 #define INT_PIN_CFG 0x0F         /* INT1_ACTL INT1_OPEN INT1_LATCH_INT_EN INT_ANYRD_2CLEAR ACTL_FSYNC FSYNC_INT_MODE_EN BYPASS_EN - */
 #define INT1_ACTL BIT(7)         /* active low */
 #define INT1_OPEN BIT(6)         /* open-drain */

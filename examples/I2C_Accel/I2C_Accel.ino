@@ -29,19 +29,21 @@
  ***************************************************************/
 
 #include <Wire.h>
-#include <7Semi_ICM20948.h>
+#include <DevLab_ICM20948.h>
 
 /* ====================== User Config ======================= */
-#define ICM_ADDR 0x69  // 0x68 default, change if AD0=HIGH
+#define SDA_PIN   6
+#define SCL_PIN   7
+#define I2C_FREQ  400000UL
+#define ICM_ADDR  0x69
 
-/** - IMU instance */
-ICM20948_7Semi imu;
+DevLab_ICM20948 imu;
 
 void setup() {
   Serial.begin(115200);
   delay(200);
   Serial.println(F("ICM-20948 (I2C) — Accel Example"));
-
+  Wire.begin(SDA_PIN, SCL_PIN);
   /** Initialize IMU using I2C */
   if (!imu.beginI2C(ICM_ADDR, Wire, 400000)) {
     Serial.println(F("ERROR: ICM-20948 beginI2C() failed."));

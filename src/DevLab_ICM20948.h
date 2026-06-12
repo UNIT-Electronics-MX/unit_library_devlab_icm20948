@@ -92,6 +92,37 @@ enum class ICM20948_Accel_DLPFCFG : uint8_t
   DLPF_6HZ = 0x06,   // BW ≈ 6 Hz,   NBW ≈ 8.3 Hz
   DLPF_473HZ = 0x07, // BW ≈ 473 Hz, NBW ≈ 499 Hz
 };
+
+struct ICM20948_IntPinConfig
+{
+  uint8_t activeLevel    : 1;  // bit 7 | 0 = active high,       1 = active low
+  uint8_t driveMode      : 1;  // bit 6 | 0 = push-pull,         1 = open-drain
+  uint8_t latchMode      : 1;  // bit 5 | 0 = pulse 50µs,        1 = latch held
+  uint8_t clearMode      : 1;  // bit 4 | 0 = read INT_STATUS,   1 = any read
+  uint8_t fsyncActLevel  : 1;  // bit 3 | 0 = FSYNC active high, 1 = FSYNC active low
+  uint8_t fsyncIntEn     : 1;  // bit 2 | 0 = FSYNC disabled,    1 = FSYNC as interrupt
+  uint8_t bypassEn       : 1;  // bit 1 | 0 = normal,            1 = I2C bypass mode
+};
+
+struct ICM20948_IntEnableConfig
+{
+  // --- INT_ENABLE (0x10) ---
+  uint8_t wofEn        : 1;  // Wake on FSYNC
+  uint8_t womIntEn     : 1;  // Wake on motion
+  uint8_t pllRdyEn     : 1;  // PLL ready
+  uint8_t dmpInt1En    : 1;  // DMP interrupt
+  uint8_t i2cMstIntEn  : 1;  // I2C master interrupt
+
+  // --- INT_ENABLE_1 (0x11) ---
+  uint8_t rawDataRdyEn : 1;  // Raw data ready
+
+  // --- INT_ENABLE_2 (0x12) --- canal por canal
+  uint8_t fifoOvfEn[5];      // [0]–[4]: 1 = overflow interrupt ON para ese canal
+
+  // --- INT_ENABLE_3 (0x13) --- canal por canal
+  uint8_t fifoWmEn[5];       // [0]–[4]: 1 = watermark interrupt ON para ese canal
+};
+
 /**
  * Class
  * - Manages ICM-20948 over I2C (SPI path disabled in this cut)
@@ -631,6 +662,9 @@ public:
    * - false → Operation failed
    */
   bool getAccelOffset(int16_t &offsetX, int16_t &offsetY, int16_t &offsetZ);
+
+  bool intInit();
+
 
 private:
   I2C_Interface i2c;

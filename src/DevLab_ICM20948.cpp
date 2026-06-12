@@ -1171,3 +1171,59 @@ bool DevLab_ICM20948::getAccelOffset(int16_t &offsetX, int16_t &offsetY, int16_t
   // Success
   return true;
 }
+
+
+bool DevLab_ICM20948::intInit(const ICM20948_IntPinConfig &cfg){
+  // Validate bus pointer
+  if (!bus)
+    return false;
+
+  if(!selectBank(0))
+    return false;
+
+  uint8_t reg = (cfg.activeLevel   << 7) |
+                (cfg.driveMode     << 6) |
+                (cfg.latchMode     << 5) |
+                (cfg.clearMode     << 4) |
+                (cfg.fsyncActLevel << 3) |
+                (cfg.fsyncIntEn    << 2) |
+                (cfg.bypassEn      << 1);
+  // Initialize INT1 
+  // Configure interrupt pin (open-drain, active-low, latch)
+  if (!bus->write(INT_PIN_CFG, reg))
+    return false;
+
+  // Configuration successful
+  return true;
+}
+
+bool DevLab_ICM20948::intEnableConfig(const ICM20948_IntEnableConfig &cfg)
+{
+  if (!bus)           return false;
+  if (!selectBank(0)) return false;
+
+  // INT_ENABLE
+  uint8_t reg0 = (cfg.wofEn       << 7) |
+                 (cfg.womIntEn    << 3) |
+                 (cfg.pllRdyEn    << 2) |
+                 (cfg.dmpInt1En   << 1) |
+                 (cfg.i2cMstIntEn << 0);
+  if (!bus->write(INT_ENABLE, reg0)) return false;
+
+  // INT_ENABLE_1
+  if (!bus->write(INT_ENABLE_1, (uint8_t)(cfg.rawDataRdyEn & 0x01))) return false;
+
+  // INT_ENABLE_2 — construye máscara desde el array
+  uint8_t ovfMask = 0;
+  for (uint8_t i = 0; i < 5; i++)
+    ovfMask |= (cfg.fifoOvfEn[i] ? BIT(i) : 0);
+  if (!bus->write(INT_ENABLE_2, ovfMask)) return false;
+
+  // INT_ENABLE_3 — igual
+  uint8_t wmMask = 0;
+  for (uint8_t i = 0; i < 5; i++)
+    wmMask |= (cfg.fifoWmEn[i] ? BIT(i) : 0);
+  if (!bus->write(INT_ENABLE_3, wmMask)) return false;
+
+  return true;
+}
