@@ -1,6 +1,6 @@
 # 7Semi ICM20948 Arduino Library
 
-Arduino driver for the TDK InvenSense ICM-20948 9-axis IMU sensor.
+Arduino driver for the module DevLab ICM-20948 9-axis IMU sensor.
 
 The ICM-20948 integrates a 3-axis accelerometer, 3-axis gyroscope, and 3-axis magnetometer (AK09916), enabling motion tracking, orientation sensing, and navigation applications.
 
@@ -17,7 +17,8 @@ The ICM-20948 integrates a 3-axis accelerometer, 3-axis gyroscope, and 3-axis ma
   - Accel: ±2g / ±4g / ±8g / ±16g
   - Gyro: ±250 / ±500 / ±1000 / ±2000 dps
 
-- Digital Low Pass Filter (DLPF)
+
+- Digital Low Pass Filter configurable(DLPF)
   - Noise reduction
   - Configurable bandwidth
 
@@ -80,7 +81,7 @@ The ICM-20948 supports both **I²C** and **SPI** communication.
 
 1. Open Arduino IDE  
 2. Go to Library Manager  
-3. Search for **7Semi ICM20948**  
+3. Search for **DevLab ICM20948**  
 4. Click Install  
 
 ---

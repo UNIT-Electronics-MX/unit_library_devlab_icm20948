@@ -681,8 +681,10 @@ public:
    */
   bool getAccelOffset(int16_t &offsetX, int16_t &offsetY, int16_t &offsetZ);
 
-  bool intInit();
+  bool intInit(const ICM20948_IntPinConfig &cfg);
 
+  bool intEnableConfig(const ICM20948_IntEnableConfig &cfg);
+  
   bool checkIntStatus(ICM20948_IntStatus &status);
 
 private:

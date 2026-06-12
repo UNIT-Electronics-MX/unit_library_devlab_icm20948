@@ -91,7 +91,7 @@ bool DevLab_ICM20948::beginSPI(uint8_t csPin, SPIClass &spiPort, uint32_t spiSpe
     return false;
 
   // Validate device ID (expected 0xEA)
-  if (who_am_i == WHO_AM_I_VAL)
+  if (who_am_i != WHO_AM_I_VAL)
     return false;
 
   if (!selectBank(2))
@@ -101,7 +101,7 @@ bool DevLab_ICM20948::beginSPI(uint8_t csPin, SPIClass &spiPort, uint32_t spiSpe
     return false;
 
   // Enable I2C interface (I2C_IF_DIS = 0)
-  if (!bus->writeBit(USER_CTRL, 4, (uint8_t)0x00))
+  if (!bus->writeBit(USER_CTRL, 4, (uint8_t)0x01))
     return false;
 
   // Wake device from sleep mode (SLEEP = 0)

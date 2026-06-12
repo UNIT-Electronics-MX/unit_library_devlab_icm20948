@@ -28,35 +28,30 @@
  * - MISO -> GPIO19
  * - CS   -> GPIO5
  ***************************************************************/
-#include <7Semi_ICM20948.h>
+#include <DevLab_ICM20948.h>
 
-static const uint8_t CS_PIN   = 10;
+#define MOSI_PIN D11
+#define MISO_PIN D12
+#define SCK_PIN  D13
+#define CS_PIN   D10  
+#define SPI_FAST_SPEED 1000000
 
-/** IMU instance */
-ICM20948_7Semi imu;
+/** IMU inst0ance */
+DevLab_ICM20948 imu;
+SPIClass spi_bus(SPI);   // ← usa el bus SPI por defecto del Arduino
 
 void setup() {
   Serial.begin(115200);
   delay(200);
-  Serial.println(F("ICM-20948 — SPI Basic"));
 
 
-  /** Initialize IMU using SPI */
-  if (!imu.beginSPI(CS_PIN, SPI, 1000000)) {
-    Serial.println(F("ERROR: beginSPI() failed"));
+  if (!imu.beginSPI(CS_PIN, spi_bus, 1000000)) {
+    Serial.println("ERROR: beginSPI() failed");
     while (1) delay(200);
   }
 
-  /** Enable all sensors
-   * - accel = true
-   * - gyro  = true
-   * - temp  = true
-   */
-  if (!imu.setSensors(true, true, true)) {
-    Serial.println(F("ERROR: setSensors failed"));
-  }
-
-  Serial.println(F("Ready.\n"));
+  imu.setSensors(true, true, true);
+  Serial.println("Ready.");
 }
 
 void loop() {
