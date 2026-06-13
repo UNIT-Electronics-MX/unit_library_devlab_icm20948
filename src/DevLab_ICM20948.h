@@ -687,6 +687,11 @@ public:
   
   bool checkIntStatus(ICM20948_IntStatus &status);
 
+  bool auxMasterEnable(uint8_t lkFreq);
+
+  bool auxWriteByte(uint8_t slaveAddr, uint8_t reg, uint8_t data);
+  bool auxConfigSlave(uint8_t slaveAddr, uint8_t reg, uint8_t numBytes);
+  bool auxReadSensorData(uint8_t *buf, uint8_t len);
 private:
   I2C_Interface i2c;
   SPI_Interface spi;

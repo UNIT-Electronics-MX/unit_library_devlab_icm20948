@@ -1256,3 +1256,78 @@ bool DevLab_ICM20948::checkIntStatus(ICM20948_IntStatus &status)
 
   return true;
 }
+
+bool DevLab_ICM20948::auxMasterEnable(uint8_t clkFreq)
+{
+    // BANK 0: asegurarse que BYPASS_EN=0 e I2C_MST_EN=1
+    if (!selectBank(0)) return false;
+
+    // Limpiar BYPASS_EN (bit 1 de INT_PIN_CFG)
+    if (!bus->writeBit(INT_PIN_CFG, 1, 0)) return false;
+
+    // Activar I2C_MST_EN (bit 5 de USER_CTRL)
+    if (!bus->writeBit(USER_CTRL, 5, 1)) return false;
+
+    // BANK 3: configurar clock del master auxiliar
+    if (!selectBank(3)) return false;
+
+    // clkFreq típico: 0x07 = ~345.6 kHz  |  0x0D = ~400 kHz
+    if (!bus->writeBits(I2C_MST_CTRL, 0, 4, clkFreq)) return false;
+
+    // Volver a BANK 0
+    return selectBank(0);
+}
+
+bool DevLab_ICM20948::auxWriteByte(uint8_t slaveAddr, uint8_t reg, uint8_t data)
+{
+    if (!selectBank(3)) return false;
+
+    // Dirección del slave, bit 7=0 para escritura
+    if (!bus->write(I2C_SLV4_ADDR, slaveAddr & 0x7F)) return false;
+
+    // Registro destino que queremos escribir en el slave 
+    if (!bus->write(I2C_SLV4_REG, reg)) return false;
+
+    // Dato a escribir
+    if (!bus->write(I2C_SLV4_DO, data)) return false;
+
+    // Disparar transacción (I2C_SLV4_EN, se auto-limpia al terminar)
+    if (!bus->write(I2C_SLV4_CTRL, I2C_SLVx_EN)) return false;
+
+    // Esperar a que complete — verificar SLV4_DONE en BANK 0
+    if (!selectBank(0)) return false;
+
+    uint8_t status = 0;
+    uint8_t timeout = 50;
+    do {
+        delay(1);
+        if (!bus->read(I2C_MST_STATUS, status)) return false;
+        if (--timeout == 0) return false;  // timeout
+    } while (!(status & MST_SLV4_DONE));
+
+    // Verificar que no hubo NACK
+    return !(status & MST_SLV4_NACK);
+}
+
+  bool DevLab_ICM20948::auxConfigSlave(uint8_t slaveAddr, uint8_t reg, uint8_t numBytes)
+{
+    if (!selectBank(3)) return false;
+
+    // Slave 0: dirección + bit READ
+    if (!bus->write(I2C_SLV0_ADDR, slaveAddr | I2C_SLVx_RNW)) return false;
+
+    // Registro de inicio
+    if (!bus->write(I2C_SLV0_REG, reg)) return false;
+
+    // Habilitar + número de bytes
+    if (!bus->write(I2C_SLV0_CTRL, I2C_SLVx_EN | (numBytes & 0x0F))) return false;
+
+    return selectBank(0);
+}
+
+// Para leer los datos que el ICM leyó automáticamente:
+bool DevLab_ICM20948::auxReadSensorData(uint8_t *buf, uint8_t len)
+{
+    if (!selectBank(0)) return false;
+    return bus->readBytes(EXT_SLV_SENS_DATA_00, buf, len);
+}

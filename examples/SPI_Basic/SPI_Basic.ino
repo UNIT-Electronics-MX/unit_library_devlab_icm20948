@@ -23,21 +23,18 @@
  * - GND  -> GND
  *
  * Wiring (ESP32 VSPI default)
- * - SCK  -> GPIO18
- * - MOSI -> GPIO23
- * - MISO -> GPIO19
- * - CS   -> GPIO5
+ * - SCK  -> D13
+ * - MOSI -> D11
+ * - MISO -> D12
+ * - CS   -> D10
  ***************************************************************/
 #include <DevLab_ICM20948.h>
 
-#define MOSI_PIN D11
-#define MISO_PIN D12
-#define SCK_PIN  D13
-#define CS_PIN   D10  
 #define SPI_FAST_SPEED 1000000
 
 /** IMU inst0ance */
 DevLab_ICM20948 imu;
+
 SPIClass spi_bus(SPI);   // ← usa el bus SPI por defecto del Arduino
 
 void setup() {
