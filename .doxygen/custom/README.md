@@ -9,6 +9,7 @@ This directory contains customization files for Doxygen-generated documentation.
 ├── Doxyfile           # Main Doxygen configuration
 └── custom/
     ├── custom.css     # Custom styles (DevLab theme)
+    ├── devlab-fonts.sty # LaTeX font overrides (Times New Roman + Courier)
     └── README.md      # This documentation
 ```
 
@@ -21,6 +22,12 @@ Custom stylesheet with DevLab theme:
 - **Responsive** for mobile devices
 - **Enhanced tables** with blue headers
 - **Code blocks** with distinctive blue border
+
+### `devlab-fonts.sty`
+LaTeX stylesheet for PDF output:
+- **Text font**: Times New Roman
+- **Monospace font**: Courier New
+- **Fallbacks**: TeX Gyre Termes and TeX Gyre Cursor when Microsoft fonts are not available
 
 ## How to Customize
 
