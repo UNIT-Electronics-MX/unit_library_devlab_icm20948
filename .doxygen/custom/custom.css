@@ -18,6 +18,32 @@
 }
 
 /* ============================================
+   Override Doxygen Default Colors
+   ============================================ */
+
+/* Remove all blue accent colors from Doxygen */
+:root {
+    --primary-color: var(--ti-red) !important;
+    --primary-dark-color: var(--ti-dark-red) !important;
+    --primary-light-color: var(--ti-light-red) !important;
+    --nav-text-color: var(--ti-white) !important;
+    --nav-background-color: var(--ti-dark-gray) !important;
+}
+
+/* Force override of any remaining blue colors */
+div, span, a, td, th, li {
+    border-color: var(--ti-border-gray) !important;
+}
+
+.highlight,
+.highlighted,
+.selected,
+.current {
+    background-color: var(--ti-red) !important;
+    color: var(--ti-white) !important;
+}
+
+/* ============================================
    General Page Styling
    ============================================ */
 
@@ -193,13 +219,41 @@ h4, h5, h6 {
 
 /* Links */
 a {
-    color: var(--ti-blue-link);
+    color: var(--ti-red) !important;
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--ti-red);
+    color: var(--ti-dark-red) !important;
     text-decoration: underline;
+}
+
+a:visited {
+    color: var(--ti-dark-red) !important;
+}
+
+/* Override specific link types */
+a.el,
+a.elRef,
+.contents a:visited.el {
+    color: var(--ti-red) !important;
+}
+
+/* Additional link overrides */
+.fieldtable a,
+.memberdecls a,
+.memdoc a,
+div.line a,
+.arrow {
+    color: var(--ti-red) !important;
+}
+
+/* Hover states for all links */
+.fieldtable a:hover,
+.memberdecls a:hover,
+.memdoc a:hover,
+div.line a:hover {
+    color: var(--ti-dark-red) !important;
 }
 
 /* ============================================
@@ -296,13 +350,17 @@ table.params tr:hover {
 }
 
 .memname {
-    color: var(--ti-red);
+    color: var(--ti-red) !important;
     font-weight: bold;
 }
 
 .paramname {
-    color: var(--ti-blue-link);
+    color: var(--ti-dark-red) !important;
     font-style: italic;
+}
+
+.paramtype {
+    color: var(--ti-gray) !important;
 }
 
 /* ============================================
@@ -455,3 +513,122 @@ li {
 .textblock {
     line-height: 1.7;
 }
+
+/* ============================================
+   Additional Color Overrides (No Blue!)
+   ============================================ */
+
+/* Directory and file listings */
+.directory .levels span,
+.directory .arrow {
+    color: var(--ti-red) !important;
+}
+
+.icona,
+.icon {
+    background-color: var(--ti-light-gray) !important;
+    color: var(--ti-red) !important;
+}
+
+/* Class and member items */
+.mdescLeft,
+.mdescRight,
+.memItemLeft,
+.memItemRight,
+.memTemplItemLeft,
+.memTemplItemRight,
+.memTemplParams {
+    background-color: var(--ti-light-gray) !important;
+    border-color: var(--ti-border-gray) !important;
+}
+
+/* Index items */
+.indexkey {
+    background-color: var(--ti-light-gray) !important;
+    border-color: var(--ti-border-gray) !important;
+    color: var(--ti-dark-gray) !important;
+}
+
+.indexvalue {
+    background-color: var(--ti-white) !important;
+    border-color: var(--ti-border-gray) !important;
+}
+
+/* Inheritance and collaboration graphs */
+.inherit_header,
+.groupheader {
+    background-color: var(--ti-light-gray) !important;
+    border-bottom: 2px solid var(--ti-red) !important;
+    color: var(--ti-dark-gray) !important;
+}
+
+/* Code line numbers */
+.lineno {
+    color: var(--ti-gray) !important;
+    background-color: var(--ti-light-gray) !important;
+    border-right: 2px solid var(--ti-red) !important;
+}
+
+.lineno a {
+    color: var(--ti-gray) !important;
+}
+
+.lineno a:hover {
+    color: var(--ti-red) !important;
+    background-color: var(--ti-white) !important;
+}
+
+/* Member item details */
+.memitem .memproto {
+    border-color: var(--ti-red) !important;
+}
+
+.memitem.glow {
+    box-shadow: 0 0 15px var(--ti-red) !important;
+}
+
+/* Anchors and references */
+.anchor {
+    color: var(--ti-red) !important;
+}
+
+/* Definition lists */
+dl.section {
+    border-left: 4px solid var(--ti-red) !important;
+}
+
+/* Emphasized elements */
+em,
+.mlabels .mlabel {
+    color: var(--ti-dark-red) !important;
+}
+
+/* Top menu bar */
+#top {
+    background-color: var(--ti-dark-gray) !important;
+    border-bottom: 2px solid var(--ti-red) !important;
+}
+
+/* Summary items */
+.summary {
+    background-color: var(--ti-light-gray) !important;
+}
+
+.summary a {
+    color: var(--ti-red) !important;
+}
+
+/* Tooltips and popups */
+.ttc {
+    border-color: var(--ti-red) !important;
+}
+
+/* Graph nodes */
+.graph .node text {
+    fill: var(--ti-dark-gray) !important;
+}
+
+.graph .edge .label {
+    fill: var(--ti-gray) !important;
+}
+
