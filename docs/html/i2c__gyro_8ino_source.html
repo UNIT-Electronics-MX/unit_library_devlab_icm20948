@@ -138,108 +138,121 @@ $(document).ready(function(){initNavTree('i2c__gyro_8ino_source.html',''); initR
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> */</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>/* ====================== User Config ======================= */</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>#define SDA_PIN   6</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>#define SCL_PIN   7</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>#define I2C_FREQ  400000UL</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>#define ICM_ADDR  0x69</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>DevLab_ICM20948 imu;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>void setup() {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  Serial.begin(115200);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  delay(200);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  Serial.println(F(&quot;ICM-20948 — I2C Basic&quot;));</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  Wire.begin(SDA_PIN, SCL_PIN);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  /** Initialize IMU */</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  if (!imu.beginI2C(ICM_ADDR, Wire, 400000)) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    Serial.println(F(&quot;ERROR: beginI2C() failed&quot;));</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    while (1) delay(200);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  /** Apply safe defaults */</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  if (!imu.applyBasicDefaults()) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    Serial.println(F(&quot;ERROR: applyBasicDefaults() failed.&quot;));</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    while (1) delay(200);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  Serial.println(F(&quot;ICM-20948 ready.&quot;));</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  /** Optional: gate sensors</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>   * - setSensors(accel_on, gyro_on, temp_on)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>   * - Here: enable only gyro (accel/temp off)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>   */</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  if (!imu.setSensors(/*accel*/ false, /*gyro*/ true, /*temp*/ false)) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    Serial.println(F(&quot;setSensors failed.&quot;));</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>/** @brief I2C SDA pin used by the example board. */</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>#define SDA_PIN   6</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>/** @brief I2C SCL pin used by the example board. */</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>#define SCL_PIN   7</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>/** @brief I2C bus speed in hertz. */</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>#define I2C_FREQ  400000UL</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>/** @brief ICM-20948 I2C address selected by the AD0 pin. */</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>#define ICM_ADDR  0x69</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>/** @brief Global ICM-20948 driver instance. */</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>DevLab_ICM20948 imu;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>/**</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> * @brief Configure the IMU for gyroscope-only operation over I2C.</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> *</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> * The function initializes the I2C interface, applies safe defaults, enables</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> * the gyroscope, and configures DLPF, full-scale range, and output data rate.</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> */</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>void setup() {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  Serial.begin(115200);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  delay(200);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  Serial.println(F(&quot;ICM-20948 — I2C Basic&quot;));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  Wire.begin(SDA_PIN, SCL_PIN);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  /* Initialize IMU. */</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  if (!imu.beginI2C(ICM_ADDR, Wire, 400000)) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Serial.println(F(&quot;ERROR: beginI2C() failed&quot;));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    while (1) delay(200);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  /* Apply safe defaults. */</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  if (!imu.applyBasicDefaults()) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    Serial.println(F(&quot;ERROR: applyBasicDefaults() failed.&quot;));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    while (1) delay(200);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  /* ----------------- GYRO DLPF Config (reference) ----------------</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>   * GyroConfig(DLPFCFG, FS_SEL, FCHOICE, XGYRO, YGYRO, ZGYRO, AVGCFG)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   * - DLPF     : GYRO_DLPFCFG_0..7 (use 3 or 4 for balanced settings)</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   * - FS_SEL   : dps250 / dps500 / dps1000 / dps2000</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>   * - FCHOICE  : false → DLPF path (recommended), true → bypass (very wide BW)</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>   * - XGYRO/YGYRO/ZGYRO : per-axis enable (true = enable axis)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>   * - AVGCFG   : 0..7 internal averaging (higher = more smoothing, more delay)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>   * FCHOICE=0 (DLPF on):</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>   * - GYRO_DLPFCFG_1 : 3dB ≈ 196.6 Hz, NBW ≈ 229.8 Hz</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>   * - GYRO_DLPFCFG_2 : 3dB ≈ 151.8 Hz, NBW ≈ 187.6 Hz</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>   * - GYRO_DLPFCFG_3 : 3dB ≈ 119.5 Hz, NBW ≈ 154.3 Hz   ← good default</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>   * - GYRO_DLPFCFG_4 : 3dB ≈ 51.2  Hz, NBW ≈ 73.3  Hz</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>   * - GYRO_DLPFCFG_5 : 3dB ≈ 23.9  Hz, NBW ≈ 35.9  Hz</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>   * - GYRO_DLPFCFG_6 : 3dB ≈ 5.7   Hz, NBW ≈ 8.3   Hz</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>   * - GYRO_DLPFCFG_7 : 3dB ≈ 473   Hz, NBW ≈ 499   Hz</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>   *</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>   * FCHOICE=1 (Bypass) : very wide (use with care; highest noise)</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>   */</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  if (!imu.GyroConfig(/*DLPFCFG*/ GYRO_DLPFCFG_4,</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                      /*FS_SEL*/   dps2000,</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                      /*FCHOICE*/  true,       // DLPF ON (recommended)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                      /*X*/ true, /*Y*/ true, /*Z*/ true,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                      /*AVGCFG*/   0)) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    Serial.println(F(&quot;GyroConfig failed.&quot;));</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  /** Set gyroscope output data rate (ODR)</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>   * - Gyro_SMPLRT(rate_hz)</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>   * - Base (DLPF path) = 1100 Hz</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>   * - Valid range: ~4.3–1100 Hz</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>   * - Example: 1000 Hz</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>   */</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  if (!imu.Gyro_SMPLRT(1000)) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    Serial.println(F(&quot;Gyro_SMPLRT failed.&quot;));</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  Serial.println(F(&quot;ICM-20948 ready.&quot;));</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  /* Optional: gate sensors</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   * - setSensors(accel_on, gyro_on, temp_on)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>   * - Here: enable only gyro (accel/temp off)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>   */</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  if (!imu.setSensors(/*accel*/ false, /*gyro*/ true, /*temp*/ false)) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    Serial.println(F(&quot;setSensors failed.&quot;));</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  /* ----------------- GYRO DLPF Config (reference) ----------------</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>   * GyroConfig(DLPFCFG, FS_SEL, FCHOICE, XGYRO, YGYRO, ZGYRO, AVGCFG)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>   * - DLPF     : GYRO_DLPFCFG_0..7 (use 3 or 4 for balanced settings)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>   * - FS_SEL   : dps250 / dps500 / dps1000 / dps2000</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>   * - FCHOICE  : false → DLPF path (recommended), true → bypass (very wide BW)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>   * - XGYRO/YGYRO/ZGYRO : per-axis enable (true = enable axis)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>   * - AVGCFG   : 0..7 internal averaging (higher = more smoothing, more delay)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>   * FCHOICE=0 (DLPF on):</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>   * - GYRO_DLPFCFG_1 : 3dB ≈ 196.6 Hz, NBW ≈ 229.8 Hz</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>   * - GYRO_DLPFCFG_2 : 3dB ≈ 151.8 Hz, NBW ≈ 187.6 Hz</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>   * - GYRO_DLPFCFG_3 : 3dB ≈ 119.5 Hz, NBW ≈ 154.3 Hz   ← good default</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>   * - GYRO_DLPFCFG_4 : 3dB ≈ 51.2  Hz, NBW ≈ 73.3  Hz</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>   * - GYRO_DLPFCFG_5 : 3dB ≈ 23.9  Hz, NBW ≈ 35.9  Hz</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>   * - GYRO_DLPFCFG_6 : 3dB ≈ 5.7   Hz, NBW ≈ 8.3   Hz</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>   * - GYRO_DLPFCFG_7 : 3dB ≈ 473   Hz, NBW ≈ 499   Hz</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>   *</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>   * FCHOICE=1 (Bypass) : very wide (use with care; highest noise)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>   */</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  if (!imu.GyroConfig(/*DLPFCFG*/ GYRO_DLPFCFG_4,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                      /*FS_SEL*/   dps2000,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                      /*FCHOICE*/  true,       // DLPF ON (recommended)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                      /*X*/ true, /*Y*/ true, /*Z*/ true,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                      /*AVGCFG*/   0)) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    Serial.println(F(&quot;GyroConfig failed.&quot;));</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>void loop() {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  float gx, gy, gz;  // gyro X/Y/Z in dps</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  /** - readGyro(x,y,z)</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>   * - Returns:</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>   *   - true on success;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>   * - Output:</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>   *   - gx/gy/gz in dps</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>   */</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  if (imu.readGyro(gx, gy, gz)) {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    Serial.print(&quot;GYRO [dps]: &quot;);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    Serial.print(gx, 3);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    Serial.print(&quot;, &quot;);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    Serial.print(gy, 3);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    Serial.print(&quot;, &quot;);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    Serial.println(gz, 3);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  } else {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    Serial.println(F(&quot;GYRO read failed&quot;));</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  Serial.println(F(&quot;-----------------------------&quot;));</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  delay(500);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  /* Set gyroscope output data rate (ODR)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>   * - Gyro_SMPLRT(rate_hz)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>   * - Base (DLPF path) = 1100 Hz</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>   * - Valid range: ~4.3–1100 Hz</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>   * - Example: 1000 Hz</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>   */</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  if (!imu.Gyro_SMPLRT(1000)) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    Serial.println(F(&quot;Gyro_SMPLRT failed.&quot;));</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>/**</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> * @brief Read and print gyroscope data in degrees per second.</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> */</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>void loop() {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  float gx, gy, gz;  // gyro X/Y/Z in dps</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  /* - readGyro(x,y,z)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>   * - Returns:</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>   *   - true on success;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>   * - Output:</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>   *   - gx/gy/gz in dps</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>   */</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  if (imu.readGyro(gx, gy, gz)) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    Serial.print(&quot;GYRO [dps]: &quot;);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    Serial.print(gx, 3);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    Serial.print(&quot;, &quot;);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    Serial.print(gy, 3);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    Serial.print(&quot;, &quot;);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    Serial.println(gz, 3);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  } else {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    Serial.println(F(&quot;GYRO read failed&quot;));</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  Serial.println(F(&quot;-----------------------------&quot;));</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  delay(500);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_72b0ae39f9e205f9b537e4731b867472.html">i2c_gyro</a></li><li class="navelem"><a class="el" href="i2c__gyro_8ino.html">i2c_gyro.ino</a></li>
-    <li class="footer">Generated on Tue Jun 16 2026 15:54:44 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Jun 16 2026 16:04:34 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

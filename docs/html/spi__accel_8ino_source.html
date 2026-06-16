@@ -130,109 +130,120 @@ $(document).ready(function(){initNavTree('spi__accel_8ino_source.html',''); init
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>#include &lt;DevLab_ICM20948.h&gt;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>#define SPI_FAST_SPEED 1000000</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>/** IMU inst0ance */</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>DevLab_ICM20948 imu;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>SPIClass spi_bus(SPI);   // ← usa el bus SPI por defecto del Arduino</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>void setup() {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  Serial.begin(115200);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  delay(200);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  if (!imu.beginSPI(CS_PIN, spi_bus, 1000000)) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Serial.println(&quot;ERROR: beginSPI() failed&quot;);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    while (1) delay(200);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  Serial.println(F(&quot;ICM-20948 ready.&quot;));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>/** @brief SPI clock used during sensor initialization and reads. */</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>#define SPI_FAST_SPEED 1000000</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>/** @brief Global ICM-20948 driver instance. */</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>DevLab_ICM20948 imu;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>/** @brief SPI bus object used by the IMU driver. */</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>SPIClass spi_bus(SPI);   // usa el bus SPI por defecto del Arduino</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>/**</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> * @brief Configure the IMU for accelerometer-only operation over SPI.</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> *</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> * @note The sketch expects a board-level CS_PIN definition to select the</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> * chip-select pin used by beginSPI().</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> */</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>void setup() {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  Serial.begin(115200);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  delay(200);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  /** Optional: gate sensors</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>   * - setSensors(accel_on, gyro_on, temp_on)</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>   * - Here: enable only accel (gyro/temp off)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>   */</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  if (!imu.setSensors(/*accel*/ true, /*gyro*/ false, /*temp*/ false)) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    Serial.println(F(&quot;setSensors failed.&quot;));</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  /* ---------------- ACCEL DLPF Config (reference) ---------------</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>   * ACCEL_DLPFCFG (0..7) — 3dB &amp; Noise Bandwidth (datasheet)</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>   * DLPF path ODR = 1125 / (1 + ACCEL_SMPLRT_DIV), DIV: 0..4095</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>   *</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>   * FCHOICE=0 (Bypass) : 3dB ≈ 1209 Hz, NBW ≈ 1248 Hz, Rate ≈ 4500 Hz</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>   * FCHOICE=1 (DLPF on):</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>   * - ACCEL_DLPFCFG_0 : 3dB ≈ 246.0 Hz,  NBW ≈ 265.0 Hz</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>   * - ACCEL_DLPFCFG_1 : 3dB ≈ 246.0 Hz,  NBW ≈ 265.0 Hz</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>   * - ACCEL_DLPFCFG_2 : 3dB ≈ 111.4 Hz,  NBW ≈ 136.0 Hz</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>   * - ACCEL_DLPFCFG_3 : 3dB ≈ 50.4  Hz,  NBW ≈ 68.8  Hz   ← good default</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>   * - ACCEL_DLPFCFG_4 : 3dB ≈ 23.9  Hz,  NBW ≈ 34.4  Hz</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>   * - ACCEL_DLPFCFG_5 : 3dB ≈ 11.5  Hz,  NBW ≈ 17.0  Hz</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>   * - ACCEL_DLPFCFG_6 : 3dB ≈ 5.7   Hz,  NBW ≈ 8.3   Hz</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>   * - ACCEL_DLPFCFG_7 : 3dB ≈ 473   Hz,  NBW ≈ 499   Hz</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>   */</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  /** Configure accelerometer</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>   * AccelConfigure(DLPF, FS_SEL, dlpf_enable, dec3, stX, stY, stZ)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   * - DLPF       : ACCEL_DLPFCFG_0..7 (use 3 for balanced setting)</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   * - FS_SEL     : 0..3 =&gt; ±2/±4/±8/±16 g  (g2=0, g4=1, g8=2, g16=3)</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>   * - dlpf_enable: true to use DLPF path (recommended)</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>   * - dec3       : 0..3 (DEC3_CFG averaging)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>   *                0 = ACCEL_DEC3_AVG_1_OR_4  (depends on FCHOICE)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>   *                1 = ACCEL_DEC3_AVG_8</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>   *                2 = ACCEL_DEC3_AVG_16</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>   *                3 = ACCEL_DEC3_AVG_32</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>   * - stX/Y/Z    : enable self-test (false here)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>   */</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  if (!imu.AccelConfigure(ACCEL_DLPFCFG_3, /*FS_SEL*/ g4,</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                          /*dlpf_enable*/ true,  // DLPF really ON</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                          /*dec3*/ ACCEL_DEC3_AVG_8,</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                          /*stX*/ false, /*stY*/ false, /*stZ*/ false)) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    Serial.println(F(&quot;AccelConfigure failed.&quot;));</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  /** Set accelerometer output data rate (ODR)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>   * - Accel_SMPLRT(rate_hz)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>   * - Base (DLPF path) = 1125 Hz</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>   * - Valid range: 1–1125 Hz</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>   * - Example: 225 Hz </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>   */</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  if (!imu.Accel_SMPLRT(225)) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    Serial.println(F(&quot;Accel_SMPLRT failed.&quot;));</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>void loop() {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  float ax, ay, az;  // accel X/Y/Z in g</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  /** - readAccel(x,y,z)</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>   * - Returns:</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>   *   - true on success;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>   * - Output:</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>   *   - ax/ay/az in g</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>   */</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  if (imu.readAccel(ax, ay, az)) {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    Serial.print(&quot;ACCEL [g]: &quot;);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    Serial.print(ax, 3);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    Serial.print(&quot;, &quot;);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    Serial.print(ay, 3);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    Serial.print(&quot;, &quot;);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    Serial.println(az, 3);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  } else {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    Serial.println(F(&quot;ACCEL read failed&quot;));</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  }</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  Serial.println(F(&quot;-----------------------------&quot;));</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  delay(500);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  if (!imu.beginSPI(CS_PIN, spi_bus, 1000000)) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    Serial.println(&quot;ERROR: beginSPI() failed&quot;);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    while (1) delay(200);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  Serial.println(F(&quot;ICM-20948 ready.&quot;));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  /* Optional: gate sensors</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>   * - setSensors(accel_on, gyro_on, temp_on)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>   * - Here: enable only accel (gyro/temp off)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>   */</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  if (!imu.setSensors(/*accel*/ true, /*gyro*/ false, /*temp*/ false)) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Serial.println(F(&quot;setSensors failed.&quot;));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  /* ---------------- ACCEL DLPF Config (reference) ---------------</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>   * ACCEL_DLPFCFG (0..7) — 3dB &amp; Noise Bandwidth (datasheet)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>   * DLPF path ODR = 1125 / (1 + ACCEL_SMPLRT_DIV), DIV: 0..4095</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>   *</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>   * FCHOICE=0 (Bypass) : 3dB ≈ 1209 Hz, NBW ≈ 1248 Hz, Rate ≈ 4500 Hz</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>   * FCHOICE=1 (DLPF on):</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>   * - ACCEL_DLPFCFG_0 : 3dB ≈ 246.0 Hz,  NBW ≈ 265.0 Hz</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>   * - ACCEL_DLPFCFG_1 : 3dB ≈ 246.0 Hz,  NBW ≈ 265.0 Hz</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>   * - ACCEL_DLPFCFG_2 : 3dB ≈ 111.4 Hz,  NBW ≈ 136.0 Hz</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>   * - ACCEL_DLPFCFG_3 : 3dB ≈ 50.4  Hz,  NBW ≈ 68.8  Hz   ← good default</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   * - ACCEL_DLPFCFG_4 : 3dB ≈ 23.9  Hz,  NBW ≈ 34.4  Hz</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   * - ACCEL_DLPFCFG_5 : 3dB ≈ 11.5  Hz,  NBW ≈ 17.0  Hz</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>   * - ACCEL_DLPFCFG_6 : 3dB ≈ 5.7   Hz,  NBW ≈ 8.3   Hz</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>   * - ACCEL_DLPFCFG_7 : 3dB ≈ 473   Hz,  NBW ≈ 499   Hz</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>   */</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  /* Configure accelerometer</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>   * AccelConfigure(DLPF, FS_SEL, dlpf_enable, dec3, stX, stY, stZ)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>   * - DLPF       : ACCEL_DLPFCFG_0..7 (use 3 for balanced setting)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>   * - FS_SEL     : 0..3 =&gt; ±2/±4/±8/±16 g  (g2=0, g4=1, g8=2, g16=3)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>   * - dlpf_enable: true to use DLPF path (recommended)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>   * - dec3       : 0..3 (DEC3_CFG averaging)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>   *                0 = ACCEL_DEC3_AVG_1_OR_4  (depends on FCHOICE)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>   *                1 = ACCEL_DEC3_AVG_8</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>   *                2 = ACCEL_DEC3_AVG_16</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>   *                3 = ACCEL_DEC3_AVG_32</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>   * - stX/Y/Z    : enable self-test (false here)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>   */</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  if (!imu.AccelConfigure(ACCEL_DLPFCFG_3, /*FS_SEL*/ g4,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                          /*dlpf_enable*/ true,  // DLPF really ON</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                          /*dec3*/ ACCEL_DEC3_AVG_8,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                          /*stX*/ false, /*stY*/ false, /*stZ*/ false)) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    Serial.println(F(&quot;AccelConfigure failed.&quot;));</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  /* Set accelerometer output data rate (ODR)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>   * - Accel_SMPLRT(rate_hz)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>   * - Base (DLPF path) = 1125 Hz</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>   * - Valid range: 1–1125 Hz</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>   * - Example: 225 Hz </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>   */</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  if (!imu.Accel_SMPLRT(225)) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    Serial.println(F(&quot;Accel_SMPLRT failed.&quot;));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>/**</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> * @brief Read and print accelerometer data in g.</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> */</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>void loop() {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  float ax, ay, az;  // accel X/Y/Z in g</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  /* - readAccel(x,y,z)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>   * - Returns:</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>   *   - true on success;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>   * - Output:</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>   *   - ax/ay/az in g</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>   */</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  if (imu.readAccel(ax, ay, az)) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    Serial.print(&quot;ACCEL [g]: &quot;);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    Serial.print(ax, 3);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    Serial.print(&quot;, &quot;);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    Serial.print(ay, 3);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    Serial.print(&quot;, &quot;);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    Serial.println(az, 3);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  } else {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    Serial.println(F(&quot;ACCEL read failed&quot;));</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  Serial.println(F(&quot;-----------------------------&quot;));</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  delay(500);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_0e5973fcad70f068092871290dcee444.html">spi_accel</a></li><li class="navelem"><a class="el" href="spi__accel_8ino.html">spi_accel.ino</a></li>
-    <li class="footer">Generated on Tue Jun 16 2026 15:54:44 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Tue Jun 16 2026 16:04:34 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
