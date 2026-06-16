@@ -1,6 +1,10 @@
-# 7Semi ICM20948 Arduino Library
+# DevLab ICM20948 Arduino Library
 
 Arduino driver for the module DevLab ICM-20948 9-axis IMU sensor.
+
+This library is a DevLab adaptation derived from the 7Semi ICM20948 Arduino Library.
+The original MIT license notice from 7semi-solutions is preserved in `LICENSE`.
+See `NOTICE.md` for attribution and origin details.
 
 The ICM-20948 integrates a 3-axis accelerometer, 3-axis gyroscope, and 3-axis magnetometer (AK09916), enabling motion tracking, orientation sensing, and navigation applications.
 
@@ -213,3 +217,5 @@ imu.setAccelAveraging(AVG_8);
 ## License
 
 - MIT License
+- Original work copyright: 2025 7semi-solutions
+- DevLab adaptation maintains the original license notice and attribution.
