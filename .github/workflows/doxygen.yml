@@ -16,7 +16,7 @@ on:
         type: boolean
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  DOXYGEN_VERSION: "1.17.0"
+  DOXYGEN_VERSION: "1.12.0"
   DOXYGEN_PREFIX: "${{ github.workspace }}/.doxygen"
 
 jobs:
@@ -97,6 +97,19 @@ jobs:
       - name: Verify deploy entrypoint
         run: |
           test -f docs/html/index.html
+
+      - name: Commit and push documentation changes
+        if: ${{ github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch') }}
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "docs: update Doxygen documentation [skip ci]"
+            git push
+          fi
 
       - name: Build PDF from LaTeX
         if: ${{ startsWith(github.ref, 'refs/tags/') || (github.event_name == 'workflow_dispatch' && inputs.build_pdf) }}
