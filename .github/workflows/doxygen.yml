@@ -27,6 +27,7 @@ concurrency:
 jobs:
   docs:
     name: Build documentation
+    if: ${{ github.event_name != 'push' || github.event.head_commit == null || !contains(github.event.head_commit.message, '[skip ci]') }}
     runs-on: ubuntu-latest
 
     steps:
