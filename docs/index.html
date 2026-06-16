@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=html/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLab ICM20948 Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%);
+            color: #FFFFFF;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(74, 158, 255, 0.3);
+        }
+        h1 {
+            color: #4A9EFF;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top: 3px solid #4A9EFF;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #4A9EFF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .subtitle {
+            color: #CCCCCC;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DevLab ICM20948 Documentation</h1>
+        <div class="spinner"></div>
+        <p class="subtitle">Redirecting to documentation...</p>
+        <p style="margin-top: 20px;">
+            If you are not redirected automatically, 
+            <a href="html/index.html">click here</a>.
+        </p>
+    </div>
+    <script>
+        // Redirect after 0.5 seconds for better UX
+        setTimeout(function() {
+            window.location.href = 'html/index.html';
+        }, 500);
+    </script>
+</body>
+</html>

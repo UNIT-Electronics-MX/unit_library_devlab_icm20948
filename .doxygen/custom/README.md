@@ -1,4 +1,4 @@
-# Personalización de Doxygen - Estilo Texas Instruments
+# Personalización de Doxygen - Estilo DevLab
 
 Este directorio contiene los archivos de personalización para la documentación generada con Doxygen.
 
@@ -8,19 +8,19 @@ Este directorio contiene los archivos de personalización para la documentación
 .doxygen/
 ├── Doxyfile           # Configuración principal de Doxygen
 └── custom/
-    ├── custom.css     # Estilos personalizados (tema TI)
+    ├── custom.css     # Estilos personalizados (tema DevLab)
     └── README.md      # Esta documentación
 ```
 
 ## Archivos incluidos
 
 ### `custom.css`
-Hoja de estilos personalizada con el tema de Texas Instruments:
-- **Colores principales**: Rojo TI (#CC0000), gris, blanco
-- **Diseño profesional** similar a la documentación de TI
+Hoja de estilos personalizada con el tema de DevLab:
+- **Colores principales**: Azul claro (#4A9EFF), Negro (#1A1A1A), Blanco
+- **Diseño profesional** con identidad DevLab
 - **Responsive** para dispositivos móviles
-- **Tablas mejoradas** con encabezados en rojo
-- **Bloques de código** con borde rojo distintivo
+- **Tablas mejoradas** con encabezados en azul
+- **Bloques de código** con borde azul distintivo
 
 ## Cómo personalizar
 
@@ -29,10 +29,10 @@ Edita las variables CSS en `custom.css`:
 
 ```css
 :root {
-    --ti-red: #CC0000;           /* Color principal */
-    --ti-dark-red: #990000;      /* Rojo oscuro */
-    --ti-gray: #666666;          /* Texto secundario */
-    --ti-light-gray: #F5F5F5;    /* Fondos */
+    --devlab-blue: #4A9EFF;          /* Color principal azul */
+    --devlab-dark-blue: #2E7FD9;     /* Azul oscuro */
+    --devlab-black: #1A1A1A;         /* Negro para navbar */
+    --devlab-white: #FFFFFF;          /* Blanco */
 }
 ```
 
@@ -76,28 +76,28 @@ INPUT = ../src ../examples
 
 ## Ejemplos de personalización
 
-### Cambiar a tema azul
+### Cambiar a azul más oscuro
 ```css
 :root {
-    --ti-red: #0066CC;
-    --ti-dark-red: #004499;
-    --ti-light-red: #3399FF;
+    --devlab-blue: #2E7FD9;
+    --devlab-dark-blue: #1E5FB9;
+    --devlab-light-blue: #4A9EFF;
 }
 ```
 
-### Cambiar a tema verde
+### Cambiar a azul cian
 ```css
 :root {
-    --ti-red: #00AA00;
-    --ti-dark-red: #008800;
-    --ti-light-red: #00CC00;
+    --devlab-blue: #00BCD4;
+    --devlab-dark-blue: #0097A7;
+    --devlab-light-blue: #26C6DA;
 }
 ```
 
 ## Referencias
 
 - [Doxygen Documentation](https://www.doxygen.nl/manual/)
-- [Texas Instruments Style Guide](https://www.ti.com)
+- [DevLab Website](https://uelectronics.com)
 - [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
 ## Notas

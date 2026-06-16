@@ -1,49 +1,48 @@
 /* ============================================
-   Texas Instruments Style for Doxygen
+   DevLab Color Palette - Professional Theme
    ============================================ */
 
-/* TI Color Palette - Profesional y suave */
+/* DevLab Color Palette */
 :root {
-    --ti-red: #B8312F;
-    --ti-dark-red: #8B2423;
-    --ti-light-red: #C94C4A;
-    --ti-accent-red: #D64545;
-    --ti-gray: #666666;
-    --ti-light-gray: #F5F5F5;
-    --ti-medium-gray: #CCCCCC;
-    --ti-dark-gray: #2C2C2C;
-    --ti-nav-gray: #3A3A3A;
-    --ti-border-gray: #E0E0E0;
-    --ti-white: #FFFFFF;
-    --ti-black: #000000;
-    --ti-text-dark: #333333;
-    --ti-code-bg: #F8F8F8;
+    --devlab-blue: #4A9EFF;
+    --devlab-dark-blue: #2E7FD9;
+    --devlab-light-blue: #6BB3FF;
+    --devlab-accent-blue: #5AA8FF;
+    --devlab-black: #1A1A1A;
+    --devlab-dark-gray: #2C2C2C;
+    --devlab-gray: #666666;
+    --devlab-light-gray: #F5F5F5;
+    --devlab-medium-gray: #CCCCCC;
+    --devlab-border-gray: #E0E0E0;
+    --devlab-white: #FFFFFF;
+    --devlab-text-dark: #333333;
+    --devlab-code-bg: #F8F8F8;
 }
 
 /* ============================================
    Override Doxygen Default Colors
    ============================================ */
 
-/* Remove all blue accent colors from Doxygen */
+/* Override Doxygen default blue colors */
 :root {
-    --primary-color: var(--ti-red) !important;
-    --primary-dark-color: var(--ti-dark-red) !important;
-    --primary-light-color: var(--ti-light-red) !important;
-    --nav-text-color: var(--ti-white) !important;
-    --nav-background-color: var(--ti-dark-gray) !important;
+    --primary-color: var(--devlab-blue) !important;
+    --primary-dark-color: var(--devlab-dark-blue) !important;
+    --primary-light-color: var(--devlab-light-blue) !important;
+    --nav-text-color: var(--devlab-white) !important;
+    --nav-background-color: var(--devlab-black) !important;
 }
 
 /* Force override of any remaining blue colors */
 div, span, a, td, th, li {
-    border-color: var(--ti-border-gray) !important;
+    border-color: var(--devlab-border-gray) !important;
 }
 
 .highlight,
 .highlighted,
 .selected,
 .current {
-    background-color: var(--ti-red) !important;
-    color: var(--ti-white) !important;
+    background-color: var(--devlab-blue) !important;
+    color: var(--devlab-white) !important;
 }
 
 /* Fix white text on white background issues */
@@ -51,18 +50,18 @@ div.header,
 .title,
 .summary a,
 .memtitle {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
 }
 
 /* Ensure breadcrumbs are visible */
 div.header .headertitle,
 div.header .title,
 div.summary {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
 }
 
 div.header .headertitle .title {
-    color: var(--ti-dark-red) !important;
+    color: var(--devlab-dark-blue) !important;
     font-weight: bold;
 }
 
@@ -72,25 +71,25 @@ div.header .headertitle .title {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Arial, sans-serif;
-    background-color: var(--ti-white);
-    color: var(--ti-text-dark);
+    background-color: var(--devlab-white);
+    color: var(--devlab-text-dark);
     line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-/* Header Styling */
+/* Header Styling - DevLab Theme */
 #titlearea {
-    background: linear-gradient(180deg, var(--ti-red) 0%, var(--ti-dark-red) 100%);
-    border-bottom: 3px solid var(--ti-dark-red);
+    background: linear-gradient(180deg, var(--devlab-blue) 0%, var(--devlab-dark-blue) 100%);
+    border-bottom: 3px solid var(--devlab-dark-blue);
     padding: 20px 0;
-    color: var(--ti-white);
+    color: var(--devlab-white);
 }
 
 #projectname {
     font-size: 28px;
     font-weight: 600;
-    color: var(--ti-white) !important;
+    color: var(--devlab-white) !important;
     margin: 0;
     padding: 0;
 }
@@ -107,21 +106,21 @@ body {
 }
 
 /* ============================================
-   Navigation Menu
+   Navigation Menu - DevLab Theme
    ============================================ */
 
-/* Main navigation bar - Dark theme with high contrast */
+/* Main navigation bar - Black background with white text */
 #main-menu,
 #main-nav,
 #top {
-    background-color: var(--ti-nav-gray) !important;
-    border-bottom: 2px solid var(--ti-red) !important;
+    background-color: var(--devlab-black) !important;
+    border-bottom: 2px solid var(--devlab-blue) !important;
 }
 
 /* Menu items - White text on dark background */
 .sm-dox,
 .sm-dox ul {
-    background-color: var(--ti-nav-gray) !important;
+    background-color: var(--devlab-black) !important;
 }
 
 .sm-dox a {
@@ -131,7 +130,7 @@ body {
 }
 
 .sm-dox a:hover {
-    background-color: var(--ti-red) !important;
+    background-color: var(--devlab-blue) !important;
     color: #FFFFFF !important;
 }
 
@@ -143,8 +142,8 @@ body {
 .tabs, 
 .tabs2, 
 .tabs3 {
-    background: var(--ti-light-gray) !important;
-    border-bottom: 2px solid var(--ti-red) !important;
+    background: var(--devlab-light-gray) !important;
+    border-bottom: 2px solid var(--devlab-blue) !important;
 }
 
 .tablist {
@@ -153,19 +152,19 @@ body {
 }
 
 .tablist li {
-    background: var(--ti-medium-gray) !important;
+    background: var(--devlab-medium-gray) !important;
     display: inline-block !important;
 }
 
 .tablist a {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
     padding: 8px 16px !important;
     display: inline-block !important;
 }
 
 .tablist a:hover,
 .tablist li:hover {
-    background: var(--ti-red) !important;
+    background: var(--devlab-blue) !important;
 }
 
 .tablist li:hover a {
@@ -173,7 +172,7 @@ body {
 }
 
 .tablist li.current {
-    background: var(--ti-red) !important;
+    background: var(--devlab-blue) !important;
 }
 
 .tablist li.current a {
@@ -182,16 +181,16 @@ body {
 
 /* Tree navigation */
 #nav-tree {
-    background-color: var(--ti-light-gray) !important;
+    background-color: var(--devlab-light-gray) !important;
 }
 
 #nav-tree a {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
 }
 
 .tablist li.current a {
-    background: var(--ti-red);
-    color: var(--ti-white);
+    background: var(--devlab-blue);
+    color: var(--devlab-white);
 }
 
 /* ============================================
@@ -199,28 +198,28 @@ body {
    ============================================ */
 
 #side-nav {
-    background-color: var(--ti-light-gray);
-    border-right: 1px solid var(--ti-border-gray);
+    background-color: var(--devlab-light-gray);
+    border-right: 1px solid var(--devlab-border-gray);
     padding: 10px;
 }
 
 #nav-tree {
-    background-color: var(--ti-light-gray);
+    background-color: var(--devlab-light-gray);
 }
 
 #nav-tree .item {
-    color: var(--ti-dark-gray);
+    color: var(--devlab-dark-gray);
 }
 
 #nav-tree .selected {
-    background-color: var(--ti-red);
-    color: var(--ti-white);
+    background-color: var(--devlab-blue);
+    color: var(--devlab-white);
     border-radius: 3px;
 }
 
 #nav-tree a:hover {
-    background-color: var(--ti-red);
-    color: var(--ti-white);
+    background-color: var(--devlab-blue);
+    color: var(--devlab-white);
     border-radius: 3px;
 }
 
@@ -229,7 +228,7 @@ body {
    ============================================ */
 
 #doc-content {
-    background-color: var(--ti-white) !important;
+    background-color: var(--devlab-white) !important;
     padding: 20px;
 }
 
@@ -244,34 +243,34 @@ body {
 .title,
 h1.title,
 .PageDocTitle {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
     background-color: transparent !important;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
     font-weight: 600;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    border-bottom: 2px solid var(--ti-red);
+    border-bottom: 2px solid var(--devlab-blue);
     padding-bottom: 5px;
     background-color: transparent !important;
 }
 
 h1 {
     font-size: 26px;
-    color: var(--ti-dark-red) !important;
+    color: var(--devlab-dark-blue) !important;
 }
 
 h2 {
     font-size: 22px;
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
 }
 
 h3 {
     font-size: 18px;
-    border-bottom: 1px solid var(--ti-medium-gray);
+    border-bottom: 1px solid var(--devlab-medium-gray);
 }
 
 h4, h5, h6 {
@@ -280,24 +279,24 @@ h4, h5, h6 {
 
 /* Links */
 a {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--ti-dark-red) !important;
+    color: var(--devlab-dark-blue) !important;
     text-decoration: underline;
 }
 
 a:visited {
-    color: var(--ti-dark-red) !important;
+    color: var(--devlab-dark-blue) !important;
 }
 
 /* Override specific link types */
 a.el,
 a.elRef,
 .contents a:visited.el {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 /* Additional link overrides */
@@ -306,7 +305,7 @@ a.elRef,
 .memdoc a,
 div.line a,
 .arrow {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 /* Hover states for all links */
@@ -314,7 +313,7 @@ div.line a,
 .memberdecls a:hover,
 .memdoc a:hover,
 div.line a:hover {
-    color: var(--ti-dark-red) !important;
+    color: var(--devlab-dark-blue) !important;
 }
 
 /* ============================================
@@ -322,9 +321,9 @@ div.line a:hover {
    ============================================ */
 
 .fragment, pre.fragment {
-    background-color: var(--ti-code-bg);
-    border: 1px solid var(--ti-border-gray);
-    border-left: 4px solid var(--ti-red);
+    background-color: var(--devlab-code-bg);
+    border: 1px solid var(--devlab-border-gray);
+    border-left: 4px solid var(--devlab-blue);
     padding: 15px;
     border-radius: 4px;
     overflow-x: auto;
@@ -334,12 +333,12 @@ div.line a:hover {
 }
 
 code {
-    background-color: var(--ti-code-bg);
+    background-color: var(--devlab-code-bg);
     padding: 2px 6px;
     border-radius: 3px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 90%;
-    color: var(--ti-dark-red);
+    color: var(--devlab-dark-blue);
 }
 
 /* ============================================
@@ -352,14 +351,14 @@ table.params {
     border-collapse: collapse;
     width: 100%;
     margin: 15px 0;
-    border: 1px solid var(--ti-border-gray);
+    border: 1px solid var(--devlab-border-gray);
 }
 
 table.memberdecls th,
 table.fieldtable th,
 table.params th {
-    background: linear-gradient(180deg, var(--ti-red) 0%, var(--ti-dark-red) 100%);
-    color: var(--ti-white);
+    background: linear-gradient(180deg, var(--devlab-blue) 0%, var(--devlab-dark-blue) 100%);
+    color: var(--devlab-white);
     padding: 10px;
     text-align: left;
     font-weight: 600;
@@ -369,13 +368,13 @@ table.memberdecls td,
 table.fieldtable td,
 table.params td {
     padding: 8px 10px;
-    border: 1px solid var(--ti-border-gray);
+    border: 1px solid var(--devlab-border-gray);
 }
 
 table.memberdecls tr:nth-child(even),
 table.fieldtable tr:nth-child(even),
 table.params tr:nth-child(even) {
-    background-color: var(--ti-light-gray);
+    background-color: var(--devlab-light-gray);
 }
 
 table.memberdecls tr:hover,
@@ -389,8 +388,8 @@ table.params tr:hover {
    ============================================ */
 
 .memitem {
-    background-color: var(--ti-white);
-    border: 1px solid var(--ti-border-gray);
+    background-color: var(--devlab-white);
+    border: 1px solid var(--devlab-border-gray);
     border-radius: 5px;
     margin: 20px 0;
     padding: 0;
@@ -398,8 +397,8 @@ table.params tr:hover {
 }
 
 .memproto {
-    background: linear-gradient(180deg, var(--ti-light-gray) 0%, var(--ti-white) 100%);
-    border-bottom: 2px solid var(--ti-red);
+    background: linear-gradient(180deg, var(--devlab-light-gray) 0%, var(--devlab-white) 100%);
+    border-bottom: 2px solid var(--devlab-blue);
     padding: 15px;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 5px 5px 0 0;
@@ -407,21 +406,21 @@ table.params tr:hover {
 
 .memdoc {
     padding: 15px;
-    background-color: var(--ti-white);
+    background-color: var(--devlab-white);
 }
 
 .memname {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
     font-weight: bold;
 }
 
 .paramname {
-    color: var(--ti-dark-red) !important;
+    color: var(--devlab-dark-blue) !important;
     font-style: italic;
 }
 
 .paramtype {
-    color: var(--ti-gray) !important;
+    color: var(--devlab-gray) !important;
 }
 
 /* ============================================
@@ -432,8 +431,8 @@ table.params tr:hover {
 button,
 input[type="button"],
 input[type="submit"] {
-    background: linear-gradient(180deg, var(--ti-red) 0%, var(--ti-dark-red) 100%);
-    color: var(--ti-white);
+    background: linear-gradient(180deg, var(--devlab-blue) 0%, var(--devlab-dark-blue) 100%);
+    color: var(--devlab-white);
     border: none;
     padding: 8px 16px;
     border-radius: 4px;
@@ -446,8 +445,8 @@ input[type="submit"] {
 button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover {
-    background: var(--ti-accent-red);
-    box-shadow: 0 2px 8px rgba(184, 49, 47, 0.3);
+    background: var(--devlab-accent-blue);
+    box-shadow: 0 2px 8px rgba(74, 158, 255, 0.4);
 }
 
 /* ============================================
@@ -472,17 +471,17 @@ dl.warning {
 
 dl.attention {
     background-color: #FFE6E6;
-    border-left-color: var(--ti-red);
+    border-left-color: var(--devlab-blue);
 }
 
 dl.note {
     background-color: #E7F3FF;
-    border-left-color: var(--ti-blue-link);
+    border-left-color: var(--devlab-blue);
 }
 
 dl.todo {
     background-color: #F0F0F0;
-    border-left-color: var(--ti-gray);
+    border-left-color: var(--devlab-gray);
 }
 
 dl.bug {
@@ -495,27 +494,27 @@ dl.bug {
    ============================================ */
 
 #nav-path {
-    background-color: var(--ti-light-gray) !important;
-    border-top: 2px solid var(--ti-red) !important;
+    background-color: var(--devlab-light-gray) !important;
+    border-top: 2px solid var(--devlab-blue) !important;
     padding: 10px;
 }
 
 .navpath li,
 .navpath li a {
-    color: var(--ti-dark-gray) !important;
+    color: var(--devlab-dark-gray) !important;
 }
 
 .navpath li a:hover {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 hr.footer {
-    border-top: 1px solid var(--ti-border-gray);
+    border-top: 1px solid var(--devlab-border-gray);
     margin-top: 30px;
 }
 
 .footer {
-    color: var(--ti-gray) !important;
+    color: var(--devlab-gray) !important;
 }
 
 /* ============================================
@@ -523,14 +522,14 @@ hr.footer {
    ============================================ */
 
 #MSearchBox {
-    background-color: var(--ti-white);
-    border: 1px solid var(--ti-border-gray);
+    background-color: var(--devlab-white);
+    border: 1px solid var(--devlab-border-gray);
     border-radius: 4px;
 }
 
 #MSearchField {
-    background-color: var(--ti-white);
-    color: var(--ti-dark-gray);
+    background-color: var(--devlab-white);
+    color: var(--devlab-dark-gray);
     border: none;
     padding: 5px 10px;
 }
@@ -591,13 +590,13 @@ li {
 /* Directory and file listings */
 .directory .levels span,
 .directory .arrow {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 .icona,
 .icon {
-    background-color: var(--ti-light-gray) !important;
-    color: var(--ti-red) !important;
+    background-color: var(--devlab-light-gray) !important;
+    color: var(--devlab-blue) !important;
 }
 
 /* Class and member items */
@@ -608,98 +607,98 @@ li {
 .memTemplItemLeft,
 .memTemplItemRight,
 .memTemplParams {
-    background-color: var(--ti-light-gray) !important;
-    border-color: var(--ti-border-gray) !important;
+    background-color: var(--devlab-light-gray) !important;
+    border-color: var(--devlab-border-gray) !important;
 }
 
 /* Index items */
 .indexkey {
-    background-color: var(--ti-light-gray) !important;
-    border-color: var(--ti-border-gray) !important;
-    color: var(--ti-dark-gray) !important;
+    background-color: var(--devlab-light-gray) !important;
+    border-color: var(--devlab-border-gray) !important;
+    color: var(--devlab-dark-gray) !important;
 }
 
 .indexvalue {
-    background-color: var(--ti-white) !important;
-    border-color: var(--ti-border-gray) !important;
+    background-color: var(--devlab-white) !important;
+    border-color: var(--devlab-border-gray) !important;
 }
 
 /* Inheritance and collaboration graphs */
 .inherit_header,
 .groupheader {
-    background-color: var(--ti-light-gray) !important;
-    border-bottom: 2px solid var(--ti-red) !important;
-    color: var(--ti-dark-gray) !important;
+    background-color: var(--devlab-light-gray) !important;
+    border-bottom: 2px solid var(--devlab-blue) !important;
+    color: var(--devlab-dark-gray) !important;
 }
 
 /* Code line numbers */
 .lineno {
-    color: var(--ti-gray) !important;
-    background-color: var(--ti-light-gray) !important;
-    border-right: 2px solid var(--ti-red) !important;
+    color: var(--devlab-gray) !important;
+    background-color: var(--devlab-light-gray) !important;
+    border-right: 2px solid var(--devlab-blue) !important;
 }
 
 .lineno a {
-    color: var(--ti-gray) !important;
+    color: var(--devlab-gray) !important;
 }
 
 .lineno a:hover {
-    color: var(--ti-red) !important;
-    background-color: var(--ti-white) !important;
+    color: var(--devlab-blue) !important;
+    background-color: var(--devlab-white) !important;
 }
 
 /* Member item details */
 .memitem .memproto {
-    border-color: var(--ti-red) !important;
+    border-color: var(--devlab-blue) !important;
 }
 
 .memitem.glow {
-    box-shadow: 0 0 15px var(--ti-red) !important;
+    box-shadow: 0 0 15px var(--devlab-blue) !important;
 }
 
 /* Anchors and references */
 .anchor {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 /* Definition lists */
 dl.section {
-    border-left: 4px solid var(--ti-red) !important;
+    border-left: 4px solid var(--devlab-blue) !important;
 }
 
 /* Emphasized elements */
 em,
 .mlabels .mlabel {
-    color: var(--ti-dark-red) !important;
+    color: var(--devlab-dark-blue) !important;
 }
 
 /* Top menu bar */
 #top {
-    background-color: var(--ti-dark-gray) !important;
-    border-bottom: 2px solid var(--ti-red) !important;
+    background-color: var(--devlab-dark-gray) !important;
+    border-bottom: 2px solid var(--devlab-blue) !important;
 }
 
 /* Summary items */
 .summary {
-    background-color: var(--ti-light-gray) !important;
+    background-color: var(--devlab-light-gray) !important;
 }
 
 .summary a {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 /* Tooltips and popups */
 .ttc {
-    border-color: var(--ti-red) !important;
+    border-color: var(--devlab-blue) !important;
 }
 
 /* Graph nodes */
 .graph .node text {
-    fill: var(--ti-dark-gray) !important;
+    fill: var(--devlab-dark-gray) !important;
 }
 
 .graph .edge .label {
-    fill: var(--ti-gray) !important;
+    fill: var(--devlab-gray) !important;
 }
 
 /* ============================================
@@ -711,42 +710,42 @@ em,
 .textblock p,
 .contents p,
 div.textblock {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
 }
 
 /* Directory listings */
 .directory tr.even {
-    background-color: var(--ti-light-gray) !important;
+    background-color: var(--devlab-light-gray) !important;
 }
 
 .directory td,
 .directory td.entry {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
 }
 
 /* Class list and member lists */
 .memberdecls td,
 .fieldtable td {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
 }
 
 /* Page navigation */
 .pages a,
 .navpath ul li a {
-    color: var(--ti-text-dark) !important;
+    color: var(--devlab-text-dark) !important;
 }
 
 .pages a:hover,
 .navpath ul li a:hover {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 /* Ensure table headers are readable */
 table thead th,
 table.memberdecls th,
 table.fieldtable th {
-    color: var(--ti-white) !important;
-    background: linear-gradient(180deg, var(--ti-red) 0%, var(--ti-dark-red) 100%) !important;
+    color: var(--devlab-white) !important;
+    background: linear-gradient(180deg, var(--devlab-blue) 0%, var(--devlab-dark-blue) 100%) !important;
 }
 
 /* Make sure all navigation text is visible */
@@ -762,50 +761,50 @@ table.fieldtable th {
 div.header .title,
 div.header .summary,
 div.headertitle {
-    color: var(--ti-dark-gray) !important;
+    color: var(--devlab-dark-gray) !important;
     background: transparent !important;
 }
 
 /* Ingroup text */
 .ingroups,
 .ingroups a {
-    color: var(--ti-gray) !important;
+    color: var(--devlab-gray) !important;
 }
 
 .ingroups a:hover {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 /* Documentation body text */
 .memdoc,
 .memdoc p,
 .memdoc dl {
-    color: var(--ti-dark-gray) !important;
+    color: var(--devlab-dark-gray) !important;
 }
 
 /* Function/method signatures */
 .memname,
 .memname td {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 /* Ensure dropdown menus are visible */
 .sm-dox ul a,
 .sm-dox ul a:hover,
 .sm-dox ul a:focus {
-    color: var(--ti-white) !important;
-    background-color: var(--ti-gray) !important;
+    color: var(--devlab-white) !important;
+    background-color: var(--devlab-gray) !important;
 }
 
 .sm-dox ul a:hover {
-    background-color: var(--ti-red) !important;
+    background-color: var(--devlab-blue) !important;
 }
 
 /* File/directory icons */
 .icondoc,
 .iconfopen,
 .iconfclosed {
-    color: var(--ti-red) !important;
+    color: var(--devlab-blue) !important;
 }
 
 

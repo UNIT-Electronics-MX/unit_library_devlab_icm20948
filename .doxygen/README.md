@@ -41,7 +41,7 @@ Abre `docs/html/index.html` en tu navegador.
 - `../docs/latex/` - Documentación LaTeX (solo en tags)
 
 ### Estilo
-- **Tema personalizado**: Texas Instruments (rojo corporativo)
+- **Tema personalizado**: DevLab (azul claro, negro, blanco)
 - **CSS**: `custom/custom.css`
 - **Modo**: Modo claro (LIGHT)
 - **Tree view**: Activado para navegación mejorada
