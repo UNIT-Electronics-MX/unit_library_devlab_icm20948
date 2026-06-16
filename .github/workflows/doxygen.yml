@@ -132,10 +132,6 @@ jobs:
         with:
           path: docs/html
 
-      - name: Deploy docs/html to GitHub Pages
-        if: ${{ github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch') }}
-        uses: actions/deploy-pages@v4
-
       - name: Upload warning log
         if: always()
         uses: actions/upload-artifact@v4
@@ -151,3 +147,20 @@ jobs:
           name: doxygen-pdf
           path: docs/latex/refman.pdf
           if-no-files-found: error
+
+  deploy:
+    name: Deploy GitHub Pages
+    needs: docs
+    if: ${{ github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch') }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy docs/html to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
