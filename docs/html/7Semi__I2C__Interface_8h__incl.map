@@ -1,12 +1,12 @@
-<map id="/home/runner/work/unit_devlab_icm20948_library/unit_devlab_icm20948_library/src/7Semi_I2C_Interface.h" name="/home/runner/work/unit_devlab_icm20948_library/unit_devlab_icm20948_library/src/7Semi_I2C_Interface.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="76,5,299,75"/>
-<area shape="rect" id="Node000002" href="$7Semi__Interface_8h.html" title=" " alt="" coords="64,123,204,148"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,76,150,112,145,109,166,73"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="205,196,269,221"/>
-<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="203,74,219,122,234,182,229,183,214,123,198,76"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,196,89,221"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,150,74,189,70,185,118,146"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="152,146,210,186,207,190,149,150"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="113,196,168,221"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="138,148,141,182,136,183,132,149"/>
+<map id="src/7Semi_I2C_Interface.h" name="src/7Semi_I2C_Interface.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="92,5,283,31"/>
+<area shape="rect" id="Node000002" href="$7Semi__Interface_8h.html" title=" " alt="" coords="64,79,204,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,33,153,69,149,66,176,29"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="205,152,269,177"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="196,30,219,78,235,138,230,139,214,80,192,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,89,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,106,74,145,70,141,118,102"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="152,102,210,142,207,146,149,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="113,152,168,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="138,104,141,138,136,139,132,105"/>
 </map>
