@@ -76,6 +76,10 @@ jobs:
           sed -i 's/\\pdfminorversion=7/\\ifdefined\\pdfminorversion\\pdfminorversion=7\\fi/' docs/latex/build/refman.tex
           sed -i 's/\\pdfsuppresswarningpagegroup=1/\\ifdefined\\pdfsuppresswarningpagegroup\\pdfsuppresswarningpagegroup=1\\fi/' docs/latex/build/refman.tex
           sed -i '/\\doxynewunicodechar{/s/^/%/' docs/latex/build/refman.tex
+          sed -i '/\\usepackage\[T1\]{fontenc}/s/^/%/' docs/latex/build/refman.tex
+          sed -i '/\\usepackage\[scaled=.90\]{helvet}/s/^/%/' docs/latex/build/refman.tex
+          sed -i '/\\usepackage{courier}/s/^/%/' docs/latex/build/refman.tex
+          sed -i '/\\renewcommand{\\familydefault}{\\sfdefault}/s/^/%/' docs/latex/build/refman.tex
           cp docs/latex/build/refman.tex docs/latex/refman.tex
 
       - name: Create .nojekyll files for GitHub Pages
