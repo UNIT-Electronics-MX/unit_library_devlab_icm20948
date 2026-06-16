@@ -1,3 +1,9 @@
+/**
+ * @file test2.ino
+ * @brief Extended accelerometer DLPF, full-scale, and averaging sweep.
+ * @details Runs a larger I2C validation matrix for the 7Semi ICM-20948
+ * accelerometer and prints CSV-like samples for later analysis.
+ */
 
 #include <Wire.h>
 #include <DevLab_ICM20948.h>
@@ -5,22 +11,33 @@
 // -----------------------------------------------------------
 // PINES I2C — ESP32C6 NANO Unit Electronics
 // -----------------------------------------------------------
+/** @brief I2C SDA pin used by the example board. */
 #define SDA_PIN   6
+/** @brief I2C SCL pin used by the example board. */
 #define SCL_PIN   7
+/** @brief I2C bus speed in hertz. */
 #define I2C_FREQ  400000UL
+/** @brief ICM-20948 I2C address selected by the AD0 pin. */
 #define ICM_ADDR  0x69
 
 // -----------------------------------------------------------
 // STRUCT
 // -----------------------------------------------------------
+/** @brief Accelerometer DLPF divider and timing configuration. */
 struct configDLPF {
+  /** @brief Index into the accelDLPF lookup table. */
   uint8_t     dlpf_idx;
+  /** @brief Sample-rate divider written to the IMU register. */
   uint16_t    div;
+  /** @brief Noise bandwidth in hertz for reporting. */
   float       nbw_hz;
+  /** @brief Output data rate in hertz for timing calculations. */
   float       odr_hz;
+  /** @brief Text label printed with each captured sample. */
   const char* nombre;
 };
 //id,div,nbw_hz,odr_hz,nombre : {DLPF, NBW , ODR}
+/** @brief Accelerometer DLPF configurations exercised by this sweep. */
 const configDLPF configsDLPF[] = {
   {  0,   0,  265.0f, 1125.0f, "246 ; 265 ; 1125 " },
   {  1,   0,  265.0f, 1125.0f, "246 ; 265 ; 1125 " },
@@ -31,20 +48,25 @@ const configDLPF configsDLPF[] = {
   {  6,  29,    8.3f,   37.5f, "6 ; 8 ;  35 " },
   {  7,   0,  499.0f, 1125.0f, "473 ; 499 ; 1125 " },
 };
+/** @brief Number of accelerometer DLPF configurations. */
 const uint8_t N_DLPF = sizeof(configsDLPF) / sizeof(configsDLPF[0]);
 
 // -----------------------------------------------------------
 // ARRAYS ORIGINALES
 // -----------------------------------------------------------
+/** @brief Accelerometer full-scale ranges exercised by the sweep. */
 const ICM20948_Accel_FullScale accelCfg[] = {
   ICM20948_Accel_FullScale::G_2,
   ICM20948_Accel_FullScale::G_4,
   ICM20948_Accel_FullScale::G_8,
   ICM20948_Accel_FullScale::G_16
 };
+/** @brief Text labels matching accelCfg. */
 const char* etiquetasAccelCfg[] = { "+-2G","+-4G","+-8G","+-16G" };
+/** @brief Number of accelerometer full-scale ranges. */
 const uint8_t N_FS = 4;
 
+/** @brief Accelerometer DLPF enum values matching configsDLPF. */
 const ICM20948_Accel_DLPFCFG accelDLPF[] = {
   ICM20948_Accel_DLPFCFG::DLPF0_246HZ,
   ICM20948_Accel_DLPFCFG::DLPF_246HZ,
@@ -56,34 +78,48 @@ const ICM20948_Accel_DLPFCFG accelDLPF[] = {
   ICM20948_Accel_DLPFCFG::DLPF_473HZ
 };
 
+/** @brief Accelerometer averaging settings exercised by the sweep. */
 const ICM20948_Accel_Average accelAVG[] = {
   ICM20948_Accel_Average::AVG_1_OR_4,
   ICM20948_Accel_Average::AVG_8,
   ICM20948_Accel_Average::AVG_16,
   ICM20948_Accel_Average::AVG_32
 };
+/** @brief Text labels matching accelAVG. */
 const char* etiquetasAccelAVG[] = { "14","8","16","32" };
+/** @brief Number of accelerometer averaging settings. */
 const uint8_t N_AVG = 4;
+/** @brief Raw accelerometer sample-rate divider values for experiments. */
 const uint16_t accelSR[] = {
   0, 1, 3, 5, 7, 10, 15, 22, 31, 63, 127, 255, 513, 1022, 2044, 4095
 };
+/** @brief Text labels matching accelSR output data rates. */
 const char* etiquetasSR[] = {
   "1125.0","562.5","281.3","187.5","140.6","102.3","70.3",
   "48.9","35.2","17.6","8.8","4.4","2.2","1.1","0.55","0.27"
 };
 
 // -----------------------------------------------------------
+/** @brief Global ICM-20948 driver instance. */
 DevLab_ICM20948 imu;
+/** @brief Count of validation passes reserved for future checks. */
 uint8_t total_pass = 0;
+/** @brief Count of validation failures reserved for future checks. */
 uint8_t total_fail = 0;
+/** @brief Count of validation warnings reserved for future checks. */
 uint8_t total_warn = 0;
 
 
+/** @brief Print a separator line to Serial. */
 void printLinea()      { Serial.println(F("------------------------------------------------------------")); }
+/** @brief Print a double separator line to Serial. */
 void printDobleLinea() { Serial.println(F("============================================================")); }
 // -----------------------------------------------------------
 // WHO_AM_I
 // -----------------------------------------------------------
+/**
+ * @brief Verify the IMU identity register.
+ */
 void firstStage() {
   uint8_t who;
   if (!imu.readWhoAmI(who) || who != 0xEA) {
@@ -102,6 +138,14 @@ void firstStage() {
 //
 // FIX 2: setAccelDivRate escribe el DIV directo al registro
 // -----------------------------------------------------------
+/**
+ * @brief Apply one accelerometer full-scale, DLPF, and averaging configuration.
+ *
+ * @param fs_idx Index into accelCfg.
+ * @param cfg DLPF timing and divider configuration.
+ * @param avg Index into accelAVG.
+ * @return true if all configuration writes succeeded, otherwise false.
+ */
 bool applySettings(uint8_t fs_idx, const configDLPF &cfg,uint8_t avg) {
   uint8_t dlpf_val = (uint8_t)accelDLPF[cfg.dlpf_idx];
   bool ok = true;
@@ -133,6 +177,9 @@ bool applySettings(uint8_t fs_idx, const configDLPF &cfg,uint8_t avg) {
 // Cuando las lecturas muestren Az ~1g en reposo,
 // el sensor esta funcionando y se puede activar el sweep completo.
 // -----------------------------------------------------------
+/**
+ * @brief Run the full accelerometer validation matrix and print samples.
+ */
 void runSweep() {
 
   uint16_t n = 0;
@@ -197,6 +244,9 @@ void runSweep() {
 // -----------------------------------------------------------
 // SETUP
 // -----------------------------------------------------------
+/**
+ * @brief Initialize I2C, reset/wake the IMU, enable sensors, and start sweep.
+ */
 void setup() {
   Serial.begin(115200);
   delay(200);
@@ -219,7 +269,7 @@ void setup() {
   // Despues del reset hay que despertar el dispositivo
   imu.softReset();
   delay(100);
-  imu.sleep(false);   // ← limpia SLEEP bit, CLKSEL=1
+  imu.sleep(false);   // limpia SLEEP bit, CLKSEL=1
   delay(50);
 
   if (!imu.setSensors(true, true, true)) {
@@ -242,6 +292,9 @@ void setup() {
 // -----------------------------------------------------------
 // LOOP — lectura simple post-sweep
 // -----------------------------------------------------------
+/**
+ * @brief Optional post-sweep loop for manual accelerometer reads.
+ */
 void loop() {
   /*float ax, ay, az;
   if (imu.readAccel(ax, ay, az)) {

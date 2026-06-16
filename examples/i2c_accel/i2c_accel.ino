@@ -32,19 +32,30 @@
 #include <DevLab_ICM20948.h>
 
 /* ====================== User Config ======================= */
+/** @brief I2C SDA pin used by the example board. */
 #define SDA_PIN   6
+/** @brief I2C SCL pin used by the example board. */
 #define SCL_PIN   7
+/** @brief I2C bus speed in hertz. */
 #define I2C_FREQ  400000UL
+/** @brief ICM-20948 I2C address selected by the AD0 pin. */
 #define ICM_ADDR  0x69
 
+/** @brief Global ICM-20948 driver instance. */
 DevLab_ICM20948 imu;
 
+/**
+ * @brief Configure the IMU for accelerometer-only operation over I2C.
+ *
+ * The function initializes the bus, verifies the device identity, enables the
+ * accelerometer, and applies range, DLPF, averaging, and sample-rate settings.
+ */
 void setup() {
   Serial.begin(115200);
   delay(200);
   Serial.println(F("ICM-20948 (I2C) — Accel Example"));
   Wire.begin(SDA_PIN, SCL_PIN);
-  /** Initialize IMU using I2C */
+  /* Initialize IMU using I2C. */
   if (!imu.beginI2C(ICM_ADDR, Wire, 400000)) {
     Serial.println(F("ERROR: ICM-20948 beginI2C() failed."));
     while (1) delay(200);
@@ -52,14 +63,14 @@ void setup() {
 
   Serial.println(F("ICM-20948 ready."));
 
-  /** Verify device identity */
+  /* Verify device identity. */
   uint8_t who;
   if (imu.readWhoAmI(who)) {
     Serial.print("WHO_AM_I: 0x");
     Serial.println(who, HEX);
   }
 
-  /** Enable only accelerometer
+  /* Enable only accelerometer
    * - accel = true
    * - gyro  = false
    * - temp  = false
@@ -75,24 +86,24 @@ void setup() {
    * - Sample rate: output frequency
    */
 
-  /** Set accelerometer full-scale range */
+  /* Set accelerometer full-scale range. */
   if (!imu.setAccelScale(ICM20948_Accel_FullScale::G_4)) {
     Serial.println(F("setAccelScale failed."));
   }
 
-  /** Enable DLPF (recommended)
+  /* Enable DLPF (recommended)
    * - bypass = false → DLPF enabled
    */
   if (!imu.setAccelDLPF(ACCEL_DLPFCFG_3, false)) {
     Serial.println(F("setAccelDLPF failed."));
   }
 
-  /** Set averaging (noise reduction) */
+  /* Set averaging (noise reduction). */
   if (!imu.setAccelAveraging(ICM20948_Accel_Average::AVG_8)) {
     Serial.println(F("setAccelAveraging failed."));
   }
 
-  /** Set output data rate (ODR)
+  /* Set output data rate (ODR)
    * - Base = 1125 Hz
    * - ODR = 1125 / (1 + divider)
    * - Example: 225 Hz
@@ -104,10 +115,13 @@ void setup() {
   delay(10);
 }
 
+/**
+ * @brief Read and print accelerometer data in g.
+ */
 void loop() {
   float ax, ay, az;
 
-  /** Read accelerometer data
+  /* Read accelerometer data
    * - Output in g units
    * - Returns true on success
    */

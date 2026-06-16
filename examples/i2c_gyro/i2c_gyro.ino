@@ -37,26 +37,36 @@
  */
 
 /* ====================== User Config ======================= */
+/** @brief I2C SDA pin used by the example board. */
 #define SDA_PIN   6
+/** @brief I2C SCL pin used by the example board. */
 #define SCL_PIN   7
+/** @brief I2C bus speed in hertz. */
 #define I2C_FREQ  400000UL
+/** @brief ICM-20948 I2C address selected by the AD0 pin. */
 #define ICM_ADDR  0x69
 
+/** @brief Global ICM-20948 driver instance. */
 DevLab_ICM20948 imu;
 
-
+/**
+ * @brief Configure the IMU for gyroscope-only operation over I2C.
+ *
+ * The function initializes the I2C interface, applies safe defaults, enables
+ * the gyroscope, and configures DLPF, full-scale range, and output data rate.
+ */
 void setup() {
   Serial.begin(115200);
   delay(200);
   Serial.println(F("ICM-20948 — I2C Basic"));
   Wire.begin(SDA_PIN, SCL_PIN);
-  /** Initialize IMU */
+  /* Initialize IMU. */
   if (!imu.beginI2C(ICM_ADDR, Wire, 400000)) {
     Serial.println(F("ERROR: beginI2C() failed"));
     while (1) delay(200);
   }
 
-  /** Apply safe defaults */
+  /* Apply safe defaults. */
   if (!imu.applyBasicDefaults()) {
     Serial.println(F("ERROR: applyBasicDefaults() failed."));
     while (1) delay(200);
@@ -64,7 +74,7 @@ void setup() {
 
   Serial.println(F("ICM-20948 ready."));
 
-  /** Optional: gate sensors
+  /* Optional: gate sensors
    * - setSensors(accel_on, gyro_on, temp_on)
    * - Here: enable only gyro (accel/temp off)
    */
@@ -98,7 +108,7 @@ void setup() {
     Serial.println(F("GyroConfig failed."));
   }
 
-  /** Set gyroscope output data rate (ODR)
+  /* Set gyroscope output data rate (ODR)
    * - Gyro_SMPLRT(rate_hz)
    * - Base (DLPF path) = 1100 Hz
    * - Valid range: ~4.3–1100 Hz
@@ -109,10 +119,13 @@ void setup() {
   }
 }
 
+/**
+ * @brief Read and print gyroscope data in degrees per second.
+ */
 void loop() {
   float gx, gy, gz;  // gyro X/Y/Z in dps
 
-  /** - readGyro(x,y,z)
+  /* - readGyro(x,y,z)
    * - Returns:
    *   - true on success;
    * - Output:

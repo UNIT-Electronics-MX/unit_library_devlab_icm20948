@@ -29,19 +29,27 @@
 
 #include <DevLab_ICM20948.h>
 
+/** @brief SPI clock used during sensor initialization and reads. */
 #define SPI_FAST_SPEED 1000000
 
-/** IMU inst0ance */
+/** @brief Global ICM-20948 driver instance. */
 DevLab_ICM20948 imu;
 
-SPIClass spi_bus(SPI);   
+/** @brief SPI bus object used by the IMU driver. */
+SPIClass spi_bus(SPI);
 
+/**
+ * @brief Configure the IMU for gyroscope-only operation over SPI.
+ *
+ * @note The sketch expects a board-level CS_PIN definition to select the
+ * chip-select pin used by beginSPI().
+ */
 void setup() {
   Serial.begin(115200);
   delay(200);
   Serial.println(F("ICM-20948 (SPI) — Gyro Example"));
 
-  /** Init SPI bus on your pins */
+  /* Init SPI bus on your pins. */
   // SPI.begin(SCK_PIN, MISO_PIN, MOSI_PIN, CS_PIN);
 
   if (!imu.beginSPI(CS_PIN, spi_bus, 1000000)) {
@@ -49,7 +57,7 @@ void setup() {
     while (1) delay(200);
   }
 
-  /** Apply safe defaults */
+  /* Apply safe defaults. */
   if (!imu.applyBasicDefaults()) {
     Serial.println(F("ERROR: applyBasicDefaults() failed."));
     while (1) delay(200);
@@ -57,7 +65,7 @@ void setup() {
 
   Serial.println(F("ICM-20948 ready."));
 
-  /** Optional: gate sensors
+  /* Optional: gate sensors
    * - setSensors(accel_on, gyro_on, temp_on)
    * - Here: enable only gyro (accel/temp off)
    */
@@ -92,7 +100,7 @@ void setup() {
     Serial.println(F("GyroConfig failed."));
   }
 
-  /** Set gyroscope output data rate (ODR)
+  /* Set gyroscope output data rate (ODR)
    * - Gyro_SMPLRT(rate_hz)
    * - Base (DLPF path) = 1100 Hz
    * - Valid range: ~4.3–1100 Hz
@@ -103,10 +111,13 @@ void setup() {
   }
 }
 
+/**
+ * @brief Read and print gyroscope data in degrees per second.
+ */
 void loop() {
   float gx, gy, gz;  // gyro X/Y/Z in dps
 
-  /** - readGyro(x,y,z)
+  /* - readGyro(x,y,z)
    * - Returns:
    *   - true on success;
    * - Output:

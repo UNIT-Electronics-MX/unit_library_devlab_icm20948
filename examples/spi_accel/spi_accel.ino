@@ -29,13 +29,21 @@
 
 #include <DevLab_ICM20948.h>
 
+/** @brief SPI clock used during sensor initialization and reads. */
 #define SPI_FAST_SPEED 1000000
 
-/** IMU inst0ance */
+/** @brief Global ICM-20948 driver instance. */
 DevLab_ICM20948 imu;
 
-SPIClass spi_bus(SPI);   // ← usa el bus SPI por defecto del Arduino
+/** @brief SPI bus object used by the IMU driver. */
+SPIClass spi_bus(SPI);   // usa el bus SPI por defecto del Arduino
 
+/**
+ * @brief Configure the IMU for accelerometer-only operation over SPI.
+ *
+ * @note The sketch expects a board-level CS_PIN definition to select the
+ * chip-select pin used by beginSPI().
+ */
 void setup() {
   Serial.begin(115200);
   delay(200);
@@ -49,7 +57,7 @@ void setup() {
 
   Serial.println(F("ICM-20948 ready."));
 
-  /** Optional: gate sensors
+  /* Optional: gate sensors
    * - setSensors(accel_on, gyro_on, temp_on)
    * - Here: enable only accel (gyro/temp off)
    */
@@ -72,7 +80,7 @@ void setup() {
    * - ACCEL_DLPFCFG_7 : 3dB ≈ 473   Hz,  NBW ≈ 499   Hz
    */
 
-  /** Configure accelerometer
+  /* Configure accelerometer
    * AccelConfigure(DLPF, FS_SEL, dlpf_enable, dec3, stX, stY, stZ)
    * - DLPF       : ACCEL_DLPFCFG_0..7 (use 3 for balanced setting)
    * - FS_SEL     : 0..3 => ±2/±4/±8/±16 g  (g2=0, g4=1, g8=2, g16=3)
@@ -91,7 +99,7 @@ void setup() {
     Serial.println(F("AccelConfigure failed."));
   }
 
-  /** Set accelerometer output data rate (ODR)
+  /* Set accelerometer output data rate (ODR)
    * - Accel_SMPLRT(rate_hz)
    * - Base (DLPF path) = 1125 Hz
    * - Valid range: 1–1125 Hz
@@ -102,10 +110,13 @@ void setup() {
   }
 }
 
+/**
+ * @brief Read and print accelerometer data in g.
+ */
 void loop() {
   float ax, ay, az;  // accel X/Y/Z in g
 
-  /** - readAccel(x,y,z)
+  /* - readAccel(x,y,z)
    * - Returns:
    *   - true on success;
    * - Output:

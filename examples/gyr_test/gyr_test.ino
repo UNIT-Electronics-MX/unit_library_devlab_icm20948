@@ -1,25 +1,43 @@
+/**
+ * @file gyr_test.ino
+ * @brief Gyroscope DLPF and full-scale sweep for the 7Semi ICM-20948.
+ * @details Applies each gyroscope filter/full-scale configuration over I2C and
+ * prints repeated samples for validation and noise comparison.
+ */
+
 #include <Wire.h>
 #include <DevLab_ICM20948.h>
 // -----------------------------------------------------------
 // PINES I2C — ESP32C6 NANO Unit Electronics
 // -----------------------------------------------------------
+/** @brief I2C SDA pin used by the example board. */
 #define SDA_PIN   6
+/** @brief I2C SCL pin used by the example board. */
 #define SCL_PIN   7
+/** @brief I2C bus speed in hertz. */
 #define I2C_FREQ  400000UL
+/** @brief ICM-20948 I2C address selected by the AD0 pin. */
 #define ICM_ADDR  0x69
 
 // -----------------------------------------------------------
 // STRUCT
 // -----------------------------------------------------------
+/** @brief Gyroscope DLPF divider and timing configuration. */
 struct configDLPF {
+  /** @brief Index into the gyroDLPF lookup table. */
   uint8_t     dlpf_idx;
+  /** @brief Sample-rate divider written to the IMU register. */
   uint16_t    div;
+  /** @brief Noise bandwidth in hertz for reporting. */
   float       nbw_hz;
+  /** @brief Output data rate in hertz for timing calculations. */
   float       odr_hz;
+  /** @brief Text label printed with each captured sample. */
   const char* nombre;
 };
 //id,div,nbw_hz,odr_hz,nombre : {DLPF, NBW , ODR}
 /*
+/** @brief Gyroscope DLPF configurations exercised by the sweep. */
 const configDLPF configsDLPF[] = {
   {  0,   0,  229.8f, 1125.0f, "196,6 ; 229,8 ; 1125.0 " },
   {  1,   0,  187.6f, 1125.0f, "151,8 ; 187.6 ; 1125.0 " },
@@ -40,8 +58,10 @@ const configDLPF configsDLPF[] = {
   {  6,  29,    8.9f,   37.5f, "5,7 ; 8,9 ;  37.5 " },
   {  7,   0,  376.5f, 1125.0f, "361,4 ; 376,5 ; 1125 " },
 };
+/** @brief Number of gyroscope DLPF configurations. */
 const uint8_t N_DLPF = sizeof(configsDLPF) / sizeof(configsDLPF[0]);
 
+/** @brief Gyroscope full-scale ranges exercised by the sweep. */
 const ICM20948_Gyro_FullScale gyroFSCfg[] = {
   ICM20948_Gyro_FullScale::DPS_250,
   ICM20948_Gyro_FullScale::DPS_500,
@@ -49,9 +69,12 @@ const ICM20948_Gyro_FullScale gyroFSCfg[] = {
   ICM20948_Gyro_FullScale::DPS_2000
 };
 
+/** @brief Text labels matching gyroFSCfg. */
 const char* etiquetasGyroFSCfg[] = {"250", "500", "1000", "2000"};
+/** @brief Number of gyroscope full-scale ranges. */
 const uint8_t N_FS = 4;
 
+/** @brief Gyroscope DLPF enum values matching configsDLPF. */
 const ICM20948_Gyro_DLPF gyroDLPF[] = {
   ICM20948_Gyro_DLPF::DLPF_196HZ,
   ICM20948_Gyro_DLPF::DLPF_151HZ,
@@ -63,6 +86,7 @@ const ICM20948_Gyro_DLPF gyroDLPF[] = {
   ICM20948_Gyro_DLPF::DLPF_361HZ
 };
 
+/** @brief Gyroscope averaging settings available for experiments. */
 const ICM20948_Gyro_Average gyroAVGCfg[]= {
   ICM20948_Gyro_Average::AVG_1,
   ICM20948_Gyro_Average::AVG_2,
@@ -74,14 +98,22 @@ const ICM20948_Gyro_Average gyroAVGCfg[]= {
   ICM20948_Gyro_Average::AVG_128
 };     
 
+/** @brief Text labels matching gyroAVGCfg. */
 const char* etiquetasGyroAVGCfg[] = {"1","2","4","8","16","32","64","128"};
+/** @brief Number of gyroscope averaging settings. */
 const uint8_t N_AVG = 8;
 
+/** @brief Global ICM-20948 driver instance. */
 DevLab_ICM20948 imu;
 
+/** @brief Print a separator line to Serial. */
 void printLinea()      { Serial.println(F("------------------------------------------------------------")); }
+/** @brief Print a double separator line to Serial. */
 void printDobleLinea() { Serial.println(F("============================================================")); }
 
+/**
+ * @brief Verify the IMU identity register.
+ */
 void firstStage() {
   uint8_t who;
   if (!imu.readWhoAmI(who) || who != 0xEA) {
@@ -91,6 +123,13 @@ void firstStage() {
   Serial.printf("WHO_AM_I = 0x%02X  OK\n", who);
 }
 
+/**
+ * @brief Apply one gyroscope full-scale and DLPF configuration.
+ *
+ * @param fs_idx Index into gyroFSCfg.
+ * @param cfg DLPF timing and divider configuration.
+ * @return true if all configuration writes succeeded, otherwise false.
+ */
 bool applySettings(uint8_t fs_idx, const configDLPF &cfg) {
   ICM20948_Gyro_DLPF dlpf_val = gyroDLPF[cfg.dlpf_idx];
   bool ok = true;
@@ -113,6 +152,9 @@ bool applySettings(uint8_t fs_idx, const configDLPF &cfg) {
   return ok;
 }
 
+/**
+ * @brief Run the gyroscope validation sweep and print each captured sample.
+ */
 void runSweep(){
   uint16_t n = 0;
   printDobleLinea();
@@ -154,6 +196,10 @@ void runSweep(){
   
   }
 }
+
+/**
+ * @brief Initialize I2C, reset/wake the IMU, enable gyro, and start the sweep.
+ */
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
@@ -176,7 +222,7 @@ void setup() {
   // Despues del reset hay que despertar el dispositivo
   imu.softReset();
   delay(100);
-  imu.sleep(false);   // ← limpia SLEEP bit, CLKSEL=1
+  imu.sleep(false);   // limpia SLEEP bit, CLKSEL=1
   delay(50);
 
   if (!imu.setSensors(false, true, false)) {
@@ -196,6 +242,9 @@ void setup() {
   //}
 }
 
+/**
+ * @brief Empty loop; this sketch runs the gyroscope sweep once in setup().
+ */
 void loop() {
   // put your main code here, to run repeatedly:
 
