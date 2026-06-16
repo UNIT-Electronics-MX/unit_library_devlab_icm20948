@@ -1,5 +1,14 @@
 <map id="DevLab_ICM20948::setLowPower" name="DevLab_ICM20948::setLowPower">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,243,31"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="291,5,513,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,15,277,15,277,21,243,21"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,243,55"/>
+<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="505,5,728,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,34,492,21,492,27,243,39"/>
+<area shape="rect" id="Node000004" href="$classBusIO__7Semi.html#ac7b3d1c425f7187abbe1bbec64d9ccea" title=" " alt="" coords="291,55,457,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="243,51,277,55,277,60,243,57"/>
+<area shape="rect" id="Node000003" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="776,5,925,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="728,15,762,15,762,21,728,21"/>
+<area shape="rect" id="Node000005" href="$classBusIO__7Semi.html#a855c7388d4118e632c84c7f8e2e3ddc2" title=" " alt="" coords="529,55,704,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="458,65,515,65,515,70,458,70"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="677,52,776,31,777,36,678,57"/>
+<area shape="rect" id="Node000006" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="778,55,923,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="704,65,764,65,764,70,704,70"/>
 </map>

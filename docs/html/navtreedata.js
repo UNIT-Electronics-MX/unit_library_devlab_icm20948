@@ -49,10 +49,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "7Semi__I2C__Interface_8h.html",
-"ICM20948__regs_8h.html#a8e75e97149a0b6aa3b89d5b93b1574d7",
-"globals_defs_m.html"
+"ICM20948__regs_8h.html#a966007d39d833afbf07884f535d7c1fb",
+"globals_defs_r.html"
 ];
 
-const SYNCONMSG = 'click to disable panel synchronization';
-const SYNCOFFMSG = 'click to enable panel synchronization';
-const LISTOFALLMEMBERS = 'List of all members';
+var SYNCONMSG = 'click to disable panel synchronisation';
+var SYNCOFFMSG = 'click to enable panel synchronisation';

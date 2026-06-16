@@ -1,5 +1,9 @@
 <map id="DevLab_ICM20948::getDLPF" name="DevLab_ICM20948::getDLPF">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,211,31"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="259,5,481,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,15,245,15,245,21,211,21"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,211,56"/>
+<area shape="rect" id="Node000002" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="297,5,443,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,31,283,24,284,29,211,36"/>
+<area shape="rect" id="Node000003" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="259,55,481,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,50,245,53,245,59,210,55"/>
+<area shape="rect" id="Node000004" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="529,55,679,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="482,65,516,65,516,70,482,70"/>
 </map>

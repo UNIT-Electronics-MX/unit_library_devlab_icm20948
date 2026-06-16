@@ -8,7 +8,7 @@ var searchData=
   ['delay_5ftimeh_5',['DELAY_TIMEH',['../ICM20948__regs_8h.html#a0b9620a734608f6814b7b7f818e47575',1,'ICM20948_regs.h']]],
   ['delay_5ftimel_6',['DELAY_TIMEL',['../ICM20948__regs_8h.html#aa7033e3ca087f13e7ba04d8edcee9884',1,'ICM20948_regs.h']]],
   ['delay_5fus_7',['delay_us',['../classInterface__7Semi.html#a7e9d62ef33227b06c85288712dc11c59',1,'Interface_7Semi']]],
-  ['devlab_5ficm20948_8',['DevLab_ICM20948',['../classDevLab__ICM20948.html',1,'DevLab_ICM20948'],['../classDevLab__ICM20948.html#ad71f3c89c3edb515b8cfb3f4b3073e95',1,'DevLab_ICM20948::DevLab_ICM20948()']]],
+  ['devlab_5ficm20948_8',['devlab_icm20948',['../classDevLab__ICM20948.html#ad71f3c89c3edb515b8cfb3f4b3073e95',1,'DevLab_ICM20948::DevLab_ICM20948()'],['../classDevLab__ICM20948.html',1,'DevLab_ICM20948']]],
   ['devlab_5ficm20948_2ecpp_9',['DevLab_ICM20948.cpp',['../DevLab__ICM20948_8cpp.html',1,'']]],
   ['devlab_5ficm20948_2eh_10',['DevLab_ICM20948.h',['../DevLab__ICM20948_8h.html',1,'']]],
   ['dlpf0_5f246hz_11',['DLPF0_246HZ',['../DevLab__ICM20948_8h.html#a62506f4660c8cca0e4f2d55cc6cea833a13cbb7979b56e04b08ae1fce52de8920',1,'DevLab_ICM20948.h']]],

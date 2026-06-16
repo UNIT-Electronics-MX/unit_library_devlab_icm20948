@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['busio_5f7semi_2eh_0',['BusIO_7Semi.h',['../BusIO__7Semi_8h.html',1,'']]]
+  ['devlab_5ficm20948_2ecpp_0',['DevLab_ICM20948.cpp',['../DevLab__ICM20948_8cpp.html',1,'']]],
+  ['devlab_5ficm20948_2eh_1',['DevLab_ICM20948.h',['../DevLab__ICM20948_8h.html',1,'']]]
 ];

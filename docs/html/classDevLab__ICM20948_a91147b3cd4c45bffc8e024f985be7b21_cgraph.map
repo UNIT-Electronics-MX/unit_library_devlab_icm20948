@@ -1,11 +1,25 @@
 <map id="DevLab_ICM20948::beginI2C" name="DevLab_ICM20948::beginI2C">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,70,213,95"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#a31460c48549b1d3081e253706f8b15e6" title=" " alt="" coords="267,5,490,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,67,271,46,272,51,170,73"/>
-<area shape="rect" id="Node000003" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="544,70,767,95"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="214,80,530,80,530,85,214,85"/>
-<area shape="rect" id="Node000004" href="$classDevLab__ICM20948.html#a8bef7eafb3b67eb736f491d0df453b9e" title=" " alt="" coords="261,121,496,146"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,93,298,115,297,121,177,98"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="476,43,581,65,579,70,475,48"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="448,118,571,95,572,101,449,123"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,136,213,162"/>
+<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#a31460c48549b1d3081e253706f8b15e6" title=" " alt="" coords="267,46,490,86"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,134,298,88,300,93,153,139"/>
+<area shape="rect" id="Node000003" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="544,108,767,134"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="213,141,530,125,530,130,214,146"/>
+<area shape="rect" id="Node000004" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="815,82,964,107"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="120,134,176,81,216,53,260,32,341,12,425,4,508,5,590,13,667,27,736,43,842,75,841,80,735,48,666,32,589,18,508,10,425,9,342,17,262,37,219,58,179,85,124,138"/>
+<area shape="rect" id="Node000005" href="$classI2C__Interface.html#ae8147c4d6e54fe2622825d7e17493152" title=" " alt="" coords="292,260,465,286"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="127,160,184,203,222,227,262,247,283,254,282,259,260,251,220,231,181,207,124,164"/>
+<area shape="rect" id="Node000006" href="$classDevLab__ICM20948.html#a8bef7eafb3b67eb736f491d0df453b9e" title=" " alt="" coords="261,211,496,236"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="146,159,262,197,297,206,295,211,261,202,144,164"/>
+<area shape="rect" id="Node000008" href="$classBusIO__7Semi.html#ac7b3d1c425f7187abbe1bbec64d9ccea" title=" " alt="" coords="295,162,462,187"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="214,156,282,163,281,168,213,161"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="481,84,577,103,576,108,480,89"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="490,70,801,87,801,92,490,75"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="766,106,800,102,801,107,767,111"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="469,208,495,197,509,185,518,172,527,159,543,145,562,136,564,141,545,150,531,162,522,175,513,189,497,202,471,213"/>
+<area shape="rect" id="Node000007" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="817,186,962,211"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="496,215,803,200,803,205,497,221"/>
+<area shape="rect" id="Node000009" href="$classBusIO__7Semi.html#a855c7388d4118e632c84c7f8e2e3ddc2" title=" " alt="" coords="568,160,743,186"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="462,171,554,171,554,176,462,177"/>
+<area shape="poly" id="edge14_Node000009_Node000004" title=" " alt="" coords="712,158,766,142,847,110,849,115,768,148,714,163"/>
+<area shape="poly" id="edge13_Node000009_Node000007" title=" " alt="" coords="743,180,803,186,803,192,743,185"/>
 </map>

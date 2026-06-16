@@ -2,18 +2,17 @@
   \batchmode
   % to overcome problems with too many open files
   \let\mypdfximage\pdfximage\def\pdfximage{\immediate\mypdfximage}
-  \RequirePackage{iftex}
-  \ifLuaTeX
-    \directlua{pdf.setminorversion(7)}
-  \fi
-  \ifXeTeX
-    \special{pdf:minorversion 7}
-  \fi
-  \ifPDFTeX
-    \pdfminorversion=7
-  \fi
+  \pdfminorversion=7
   % Set document class depending on configuration
   \documentclass[twoside]{book}
+  %% moved from doxygen.sty due to workaround for LaTex 2019 version and unmaintained tabu package
+  \usepackage{ifthen}
+  \ifx\requestedLaTeXdate\undefined
+    \usepackage{array}
+  \else
+    \usepackage{array}[=2016-10-06]
+  \fi
+  %%
   % Packages required by doxygen
   \makeatletter
   \providecommand\IfFormatAtLeastTF{\@ifl@t@r\fmtversion}
@@ -24,18 +23,10 @@
   \let\protected@wlog\@@protected@wlog
   \makeatother
   \IfFormatAtLeastTF{2016/01/01}{}{\usepackage{fixltx2e}} % for \textsubscript
-  \ifPDFTeX
-    \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
-  \fi
+  \IfFormatAtLeastTF{2015/01/01}{\pdfsuppresswarningpagegroup=1}{}
   \usepackage{doxygen}
   \usepackage{graphicx}
-  \iftutex
-    \usepackage{fontspec}
-    \defaultfontfeatures{Ligatures={TeX}}
-    \usepackage{unicode-math}
-  \else
-    \usepackage[utf8]{inputenc}
-  \fi
+  \usepackage[utf8]{inputenc}
   \usepackage{makeidx}
   \PassOptionsToPackage{warn}{textcomp}
   \usepackage{textcomp}
@@ -44,10 +35,7 @@
   % NLS support packages
   % Define default fonts
   % Font selection
-  \iftutex
-  \else
-    \usepackage[T1]{fontenc}
-  \fi
+  \usepackage[T1]{fontenc}
   % set main and monospaced font
   \usepackage[scaled=.90]{helvet}
 \usepackage{courier}
@@ -112,11 +100,11 @@
     \fancyhead[LE, RO]{\bfseries\thepage}
     \fancyhead[LO]{\bfseries\rightmark}
     \fancyhead[RE]{\bfseries\leftmark}
-    \fancyfoot[LO, RE]{\bfseries\scriptsize Generated on Mon Jun 15 2026 18:\+36:\+22 for Dev\+Lab\+\_\+\+ICM20948 by Doxygen }
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generated on Tue Jun 16 2026 15\+:13\+:59 for Dev\+Lab\+\_\+\+ICM20948 by Doxygen }
   }
   \fancypagestyle{plain}{
     \fancyhf{}
-    \fancyfoot[LO, RE]{\bfseries\scriptsize Generated on Mon Jun 15 2026 18:\+36:\+22 for Dev\+Lab\+\_\+\+ICM20948 by Doxygen }
+    \fancyfoot[LO, RE]{\bfseries\scriptsize Generated on Tue Jun 16 2026 15\+:13\+:59 for Dev\+Lab\+\_\+\+ICM20948 by Doxygen }
     \renewcommand{\headrulewidth}{0pt}
   }
   \pagestyle{fancyplain}
@@ -128,14 +116,13 @@
   }
   % ToC, LoF, LoT, bibliography, and index
   % Indices & bibliography
-  \usepackage[numbers]{natbib}
+  \usepackage{natbib}
   \usepackage[titles]{tocloft}
   \setcounter{tocdepth}{3}
   \setcounter{secnumdepth}{5}
   % creating indexes
   \makeindex
-  \ifPDFTeX
-\usepackage{newunicodechar}
+  \usepackage{newunicodechar}
   \makeatletter
     \def\doxynewunicodechar#1#2{%
     \@tempswafalse
@@ -154,20 +141,15 @@
   \doxynewunicodechar{⁻}{${}^{-}$}% Superscript minus
   \doxynewunicodechar{²}{${}^{2}$}% Superscript two
   \doxynewunicodechar{³}{${}^{3}$}% Superscript three
-\fi
   % Hyperlinks
     % Hyperlinks (required, but should be loaded last)
-    \ifPDFTeX
+    \ifpdf
       \usepackage[pdftex,pagebackref=true]{hyperref}
     \else
-      \ifXeTeX
-        \usepackage[xetex,pagebackref=true]{hyperref}
+      \ifxetex
+        \usepackage[pagebackref=true]{hyperref}
       \else
-        \ifLuaTeX
-          \usepackage[luatex,pagebackref=true]{hyperref}
-        \else
-          \usepackage[ps2pdf,pagebackref=true]{hyperref}
-        \fi
+        \usepackage[ps2pdf,pagebackref=true]{hyperref}
       \fi
     \fi
     \hypersetup{%
@@ -215,9 +197,9 @@
   {\Large Dev\+Lab\+\_\+\+ICM20948}\\
   [1ex]\large 1.\+0.\+0 \\
   \vspace*{1cm}
-  {\large Generated on Mon Jun 15 2026 18:\+36:\+22 for Dev\+Lab\+\_\+\+ICM20948 by Doxygen 1.17.0}\\
+  {\large Generated on Tue Jun 16 2026 15\+:13\+:59 for Dev\+Lab\+\_\+\+ICM20948 by Doxygen 1.9.8}\\
     \vspace*{0.5cm}
-    {\small Mon Jun 15 2026 18:36:22}
+    {\small Tue Jun 16 2026 15:13:59}
   \end{center}
   \end{titlepage}
   \clearemptydoublepage
@@ -228,22 +210,12 @@
   % re-enable anchors again
   \hypersetup{pageanchor=true}
 %--- Begin generated contents ---
-\chapter{Directory Hierarchy}
-\input{dirs}
 \chapter{Hierarchical Index}
 \input{hierarchy}
 \chapter{Class Index}
 \input{annotated}
 \chapter{File Index}
 \input{files}
-\chapter{Directory Documentation}
-\input{dir_65bf8067fd5cf2260b987c5c4d283bf0}
-\input{dir_d28a4824dc47e487b107a5db32ef43c4}
-\input{dir_3f8fc98c40b2eb4e9635f54cb3323d40}
-\input{dir_96cefe71441431261f93ea5e1dca1b9b}
-\input{dir_9c757e291252d3baf4f12bc32e236e45}
-\input{dir_453f9dc5900afa06729291008a6e6a24}
-\input{dir_68267d1309a1af8e8297ef4c3efbcdba}
 \chapter{Class Documentation}
 \input{classBusIO__7Semi}
 \input{classDevLab__ICM20948}
@@ -255,16 +227,30 @@
 \input{classInterface__7Semi}
 \input{classSPI__Interface}
 \chapter{File Documentation}
-\input{admin__pwm_8ino}
-\input{admin__pwm_8ino_source}
-\input{I2C__Accel_8ino}
-\input{I2C__Accel_8ino_source}
-\input{I2C__Basic_8ino}
-\input{I2C__Basic_8ino_source}
-\input{I2C__Magneto_8ino}
-\input{I2C__Magneto_8ino_source}
-\input{SPI__Basic_8ino}
-\input{SPI__Basic_8ino_source}
+\input{gyr__test_8ino}
+\input{gyr__test_8ino_source}
+\input{i2c__accel_8ino}
+\input{i2c__accel_8ino_source}
+\input{i2c__basic_8ino}
+\input{i2c__basic_8ino_source}
+\input{i2c__gyro_8ino}
+\input{i2c__gyro_8ino_source}
+\input{i2c__magneto_8ino}
+\input{i2c__magneto_8ino_source}
+\input{interrupt_8ino}
+\input{interrupt_8ino_source}
+\input{mag__test_8ino}
+\input{mag__test_8ino_source}
+\input{spi__accel_8ino}
+\input{spi__accel_8ino_source}
+\input{spi__basic_8ino}
+\input{spi__basic_8ino_source}
+\input{spi__gyro_8ino}
+\input{spi__gyro_8ino_source}
+\input{test_8ino}
+\input{test_8ino_source}
+\input{test2_8ino}
+\input{test2_8ino_source}
 \input{7Semi__I2C__Interface_8h}
 \input{7Semi__I2C__Interface_8h_source}
 \input{7Semi__Interface_8h}

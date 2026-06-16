@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['devlab_5ficm20948_2ecpp_0',['DevLab_ICM20948.cpp',['../DevLab__ICM20948_8cpp.html',1,'']]],
-  ['devlab_5ficm20948_2eh_1',['DevLab_ICM20948.h',['../DevLab__ICM20948_8h.html',1,'']]]
+  ['gyr_5ftest_2eino_0',['gyr_test.ino',['../gyr__test_8ino.html',1,'']]]
 ];

@@ -1,5 +1,8 @@
 <map id="DevLab_ICM20948::auxConfigSlave" name="DevLab_ICM20948::auxConfigSlave">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,221,45"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="269,13,492,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,23,255,23,255,28,222,28"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,221,63"/>
+<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="269,5,492,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,30,255,27,256,32,222,36"/>
+<area shape="rect" id="Node000003" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="540,31,689,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="222,41,526,41,526,46,222,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="493,27,527,31,526,36,492,33"/>
 </map>

@@ -1,5 +1,11 @@
 <map id="DevLab_ICM20948::getAccelScale" name="DevLab_ICM20948::getAccelScale">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,212,45"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="260,13,483,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,23,246,23,246,28,212,28"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,212,63"/>
+<area shape="rect" id="Node000002" href="$classBusIO__7Semi.html#aed7b0973e323495f8516a0d253089af8" title=" " alt="" coords="286,5,457,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,31,272,25,273,30,212,36"/>
+<area shape="rect" id="Node000004" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="260,55,483,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="212,50,247,53,246,59,212,55"/>
+<area shape="rect" id="Node000003" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="533,5,678,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="457,15,519,15,519,21,457,21"/>
+<area shape="rect" id="Node000005" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="531,55,680,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="483,65,517,65,517,70,483,70"/>
 </map>

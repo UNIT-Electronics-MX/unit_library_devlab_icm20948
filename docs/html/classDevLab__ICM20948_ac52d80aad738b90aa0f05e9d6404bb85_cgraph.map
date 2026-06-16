@@ -1,5 +1,15 @@
 <map id="DevLab_ICM20948::setAccelDLPF" name="DevLab_ICM20948::setAccelDLPF">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,244,31"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="292,5,515,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,15,278,15,278,21,244,21"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,244,80"/>
+<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="507,5,729,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,52,292,41,493,23,493,28,292,46,207,57"/>
+<area shape="rect" id="Node000004" href="$classBusIO__7Semi.html#ac7b3d1c425f7187abbe1bbec64d9ccea" title=" " alt="" coords="292,55,459,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="244,65,278,65,278,70,244,70"/>
+<area shape="rect" id="Node000005" href="$classBusIO__7Semi.html#a855c7388d4118e632c84c7f8e2e3ddc2" title=" " alt="" coords="531,55,705,80"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="194,77,292,90,375,94,458,90,539,80,539,85,459,95,375,100,292,95,193,83"/>
+<area shape="rect" id="Node000003" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="777,5,927,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="730,15,764,15,764,21,730,21"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="459,65,517,65,517,70,459,70"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="678,52,777,31,778,36,679,57"/>
+<area shape="rect" id="Node000006" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="779,55,925,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="705,65,766,65,766,70,705,70"/>
 </map>

@@ -1,5 +1,8 @@
 <map id="DevLab_ICM20948::sleep" name="DevLab_ICM20948::sleep">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,192,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,192,56"/>
 <area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="240,5,463,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,15,226,15,226,21,192,21"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,31,226,28,227,33,192,37"/>
+<area shape="rect" id="Node000003" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="511,31,660,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="192,41,497,41,497,46,192,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="463,27,497,31,497,36,463,33"/>
 </map>

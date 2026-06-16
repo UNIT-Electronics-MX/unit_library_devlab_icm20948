@@ -1,5 +1,9 @@
 <map id="DevLab_ICM20948::readGyro" name="DevLab_ICM20948::readGyro">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,216,31"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="264,5,487,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,15,250,15,250,21,216,21"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,216,56"/>
+<area shape="rect" id="Node000002" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="303,5,448,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,31,289,24,289,29,217,36"/>
+<area shape="rect" id="Node000003" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="264,55,487,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,50,251,53,250,59,216,56"/>
+<area shape="rect" id="Node000004" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="535,55,684,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="487,65,521,65,521,70,487,70"/>
 </map>

@@ -1,5 +1,14 @@
 <map id="DevLab_ICM20948::getSensors" name="DevLab_ICM20948::getSensors">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,228,31"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="276,5,499,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,15,262,15,262,21,228,21"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,228,56"/>
+<area shape="rect" id="Node000002" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="765,5,911,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,28,276,15,406,8,536,7,752,11,752,16,536,12,406,14,276,21,183,33"/>
+<area shape="rect" id="Node000003" href="$classBusIO__7Semi.html#a0d76100d6e83237e0ee97eba7044147d" title=" " alt="" coords="306,31,469,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,41,292,41,292,46,228,46"/>
+<area shape="rect" id="Node000005" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="276,80,499,105"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="187,53,304,75,303,80,187,59"/>
+<area shape="rect" id="Node000004" href="$classBusIO__7Semi.html#aed7b0973e323495f8516a0d253089af8" title=" " alt="" coords="547,31,717,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="469,41,533,41,533,46,469,46"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="717,30,751,26,752,31,718,35"/>
+<area shape="rect" id="Node000006" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="557,80,707,105"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="499,90,544,90,544,95,499,95"/>
 </map>

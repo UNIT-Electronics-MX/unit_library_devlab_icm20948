@@ -1,5 +1,12 @@
 <map id="DevLab_ICM20948::setGyroScale" name="DevLab_ICM20948::setGyroScale">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,208,45"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="256,13,479,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,23,242,23,242,28,208,28"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,208,63"/>
+<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="256,5,479,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,31,242,27,243,33,208,36"/>
+<area shape="rect" id="Node000004" href="$classBusIO__7Semi.html#a855c7388d4118e632c84c7f8e2e3ddc2" title=" " alt="" coords="280,55,455,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,50,266,55,266,61,208,55"/>
+<area shape="rect" id="Node000003" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="527,5,676,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="479,15,513,15,513,21,479,21"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="428,52,526,31,527,36,429,57"/>
+<area shape="rect" id="Node000005" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="529,55,674,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="455,65,515,65,515,70,455,70"/>
 </map>
