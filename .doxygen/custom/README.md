@@ -1,67 +1,67 @@
-# Personalización de Doxygen - Estilo DevLab
+# Doxygen Customization - DevLab Style
 
-Este directorio contiene los archivos de personalización para la documentación generada con Doxygen.
+This directory contains customization files for Doxygen-generated documentation.
 
-## Estructura del proyecto
+## Project Structure
 
 ```
 .doxygen/
-├── Doxyfile           # Configuración principal de Doxygen
+├── Doxyfile           # Main Doxygen configuration
 └── custom/
-    ├── custom.css     # Estilos personalizados (tema DevLab)
-    └── README.md      # Esta documentación
+    ├── custom.css     # Custom styles (DevLab theme)
+    └── README.md      # This documentation
 ```
 
-## Archivos incluidos
+## Included Files
 
 ### `custom.css`
-Hoja de estilos personalizada con el tema de DevLab:
-- **Colores principales**: Azul claro (#4A9EFF), Negro (#1A1A1A), Blanco
-- **Diseño profesional** con identidad DevLab
-- **Responsive** para dispositivos móviles
-- **Tablas mejoradas** con encabezados en azul
-- **Bloques de código** con borde azul distintivo
+Custom stylesheet with DevLab theme:
+- **Main colors**: Light Blue (#4A9EFF), Black (#1A1A1A), White
+- **Professional design** with DevLab identity
+- **Responsive** for mobile devices
+- **Enhanced tables** with blue headers
+- **Code blocks** with distinctive blue border
 
-## Cómo personalizar
+## How to Customize
 
-### 1. Cambiar colores
-Edita las variables CSS en `custom.css`:
+### 1. Change Colors
+Edit CSS variables in `custom.css`:
 
 ```css
 :root {
-    --devlab-blue: #4A9EFF;          /* Color principal azul */
-    --devlab-dark-blue: #2E7FD9;     /* Azul oscuro */
-    --devlab-black: #1A1A1A;         /* Negro para navbar */
-    --devlab-white: #FFFFFF;          /* Blanco */
+    --devlab-blue: #4A9EFF;          /* Primary blue color */
+    --devlab-dark-blue: #2E7FD9;     /* Dark blue */
+    --devlab-black: #1A1A1A;         /* Black for navbar */
+    --devlab-white: #FFFFFF;          /* White */
 }
 ```
 
-### 2. Agregar tu logo
+### 2. Add Your Logo
 
-1. Guarda tu logo en este directorio (ej: `logo.png`)
-2. Edita el `Doxyfile` en `.doxygen/`:
+1. Save your logo in this directory (e.g., `logo.png`)
+2. Edit `Doxyfile` in `.doxygen/`:
    ```
    PROJECT_LOGO = custom/logo.png
    ```
-3. Dimensiones recomendadas: **200x55 píxeles** (máximo)
+3. Recommended dimensions: **200x55 pixels** (maximum)
 
-### 3. Personalizar encabezado/pie de página
+### 3. Customize Header/Footer
 
-Desde el directorio `.doxygen/`, genera los archivos base:
+From the `.doxygen/` directory, generate base files:
 ```bash
 cd .doxygen
 doxygen -w html custom/header.html custom/footer.html custom/stylesheet.css
 ```
 
-Luego edítalos y configura en `Doxyfile`:
+Then edit them and configure in `Doxyfile`:
 ```
 HTML_HEADER = custom/header.html
 HTML_FOOTER = custom/footer.html
 ```
 
-## Configuración actual en Doxyfile
+## Current Doxyfile Configuration
 
-Las siguientes opciones están configuradas:
+The following options are configured:
 
 ```
 HTML_EXTRA_STYLESHEET = custom/custom.css
@@ -69,14 +69,14 @@ HTML_COLORSTYLE = LIGHT
 GENERATE_TREEVIEW = YES
 HTML_DYNAMIC_MENUS = YES
 PROJECT_NAME = "DevLab_ICM20948"
-PROJECT_BRIEF = "Driver para sensor ICM-20948"
+PROJECT_BRIEF = "ICM-20948 Sensor Driver"
 OUTPUT_DIRECTORY = ../docs
 INPUT = ../src ../examples
 ```
 
-## Ejemplos de personalización
+## Customization Examples
 
-### Cambiar a azul más oscuro
+### Change to darker blue
 ```css
 :root {
     --devlab-blue: #2E7FD9;
@@ -85,7 +85,7 @@ INPUT = ../src ../examples
 }
 ```
 
-### Cambiar a azul cian
+### Change to cyan blue
 ```css
 :root {
     --devlab-blue: #00BCD4;
@@ -94,14 +94,14 @@ INPUT = ../src ../examples
 }
 ```
 
-## Referencias
+## References
 
 - [Doxygen Documentation](https://www.doxygen.nl/manual/)
 - [DevLab Website](https://uelectronics.com)
 - [CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
-## Notas
+## Notes
 
-- Los cambios en CSS se aplicarán automáticamente al regenerar la documentación
-- Para probar localmente: `cd .doxygen && doxygen Doxyfile` y abre `docs/html/index.html`
-- El workflow de GitHub Actions aplica estos estilos automáticamente
+- CSS changes will be applied automatically when regenerating documentation
+- To test locally: `cd .doxygen && doxygen Doxyfile` and open `docs/html/index.html`
+- GitHub Actions workflow applies these styles automatically

@@ -1,109 +1,109 @@
-# Configuración de Doxygen
+# Doxygen Configuration
 
-Este directorio contiene toda la configuración de Doxygen para generar la documentación del proyecto DevLab_ICM20948.
+This directory contains all Doxygen configuration files for generating the DevLab_ICM20948 project documentation.
 
-## Estructura
+## Structure
 
 ```
 .doxygen/
-├── Doxyfile                  # Archivo de configuración principal de Doxygen
-├── README.md                 # Esta documentación
+├── Doxyfile                  # Main Doxygen configuration file
+├── README.md                 # This documentation
 └── custom/
-    ├── custom.css            # Estilos personalizados (tema Texas Instruments)
-    └── README.md             # Guía de personalización de estilos
+    ├── custom.css            # Custom styles (DevLab theme)
+    └── README.md             # Style customization guide
 ```
 
-## Uso
+## Usage
 
-### Generar documentación localmente
+### Generate documentation locally
 
-Desde la raíz del proyecto:
+From the project root:
 
 ```bash
 cd .doxygen
 doxygen Doxyfile
 ```
 
-La documentación se generará en `docs/html/` y `docs/latex/`.
+Documentation will be generated in `docs/html/` and `docs/latex/`.
 
-### Ver la documentación
+### View documentation
 
-Abre `docs/html/index.html` en tu navegador.
+Open `docs/html/index.html` in your browser.
 
-## Configuración actual
+## Current Configuration
 
-### Directorios de entrada
-- `../src/` - Código fuente del driver
-- `../examples/` - Ejemplos de uso
+### Input Directories
+- `../src/` - Driver source code
+- `../examples/` - Usage examples
 
-### Directorios de salida
-- `../docs/html/` - Documentación HTML
-- `../docs/latex/` - Documentación LaTeX (solo en tags)
+### Output Directories
+- `../docs/html/` - HTML documentation
+- `../docs/latex/` - LaTeX documentation (tags only)
 
-### Estilo
-- **Tema personalizado**: DevLab (azul claro, negro, blanco)
+### Style
+- **Custom theme**: DevLab (light blue, black, white)
 - **CSS**: `custom/custom.css`
-- **Modo**: Modo claro (LIGHT)
-- **Tree view**: Activado para navegación mejorada
+- **Mode**: Light mode
+- **Tree view**: Enabled for improved navigation
 
-## Personalización
+## Customization
 
-Para personalizar los estilos, edita `custom/custom.css`. 
+To customize styles, edit `custom/custom.css`. 
 
-Ver la [guía de personalización](custom/README.md) para más detalles.
+See the [customization guide](custom/README.md) for more details.
 
 ## GitHub Actions
 
-El workflow `.github/workflows/doxygen.yml` genera automáticamente la documentación cuando:
-- Se hace push a `main`
-- Se crea un tag `v*`
-- Se ejecuta manualmente (workflow_dispatch)
+The workflow `.github/workflows/doxygen.yml` automatically generates documentation when:
+- Push to `main`
+- Tag created with `v*` pattern
+- Manual execution (workflow_dispatch)
 
-Los cambios se publican automáticamente en GitHub Pages y se hace commit de los archivos generados.
+Changes are automatically published to GitHub Pages and generated files are committed.
 
-## Comandos útiles
+## Useful Commands
 
-### Generar archivos base para personalización
+### Generate base files for customization
 
 ```bash
 cd .doxygen
 doxygen -w html custom/header.html custom/footer.html custom/stylesheet.css
 ```
 
-### Verificar la configuración
+### Verify configuration
 
 ```bash
 cd .doxygen
-doxygen -g - > /dev/null  # Muestra solo warnings
+doxygen -g - > /dev/null  # Shows warnings only
 ```
 
-### Actualizar Doxyfile a nueva versión
+### Update Doxyfile to new version
 
 ```bash
 cd .doxygen
-doxygen -u Doxyfile  # Actualiza el archivo con nuevas opciones
+doxygen -u Doxyfile  # Updates file with new options
 ```
 
-## Solución de problemas
+## Troubleshooting
 
-### Los estilos no se aplican
+### Styles not applying
 
-1. Verifica que `custom/custom.css` existe
-2. Verifica la ruta en Doxyfile: `HTML_EXTRA_STYLESHEET = custom/custom.css`
-3. Regenera la documentación limpiando primero: `rm -rf ../docs/html ../docs/latex`
+1. Verify that `custom/custom.css` exists
+2. Check path in Doxyfile: `HTML_EXTRA_STYLESHEET = custom/custom.css`
+3. Regenerate documentation after cleaning: `rm -rf ../docs/html ../docs/latex`
 
-### Archivos no encontrados
+### Files not found
 
-Todas las rutas en Doxyfile son relativas a `.doxygen/`:
+All paths in Doxyfile are relative to `.doxygen/`:
 - `INPUT = ../src ../examples`
 - `OUTPUT_DIRECTORY = ../docs`
 - `HTML_EXTRA_STYLESHEET = custom/custom.css`
 
-### El warning log no aparece
+### Warning log not appearing
 
-El archivo se genera en `.doxygen/doxygen_warnings.log` (relativo al directorio donde se ejecuta doxygen).
+The file is generated at `.doxygen/doxygen_warnings.log` (relative to the directory where doxygen runs).
 
-## Referencias
+## References
 
 - [Doxygen Manual](https://www.doxygen.nl/manual/)
 - [Doxygen Configuration](https://www.doxygen.nl/manual/config.html)
