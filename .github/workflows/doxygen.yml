@@ -24,10 +24,6 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-env:
-  DOXYGEN_VERSION: "1.12.0"
-  DOXYGEN_PREFIX: "${{ github.workspace }}/.doxygen"
-
 jobs:
   docs:
     name: Build documentation
@@ -36,17 +32,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install build dependencies
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            bison \
-            build-essential \
-            cmake \
-            flex \
-            graphviz \
-            python3
+            doxygen \
+            graphviz
 
       - name: Install LaTeX dependencies
         if: ${{ startsWith(github.ref, 'refs/tags/') || (github.event_name == 'workflow_dispatch' && inputs.build_pdf) }}
@@ -56,34 +51,9 @@ jobs:
             texlive-latex-extra \
             texlive-latex-recommended
 
-      - name: Cache Doxygen build
-        id: cache-doxygen
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.DOXYGEN_PREFIX }}
-          key: ${{ runner.os }}-doxygen-${{ env.DOXYGEN_VERSION }}
-
-      - name: Build Doxygen from source
-        if: steps.cache-doxygen.outputs.cache-hit != 'true'
-        run: |
-          curl -fsSLO "https://www.doxygen.nl/files/doxygen-${DOXYGEN_VERSION}.src.tar.gz"
-          tar -xzf "doxygen-${DOXYGEN_VERSION}.src.tar.gz"
-          cmake \
-            -S "doxygen-${DOXYGEN_VERSION}" \
-            -B "doxygen-${DOXYGEN_VERSION}/build" \
-            -G "Unix Makefiles" \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_INSTALL_PREFIX="${DOXYGEN_PREFIX}"
-          cmake --build "doxygen-${DOXYGEN_VERSION}/build" --parallel "$(nproc)"
-          cmake --install "doxygen-${DOXYGEN_VERSION}/build"
-
-      - name: Add Doxygen to PATH
-        run: echo "${DOXYGEN_PREFIX}/bin" >> "${GITHUB_PATH}"
-
-      - name: Verify Doxygen
+      - name: Verify Doxygen installation
         run: |
           doxygen --version
-          test "$(doxygen --version)" = "${DOXYGEN_VERSION}"
           dot -V
 
       - name: Clean previous generated docs
