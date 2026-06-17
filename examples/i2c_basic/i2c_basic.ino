@@ -1,5 +1,6 @@
 /***************************************************************
  * @file    I2C_Basic.ino
+ * @author  7Semi,Jonathan Mejorado Lopez 
  * @brief   Minimal I2C bring-up for 7Semi ICM-20948 +
  *          basic Accel/Gyro/Temp/Mag readout (updated API).
  *

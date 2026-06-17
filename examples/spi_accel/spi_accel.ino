@@ -1,5 +1,6 @@
 /***************************************************************
  * @file    SPI_Accel.ino
+ * @author  7Semi,Jonathan Mejorado Lopez
  * @brief   Minimal SPI bring-up for 7Semi ICM-20948 on ESP32 +
  *          continuous accelerometer readout.
  *

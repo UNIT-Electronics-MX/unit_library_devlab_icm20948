@@ -2,6 +2,7 @@
  * @file    ICM20948_SPI_Gyro.ino
  * @brief   Minimal SPI bring-up for 7Semi ICM-20948 on ESP32/UNO +
  *          continuous gyroscope readout.
+ * @author  7Semi,Jonathan Mejorado Lopez
  *
  * Features
  * - SPI init on custom pins

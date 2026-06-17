@@ -1,5 +1,6 @@
 /**
  * @file test.ino
+ * @author Jonathan Mejorado Lopez
  * @brief Accelerometer DLPF validation sketch for the 7Semi ICM-20948.
  * @details Runs an I2C accelerometer sweep across DLPF settings, prints sample
  * data to Serial, and is intended for bench validation with the sensor flat and

@@ -1,5 +1,6 @@
 /***************************************************************
  * @file    I2C_Accel.ino
+ * @author  7Semi,Jonathan Mejorado Lopez 
  * @brief   Minimal I2C bring-up for 7Semi ICM-20948 on UNO/ESP32 +
  *          continuous accelerometer readout 
  *

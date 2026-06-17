@@ -1,5 +1,6 @@
 /***************************************************************
  * @file    I2C_Gyro.ino
+ * @author  7Semi,Jonathan Mejorado Lopez 
  * @brief   Minimal I2C bring-up for 7Semi ICM-20948 on ESP32/UNO +
  *          continuous gyroscope readout.
  *
@@ -92,30 +93,29 @@ void setup() {
    * FCHOICE=0 (DLPF on):
    * - GYRO_DLPFCFG_1 : 3dB ≈ 196.6 Hz, NBW ≈ 229.8 Hz
    * - GYRO_DLPFCFG_2 : 3dB ≈ 151.8 Hz, NBW ≈ 187.6 Hz
-   * - GYRO_DLPFCFG_3 : 3dB ≈ 119.5 Hz, NBW ≈ 154.3 Hz   ← good default
+   * - GYRO_DLPFCFG_3 : 3dB ≈ 119.5 Hz, NBW ≈ 154.3 Hz    
    * - GYRO_DLPFCFG_4 : 3dB ≈ 51.2  Hz, NBW ≈ 73.3  Hz
-   * - GYRO_DLPFCFG_5 : 3dB ≈ 23.9  Hz, NBW ≈ 35.9  Hz
+   * - GYRO_DLPFCFG_5 : 3dB ≈ 23.9  Hz, NBW ≈ 35.9  Hz  ← good default
    * - GYRO_DLPFCFG_6 : 3dB ≈ 5.7   Hz, NBW ≈ 8.3   Hz
    * - GYRO_DLPFCFG_7 : 3dB ≈ 473   Hz, NBW ≈ 499   Hz
    *
    * FCHOICE=1 (Bypass) : very wide (use with care; highest noise)
    */
-  if (!imu.GyroConfig(/*DLPFCFG*/ GYRO_DLPFCFG_4,
-                      /*FS_SEL*/   dps2000,
-                      /*FCHOICE*/  true,       // DLPF ON (recommended)
-                      /*X*/ true, /*Y*/ true, /*Z*/ true,
-                      /*AVGCFG*/   0)) {
-    Serial.println(F("GyroConfig failed."));
+  if(!imu.setDLPF(ICM20948_Gyro_DLPF::DLPF_23HZ, false)) {
+    Serial.println(F("setDLPF failed."));
+  }
+  /* Set gyroscope full-scale range. */
+  if(!imu.setGyroScale(ICM20948_Gyro_FullScale::DPS_2000)) {
+    Serial.println(F("setGyroScale failed."));
   }
 
   /* Set gyroscope output data rate (ODR)
-   * - Gyro_SMPLRT(rate_hz)
-   * - Base (DLPF path) = 1100 Hz
-   * - Valid range: ~4.3–1100 Hz
-   * - Example: 1000 Hz
+   * - Gyro_DIV_RATE = 1100 / (1 + DIV_RATE)
+   * - DIV_RATE = 0..255
+   * - Example: DIV_RATE=5 → ODR ≈ 183.33 Hz
    */
-  if (!imu.Gyro_SMPLRT(1000)) {
-    Serial.println(F("Gyro_SMPLRT failed."));
+  if (!imu.setGyroDivRate(5)) { // 1100 / (1 + 5) = 183.33 Hz
+    Serial.println(F("setGyroDivRate failed."));
   }
 }
 
