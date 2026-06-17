@@ -14,21 +14,23 @@
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="504,269,458,297,404,322,361,335,360,330,402,318,455,292,501,265"/>
 <area shape="rect" id="Node000013" href="$classDevLab__ICM20948.html#a0bea2c662c285120253851c80289e077" title=" " alt="" coords="181,431,385,457"/>
 <area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="523,273,505,308,479,348,445,389,404,422,381,434,379,429,401,418,441,385,474,345,500,305,519,271"/>
-<area shape="rect" id="Node000015" href="$classDevLab__ICM20948.html#a6c9c09f8b2ab39f5de7f48c6c743ffc4" title=" " alt="" coords="165,382,402,407"/>
-<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="517,272,470,323,438,349,404,372,372,384,370,379,401,367,435,345,466,319,513,268"/>
-<area shape="rect" id="Node000016" href="$classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186" title=" " alt="" coords="172,119,395,145"/>
-<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="506,227,459,192,402,160,364,147,366,142,404,155,462,188,509,223"/>
+<area shape="rect" id="Node000016" href="$classDevLab__ICM20948.html#a6c9c09f8b2ab39f5de7f48c6c743ffc4" title=" " alt="" coords="165,382,402,407"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="517,272,470,324,439,351,404,373,376,384,374,379,401,368,435,346,466,320,513,268"/>
+<area shape="rect" id="Node000017" href="$classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186" title=" " alt="" coords="172,119,395,145"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="506,227,459,192,402,160,364,147,366,142,404,155,462,188,509,223"/>
 <area shape="rect" id="Node000004" href="$gyr__test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Initialize I2C, reset/wake the IMU, enable gyro, and start the sweep." alt="" coords="31,177,90,202"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="185,282,163,273,136,258,111,239,73,205,76,201,114,235,139,253,165,268,187,277"/>
 <area shape="rect" id="Node000006" href="$spi__accel_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Configure the IMU for accelerometer&#45;only operation over SPI." alt="" coords="31,70,90,95"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="166,85,90,85,90,80,166,80"/>
-<area shape="rect" id="Node000010" href="$test_8ino.html#a327f4fbd9f22daba4f8a6f3f1c13f729" title="Apply one accelerometer full&#45;scale and DLPF configuration." alt="" coords="5,283,116,309"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="208,332,163,323,115,311,116,306,165,317,209,327"/>
-<area shape="rect" id="Node000011" href="$test2_8ino.html#a73c1d2766fc4db839bb9adf5cab93c80" title="Apply one accelerometer full&#45;scale, DLPF, and averaging configuration." alt="" coords="5,333,116,358"/>
-<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="150,348,116,348,116,343,150,343"/>
-<area shape="rect" id="Node000012" href="$i2c__accel_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Configure the IMU for accelerometer&#45;only operation over I2C." alt="" coords="31,382,90,407"/>
-<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="204,363,165,372,91,390,89,385,163,367,203,358"/>
-<area shape="rect" id="Node000014" href="$gyr__test_8ino.html#a327f4fbd9f22daba4f8a6f3f1c13f729" title="Apply one gyroscope full&#45;scale and DLPF configuration." alt="" coords="5,431,116,457"/>
-<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="167,447,116,447,116,441,167,441"/>
-<area shape="poly" id="edge16_Node000016_Node000004" title=" " alt="" coords="205,150,165,160,91,182,90,177,163,155,204,145"/>
+<area shape="rect" id="Node000010" href="$test_8ino.html#a327f4fbd9f22daba4f8a6f3f1c13f729" title="Apply one accelerometer full&#45;scale and DLPF configuration." alt="" coords="5,333,116,358"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="150,348,116,348,116,343,150,343"/>
+<area shape="rect" id="Node000011" href="$test2_8ino.html#a73c1d2766fc4db839bb9adf5cab93c80" title="Apply one accelerometer full&#45;scale, DLPF, and averaging configuration." alt="" coords="5,382,116,407"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="209,364,165,373,116,384,115,379,163,368,208,358"/>
+<area shape="rect" id="Node000012" href="$i2c__accel_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Configure the IMU for accelerometer&#45;only operation over I2C." alt="" coords="31,283,90,309"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="208,332,163,323,90,305,91,300,165,317,209,327"/>
+<area shape="rect" id="Node000014" href="$gyr__test_8ino.html#a327f4fbd9f22daba4f8a6f3f1c13f729" title="Apply one gyroscope full&#45;scale and DLPF configuration." alt="" coords="5,481,116,506"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="213,462,117,484,116,479,211,457"/>
+<area shape="rect" id="Node000015" href="$i2c__gyro_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Configure the IMU for gyroscope&#45;only operation over I2C." alt="" coords="31,431,90,457"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="167,447,90,447,90,441,167,441"/>
+<area shape="poly" id="edge17_Node000017_Node000004" title=" " alt="" coords="205,150,165,160,91,182,90,177,163,155,204,145"/>
 </map>

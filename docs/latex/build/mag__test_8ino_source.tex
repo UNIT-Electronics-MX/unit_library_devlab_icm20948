@@ -4,143 +4,144 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00001}00001\ \textcolor{comment}{/**}}
 \DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ mag\_test.ino}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ Magnetometer\ operation-\/mode\ sweep\ for\ the\ 7Semi\ ICM-\/20948.}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @details\ Initializes\ the\ AK09916\ magnetometer\ through\ the\ ICM-\/20948\ internal}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ I2C\ master,\ iterates\ through\ continuous\ measurement\ modes,\ and\ prints\ CSV-\/like}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ magnetic\ field\ samples\ to\ the\ Serial\ monitor.}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00007}00007\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00011}00011\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00012}00012\ \textcolor{comment}{//\ PINES\ I2C\ —\ ESP32C6\ NANO\ Unit\ Electronics}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00013}00013\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00014}00014\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00015}\mbox{\hyperlink{mag__test_8ino_a526d580d324bce60a3e964066fae77e3}{00015}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00016}00016\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00017}\mbox{\hyperlink{mag__test_8ino_a06c967e78bcedcee909a70764f879433}{00017}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00018}00018\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00019}\mbox{\hyperlink{mag__test_8ino_a8b7500a141450a9df212017430c0df9e}{00019}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00020}00020\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00021}\mbox{\hyperlink{mag__test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00021}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00022}00022\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00023}00023\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00024}\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00024}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00025}00025\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00026}00026\ \textcolor{comment}{/**\ @brief\ Print\ a\ separator\ line\ to\ Serial.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00027}\mbox{\hyperlink{mag__test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{00027}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{printLinea}}()\ \ \ \ \ \ \{\ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));\ \}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00028}00028\ \textcolor{comment}{/**\ @brief\ Print\ a\ double\ separator\ line\ to\ Serial.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00029}\mbox{\hyperlink{mag__test_8ino_a42633dcf8fe2689c57c8113825f74c66}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}()\ \{\ Serial.println(F(\textcolor{stringliteral}{"{}============================================================"{}}));\ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00030}00030\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00031}00031\ \textcolor{comment}{/**\ @brief\ Magnetometer\ operating\ modes\ tested\ by\ the\ sweep.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00032}\mbox{\hyperlink{mag__test_8ino_aab69c51478cd4dd7461938611ebc08bf}{00032}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bb}{ICM20948\_Op\_Mode}}\ \mbox{\hyperlink{mag__test_8ino_aab69c51478cd4dd7461938611ebc08bf}{opMode}}[]\ =\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00033}00033\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bbaeb5ecad776b2d1994801f86a1046bdd4}{ICM20948\_Op\_Mode::MODE\_POWER\_DOWN}},}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00034}00034\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba7974d706e59ca8d22b8782dfdabce86e}{ICM20948\_Op\_Mode::MODE\_SINGLE\_MEASUREMENT}},}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00035}00035\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bbaf2654418af9eab4757668f4339177c53}{ICM20948\_Op\_Mode::MODE\_CONTINUOUS\_1}},}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00036}00036\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba2e879cf4786e911224250d6b0194a582}{ICM20948\_Op\_Mode::MODE\_CONTINUOUS\_2}},}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00037}00037\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba7f0a8ea70bc11d0092f0cd5d87ce6a3f}{ICM20948\_Op\_Mode::MODE\_CONTINUOUS\_3}},}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00038}00038\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba9a1ea869de47842c32f3676129ee81af}{ICM20948\_Op\_Mode::MODE\_CONTINUOUS\_4}},}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00039}00039\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba6c83671c670b651f57b5b009b6a2229b}{ICM20948\_Op\_Mode::MODE\_SELF\_TEST}}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00040}00040\ \};}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00041}00041\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00042}00042\ \textcolor{comment}{/**\ @brief\ Text\ labels\ matching\ the\ operating\ modes\ printed\ in\ the\ sweep.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00043}\mbox{\hyperlink{mag__test_8ino_a9d54bec7e353a4e4bd28e1b1d346f47d}{00043}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{mag__test_8ino_a9d54bec7e353a4e4bd28e1b1d346f47d}{etiquetasOpModeCfg}}[]\ =\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00044}00044\ \ \ \textcolor{stringliteral}{"{}PowerDown"{}},\textcolor{stringliteral}{"{}SingleMeasure"{}},\textcolor{stringliteral}{"{}Continuo1"{}},\textcolor{stringliteral}{"{}Continuo2"{}},\textcolor{stringliteral}{"{}Continuo3"{}},\textcolor{stringliteral}{"{}Continuo4"{}}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00045}00045\ \};\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00046}00046\ \textcolor{comment}{/**\ @brief\ Number\ of\ printable\ magnetometer\ operation\ modes.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00047}\mbox{\hyperlink{mag__test_8ino_a70317553f12ff1d3b53c82107a6cb5cf}{00047}}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{mag__test_8ino_a70317553f12ff1d3b53c82107a6cb5cf}{N\_OPM}}\ =\ 6;}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00048}00048\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00049}00049\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00050}00050\ \textcolor{comment}{\ *\ @brief\ Initialize\ the\ magnetometer\ and\ collect\ samples\ for\ each\ mode.}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00051}00051\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00052}\mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{applySettings}}()\{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00053}00053\ \ \textcolor{comment}{/*\ Initialize\ magnetometer.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00054}00054\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a7b137192f8eb987cd221808c2c6c3561}{initMag}}())\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00055}00055\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ initMag()\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00057}00057\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00058}00058\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 2;\ i\ <\ \mbox{\hyperlink{mag__test_8ino_a70317553f12ff1d3b53c82107a6cb5cf}{N\_OPM}};\ i++)\{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a0882a30454b0716953f5f375613d24b3}{setMagOpMode}}(\mbox{\hyperlink{mag__test_8ino_aab69c51478cd4dd7461938611ebc08bf}{opMode}}[i]);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00060}00060\ \ \ \ \ \ delay(100);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00061}00061\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Magnetometer\ ready"{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00062}00062\ \ \ \ \ \ \textcolor{keywordtype}{float}\ mx,\ my,\ mz;}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00064}00064\ \ \ \ \ \textcolor{comment}{/*\ Read\ magnetometer\ data}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00065}00065\ \textcolor{comment}{\ \ \ \ *\ -\/\ Output\ in\ microtesla\ (uT)}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00066}00066\ \textcolor{comment}{\ \ \ \ *\ -\/\ Returns\ true\ on\ success}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00067}00067\ \textcolor{comment}{\ \ \ \ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ r\ =\ 0;\ r\ \ <\ 500\ ;\ r++)\{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00069}00069\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a9f9b29867c2b78efef3ef9688f886314}{readMag}}(mx,\ my,\ mz))\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00070}00070\ \ \ \ \ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}[\%d]"{}},r);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00071}00071\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{};"{}});}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00072}00072\ \ \ \ \ \ \ \ \ Serial.print(\mbox{\hyperlink{mag__test_8ino_a9d54bec7e353a4e4bd28e1b1d346f47d}{etiquetasOpModeCfg}}[i]);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00073}00073\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{};"{}});}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00074}00074\ \ \ \ \ \ \ \ \ Serial.print(mx,\ 2);\ Serial.print(F(\textcolor{stringliteral}{"{};\ "{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00075}00075\ \ \ \ \ \ \ \ \ Serial.print(my,\ 2);\ Serial.print(F(\textcolor{stringliteral}{"{};\ "{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00076}00076\ \ \ \ \ \ \ \ \ Serial.println(mz,\ 2);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00077}00077\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00078}00078\ \ \ \ \ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Mag\ read\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00079}00079\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00080}00080\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00081}00081\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00082}00082\ \ \ \ \ delay(500);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00083}00083\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00085}00085\ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00086}00086\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00087}00087\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00088}00088\ \textcolor{comment}{\ *\ @brief\ Initialize\ I2C,\ verify\ the\ IMU,\ enable\ sensors,\ and\ start\ the\ sweep.}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00089}00089\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00090}\mbox{\hyperlink{mag__test_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00090}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00091}00091\ \ \ \textcolor{comment}{//\ put\ your\ setup\ code\ here,\ to\ run\ once:}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00092}00092\ \ Serial.begin(115200);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00093}00093\ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00094}00094\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ (I2C)\ —\ Magnetometer\ Example"{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00095}00095\ \ \ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00096}00096\ \ \ Wire.begin(\mbox{\hyperlink{mag__test_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\mbox{\hyperlink{mag__test_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00097}00097\ \ \ \textcolor{comment}{/*\ Initialize\ IMU.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00098}00098\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{mag__test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ 400000))\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00099}00099\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ beginI2C()\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00101}00101\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00102}00102\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00103}00103\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready\ (I2C)."{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00105}00105\ \ \ \textcolor{comment}{/*\ Verify\ device.\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00106}00106\ \ \ uint8\_t\ who;}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00107}00107\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who)\ ||\ who\ !=\ 0xEA)\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00108}00108\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ WHO\_AM\_I\ mismatch"{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00110}00110\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00111}00111\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00112}00112\ \ \ Serial.print(F(\textcolor{stringliteral}{"{}WHO\_AM\_I\ =\ 0x"{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00113}00113\ \ \ Serial.println(who,\ HEX);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00114}00114\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00115}00115\ \ \ \textcolor{comment}{/*\ Enable\ required\ sensors\ (mag\ uses\ internal\ I2C\ master)}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00116}00116\ \textcolor{comment}{\ \ \ *\ -\/\ accel/gyro\ not\ strictly\ required\ but\ safe\ to\ keep\ ON}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00117}00117\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00118}00118\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}))\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00119}00119\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00120}00120\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00121}00121\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00122}00122\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Sensor\ listo.\(\backslash\)n"{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00123}00123\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Sensor\ PLANO\ y\ QUIETO\ sobre\ la\ mesa."{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00124}00124\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Iniciando\ en\ 5\ segundos..."{}}));}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00125}00125\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 5;\ i\ >\ 0;\ i-\/-\/)\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00126}00126\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ \ \%d...\(\backslash\)n"{}},\ i);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00127}00127\ \ \ \ \ delay(1000);}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00128}00128\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00129}00129\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00130}00130\ \ \ \mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{applySettings}}();}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00131}00131\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00132}00132\ \}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00133}00133\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00134}00134\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00135}00135\ \textcolor{comment}{\ *\ @brief\ Empty\ loop;\ this\ sketch\ runs\ the\ magnetometer\ sweep\ once\ in\ setup().}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00136}00136\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00137}\mbox{\hyperlink{mag__test_8ino_afe461d27b9c48d5921c00d521181f12f}{00137}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00138}00138\ \ \ \textcolor{comment}{//\ put\ your\ main\ code\ here,\ to\ run\ repeatedly:}}
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00139}00139\ }
-\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00140}00140\ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ Magnetometer\ operation-\/mode\ sweep\ for\ the\ DevLab\ ICM-\/20948.}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @author\ Jonathan\ Mejorado\ Lopez}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ @details\ Initializes\ the\ AK09916\ magnetometer\ through\ the\ ICM-\/20948\ internal}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ I2C\ master,\ iterates\ through\ continuous\ measurement\ modes,\ and\ prints\ CSV-\/like}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ magnetic\ field\ samples\ to\ the\ Serial\ monitor.}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00008}00008\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00012}00012\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00013}00013\ \textcolor{comment}{//\ PINES\ I2C\ —\ ESP32C6\ NANO\ Unit\ Electronics}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00014}00014\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00015}00015\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00016}\mbox{\hyperlink{mag__test_8ino_a526d580d324bce60a3e964066fae77e3}{00016}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00017}00017\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00018}\mbox{\hyperlink{mag__test_8ino_a06c967e78bcedcee909a70764f879433}{00018}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00019}00019\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00020}\mbox{\hyperlink{mag__test_8ino_a8b7500a141450a9df212017430c0df9e}{00020}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00021}00021\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00022}\mbox{\hyperlink{mag__test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00022}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00023}00023\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00024}00024\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00025}\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00025}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00026}00026\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00027}00027\ \textcolor{comment}{/**\ @brief\ Print\ a\ separator\ line\ to\ Serial.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00028}\mbox{\hyperlink{mag__test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{00028}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{printLinea}}()\ \ \ \ \ \ \{\ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));\ \}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00029}00029\ \textcolor{comment}{/**\ @brief\ Print\ a\ double\ separator\ line\ to\ Serial.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00030}\mbox{\hyperlink{mag__test_8ino_a42633dcf8fe2689c57c8113825f74c66}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}()\ \{\ Serial.println(F(\textcolor{stringliteral}{"{}============================================================"{}}));\ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00031}00031\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00032}00032\ \textcolor{comment}{/**\ @brief\ Magnetometer\ operating\ modes\ tested\ by\ the\ sweep.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00033}\mbox{\hyperlink{mag__test_8ino_aab69c51478cd4dd7461938611ebc08bf}{00033}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bb}{ICM20948\_Op\_Mode}}\ \mbox{\hyperlink{mag__test_8ino_aab69c51478cd4dd7461938611ebc08bf}{opMode}}[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00034}00034\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bbaeb5ecad776b2d1994801f86a1046bdd4}{ICM20948\_Op\_Mode::MODE\_POWER\_DOWN}},}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00035}00035\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba7974d706e59ca8d22b8782dfdabce86e}{ICM20948\_Op\_Mode::MODE\_SINGLE\_MEASUREMENT}},}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00036}00036\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bbaf2654418af9eab4757668f4339177c53}{ICM20948\_Op\_Mode::MODE\_CONTINUOUS\_1}},}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00037}00037\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba2e879cf4786e911224250d6b0194a582}{ICM20948\_Op\_Mode::MODE\_CONTINUOUS\_2}},}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00038}00038\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba7f0a8ea70bc11d0092f0cd5d87ce6a3f}{ICM20948\_Op\_Mode::MODE\_CONTINUOUS\_3}},}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00039}00039\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba9a1ea869de47842c32f3676129ee81af}{ICM20948\_Op\_Mode::MODE\_CONTINUOUS\_4}},}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00040}00040\ \ \ \mbox{\hyperlink{DevLab__ICM20948_8h_ad14b8d7e0be37ca0ccaf45ccc31c18bba6c83671c670b651f57b5b009b6a2229b}{ICM20948\_Op\_Mode::MODE\_SELF\_TEST}}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00041}00041\ \};}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00042}00042\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00043}00043\ \textcolor{comment}{/**\ @brief\ Text\ labels\ matching\ the\ operating\ modes\ printed\ in\ the\ sweep.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00044}\mbox{\hyperlink{mag__test_8ino_a9d54bec7e353a4e4bd28e1b1d346f47d}{00044}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{mag__test_8ino_a9d54bec7e353a4e4bd28e1b1d346f47d}{etiquetasOpModeCfg}}[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00045}00045\ \ \ \textcolor{stringliteral}{"{}PowerDown"{}},\textcolor{stringliteral}{"{}SingleMeasure"{}},\textcolor{stringliteral}{"{}Continuo1"{}},\textcolor{stringliteral}{"{}Continuo2"{}},\textcolor{stringliteral}{"{}Continuo3"{}},\textcolor{stringliteral}{"{}Continuo4"{}}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00046}00046\ \};\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00047}00047\ \textcolor{comment}{/**\ @brief\ Number\ of\ printable\ magnetometer\ operation\ modes.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00048}\mbox{\hyperlink{mag__test_8ino_a70317553f12ff1d3b53c82107a6cb5cf}{00048}}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{mag__test_8ino_a70317553f12ff1d3b53c82107a6cb5cf}{N\_OPM}}\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00049}00049\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00050}00050\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00051}00051\ \textcolor{comment}{\ *\ @brief\ Initialize\ the\ magnetometer\ and\ collect\ samples\ for\ each\ mode.}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00052}00052\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00053}\mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{applySettings}}()\{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00054}00054\ \ \textcolor{comment}{/*\ Initialize\ magnetometer.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00055}00055\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a7b137192f8eb987cd221808c2c6c3561}{initMag}}())\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00056}00056\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ initMag()\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00058}00058\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00059}00059\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 2;\ i\ <\ \mbox{\hyperlink{mag__test_8ino_a70317553f12ff1d3b53c82107a6cb5cf}{N\_OPM}};\ i++)\{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a0882a30454b0716953f5f375613d24b3}{setMagOpMode}}(\mbox{\hyperlink{mag__test_8ino_aab69c51478cd4dd7461938611ebc08bf}{opMode}}[i]);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00061}00061\ \ \ \ \ \ delay(100);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00062}00062\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Magnetometer\ ready"{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00063}00063\ \ \ \ \ \ \textcolor{keywordtype}{float}\ mx,\ my,\ mz;}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00065}00065\ \ \ \ \ \textcolor{comment}{/*\ Read\ magnetometer\ data}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00066}00066\ \textcolor{comment}{\ \ \ \ *\ -\/\ Output\ in\ microtesla\ (uT)}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00067}00067\ \textcolor{comment}{\ \ \ \ *\ -\/\ Returns\ true\ on\ success}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00068}00068\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ r\ =\ 0;\ r\ \ <\ 500\ ;\ r++)\{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00070}00070\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a9f9b29867c2b78efef3ef9688f886314}{readMag}}(mx,\ my,\ mz))\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00071}00071\ \ \ \ \ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}[\%d]"{}},r);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00072}00072\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{};"{}});}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00073}00073\ \ \ \ \ \ \ \ \ Serial.print(\mbox{\hyperlink{mag__test_8ino_a9d54bec7e353a4e4bd28e1b1d346f47d}{etiquetasOpModeCfg}}[i]);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00074}00074\ \ \ \ \ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{};"{}});}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00075}00075\ \ \ \ \ \ \ \ \ Serial.print(mx,\ 2);\ Serial.print(F(\textcolor{stringliteral}{"{};\ "{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00076}00076\ \ \ \ \ \ \ \ \ Serial.print(my,\ 2);\ Serial.print(F(\textcolor{stringliteral}{"{};\ "{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00077}00077\ \ \ \ \ \ \ \ \ Serial.println(mz,\ 2);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00078}00078\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00079}00079\ \ \ \ \ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Mag\ read\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00080}00080\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00081}00081\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00082}00082\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00083}00083\ \ \ \ \ delay(500);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00087}00087\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00088}00088\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00089}00089\ \textcolor{comment}{\ *\ @brief\ Initialize\ I2C,\ verify\ the\ IMU,\ enable\ sensors,\ and\ start\ the\ sweep.}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00090}00090\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00091}\mbox{\hyperlink{mag__test_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00091}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00092}00092\ \ \ \textcolor{comment}{//\ put\ your\ setup\ code\ here,\ to\ run\ once:}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00093}00093\ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00094}00094\ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00095}00095\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ (I2C)\ —\ Magnetometer\ Example"{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00096}00096\ \ \ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00097}00097\ \ \ Wire.begin(\mbox{\hyperlink{mag__test_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\mbox{\hyperlink{mag__test_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00098}00098\ \ \ \textcolor{comment}{/*\ Initialize\ IMU.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00099}00099\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{mag__test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ 400000))\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00100}00100\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ beginI2C()\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00102}00102\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00104}00104\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready\ (I2C)."{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00106}00106\ \ \ \textcolor{comment}{/*\ Verify\ device.\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00107}00107\ \ \ uint8\_t\ who;}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00108}00108\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who)\ ||\ who\ !=\ 0xEA)\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00109}00109\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ WHO\_AM\_I\ mismatch"{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00111}00111\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00113}00113\ \ \ Serial.print(F(\textcolor{stringliteral}{"{}WHO\_AM\_I\ =\ 0x"{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00114}00114\ \ \ Serial.println(who,\ HEX);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00116}00116\ \ \ \textcolor{comment}{/*\ Enable\ required\ sensors\ (mag\ uses\ internal\ I2C\ master)}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00117}00117\ \textcolor{comment}{\ \ \ *\ -\/\ accel/gyro\ not\ strictly\ required\ but\ safe\ to\ keep\ ON}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00118}00118\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00119}00119\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{mag__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00120}00120\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00121}00121\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00123}00123\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Sensor\ listo.\(\backslash\)n"{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00124}00124\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Sensor\ PLANO\ y\ QUIETO\ sobre\ la\ mesa."{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00125}00125\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Iniciando\ en\ 5\ segundos..."{}}));}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00126}00126\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 5;\ i\ >\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00127}00127\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ \ \%d...\(\backslash\)n"{}},\ i);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00128}00128\ \ \ \ \ delay(1000);}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00129}00129\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00131}00131\ \ \ \mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{applySettings}}();}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00134}00134\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00135}00135\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00136}00136\ \textcolor{comment}{\ *\ @brief\ Empty\ loop;\ this\ sketch\ runs\ the\ magnetometer\ sweep\ once\ in\ setup().}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00137}00137\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00138}\mbox{\hyperlink{mag__test_8ino_afe461d27b9c48d5921c00d521181f12f}{00138}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mag__test_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00139}00139\ \ \ \textcolor{comment}{//\ put\ your\ main\ code\ here,\ to\ run\ repeatedly:}}
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{mag__test_8ino_source_l00141}00141\ \}}
 
 \end{DoxyCode}

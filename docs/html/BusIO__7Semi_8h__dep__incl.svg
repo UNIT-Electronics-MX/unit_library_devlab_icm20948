@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="gyr__test_8ino.html" target="_top" xlink:title="Gyroscope DLPF and full&#45;scale sweep for the 7Semi ICM&#45;20948.">
+<g id="a_Node000003"><a xlink:href="gyr__test_8ino.html" target="_top" xlink:title="Gyroscope DLPF and full&#45;scale sweep for the DevLab ICM&#45;20948.">
 <polygon fill="white" stroke="#666666" points="126,-30 0,-30 0,0 126,0 126,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">examples/gyr_test/gyr</text>
 <text text-anchor="middle" x="63" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_test.ino</text>
@@ -133,7 +133,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="interrupt_8ino.html" target="_top" xlink:title="I2C interrupt example for the 7Semi ICM&#45;20948.">
+<g id="a_Node000008"><a xlink:href="interrupt_8ino.html" target="_top" xlink:title="I2C interrupt example for the DevLab ICM&#45;20948.">
 <polygon fill="white" stroke="#666666" points="811,-30 701,-30 701,0 811,0 811,-30"/>
 <text text-anchor="start" x="709" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">examples/interrupt</text>
 <text text-anchor="middle" x="756" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">/interrupt.ino</text>
@@ -152,7 +152,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="mag__test_8ino.html" target="_top" xlink:title="Magnetometer operation&#45;mode sweep for the 7Semi ICM&#45;20948.">
+<g id="a_Node000009"><a xlink:href="mag__test_8ino.html" target="_top" xlink:title="Magnetometer operation&#45;mode sweep for the DevLab ICM&#45;20948.">
 <polygon fill="white" stroke="#666666" points="967,-30 829,-30 829,0 967,0 967,-30"/>
 <text text-anchor="start" x="837" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">examples/mag_test/mag</text>
 <text text-anchor="middle" x="898" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_test.ino</text>

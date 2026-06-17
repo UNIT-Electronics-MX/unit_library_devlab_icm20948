@@ -1,33 +1,46 @@
 <map id="setup" name="setup">
-<area shape="rect" id="Node000001" title="Configure the IMU for gyroscope&#45;only operation over I2C." alt="" coords="5,146,64,171"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#a31460c48549b1d3081e253706f8b15e6" title=" " alt="" coords="389,5,611,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="63,146,111,131,409,46,410,51,113,136,65,151"/>
-<area shape="rect" id="Node000005" href="$classDevLab__ICM20948.html#a91147b3cd4c45bffc8e024f985be7b21" title=" " alt="" coords="119,146,327,171"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="64,156,105,156,105,161,64,161"/>
-<area shape="rect" id="Node000011" href="$classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186" title=" " alt="" coords="112,297,335,322"/>
-<area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="54,169,197,286,194,290,50,174"/>
-<area shape="rect" id="Node000003" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="665,171,888,197"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="537,43,743,162,740,167,535,48"/>
-<area shape="rect" id="Node000004" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="936,171,1085,197"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="612,15,677,16,748,22,820,37,889,62,922,82,952,108,995,158,991,162,948,111,919,86,887,66,819,42,747,27,676,21,611,20"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="888,181,922,181,922,187,888,187"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="241,144,302,104,382,62,416,47,418,52,384,66,305,109,244,148"/>
-<area shape="poly" id="edge11_Node000005_Node000003" title=" " alt="" coords="328,161,651,176,651,181,327,166"/>
-<area shape="poly" id="edge12_Node000005_Node000004" title=" " alt="" coords="312,143,334,136,347,129,357,120,367,112,382,105,464,89,548,83,632,87,714,97,791,112,860,130,965,164,963,169,858,135,789,117,713,102,632,92,548,88,464,94,383,111,370,117,360,125,350,133,336,141,313,148"/>
-<area shape="rect" id="Node000006" href="$classI2C__Interface.html#ae8147c4d6e54fe2622825d7e17493152" title=" " alt="" coords="413,121,587,146"/>
-<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="327,147,399,140,400,145,328,152"/>
-<area shape="rect" id="Node000007" href="$classDevLab__ICM20948.html#a8bef7eafb3b67eb736f491d0df453b9e" title=" " alt="" coords="383,222,617,247"/>
-<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="271,169,383,200,440,216,439,221,382,205,270,174"/>
-<area shape="rect" id="Node000009" href="$classBusIO__7Semi.html#ac7b3d1c425f7187abbe1bbec64d9ccea" title=" " alt="" coords="417,271,583,297"/>
-<area shape="poly" id="edge13_Node000005_Node000009" title=" " alt="" coords="242,169,302,212,342,236,384,256,410,265,408,270,382,261,339,241,299,217,239,174"/>
-<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="570,219,692,197,693,202,571,225"/>
-<area shape="rect" id="Node000008" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="938,246,1083,271"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="578,245,666,255,802,260,924,259,924,264,801,265,665,260,577,250"/>
-<area shape="rect" id="Node000010" href="$classBusIO__7Semi.html#a855c7388d4118e632c84c7f8e2e3ddc2" title=" " alt="" coords="689,221,864,246"/>
-<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="570,269,692,246,693,251,571,274"/>
-<area shape="poly" id="edge16_Node000010_Node000004" title=" " alt="" coords="837,218,936,197,937,202,838,223"/>
-<area shape="poly" id="edge15_Node000010_Node000008" title=" " alt="" coords="864,240,925,247,924,252,864,245"/>
-<area shape="poly" id="edge18_Node000011_Node000003" title=" " alt="" coords="265,320,336,337,427,348,476,347,525,341,572,328,616,307,628,297,635,286,640,260,645,232,652,219,664,206,670,201,674,205,667,210,656,222,650,234,645,261,640,288,632,300,619,312,574,333,526,347,477,353,427,353,335,342,263,325"/>
-<area shape="poly" id="edge19_Node000011_Node000004" title=" " alt="" coords="259,320,316,338,383,353,449,362,500,366,552,363,617,353,696,336,756,317,887,255,935,229,978,202,981,207,938,233,889,260,758,322,697,342,618,359,552,368,500,371,448,368,382,359,315,344,257,325"/>
-<area shape="poly" id="edge20_Node000011_Node000009" title=" " alt="" coords="335,296,403,290,403,296,335,302"/>
+<area shape="rect" id="Node000001" title="Configure the IMU for gyroscope&#45;only operation over I2C." alt="" coords="5,308,64,333"/>
+<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#a31460c48549b1d3081e253706f8b15e6" title=" " alt="" coords="389,459,611,499"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,332,75,364,93,381,113,394,177,423,245,444,312,459,375,468,374,474,311,464,243,449,175,428,111,399,90,385,71,368,43,335"/>
+<area shape="rect" id="Node000005" href="$classDevLab__ICM20948.html#a91147b3cd4c45bffc8e024f985be7b21" title=" " alt="" coords="119,359,327,384"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="65,326,163,352,162,358,64,331"/>
+<area shape="rect" id="Node000011" href="$classDevLab__ICM20948.html#a0bea2c662c285120253851c80289e077" title=" " alt="" coords="121,141,325,167"/>
+<area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="41,306,69,264,110,217,145,191,180,171,183,175,148,196,114,221,73,267,46,309"/>
+<area shape="rect" id="Node000012" href="$classDevLab__ICM20948.html#a16cc9db132bb7a2b706275c9f5a03773" title=" " alt="" coords="399,574,601,614"/>
+<area shape="poly" id="edge21_Node000001_Node000012" title=" " alt="" coords="41,333,64,397,85,435,114,468,144,491,177,511,247,542,319,564,386,579,385,584,318,570,245,547,174,515,141,495,110,472,81,438,59,400,36,334"/>
+<area shape="rect" id="Node000013" href="$classDevLab__ICM20948.html#a6a06dbd14558e50d40595de82502d632" title=" " alt="" coords="399,41,601,81"/>
+<area shape="poly" id="edge24_Node000001_Node000013" title=" " alt="" coords="34,308,39,271,51,222,74,170,90,147,110,127,141,105,174,88,245,65,317,53,385,50,385,55,318,59,246,70,176,93,143,110,114,131,94,150,79,173,57,224,45,272,40,308"/>
+<area shape="rect" id="Node000014" href="$classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186" title=" " alt="" coords="112,232,335,257"/>
+<area shape="poly" id="edge27_Node000001_Node000014" title=" " alt="" coords="63,307,177,260,179,265,65,312"/>
+<area shape="rect" id="Node000003" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="665,328,888,353"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="586,457,616,445,676,408,745,359,748,364,679,412,619,450,588,462"/>
+<area shape="rect" id="Node000004" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="936,407,1085,432"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="611,464,922,427,923,432,612,469"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="817,351,960,400,958,405,815,356"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="249,382,309,412,384,445,406,453,404,458,382,450,307,417,246,386"/>
+<area shape="poly" id="edge11_Node000005_Node000003" title=" " alt="" coords="327,363,651,345,652,350,328,368"/>
+<area shape="poly" id="edge12_Node000005_Node000004" title=" " alt="" coords="236,383,259,411,292,447,335,482,384,509,424,522,465,530,550,537,635,533,718,519,796,500,865,477,970,435,972,440,867,482,797,505,719,524,636,538,550,543,464,536,422,527,382,514,332,487,289,451,255,415,232,386"/>
+<area shape="rect" id="Node000006" href="$classI2C__Interface.html#ae8147c4d6e54fe2622825d7e17493152" title=" " alt="" coords="413,409,587,435"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="294,381,417,404,416,409,293,387"/>
+<area shape="rect" id="Node000007" href="$classDevLab__ICM20948.html#a8bef7eafb3b67eb736f491d0df453b9e" title=" " alt="" coords="383,308,617,333"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="293,356,416,333,417,338,294,361"/>
+<area shape="rect" id="Node000009" href="$classBusIO__7Semi.html#ac7b3d1c425f7187abbe1bbec64d9ccea" title=" " alt="" coords="417,156,583,181"/>
+<area shape="poly" id="edge13_Node000005_Node000009" title=" " alt="" coords="240,356,469,187,472,192,243,361"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="618,326,652,329,651,334,617,332"/>
+<area shape="rect" id="Node000008" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="938,131,1083,156"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="537,305,959,158,961,163,539,310"/>
+<area shape="rect" id="Node000010" href="$classBusIO__7Semi.html#a855c7388d4118e632c84c7f8e2e3ddc2" title=" " alt="" coords="689,105,864,131"/>
+<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="570,153,692,131,693,136,571,159"/>
+<area shape="poly" id="edge16_Node000010_Node000004" title=" " alt="" coords="802,129,845,158,890,199,928,249,959,303,1002,392,997,395,955,305,923,252,886,202,842,162,799,133"/>
+<area shape="poly" id="edge15_Node000010_Node000008" title=" " alt="" coords="864,125,925,131,924,137,864,130"/>
+<area shape="poly" id="edge18_Node000011_Node000003" title=" " alt="" coords="265,139,335,122,425,111,474,110,524,114,572,124,618,141,646,157,671,177,713,225,745,274,767,314,762,317,741,276,709,228,667,181,643,161,616,146,571,129,523,119,474,115,426,116,336,127,266,144"/>
+<area shape="poly" id="edge19_Node000011_Node000009" title=" " alt="" coords="326,157,403,161,403,166,325,162"/>
+<area shape="poly" id="edge20_Node000011_Node000010" title=" " alt="" coords="233,139,257,113,291,81,334,50,382,26,446,8,499,3,552,10,618,26,656,39,692,57,750,95,747,99,689,62,654,44,617,31,551,15,499,8,447,13,384,31,337,54,295,85,261,117,237,143"/>
+<area shape="poly" id="edge22_Node000012_Node000003" title=" " alt="" coords="532,572,573,543,616,509,695,430,755,362,759,366,699,434,619,513,576,548,535,576"/>
+<area shape="poly" id="edge23_Node000012_Node000004" title=" " alt="" coords="601,601,668,601,741,595,816,580,887,553,921,530,951,500,993,442,998,446,955,504,925,534,889,558,818,585,742,600,668,606,601,606"/>
+<area shape="poly" id="edge25_Node000013_Node000003" title=" " alt="" coords="586,78,619,97,647,122,672,149,715,209,747,267,768,314,763,316,742,270,710,212,668,153,643,125,616,101,583,83"/>
+<area shape="poly" id="edge26_Node000013_Node000010" title=" " alt="" coords="598,78,702,100,701,105,597,83"/>
+<area shape="poly" id="edge28_Node000014_Node000003" title=" " alt="" coords="335,252,471,268,618,293,725,321,723,326,617,298,470,273,335,257"/>
+<area shape="poly" id="edge29_Node000014_Node000004" title=" " alt="" coords="335,231,454,228,596,236,671,246,746,262,819,284,889,313,919,331,947,352,991,394,988,398,944,356,916,335,887,318,818,289,745,267,670,252,596,241,454,234,335,237"/>
+<area shape="poly" id="edge30_Node000014_Node000009" title=" " alt="" coords="270,229,382,198,439,182,440,188,383,203,271,234"/>
 </map>

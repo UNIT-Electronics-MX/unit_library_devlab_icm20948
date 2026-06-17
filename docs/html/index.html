@@ -224,16 +224,17 @@ Initialize Sensor</h2>
 <div class="line">  <span class="keywordflow">while</span> (1);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassDevLab__ICM20948_html_a91147b3cd4c45bffc8e024f985be7b21"><div class="ttname"><a href="classDevLab__ICM20948.html#a91147b3cd4c45bffc8e024f985be7b21">DevLab_ICM20948::beginI2C</a></div><div class="ttdeci">bool beginI2C(uint8_t address=0x69, TwoWire &amp;i2cPort=Wire, uint32_t i2cSpeed=400000)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00006">DevLab_ICM20948.cpp:6</a></div></div>
-<div class="ttc" id="agyr__test_8ino_html_aa8226278adaa3f7fb2ad8b966f7787a1"><div class="ttname"><a href="gyr__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a></div><div class="ttdeci">DevLab_ICM20948 imu</div><div class="ttdoc">Global ICM-20948 driver instance.</div><div class="ttdef"><b>Definition</b> <a href="gyr__test_8ino_source.html#l00107">gyr_test.ino:107</a></div></div>
+<div class="ttc" id="agyr__test_8ino_html_aa8226278adaa3f7fb2ad8b966f7787a1"><div class="ttname"><a href="gyr__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a></div><div class="ttdeci">DevLab_ICM20948 imu</div><div class="ttdoc">Global ICM-20948 driver instance.</div><div class="ttdef"><b>Definition</b> <a href="gyr__test_8ino_source.html#l00098">gyr_test.ino:98</a></div></div>
 </div><!-- fragment --><ul>
 <li>SPI</li>
 </ul>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span> (!<a class="code hl_variable" href="gyr__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a4386f310503153f3e28935cbdda75b18">beginSPI</a>(CS_PIN, SPI, 1000000))</div>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (!<a class="code hl_variable" href="gyr__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a4386f310503153f3e28935cbdda75b18">beginSPI</a>(<a class="code hl_define" href="spi__accel_8ino.html#abfcf05153ddbd63d5aff5d018867cc19">CS_PIN</a>, SPI, 1000000))</div>
 <div class="line">{</div>
 <div class="line">  Serial.println(<span class="stringliteral">&quot;SPI init failed&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">while</span> (1);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassDevLab__ICM20948_html_a4386f310503153f3e28935cbdda75b18"><div class="ttname"><a href="classDevLab__ICM20948.html#a4386f310503153f3e28935cbdda75b18">DevLab_ICM20948::beginSPI</a></div><div class="ttdeci">bool beginSPI(uint8_t csPin, SPIClass &amp;spiPort=SPI, uint32_t spiSpeed=1000000)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00060">DevLab_ICM20948.cpp:60</a></div></div>
+<div class="ttc" id="aspi__accel_8ino_html_abfcf05153ddbd63d5aff5d018867cc19"><div class="ttname"><a href="spi__accel_8ino.html#abfcf05153ddbd63d5aff5d018867cc19">CS_PIN</a></div><div class="ttdeci">#define CS_PIN</div><div class="ttdef"><b>Definition</b> <a href="spi__accel_8ino_source.html#l00036">spi_accel.ino:36</a></div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md19"></a>
 Enable Sensors</h2>
 <div class="fragment"><div class="line"><a class="code hl_variable" href="gyr__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186">setSensors</a>(<span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
@@ -332,7 +333,7 @@ License</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 16 2026 17:37:03 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Wed Jun 17 2026 22:32:52 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

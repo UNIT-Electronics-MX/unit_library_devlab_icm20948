@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Magnetometer operation&#45;mode sweep for the 7Semi ICM&#45;20948.">
+<g id="a_Node000001"><a xlink:title="Magnetometer operation&#45;mode sweep for the DevLab ICM&#45;20948.">
 <polygon fill="#999999" stroke="#666666" points="494.5,-250 356.5,-250 356.5,-220 494.5,-220 494.5,-250"/>
 <text text-anchor="start" x="364.5" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">examples/mag_test/mag</text>
 <text text-anchor="middle" x="425.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">_test.ino</text>

@@ -153,7 +153,7 @@ CS   &GPIO   \\\cline{1-2}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{gyr__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18}{beginSPI}}(CS\_PIN,\ SPI,\ 1000000))}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{gyr__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18}{beginSPI}}(\mbox{\hyperlink{spi__accel_8ino_abfcf05153ddbd63d5aff5d018867cc19}{CS\_PIN}},\ SPI,\ 1000000))}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ Serial.println(\textcolor{stringliteral}{"{}SPI\ init\ failed"{}});}
 \DoxyCodeLine{\ \ \textcolor{keywordflow}{while}\ (1);}

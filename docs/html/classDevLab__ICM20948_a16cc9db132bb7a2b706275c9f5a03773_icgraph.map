@@ -1,5 +1,7 @@
 <map id="DevLab_ICM20948::setGyroDivRate" name="DevLab_ICM20948::setGyroDivRate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="164,5,367,45"/>
-<area shape="rect" id="Node000002" href="$gyr__test_8ino.html#a327f4fbd9f22daba4f8a6f3f1c13f729" title="Apply one gyroscope full&#45;scale and DLPF configuration." alt="" coords="5,13,116,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,28,116,28,116,23,150,23"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="164,23,367,63"/>
+<area shape="rect" id="Node000002" href="$gyr__test_8ino.html#a327f4fbd9f22daba4f8a6f3f1c13f729" title="Apply one gyroscope full&#45;scale and DLPF configuration." alt="" coords="5,5,116,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,32,116,27,117,22,151,26"/>
+<area shape="rect" id="Node000003" href="$i2c__gyro_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Configure the IMU for gyroscope&#45;only operation over I2C." alt="" coords="31,55,90,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,60,91,67,90,61,149,54"/>
 </map>

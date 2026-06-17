@@ -4,103 +4,107 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00001}00001\ \textcolor{comment}{/***************************************************************}}
 \DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ \ \ \ SPI\_Basic.ino}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ SPI\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ +}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ basic\ Accel/Gyro/Temp\ readout\ (updated\ API).}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00005}00005\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ Features}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ -\/\ SPI\ init\ (UNO\ /\ ESP32)}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ beginSPI()\ initialization}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ Manual\ sensor\ enable}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Read\ Accel\ /\ Gyro\ /\ Temp}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00011}00011\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00012}00012\ \textcolor{comment}{\ *\ Notes}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00013}00013\ \textcolor{comment}{\ *\ -\/\ WHO\_AM\_I\ must\ be\ 0xEA}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00014}00014\ \textcolor{comment}{\ *\ -\/\ Sensors\ must\ be\ explicitly\ enabled}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ SPI\ speed\ \string~1MHz\ recommended\ during\ init}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00016}00016\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO\ SPI)}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ D13}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ -\/\ MOSI\ -\/>\ D11}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ -\/\ MISO\ -\/>\ D12}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ D10\ (changeable;\ update\ CS\_PIN)}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00024}00024\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00025}00025\ \textcolor{comment}{\ *\ Wiring\ (ESP32\ VSPI\ default)}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ D13}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ MOSI\ -\/>\ D11}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ MISO\ -\/>\ D12}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00029}00029\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ D10}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00030}00030\ \textcolor{comment}{\ ***************************************************************/}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00032}00032\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00033}00033\ \textcolor{comment}{/**\ @brief\ SPI\ clock\ used\ during\ sensor\ initialization\ and\ reads.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00034}\mbox{\hyperlink{spi__basic_8ino_a785e68f45fbc9e3f0ed8219615c1ed1d}{00034}}\ \textcolor{preprocessor}{\#define\ SPI\_FAST\_SPEED\ 1000000}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00035}00035\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00036}00036\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00037}\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00037}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00038}00038\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00039}00039\ \textcolor{comment}{/**\ @brief\ SPI\ bus\ object\ used\ by\ the\ IMU\ driver.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00040}\mbox{\hyperlink{spi__basic_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{00040}}\ SPIClass\ \mbox{\hyperlink{spi__basic_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}}(SPI);}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00041}00041\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00042}00042\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00043}00043\ \textcolor{comment}{\ *\ @brief\ Initialize\ Serial\ and\ start\ the\ ICM-\/20948\ over\ SPI.}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00044}00044\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00045}00045\ \textcolor{comment}{\ *\ @note\ The\ sketch\ expects\ a\ board-\/level\ CS\_PIN\ definition\ to\ select\ the}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00046}00046\ \textcolor{comment}{\ *\ chip-\/select\ pin\ used\ by\ beginSPI().}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00047}00047\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00048}\mbox{\hyperlink{spi__basic_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00048}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__basic_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00049}00049\ \ \ Serial.begin(115200);}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00050}00050\ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00053}00053\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18}{beginSPI}}(CS\_PIN,\ \mbox{\hyperlink{spi__basic_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}},\ 1000000))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00054}00054\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}ERROR:\ beginSPI()\ failed"{}});}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00056}00056\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00058}00058\ \ \ \mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00059}00059\ \ \ Serial.println(\textcolor{stringliteral}{"{}Ready."{}});}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00060}00060\ \}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00061}00061\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00062}00062\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00063}00063\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ accelerometer,\ gyroscope,\ and\ temperature\ data.}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00064}00064\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00065}\mbox{\hyperlink{spi__basic_8ino_afe461d27b9c48d5921c00d521181f12f}{00065}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__basic_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00066}00066\ \ \ \textcolor{keywordtype}{float}\ ax,\ ay,\ az;}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00067}00067\ \ \ \textcolor{keywordtype}{float}\ gx,\ gy,\ gz;}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00068}00068\ \ \ \textcolor{keywordtype}{float}\ tC;}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00070}00070\ \ \ \textcolor{comment}{/*\ Read\ accelerometer.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00071}00071\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b}{readAccel}}(ax,\ ay,\ az))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00072}00072\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}ACC\ [g]:\ "{}}));}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00073}00073\ \ \ \ \ Serial.print(ax,\ 3);\ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00074}00074\ \ \ \ \ Serial.print(ay,\ 3);\ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00075}00075\ \ \ \ \ Serial.println(az,\ 3);}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00076}00076\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00077}00077\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ACC\ read\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00078}00078\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00080}00080\ \ \ \textcolor{comment}{/*\ Read\ gyroscope.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00081}00081\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a006c131f860f1fc81c587b3d8a77522d}{readGyro}}(gx,\ gy,\ gz))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00082}00082\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}GYR\ [dps]:\ "{}}));}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00083}00083\ \ \ \ \ Serial.print(gx,\ 2);\ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00084}00084\ \ \ \ \ Serial.print(gy,\ 2);\ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00085}00085\ \ \ \ \ Serial.println(gz,\ 2);}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00086}00086\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00087}00087\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}GYR\ read\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00088}00088\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00089}00089\ }
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00090}00090\ \ \ \textcolor{comment}{/*\ Read\ temperature.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00091}00091\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_aa5c2ecd855cebb1934bbbe020128ab5e}{readTemperature}}(tC))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00092}00092\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}TMP\ [C]:\ "{}}));}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00093}00093\ \ \ \ \ Serial.println(tC,\ 2);}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00094}00094\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00095}00095\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}TMP\ read\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00096}00096\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00098}00098\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00099}00099\ \ \ delay(500);}
-\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @author\ \ 7Semi,Jonathan\ Mejorado\ Lopez}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ SPI\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ +}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ basic\ Accel/Gyro/Temp\ readout\ (updated\ API).}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ Features}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ SPI\ init\ (UNO\ /\ ESP32)}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ beginSPI()\ initialization}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Manual\ sensor\ enable}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Read\ Accel\ /\ Gyro\ /\ Temp}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00012}00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00013}00013\ \textcolor{comment}{\ *\ Notes}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00014}00014\ \textcolor{comment}{\ *\ -\/\ WHO\_AM\_I\ must\ be\ 0xEA}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ Sensors\ must\ be\ explicitly\ enabled}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ SPI\ speed\ \string~1MHz\ recommended\ during\ init}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00017}00017\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO\ SPI)}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ -\/\ SCK(SCL)\ \ -\/>\ D13}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ -\/\ MOSI(SDA)\ -\/>\ D11}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ MISO(SD0/AD0)\ -\/>\ D12}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ CS(nCS)\ \ \ -\/>\ D10\ (changeable;\ update\ CS\_PIN)}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ Wiring\ (ESP32\ VSPI\ default)}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ D13}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ MOSI\ -\/>\ D11}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00029}00029\ \textcolor{comment}{\ *\ -\/\ MISO\ -\/>\ D12}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00030}00030\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ D10}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00031}00031\ \textcolor{comment}{\ ***************************************************************/}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00033}00033\ \textcolor{comment}{/**\ @brief\ Chip-\/select\ pin\ for\ SPI.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00035}\mbox{\hyperlink{spi__basic_8ino_abfcf05153ddbd63d5aff5d018867cc19}{00035}}\ \textcolor{preprocessor}{\#define\ CS\_PIN\ D10}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00036}00036\ \textcolor{comment}{/**\ @brief\ SPI\ clock\ used\ during\ sensor\ initialization\ and\ reads.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00038}\mbox{\hyperlink{spi__basic_8ino_a785e68f45fbc9e3f0ed8219615c1ed1d}{00038}}\ \textcolor{preprocessor}{\#define\ SPI\_FAST\_SPEED\ 1000000}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00039}00039\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00040}00040\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00041}\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00041}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00042}00042\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00043}00043\ \textcolor{comment}{/**\ @brief\ SPI\ bus\ object\ used\ by\ the\ IMU\ driver.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00044}\mbox{\hyperlink{spi__basic_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{00044}}\ SPIClass\ \mbox{\hyperlink{spi__basic_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}}(SPI);}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00045}00045\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00046}00046\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00047}00047\ \textcolor{comment}{\ *\ @brief\ Initialize\ Serial\ and\ start\ the\ ICM-\/20948\ over\ SPI.}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00048}00048\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00049}00049\ \textcolor{comment}{\ *\ @note\ The\ sketch\ expects\ a\ board-\/level\ CS\_PIN\ definition\ to\ select\ the}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00050}00050\ \textcolor{comment}{\ *\ chip-\/select\ pin\ used\ by\ beginSPI().}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00051}00051\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00052}\mbox{\hyperlink{spi__basic_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__basic_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00053}00053\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00054}00054\ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00057}00057\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18}{beginSPI}}(\mbox{\hyperlink{spi__basic_8ino_abfcf05153ddbd63d5aff5d018867cc19}{CS\_PIN}},\ \mbox{\hyperlink{spi__basic_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}},\ \mbox{\hyperlink{spi__basic_8ino_a785e68f45fbc9e3f0ed8219615c1ed1d}{SPI\_FAST\_SPEED}}))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00058}00058\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}ERROR:\ beginSPI()\ failed"{}});}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00060}00060\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00062}00062\ \ \ \mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00063}00063\ \ \ Serial.println(\textcolor{stringliteral}{"{}Ready."{}});}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00065}00065\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00066}00066\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00067}00067\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ accelerometer,\ gyroscope,\ and\ temperature\ data.}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00068}00068\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00069}\mbox{\hyperlink{spi__basic_8ino_afe461d27b9c48d5921c00d521181f12f}{00069}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__basic_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00070}00070\ \ \ \textcolor{keywordtype}{float}\ ax,\ ay,\ az;}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00071}00071\ \ \ \textcolor{keywordtype}{float}\ gx,\ gy,\ gz;}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00072}00072\ \ \ \textcolor{keywordtype}{float}\ tC;}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00074}00074\ \ \ \textcolor{comment}{/*\ Read\ accelerometer.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00075}00075\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b}{readAccel}}(ax,\ ay,\ az))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00076}00076\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}ACC\ [g]:\ "{}}));}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00077}00077\ \ \ \ \ Serial.print(ax,\ 3);\ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00078}00078\ \ \ \ \ Serial.print(ay,\ 3);\ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00079}00079\ \ \ \ \ Serial.println(az,\ 3);}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00080}00080\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00081}00081\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ACC\ read\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00082}00082\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00084}00084\ \ \ \textcolor{comment}{/*\ Read\ gyroscope.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00085}00085\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a006c131f860f1fc81c587b3d8a77522d}{readGyro}}(gx,\ gy,\ gz))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00086}00086\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}GYR\ [dps]:\ "{}}));}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00087}00087\ \ \ \ \ Serial.print(gx,\ 2);\ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00088}00088\ \ \ \ \ Serial.print(gy,\ 2);\ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00089}00089\ \ \ \ \ Serial.println(gz,\ 2);}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00090}00090\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00091}00091\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}GYR\ read\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00092}00092\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00094}00094\ \ \ \textcolor{comment}{/*\ Read\ temperature.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00095}00095\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__basic_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_aa5c2ecd855cebb1934bbbe020128ab5e}{readTemperature}}(tC))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00096}00096\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}TMP\ [C]:\ "{}}));}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00097}00097\ \ \ \ \ Serial.println(tC,\ 2);}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00098}00098\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00099}00099\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}TMP\ read\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00100}00100\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00102}00102\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00103}00103\ \ \ delay(500);}
+\DoxyCodeLine{\Hypertarget{spi__basic_8ino_source_l00104}00104\ \}}
 
 \end{DoxyCode}

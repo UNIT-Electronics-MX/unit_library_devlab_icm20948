@@ -6,141 +6,145 @@
 \DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ \ \ \ ICM20948\_SPI\_Gyro.ino}}
 \DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ SPI\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ on\ ESP32/UNO\ +}}
 \DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ continuous\ gyroscope\ readout.}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00005}00005\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ Features}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ -\/\ SPI\ init\ on\ custom\ pins}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ IMU\ begin()\ on\ SPI\ (CS\ pin\ user-\/defined)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ Safe\ defaults\ (applyBasicDefaults)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Optional\ sensor\ gating:\ gyro\ only}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Gyro\ config:\ DLPF,\ full-\/scale,\ ODR,\ AVG}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00012}00012\ \textcolor{comment}{\ *\ -\/\ Read\ gyro\ (dps)\ at\ \string~2\ Hz\ print}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00013}00013\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00014}00014\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ GPIO13}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ MOSI(SDA)\ -\/>\ GPIO11}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ MISO(SDO)\ -\/>\ GPIO12}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ GPIO10\ (changeable)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ Wiring\ (ESP32\ VSPI\ default)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ GPIO18}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ MOSI\ -\/>\ GPIO23}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ MISO\ -\/>\ GPIO19}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00025}00025\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ GPIO5\ (changeable)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00028}00028\ \textcolor{comment}{\ ***************************************************************/}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00031}00031\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00032}00032\ \textcolor{comment}{/**\ @brief\ SPI\ clock\ used\ during\ sensor\ initialization\ and\ reads.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00033}\mbox{\hyperlink{spi__gyro_8ino_a785e68f45fbc9e3f0ed8219615c1ed1d}{00033}}\ \textcolor{preprocessor}{\#define\ SPI\_FAST\_SPEED\ 1000000}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ @author\ \ 7Semi,Jonathan\ Mejorado\ Lopez}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ Features}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ SPI\ init\ on\ custom\ pins}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ IMU\ begin()\ on\ SPI\ (CS\ pin\ user-\/defined)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Safe\ defaults\ (applyBasicDefaults)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Optional\ sensor\ gating:\ gyro\ only}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00012}00012\ \textcolor{comment}{\ *\ -\/\ Gyro\ config:\ DLPF,\ full-\/scale,\ ODR,\ AVG}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00013}00013\ \textcolor{comment}{\ *\ -\/\ Read\ gyro\ (dps)\ at\ \string~2\ Hz\ print}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00014}00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ GPIO13}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ MOSI(SDA)\ -\/>\ GPIO11}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ -\/\ MISO(SDO)\ -\/>\ GPIO12}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ GPIO10\ (changeable)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ Wiring\ (ESP32\ VSPI\ default)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ GPIO18}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ MOSI\ -\/>\ GPIO23}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00025}00025\ \textcolor{comment}{\ *\ -\/\ MISO\ -\/>\ GPIO19}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ GPIO5\ (changeable)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00029}00029\ \textcolor{comment}{\ ***************************************************************/}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00033}\mbox{\hyperlink{spi__gyro_8ino_abfcf05153ddbd63d5aff5d018867cc19}{00033}}\ \textcolor{preprocessor}{\#define\ CS\_PIN\ D10\ \ }\textcolor{comment}{//\ Chip-\/select\ pin\ for\ SPI\ (change\ as\ needed)}}
 \DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00034}00034\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00035}00035\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00036}\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00036}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00035}00035\ \textcolor{comment}{/**\ @brief\ SPI\ clock\ used\ during\ sensor\ initialization\ and\ reads.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00036}\mbox{\hyperlink{spi__gyro_8ino_a785e68f45fbc9e3f0ed8219615c1ed1d}{00036}}\ \textcolor{preprocessor}{\#define\ SPI\_FAST\_SPEED\ 1000000}}
 \DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00037}00037\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00038}00038\ \textcolor{comment}{/**\ @brief\ SPI\ bus\ object\ used\ by\ the\ IMU\ driver.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00039}\mbox{\hyperlink{spi__gyro_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{00039}}\ SPIClass\ \mbox{\hyperlink{spi__gyro_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}}(SPI);}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00038}00038\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00039}\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00039}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
 \DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00040}00040\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00041}00041\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00042}00042\ \textcolor{comment}{\ *\ @brief\ Configure\ the\ IMU\ for\ gyroscope-\/only\ operation\ over\ SPI.}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00043}00043\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00044}00044\ \textcolor{comment}{\ *\ @note\ The\ sketch\ expects\ a\ board-\/level\ CS\_PIN\ definition\ to\ select\ the}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00045}00045\ \textcolor{comment}{\ *\ chip-\/select\ pin\ used\ by\ beginSPI().}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00046}00046\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00047}\mbox{\hyperlink{spi__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00048}00048\ \ \ Serial.begin(115200);}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00049}00049\ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00050}00050\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ (SPI)\ —\ Gyro\ Example"{}}));}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00052}00052\ \ \ \textcolor{comment}{/*\ Init\ SPI\ bus\ on\ your\ pins.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00053}00053\ \ \ \textcolor{comment}{//\ SPI.begin(SCK\_PIN,\ MISO\_PIN,\ MOSI\_PIN,\ CS\_PIN);}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00041}00041\ \textcolor{comment}{/**\ @brief\ SPI\ bus\ object\ used\ by\ the\ IMU\ driver.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00042}\mbox{\hyperlink{spi__gyro_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{00042}}\ SPIClass\ \mbox{\hyperlink{spi__gyro_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}}(SPI);}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00043}00043\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00044}00044\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00045}00045\ \textcolor{comment}{\ *\ @brief\ Configure\ the\ IMU\ for\ gyroscope-\/only\ operation\ over\ SPI.}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00046}00046\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00047}00047\ \textcolor{comment}{\ *\ @note\ The\ sketch\ expects\ a\ board-\/level\ CS\_PIN\ definition\ to\ select\ the}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00048}00048\ \textcolor{comment}{\ *\ chip-\/select\ pin\ used\ by\ beginSPI().}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00049}00049\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00050}\mbox{\hyperlink{spi__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00050}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00051}00051\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00052}00052\ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00053}00053\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ (SPI)\ —\ Gyro\ Example"{}}));}
 \DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00055}00055\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18}{beginSPI}}(CS\_PIN,\ \mbox{\hyperlink{spi__gyro_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}},\ 1000000))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00056}00056\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}ERROR:\ beginSPI()\ failed"{}});}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00058}00058\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00060}00060\ \ \ \textcolor{comment}{/*\ Apply\ safe\ defaults.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00061}00061\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a31460c48549b1d3081e253706f8b15e6}{applyBasicDefaults}}())\ \{}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00062}00062\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ applyBasicDefaults()\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00064}00064\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00066}00066\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00068}00068\ \ \ \textcolor{comment}{/*\ Optional:\ gate\ sensors}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00069}00069\ \textcolor{comment}{\ \ \ *\ -\/\ setSensors(accel\_on,\ gyro\_on,\ temp\_on)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00070}00070\ \textcolor{comment}{\ \ \ *\ -\/\ Here:\ enable\ only\ gyro\ (accel/temp\ off)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00071}00071\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00072}00072\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{comment}{/*accel*/}\ \textcolor{keyword}{false},\ \textcolor{comment}{/*gyro*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*temp*/}\ \textcolor{keyword}{false}))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00073}00073\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00074}00074\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00076}00076\ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ GYRO\ DLPF\ Config\ (reference)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00077}00077\ \textcolor{comment}{\ \ \ *\ GyroConfig(DLPFCFG,\ FS\_SEL,\ FCHOICE,\ XGYRO,\ YGYRO,\ ZGYRO,\ AVGCFG)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00078}00078\ \textcolor{comment}{\ \ \ *\ -\/\ DLPF\ \ \ \ \ :\ GYRO\_DLPFCFG\_0..7\ (use\ 3\ for\ balanced\ setting)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00079}00079\ \textcolor{comment}{\ \ \ *\ -\/\ FS\_SEL\ \ \ :\ dps250\ /\ dps500\ /\ dps1000\ /\ dps2000}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00080}00080\ \textcolor{comment}{\ \ \ *\ -\/\ FCHOICE\ \ :\ false\ →\ DLPF\ path\ (recommended),\ true\ →\ bypass\ (very\ wide\ BW)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00081}00081\ \textcolor{comment}{\ \ \ *\ -\/\ XGYRO/YGYRO/ZGYRO\ :\ per-\/axis\ enable\ (true\ =\ enable\ axis)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00082}00082\ \textcolor{comment}{\ \ \ *\ -\/\ AVGCFG\ \ \ :\ 0..7\ internal\ averaging\ (higher\ =\ more\ smoothing,\ more\ delay)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00083}00083\ \textcolor{comment}{\ \ \ *\ FCHOICE=0\ (DLPF\ on):}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00084}00084\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_0\ :\ 3dB\ ≈\ 12106\ Hz,\ NBW\ ≈\ 12316\ Hz\ (very\ wide)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00085}00085\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_1\ :\ 3dB\ ≈\ 196.6\ Hz,\ NBW\ ≈\ 229.8\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00086}00086\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_2\ :\ 3dB\ ≈\ 151.8\ Hz,\ NBW\ ≈\ 187.6\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00087}00087\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_3\ :\ 3dB\ ≈\ 119.5\ Hz,\ NBW\ ≈\ 154.3\ Hz\ \ \ ←\ good\ default}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00088}00088\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_4\ :\ 3dB\ ≈\ 51.2\ \ Hz,\ NBW\ ≈\ 73.3\ \ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00089}00089\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_5\ :\ 3dB\ ≈\ 23.9\ \ Hz,\ NBW\ ≈\ 35.9\ \ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00090}00090\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_6\ :\ 3dB\ ≈\ 5.7\ \ \ Hz,\ NBW\ ≈\ 8.3\ \ \ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00091}00091\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_7\ :\ 3dB\ ≈\ 473\ \ \ Hz,\ NBW\ ≈\ 499\ \ \ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00092}00092\ \textcolor{comment}{\ \ \ *}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00093}00093\ \textcolor{comment}{\ \ \ *\ FCHOICE=1\ (Bypass)\ :\ very\ wide\ (use\ with\ care;\ highest\ noise)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00094}00094\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00095}00095\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.GyroConfig(\textcolor{comment}{/*DLPFCFG*/}\ \mbox{\hyperlink{ICM20948__regs_8h_a6ec833d2b53c943952ae9c1c4e548356}{GYRO\_DLPFCFG\_4}},}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*FS\_SEL*/}\ \mbox{\hyperlink{ICM20948__regs_8h_aa7f66cc9e98bb2743e0dade1f35f6e4e}{dps2000}},}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*FCHOICE*/}\ \textcolor{keyword}{true},\ \ \textcolor{comment}{//\ DLPF\ ON}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*X*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*Y*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*Z*/}\ \textcolor{keyword}{true},}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*AVGCFG*/}\ 0))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00100}00100\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}GyroConfig\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00055}00055\ \ \ \textcolor{comment}{/*\ Init\ SPI\ bus\ on\ your\ pins.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00056}00056\ \ \ \textcolor{comment}{//\ SPI.begin(SCK\_PIN,\ MISO\_PIN,\ MOSI\_PIN,\ CS\_PIN);}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00058}00058\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18}{beginSPI}}(\mbox{\hyperlink{spi__gyro_8ino_abfcf05153ddbd63d5aff5d018867cc19}{CS\_PIN}},\ \mbox{\hyperlink{spi__gyro_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}},\ \mbox{\hyperlink{spi__gyro_8ino_a785e68f45fbc9e3f0ed8219615c1ed1d}{SPI\_FAST\_SPEED}}))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00059}00059\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}ERROR:\ beginSPI()\ failed"{}});}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00061}00061\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00063}00063\ \ \ \textcolor{comment}{/*\ Apply\ safe\ defaults.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00064}00064\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a31460c48549b1d3081e253706f8b15e6}{applyBasicDefaults}}())\ \{}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00065}00065\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ applyBasicDefaults()\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00067}00067\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00069}00069\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00071}00071\ \ \ \textcolor{comment}{/*\ Optional:\ gate\ sensors}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00072}00072\ \textcolor{comment}{\ \ \ *\ -\/\ setSensors(accel\_on,\ gyro\_on,\ temp\_on)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00073}00073\ \textcolor{comment}{\ \ \ *\ -\/\ Here:\ enable\ only\ gyro\ (accel/temp\ off)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00074}00074\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00075}00075\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{comment}{/*accel*/}\ \textcolor{keyword}{false},\ \textcolor{comment}{/*gyro*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*temp*/}\ \textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00076}00076\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00077}00077\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00079}00079\ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ GYRO\ DLPF\ Config\ (reference)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00080}00080\ \textcolor{comment}{\ \ \ *\ GyroConfig(DLPFCFG,\ FS\_SEL,\ FCHOICE,\ XGYRO,\ YGYRO,\ ZGYRO,\ AVGCFG)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00081}00081\ \textcolor{comment}{\ \ \ *\ -\/\ DLPF\ \ \ \ \ :\ GYRO\_DLPFCFG\_0..7\ (use\ 3\ for\ balanced\ setting)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00082}00082\ \textcolor{comment}{\ \ \ *\ -\/\ FS\_SEL\ \ \ :\ dps250\ /\ dps500\ /\ dps1000\ /\ dps2000}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00083}00083\ \textcolor{comment}{\ \ \ *\ -\/\ FCHOICE\ \ :\ false\ →\ DLPF\ path\ (recommended),\ true\ →\ bypass\ (very\ wide\ BW)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00084}00084\ \textcolor{comment}{\ \ \ *\ -\/\ XGYRO/YGYRO/ZGYRO\ :\ per-\/axis\ enable\ (true\ =\ enable\ axis)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00085}00085\ \textcolor{comment}{\ \ \ *\ -\/\ AVGCFG\ \ \ :\ 0..7\ internal\ averaging\ (higher\ =\ more\ smoothing,\ more\ delay)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00086}00086\ \textcolor{comment}{\ \ \ *\ FCHOICE=0\ (DLPF\ on):}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00087}00087\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_0\ :\ 3dB\ ≈\ 12106\ Hz,\ NBW\ ≈\ 12316\ Hz\ (very\ wide)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00088}00088\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_1\ :\ 3dB\ ≈\ 196.6\ Hz,\ NBW\ ≈\ 229.8\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00089}00089\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_2\ :\ 3dB\ ≈\ 151.8\ Hz,\ NBW\ ≈\ 187.6\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00090}00090\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_3\ :\ 3dB\ ≈\ 119.5\ Hz,\ NBW\ ≈\ 154.3\ Hz\ \ \ ←\ good\ default}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00091}00091\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_4\ :\ 3dB\ ≈\ 51.2\ \ Hz,\ NBW\ ≈\ 73.3\ \ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00092}00092\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_5\ :\ 3dB\ ≈\ 23.9\ \ Hz,\ NBW\ ≈\ 35.9\ \ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00093}00093\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_6\ :\ 3dB\ ≈\ 5.7\ \ \ Hz,\ NBW\ ≈\ 8.3\ \ \ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00094}00094\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_7\ :\ 3dB\ ≈\ 473\ \ \ Hz,\ NBW\ ≈\ 499\ \ \ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00095}00095\ \textcolor{comment}{\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00096}00096\ \textcolor{comment}{\ \ \ *\ FCHOICE=1\ (Bypass)\ :\ very\ wide\ (use\ with\ care;\ highest\ noise)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00097}00097\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00099}00099\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a0bea2c662c285120253851c80289e077}{setDLPF}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a9f4d08566440cf9c577724b075c59aa1aacd670919f63d087c79b5d1768c5f790}{ICM20948\_Gyro\_DLPF::DLPF\_51HZ}},\ \textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00100}00100\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setGyroDLPF\ failed."{}}));}
 \DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00101}00101\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00102}00102\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00103}00103\ \ \ \textcolor{comment}{/*\ Set\ gyroscope\ output\ data\ rate\ (ODR)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00104}00104\ \textcolor{comment}{\ \ \ *\ -\/\ Gyro\_SMPLRT(rate\_hz)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00105}00105\ \textcolor{comment}{\ \ \ *\ -\/\ Base\ (DLPF\ path)\ =\ 1100\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00106}00106\ \textcolor{comment}{\ \ \ *\ -\/\ Valid\ range:\ \string~4.3–1100\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00107}00107\ \textcolor{comment}{\ \ \ *\ -\/\ Example:\ 1000\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00108}00108\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00109}00109\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.Gyro\_SMPLRT(1000))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00110}00110\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Gyro\_SMPLRT\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00111}00111\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00112}00112\ \}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00113}00113\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00114}00114\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00115}00115\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ gyroscope\ data\ in\ degrees\ per\ second.}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00116}00116\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00117}\mbox{\hyperlink{spi__gyro_8ino_afe461d27b9c48d5921c00d521181f12f}{00117}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__gyro_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00118}00118\ \ \ \textcolor{keywordtype}{float}\ gx,\ gy,\ gz;\ \ \textcolor{comment}{//\ gyro\ X/Y/Z\ in\ dps}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00119}00119\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00120}00120\ \ \ \textcolor{comment}{/*\ -\/\ readGyro(x,y,z)}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00121}00121\ \textcolor{comment}{\ \ \ *\ -\/\ Returns:}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00122}00122\ \textcolor{comment}{\ \ \ *\ \ \ -\/\ true\ on\ success;}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00123}00123\ \textcolor{comment}{\ \ \ *\ -\/\ Output:}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00124}00124\ \textcolor{comment}{\ \ \ *\ \ \ -\/\ gx/gy/gz\ in\ dps}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00125}00125\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00126}00126\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a006c131f860f1fc81c587b3d8a77522d}{readGyro}}(gx,\ gy,\ gz))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00127}00127\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}GYRO\ [dps]:\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00128}00128\ \ \ \ \ Serial.print(gx,\ 3);}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00129}00129\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00130}00130\ \ \ \ \ Serial.print(gy,\ 3);}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00131}00131\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00132}00132\ \ \ \ \ Serial.println(gz,\ 3);}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00133}00133\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00134}00134\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00135}00135\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}GYRO\ read\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00136}00136\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00102}00102\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a6a06dbd14558e50d40595de82502d632}{setGyroScale}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a409a608f5c864bb503bf1a65b164de7da7a03fe4c8dae7b2cc724db90de97f53f}{ICM20948\_Gyro\_FullScale::DPS\_2000}}))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00103}00103\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setGyroScale\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00104}00104\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00107}00107\ \ \ \textcolor{comment}{/*\ Set\ gyroscope\ output\ data\ rate\ (ODR)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00108}00108\ \textcolor{comment}{\ \ \ *\ -\/\ Gyro\_SMPLRT(rate\_hz)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00109}00109\ \textcolor{comment}{\ \ \ *\ -\/\ Base\ (DLPF\ path)\ =\ 1100\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00110}00110\ \textcolor{comment}{\ \ \ *\ -\/\ Valid\ range:\ \string~4.3–1100\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00111}00111\ \textcolor{comment}{\ \ \ *\ -\/\ Example:\ 1000\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00112}00112\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00113}00113\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a16cc9db132bb7a2b706275c9f5a03773}{setGyroDivRate}}(2))\ \{\ \textcolor{comment}{//\ 1100\ /\ (1\ +\ 1)\ =\ 550\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00114}00114\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setGyroDivRate\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00115}00115\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00117}00117\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00118}00118\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00119}00119\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ gyroscope\ data\ in\ degrees\ per\ second.}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00120}00120\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00121}\mbox{\hyperlink{spi__gyro_8ino_afe461d27b9c48d5921c00d521181f12f}{00121}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__gyro_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00122}00122\ \ \ \textcolor{keywordtype}{float}\ gx,\ gy,\ gz;\ \ \textcolor{comment}{//\ gyro\ X/Y/Z\ in\ dps}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00124}00124\ \ \ \textcolor{comment}{/*\ -\/\ readGyro(x,y,z)}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00125}00125\ \textcolor{comment}{\ \ \ *\ -\/\ Returns:}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00126}00126\ \textcolor{comment}{\ \ \ *\ \ \ -\/\ true\ on\ success;}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00127}00127\ \textcolor{comment}{\ \ \ *\ -\/\ Output:}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00128}00128\ \textcolor{comment}{\ \ \ *\ \ \ -\/\ gx/gy/gz\ in\ dps}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00129}00129\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00130}00130\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a006c131f860f1fc81c587b3d8a77522d}{readGyro}}(gx,\ gy,\ gz))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00131}00131\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}GYRO\ [dps]:\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00132}00132\ \ \ \ \ Serial.print(gx,\ 3);}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00133}00133\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00134}00134\ \ \ \ \ Serial.print(gy,\ 3);}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00135}00135\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00136}00136\ \ \ \ \ Serial.println(gz,\ 3);}
 \DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00137}00137\ }
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00138}00138\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00139}00139\ \ \ delay(500);}
-\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00140}00140\ \}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00138}00138\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00139}00139\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}GYRO\ read\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00140}00140\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00142}00142\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00143}00143\ \ \ delay(500);}
+\DoxyCodeLine{\Hypertarget{spi__gyro_8ino_source_l00144}00144\ \}}
 
 \end{DoxyCode}

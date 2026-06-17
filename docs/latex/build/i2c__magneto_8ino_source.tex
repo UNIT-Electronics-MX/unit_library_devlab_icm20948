@@ -4,118 +4,119 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00001}00001\ \textcolor{comment}{/***************************************************************}}
 \DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ \ \ \ I2C\_Magneto.ino}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ I2C\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ +}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ AK09916\ magnetometer\ readout\ (updated\ API).}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00005}00005\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ Features}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ -\/\ I2C\ init\ on\ default/custom\ pins}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ IMU\ beginI2C()\ initialization}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ Manual\ sensor\ enable}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Magnetometer\ initialization\ (initMag)}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Read\ magnetometer\ (uT)\ at\ \string~2\ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00012}00012\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00013}00013\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO,\ I2C)}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00014}00014\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ A4}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ A5}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3\ (or\ 5V\ if\ board\ supports\ it)}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00018}00018\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ Wiring\ (ESP32,\ I2C\ default)}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ GPIO21}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ GPIO22}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00024}00024\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00025}00025\ \textcolor{comment}{\ *\ Notes}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ WHO\_AM\_I\ must\ be\ 0xEA}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ initMag()\ must\ be\ called\ before\ readMag()}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ Magnetometer\ runs\ via\ internal\ I2C\ master}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00029}00029\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00030}00030\ \textcolor{comment}{\ *\ Author\ \ :\ 7Semi\ }}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00031}00031\ \textcolor{comment}{\ *\ License\ :\ MIT}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00032}00032\ \textcolor{comment}{\ ***************************************************************/}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00036}00036\ \textcolor{comment}{/*\ ======================\ User\ Config\ =======================\ */}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00037}00037\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00038}\mbox{\hyperlink{i2c__magneto_8ino_a526d580d324bce60a3e964066fae77e3}{00038}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00039}00039\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00040}\mbox{\hyperlink{i2c__magneto_8ino_a06c967e78bcedcee909a70764f879433}{00040}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00041}00041\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00042}\mbox{\hyperlink{i2c__magneto_8ino_a8b7500a141450a9df212017430c0df9e}{00042}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00043}00043\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00044}\mbox{\hyperlink{i2c__magneto_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00044}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00045}00045\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00046}00046\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00047}\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00047}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00048}00048\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00049}00049\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00050}00050\ \textcolor{comment}{\ *\ @brief\ Configure\ I2C,\ verify\ the\ IMU,\ and\ initialize\ the\ magnetometer.}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00051}00051\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00052}00052\ \textcolor{comment}{\ *\ The\ magnetometer\ is\ accessed\ through\ the\ ICM-\/20948\ internal\ I2C\ master,\ so}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00053}00053\ \textcolor{comment}{\ *\ initMag()\ must\ succeed\ before\ loop()\ can\ read\ magnetic\ field\ data.}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00054}00054\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00055}\mbox{\hyperlink{i2c__magneto_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__magneto_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00056}00056\ \ \ Serial.begin(115200);}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00057}00057\ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00058}00058\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ (I2C)\ —\ Magnetometer\ Example"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00059}00059\ \ \ Wire.begin(\mbox{\hyperlink{i2c__magneto_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\ \mbox{\hyperlink{i2c__magneto_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00060}00060\ \ \ \textcolor{comment}{/*\ Initialize\ IMU.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00061}00061\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{i2c__magneto_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ 400000))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00062}00062\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ beginI2C()\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00064}00064\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00066}00066\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready\ (I2C)."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00068}00068\ \ \ \textcolor{comment}{/*\ Verify\ device.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00069}00069\ \ \ uint8\_t\ who;}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00070}00070\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who)\ ||\ who\ !=\ 0xEA)\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00071}00071\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ WHO\_AM\_I\ mismatch"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00073}00073\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00075}00075\ \ \ Serial.print(F(\textcolor{stringliteral}{"{}WHO\_AM\_I\ =\ 0x"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00076}00076\ \ \ Serial.println(who,\ HEX);}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00078}00078\ \ \ \textcolor{comment}{/*\ Enable\ required\ sensors\ (mag\ uses\ internal\ I2C\ master)}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00079}00079\ \textcolor{comment}{\ \ \ *\ -\/\ accel/gyro\ not\ strictly\ required\ but\ safe\ to\ keep\ ON}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00080}00080\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00081}00081\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00082}00082\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00083}00083\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00085}00085\ \ \ \textcolor{comment}{/*\ Initialize\ magnetometer.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00086}00086\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a7b137192f8eb987cd221808c2c6c3561}{initMag}}())\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00087}00087\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ initMag()\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00089}00089\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00091}00091\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Magnetometer\ ready"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00092}00092\ \}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00093}00093\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00094}00094\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00095}00095\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ magnetometer\ data\ in\ microtesla.}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00096}00096\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00097}\mbox{\hyperlink{i2c__magneto_8ino_afe461d27b9c48d5921c00d521181f12f}{00097}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__magneto_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00098}00098\ \ \ \textcolor{keywordtype}{float}\ mx,\ my,\ mz;}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00100}00100\ \ \ \textcolor{comment}{/*\ Read\ magnetometer\ data}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00101}00101\ \textcolor{comment}{\ \ \ *\ -\/\ Output\ in\ microtesla\ (uT)}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00102}00102\ \textcolor{comment}{\ \ \ *\ -\/\ Returns\ true\ on\ success}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00103}00103\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00104}00104\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a9f9b29867c2b78efef3ef9688f886314}{readMag}}(mx,\ my,\ mz))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00105}00105\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}MAG\ [uT]:\ "{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00106}00106\ \ \ \ \ Serial.print(mx,\ 2);\ Serial.print(F(\textcolor{stringliteral}{"{},\ "{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00107}00107\ \ \ \ \ Serial.print(my,\ 2);\ Serial.print(F(\textcolor{stringliteral}{"{},\ "{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00108}00108\ \ \ \ \ Serial.println(mz,\ 2);}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00109}00109\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00110}00110\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Mag\ read\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00111}00111\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00112}00112\ }
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00113}00113\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00114}00114\ \ \ delay(500);}
-\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @author\ \ 7Semi,Jonathan\ Mejorado\ Lopez}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ I2C\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ +}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ AK09916\ magnetometer\ readout\ (updated\ API).}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ Features}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ I2C\ init\ on\ default/custom\ pins}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ IMU\ beginI2C()\ initialization}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Manual\ sensor\ enable}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Magnetometer\ initialization\ (initMag)}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00012}00012\ \textcolor{comment}{\ *\ -\/\ Read\ magnetometer\ (uT)\ at\ \string~2\ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00013}00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00014}00014\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO,\ I2C)}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ A4}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ A5}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3\ (or\ 5V\ if\ board\ supports\ it)}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00019}00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ Wiring\ (ESP32,\ I2C\ default)}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ GPIO21}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ GPIO22}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00025}00025\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ Notes}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ WHO\_AM\_I\ must\ be\ 0xEA}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ initMag()\ must\ be\ called\ before\ readMag()}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00029}00029\ \textcolor{comment}{\ *\ -\/\ Magnetometer\ runs\ via\ internal\ I2C\ master}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00030}00030\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00031}00031\ \textcolor{comment}{\ *\ Author\ \ :\ 7Semi\ }}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00032}00032\ \textcolor{comment}{\ *\ License\ :\ MIT}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00033}00033\ \textcolor{comment}{\ ***************************************************************/}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00034}00034\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00037}00037\ \textcolor{comment}{/*\ ======================\ User\ Config\ =======================\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00038}00038\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00039}\mbox{\hyperlink{i2c__magneto_8ino_a526d580d324bce60a3e964066fae77e3}{00039}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00040}00040\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00041}\mbox{\hyperlink{i2c__magneto_8ino_a06c967e78bcedcee909a70764f879433}{00041}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00042}00042\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00043}\mbox{\hyperlink{i2c__magneto_8ino_a8b7500a141450a9df212017430c0df9e}{00043}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00044}00044\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00045}\mbox{\hyperlink{i2c__magneto_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00045}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00046}00046\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00047}00047\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00048}\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00048}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00049}00049\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00050}00050\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00051}00051\ \textcolor{comment}{\ *\ @brief\ Configure\ I2C,\ verify\ the\ IMU,\ and\ initialize\ the\ magnetometer.}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00052}00052\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00053}00053\ \textcolor{comment}{\ *\ The\ magnetometer\ is\ accessed\ through\ the\ ICM-\/20948\ internal\ I2C\ master,\ so}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00054}00054\ \textcolor{comment}{\ *\ initMag()\ must\ succeed\ before\ loop()\ can\ read\ magnetic\ field\ data.}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00055}00055\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00056}\mbox{\hyperlink{i2c__magneto_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00056}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__magneto_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00057}00057\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00058}00058\ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00059}00059\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ (I2C)\ —\ Magnetometer\ Example"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00060}00060\ \ \ Wire.begin(\mbox{\hyperlink{i2c__magneto_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\ \mbox{\hyperlink{i2c__magneto_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00061}00061\ \ \ \textcolor{comment}{/*\ Initialize\ IMU.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00062}00062\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{i2c__magneto_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ 400000))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00063}00063\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ beginI2C()\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00065}00065\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00067}00067\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready\ (I2C)."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00069}00069\ \ \ \textcolor{comment}{/*\ Verify\ device.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00070}00070\ \ \ uint8\_t\ who;}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00071}00071\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who)\ ||\ who\ !=\ 0xEA)\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00072}00072\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ WHO\_AM\_I\ mismatch"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00074}00074\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00076}00076\ \ \ Serial.print(F(\textcolor{stringliteral}{"{}WHO\_AM\_I\ =\ 0x"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00077}00077\ \ \ Serial.println(who,\ HEX);}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00079}00079\ \ \ \textcolor{comment}{/*\ Enable\ required\ sensors\ (mag\ uses\ internal\ I2C\ master)}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00080}00080\ \textcolor{comment}{\ \ \ *\ -\/\ accel/gyro\ not\ strictly\ required\ but\ safe\ to\ keep\ ON}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00081}00081\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00082}00082\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00083}00083\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00086}00086\ \ \ \textcolor{comment}{/*\ Initialize\ magnetometer.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00087}00087\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a7b137192f8eb987cd221808c2c6c3561}{initMag}}())\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00088}00088\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ initMag()\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00090}00090\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00092}00092\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Magnetometer\ ready"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00094}00094\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00095}00095\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00096}00096\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ magnetometer\ data\ in\ microtesla.}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00097}00097\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00098}\mbox{\hyperlink{i2c__magneto_8ino_afe461d27b9c48d5921c00d521181f12f}{00098}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__magneto_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00099}00099\ \ \ \textcolor{keywordtype}{float}\ mx,\ my,\ mz;}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00101}00101\ \ \ \textcolor{comment}{/*\ Read\ magnetometer\ data}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00102}00102\ \textcolor{comment}{\ \ \ *\ -\/\ Output\ in\ microtesla\ (uT)}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00103}00103\ \textcolor{comment}{\ \ \ *\ -\/\ Returns\ true\ on\ success}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00104}00104\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00105}00105\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{i2c__magneto_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a9f9b29867c2b78efef3ef9688f886314}{readMag}}(mx,\ my,\ mz))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00106}00106\ \ \ \ \ Serial.print(F(\textcolor{stringliteral}{"{}MAG\ [uT]:\ "{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00107}00107\ \ \ \ \ Serial.print(mx,\ 2);\ Serial.print(F(\textcolor{stringliteral}{"{},\ "{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00108}00108\ \ \ \ \ Serial.print(my,\ 2);\ Serial.print(F(\textcolor{stringliteral}{"{},\ "{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00109}00109\ \ \ \ \ Serial.println(mz,\ 2);}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00110}00110\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00111}00111\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Mag\ read\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00112}00112\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00114}00114\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00115}00115\ \ \ delay(500);}
+\DoxyCodeLine{\Hypertarget{i2c__magneto_8ino_source_l00116}00116\ \}}
 
 \end{DoxyCode}

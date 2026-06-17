@@ -1,6 +1,6 @@
 <map id="src/DevLab_ICM20948.h" name="src/DevLab_ICM20948.h">
 <area shape="rect" id="Node000001" title=" " alt="" coords="1113,5,1292,31"/>
-<area shape="rect" id="Node000002" href="$gyr__test_8ino.html" title="Gyroscope DLPF and full&#45;scale sweep for the 7Semi ICM&#45;20948." alt="" coords="5,79,173,119"/>
+<area shape="rect" id="Node000002" href="$gyr__test_8ino.html" title="Gyroscope DLPF and full&#45;scale sweep for the DevLab ICM&#45;20948." alt="" coords="5,79,173,119"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1100,23,926,28,698,38,443,55,186,81,174,83,173,78,185,76,442,50,698,33,926,23,1100,18"/>
 <area shape="rect" id="Node000003" href="$i2c__accel_8ino.html" title=" " alt="" coords="198,79,349,119"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1100,25,770,41,565,57,360,81,349,83,348,78,360,76,565,52,769,35,1099,19"/>
@@ -10,9 +10,9 @@
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1100,33,926,53,728,81,717,83,716,78,728,76,925,48,1099,28"/>
 <area shape="rect" id="Node000006" href="$i2c__magneto_8ino.html" title=" " alt="" coords="741,79,915,119"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1135,36,916,82,915,76,1134,31"/>
-<area shape="rect" id="Node000007" href="$interrupt_8ino.html" title="I2C interrupt example for the 7Semi ICM&#45;20948." alt="" coords="940,79,1087,119"/>
+<area shape="rect" id="Node000007" href="$interrupt_8ino.html" title="I2C interrupt example for the DevLab ICM&#45;20948." alt="" coords="940,79,1087,119"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1163,38,1060,81,1058,76,1161,33"/>
-<area shape="rect" id="Node000008" href="$mag__test_8ino.html" title="Magnetometer operation&#45;mode sweep for the 7Semi ICM&#45;20948." alt="" coords="1111,79,1295,119"/>
+<area shape="rect" id="Node000008" href="$mag__test_8ino.html" title="Magnetometer operation&#45;mode sweep for the DevLab ICM&#45;20948." alt="" coords="1111,79,1295,119"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1205,44,1205,79,1200,79,1200,44"/>
 <area shape="rect" id="Node000009" href="$spi__accel_8ino.html" title=" " alt="" coords="1319,79,1470,119"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1244,33,1350,76,1348,81,1242,38"/>

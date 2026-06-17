@@ -1,5 +1,7 @@
 <map id="DevLab_ICM20948::setDLPF" name="DevLab_ICM20948::setDLPF">
-<area shape="rect" id="Node000001" title=" " alt="" coords="164,5,368,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="164,31,368,56"/>
 <area shape="rect" id="Node000002" href="$gyr__test_8ino.html#a327f4fbd9f22daba4f8a6f3f1c13f729" title="Apply one gyroscope full&#45;scale and DLPF configuration." alt="" coords="5,5,116,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,21,116,21,116,15,150,15"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,32,116,27,116,22,151,26"/>
+<area shape="rect" id="Node000003" href="$i2c__gyro_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Configure the IMU for gyroscope&#45;only operation over I2C." alt="" coords="31,55,90,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,59,91,67,90,61,150,54"/>
 </map>

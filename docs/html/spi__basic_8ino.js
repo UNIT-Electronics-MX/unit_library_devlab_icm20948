@@ -1,5 +1,6 @@
 var spi__basic_8ino =
 [
+    [ "CS_PIN", "spi__basic_8ino.html#abfcf05153ddbd63d5aff5d018867cc19", null ],
     [ "SPI_FAST_SPEED", "spi__basic_8ino.html#a785e68f45fbc9e3f0ed8219615c1ed1d", null ],
     [ "loop", "spi__basic_8ino.html#afe461d27b9c48d5921c00d521181f12f", null ],
     [ "setup", "spi__basic_8ino.html#a4fc01d736fe50cf5b977f755b675f11d", null ],

@@ -101,153 +101,154 @@ $(document).ready(function(){initNavTree('mag__test_8ino_source.html',''); initR
 <div class="contents">
 <a href="mag__test_8ino.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file mag_test.ino</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief Magnetometer operation-mode sweep for the 7Semi ICM-20948.</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @details Initializes the AK09916 magnetometer through the ICM-20948 internal</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * I2C master, iterates through continuous measurement modes, and prints CSV-like</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * magnetic field samples to the Serial monitor.</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="DevLab__ICM20948_8h.html">DevLab_ICM20948.h</a>&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// -----------------------------------------------------------</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// PINES I2C — ESP32C6 NANO Unit Electronics</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// -----------------------------------------------------------</span><span class="comment"></span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/** @brief I2C SDA pin used by the example board. */</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a526d580d324bce60a3e964066fae77e3">   15</a></span><span class="preprocessor">#define SDA_PIN   6</span><span class="comment"></span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/** @brief I2C SCL pin used by the example board. */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a06c967e78bcedcee909a70764f879433">   17</a></span><span class="preprocessor">#define SCL_PIN   7</span><span class="comment"></span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/** @brief I2C bus speed in hertz. */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a8b7500a141450a9df212017430c0df9e">   19</a></span><span class="preprocessor">#define I2C_FREQ  400000UL</span><span class="comment"></span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/** @brief ICM-20948 I2C address selected by the AD0 pin. */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">   21</a></span><span class="preprocessor">#define ICM_ADDR  0x69</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"></span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/** @brief Global ICM-20948 driver instance. */</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">   24</a></span><a class="code hl_class" href="classDevLab__ICM20948.html">DevLab_ICM20948</a> <a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"></span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/** @brief Print a separator line to Serial. */</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a8765c1cf679c82cf73a0a13af44b983b">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#a8765c1cf679c82cf73a0a13af44b983b">printLinea</a>()      { Serial.println(F(<span class="stringliteral">&quot;------------------------------------------------------------&quot;</span>)); }<span class="comment"></span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/** @brief Print a double separator line to Serial. */</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a42633dcf8fe2689c57c8113825f74c66">   29</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#a42633dcf8fe2689c57c8113825f74c66">printDobleLinea</a>() { Serial.println(F(<span class="stringliteral">&quot;============================================================&quot;</span>)); }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/** @brief Magnetometer operating modes tested by the sweep. */</span></div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#aab69c51478cd4dd7461938611ebc08bf">   32</a></span><span class="keyword">const</span> <a class="code hl_enumeration" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bb">ICM20948_Op_Mode</a> <a class="code hl_variable" href="mag__test_8ino.html#aab69c51478cd4dd7461938611ebc08bf">opMode</a>[] = {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bbaeb5ecad776b2d1994801f86a1046bdd4">ICM20948_Op_Mode::MODE_POWER_DOWN</a>,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba7974d706e59ca8d22b8782dfdabce86e">ICM20948_Op_Mode::MODE_SINGLE_MEASUREMENT</a>,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bbaf2654418af9eab4757668f4339177c53">ICM20948_Op_Mode::MODE_CONTINUOUS_1</a>,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba2e879cf4786e911224250d6b0194a582">ICM20948_Op_Mode::MODE_CONTINUOUS_2</a>,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba7f0a8ea70bc11d0092f0cd5d87ce6a3f">ICM20948_Op_Mode::MODE_CONTINUOUS_3</a>,</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba9a1ea869de47842c32f3676129ee81af">ICM20948_Op_Mode::MODE_CONTINUOUS_4</a>,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba6c83671c670b651f57b5b009b6a2229b">ICM20948_Op_Mode::MODE_SELF_TEST</a></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief Magnetometer operation-mode sweep for the DevLab ICM-20948.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @author Jonathan Mejorado Lopez</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * @details Initializes the AK09916 magnetometer through the ICM-20948 internal</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * I2C master, iterates through continuous measurement modes, and prints CSV-like</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * magnetic field samples to the Serial monitor.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="DevLab__ICM20948_8h.html">DevLab_ICM20948.h</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// -----------------------------------------------------------</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// PINES I2C — ESP32C6 NANO Unit Electronics</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// -----------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/** @brief I2C SDA pin used by the example board. */</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a526d580d324bce60a3e964066fae77e3">   16</a></span><span class="preprocessor">#define SDA_PIN   6</span><span class="comment"></span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/** @brief I2C SCL pin used by the example board. */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a06c967e78bcedcee909a70764f879433">   18</a></span><span class="preprocessor">#define SCL_PIN   7</span><span class="comment"></span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/** @brief I2C bus speed in hertz. */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a8b7500a141450a9df212017430c0df9e">   20</a></span><span class="preprocessor">#define I2C_FREQ  400000UL</span><span class="comment"></span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/** @brief ICM-20948 I2C address selected by the AD0 pin. */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">   22</a></span><span class="preprocessor">#define ICM_ADDR  0x69</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"></span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/** @brief Global ICM-20948 driver instance. */</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">   25</a></span><a class="code hl_class" href="classDevLab__ICM20948.html">DevLab_ICM20948</a> <a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"></span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">/** @brief Print a separator line to Serial. */</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a8765c1cf679c82cf73a0a13af44b983b">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#a8765c1cf679c82cf73a0a13af44b983b">printLinea</a>()      { Serial.println(F(<span class="stringliteral">&quot;------------------------------------------------------------&quot;</span>)); }<span class="comment"></span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">/** @brief Print a double separator line to Serial. */</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a42633dcf8fe2689c57c8113825f74c66">   30</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#a42633dcf8fe2689c57c8113825f74c66">printDobleLinea</a>() { Serial.println(F(<span class="stringliteral">&quot;============================================================&quot;</span>)); }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"></span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/** @brief Magnetometer operating modes tested by the sweep. */</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#aab69c51478cd4dd7461938611ebc08bf">   33</a></span><span class="keyword">const</span> <a class="code hl_enumeration" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bb">ICM20948_Op_Mode</a> <a class="code hl_variable" href="mag__test_8ino.html#aab69c51478cd4dd7461938611ebc08bf">opMode</a>[] = {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bbaeb5ecad776b2d1994801f86a1046bdd4">ICM20948_Op_Mode::MODE_POWER_DOWN</a>,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba7974d706e59ca8d22b8782dfdabce86e">ICM20948_Op_Mode::MODE_SINGLE_MEASUREMENT</a>,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bbaf2654418af9eab4757668f4339177c53">ICM20948_Op_Mode::MODE_CONTINUOUS_1</a>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba2e879cf4786e911224250d6b0194a582">ICM20948_Op_Mode::MODE_CONTINUOUS_2</a>,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba7f0a8ea70bc11d0092f0cd5d87ce6a3f">ICM20948_Op_Mode::MODE_CONTINUOUS_3</a>,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba9a1ea869de47842c32f3676129ee81af">ICM20948_Op_Mode::MODE_CONTINUOUS_4</a>,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bba6c83671c670b651f57b5b009b6a2229b">ICM20948_Op_Mode::MODE_SELF_TEST</a></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"></span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/** @brief Text labels matching the operating modes printed in the sweep. */</span></div>
-<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a9d54bec7e353a4e4bd28e1b1d346f47d">   43</a></span><span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="mag__test_8ino.html#a9d54bec7e353a4e4bd28e1b1d346f47d">etiquetasOpModeCfg</a>[] = {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="stringliteral">&quot;PowerDown&quot;</span>,<span class="stringliteral">&quot;SingleMeasure&quot;</span>,<span class="stringliteral">&quot;Continuo1&quot;</span>,<span class="stringliteral">&quot;Continuo2&quot;</span>,<span class="stringliteral">&quot;Continuo3&quot;</span>,<span class="stringliteral">&quot;Continuo4&quot;</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};<span class="comment"></span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"></span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/** @brief Text labels matching the operating modes printed in the sweep. */</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a9d54bec7e353a4e4bd28e1b1d346f47d">   44</a></span><span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="mag__test_8ino.html#a9d54bec7e353a4e4bd28e1b1d346f47d">etiquetasOpModeCfg</a>[] = {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="stringliteral">&quot;PowerDown&quot;</span>,<span class="stringliteral">&quot;SingleMeasure&quot;</span>,<span class="stringliteral">&quot;Continuo1&quot;</span>,<span class="stringliteral">&quot;Continuo2&quot;</span>,<span class="stringliteral">&quot;Continuo3&quot;</span>,<span class="stringliteral">&quot;Continuo4&quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};<span class="comment"></span></div>
 </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/** @brief Number of printable magnetometer operation modes. */</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a70317553f12ff1d3b53c82107a6cb5cf">   47</a></span><span class="keyword">const</span> uint8_t <a class="code hl_variable" href="mag__test_8ino.html#a70317553f12ff1d3b53c82107a6cb5cf">N_OPM</a> = 6;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"></span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> * @brief Initialize the magnetometer and collect samples for each mode.</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#af42a493b8d96759f43d866fbe725cf3d">   52</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#af42a493b8d96759f43d866fbe725cf3d">applySettings</a>(){</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> <span class="comment">/* Initialize magnetometer. */</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a7b137192f8eb987cd221808c2c6c3561">initMag</a>()) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: initMag() failed&quot;</span>));</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 2; i &lt; <a class="code hl_variable" href="mag__test_8ino.html#a70317553f12ff1d3b53c82107a6cb5cf">N_OPM</a>; i++){</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a0882a30454b0716953f5f375613d24b3">setMagOpMode</a>(<a class="code hl_variable" href="mag__test_8ino.html#aab69c51478cd4dd7461938611ebc08bf">opMode</a>[i]);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>     delay(100);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    Serial.println(F(<span class="stringliteral">&quot;Magnetometer ready&quot;</span>));</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>     <span class="keywordtype">float</span> mx, my, mz;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">/* Read magnetometer data</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">    * - Output in microtesla (uT)</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">    * - Returns true on success</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = 0; r  &lt; 500 ; r++){</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a9f9b29867c2b78efef3ef9688f886314">readMag</a>(mx, my, mz)) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        Serial.printf(<span class="stringliteral">&quot;[%d]&quot;</span>,r);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        Serial.print(<span class="stringliteral">&quot;;&quot;</span>);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        Serial.print(<a class="code hl_variable" href="mag__test_8ino.html#a9d54bec7e353a4e4bd28e1b1d346f47d">etiquetasOpModeCfg</a>[i]);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        Serial.print(<span class="stringliteral">&quot;;&quot;</span>);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        Serial.print(mx, 2); Serial.print(F(<span class="stringliteral">&quot;; &quot;</span>));</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        Serial.print(my, 2); Serial.print(F(<span class="stringliteral">&quot;; &quot;</span>));</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        Serial.println(mz, 2);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        Serial.println(F(<span class="stringliteral">&quot;Mag read failed&quot;</span>));</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    Serial.println(F(<span class="stringliteral">&quot;-----------------------------&quot;</span>));</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    delay(500);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/** @brief Number of printable magnetometer operation modes. */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a70317553f12ff1d3b53c82107a6cb5cf">   48</a></span><span class="keyword">const</span> uint8_t <a class="code hl_variable" href="mag__test_8ino.html#a70317553f12ff1d3b53c82107a6cb5cf">N_OPM</a> = 6;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"></span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> * @brief Initialize the magnetometer and collect samples for each mode.</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#af42a493b8d96759f43d866fbe725cf3d">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#af42a493b8d96759f43d866fbe725cf3d">applySettings</a>(){</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> <span class="comment">/* Initialize magnetometer. */</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a7b137192f8eb987cd221808c2c6c3561">initMag</a>()) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: initMag() failed&quot;</span>));</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 2; i &lt; <a class="code hl_variable" href="mag__test_8ino.html#a70317553f12ff1d3b53c82107a6cb5cf">N_OPM</a>; i++){</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a0882a30454b0716953f5f375613d24b3">setMagOpMode</a>(<a class="code hl_variable" href="mag__test_8ino.html#aab69c51478cd4dd7461938611ebc08bf">opMode</a>[i]);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>     delay(100);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Serial.println(F(<span class="stringliteral">&quot;Magnetometer ready&quot;</span>));</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>     <span class="keywordtype">float</span> mx, my, mz;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">/* Read magnetometer data</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">    * - Output in microtesla (uT)</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">    * - Returns true on success</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = 0; r  &lt; 500 ; r++){</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="keywordflow">if</span> (<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a9f9b29867c2b78efef3ef9688f886314">readMag</a>(mx, my, mz)) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        Serial.printf(<span class="stringliteral">&quot;[%d]&quot;</span>,r);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        Serial.print(<span class="stringliteral">&quot;;&quot;</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        Serial.print(<a class="code hl_variable" href="mag__test_8ino.html#a9d54bec7e353a4e4bd28e1b1d346f47d">etiquetasOpModeCfg</a>[i]);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        Serial.print(<span class="stringliteral">&quot;;&quot;</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        Serial.print(mx, 2); Serial.print(F(<span class="stringliteral">&quot;; &quot;</span>));</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        Serial.print(my, 2); Serial.print(F(<span class="stringliteral">&quot;; &quot;</span>));</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        Serial.println(mz, 2);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        Serial.println(F(<span class="stringliteral">&quot;Mag read failed&quot;</span>));</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    Serial.println(F(<span class="stringliteral">&quot;-----------------------------&quot;</span>));</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    delay(500);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment"></span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment"> * @brief Initialize I2C, verify the IMU, enable sensors, and start the sweep.</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">   90</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="comment">// put your setup code here, to run once:</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> Serial.begin(115200);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  delay(200);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  Serial.println(F(<span class="stringliteral">&quot;ICM-20948 (I2C) — Magnetometer Example&quot;</span>));</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  Wire.begin(<a class="code hl_define" href="mag__test_8ino.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a>,<a class="code hl_define" href="mag__test_8ino.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a>);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="comment">/* Initialize IMU. */</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a91147b3cd4c45bffc8e024f985be7b21">beginI2C</a>(<a class="code hl_define" href="mag__test_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">ICM_ADDR</a>, Wire, 400000)) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: beginI2C() failed.&quot;</span>));</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  Serial.println(F(<span class="stringliteral">&quot;ICM-20948 ready (I2C).&quot;</span>));</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="comment">/* Verify device. */</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  uint8_t who;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a8bef7eafb3b67eb736f491d0df453b9e">readWhoAmI</a>(who) || who != 0xEA) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: WHO_AM_I mismatch&quot;</span>));</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  Serial.print(F(<span class="stringliteral">&quot;WHO_AM_I = 0x&quot;</span>));</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  Serial.println(who, HEX);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="comment">/* Enable required sensors (mag uses internal I2C master)</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">   * - accel/gyro not strictly required but safe to keep ON</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186">setSensors</a>(<span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>)) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    Serial.println(F(<span class="stringliteral">&quot;setSensors failed.&quot;</span>));</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  }</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  Serial.println(F(<span class="stringliteral">&quot;  Sensor listo.\n&quot;</span>));</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  Serial.println(F(<span class="stringliteral">&quot;  Sensor PLANO y QUIETO sobre la mesa.&quot;</span>));</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  Serial.println(F(<span class="stringliteral">&quot;  Iniciando en 5 segundos...&quot;</span>));</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 5; i &gt; 0; i--) {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    Serial.printf(<span class="stringliteral">&quot;  %d...\n&quot;</span>, i);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    delay(1000);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  <a class="code hl_function" href="mag__test_8ino.html#af42a493b8d96759f43d866fbe725cf3d">applySettings</a>();</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment"></span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"> * @brief Initialize I2C, verify the IMU, enable sensors, and start the sweep.</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">   91</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="comment">// put your setup code here, to run once:</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> Serial.begin(115200);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  delay(200);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  Serial.println(F(<span class="stringliteral">&quot;ICM-20948 (I2C) — Magnetometer Example&quot;</span>));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  Wire.begin(<a class="code hl_define" href="mag__test_8ino.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a>,<a class="code hl_define" href="mag__test_8ino.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="comment">/* Initialize IMU. */</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a91147b3cd4c45bffc8e024f985be7b21">beginI2C</a>(<a class="code hl_define" href="mag__test_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">ICM_ADDR</a>, Wire, 400000)) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: beginI2C() failed.&quot;</span>));</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  Serial.println(F(<span class="stringliteral">&quot;ICM-20948 ready (I2C).&quot;</span>));</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="comment">/* Verify device. */</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  uint8_t who;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a8bef7eafb3b67eb736f491d0df453b9e">readWhoAmI</a>(who) || who != 0xEA) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: WHO_AM_I mismatch&quot;</span>));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  Serial.print(F(<span class="stringliteral">&quot;WHO_AM_I = 0x&quot;</span>));</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  Serial.println(who, HEX);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="comment">/* Enable required sensors (mag uses internal I2C master)</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">   * - accel/gyro not strictly required but safe to keep ON</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186">setSensors</a>(<span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">false</span>)) {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    Serial.println(F(<span class="stringliteral">&quot;setSensors failed.&quot;</span>));</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  Serial.println(F(<span class="stringliteral">&quot;  Sensor listo.\n&quot;</span>));</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  Serial.println(F(<span class="stringliteral">&quot;  Sensor PLANO y QUIETO sobre la mesa.&quot;</span>));</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  Serial.println(F(<span class="stringliteral">&quot;  Iniciando en 5 segundos...&quot;</span>));</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 5; i &gt; 0; i--) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    Serial.printf(<span class="stringliteral">&quot;  %d...\n&quot;</span>, i);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    delay(1000);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <a class="code hl_function" href="mag__test_8ino.html#af42a493b8d96759f43d866fbe725cf3d">applySettings</a>();</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
 </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment"></span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment"> * @brief Empty loop; this sketch runs the magnetometer sweep once in setup().</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00137" data-start="{" data-end="}">
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#afe461d27b9c48d5921c00d521181f12f">  137</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a>() {</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="comment">// put your main code here, to run repeatedly:</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment"></span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment"> * @brief Empty loop; this sketch runs the magnetometer sweep once in setup().</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="mag__test_8ino.html#afe461d27b9c48d5921c00d521181f12f">  138</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="mag__test_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a>() {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="comment">// put your main code here, to run repeatedly:</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
 </div>
 <div class="ttc" id="aDevLab__ICM20948_8h_html"><div class="ttname"><a href="DevLab__ICM20948_8h.html">DevLab_ICM20948.h</a></div></div>
 <div class="ttc" id="aDevLab__ICM20948_8h_html_ad14b8d7e0be37ca0ccaf45ccc31c18bb"><div class="ttname"><a href="DevLab__ICM20948_8h.html#ad14b8d7e0be37ca0ccaf45ccc31c18bb">ICM20948_Op_Mode</a></div><div class="ttdeci">ICM20948_Op_Mode</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8h_source.html#l00014">DevLab_ICM20948.h:15</a></div></div>
@@ -265,25 +266,25 @@ $(document).ready(function(){initNavTree('mag__test_8ino_source.html',''); initR
 <div class="ttc" id="aclassDevLab__ICM20948_html_a91147b3cd4c45bffc8e024f985be7b21"><div class="ttname"><a href="classDevLab__ICM20948.html#a91147b3cd4c45bffc8e024f985be7b21">DevLab_ICM20948::beginI2C</a></div><div class="ttdeci">bool beginI2C(uint8_t address=0x69, TwoWire &amp;i2cPort=Wire, uint32_t i2cSpeed=400000)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00006">DevLab_ICM20948.cpp:6</a></div></div>
 <div class="ttc" id="aclassDevLab__ICM20948_html_a9f9b29867c2b78efef3ef9688f886314"><div class="ttname"><a href="classDevLab__ICM20948.html#a9f9b29867c2b78efef3ef9688f886314">DevLab_ICM20948::readMag</a></div><div class="ttdeci">bool readMag(float &amp;x, float &amp;y, float &amp;z)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00310">DevLab_ICM20948.cpp:310</a></div></div>
 <div class="ttc" id="aclassDevLab__ICM20948_html_ae9c088334d6ec706bb08b47ef29bd186"><div class="ttname"><a href="classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186">DevLab_ICM20948::setSensors</a></div><div class="ttdeci">bool setSensors(bool accel_on, bool gyro_on, bool temp_on)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l01006">DevLab_ICM20948.cpp:1006</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_a06c967e78bcedcee909a70764f879433"><div class="ttname"><a href="mag__test_8ino.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a></div><div class="ttdeci">#define SCL_PIN</div><div class="ttdoc">I2C SCL pin used by the example board.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00017">mag_test.ino:17</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_a42633dcf8fe2689c57c8113825f74c66"><div class="ttname"><a href="mag__test_8ino.html#a42633dcf8fe2689c57c8113825f74c66">printDobleLinea</a></div><div class="ttdeci">void printDobleLinea()</div><div class="ttdoc">Print a double separator line to Serial.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00029">mag_test.ino:29</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="mag__test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">Initialize I2C, verify the IMU, enable sensors, and start the sweep.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00090">mag_test.ino:90</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_a526d580d324bce60a3e964066fae77e3"><div class="ttname"><a href="mag__test_8ino.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a></div><div class="ttdeci">#define SDA_PIN</div><div class="ttdoc">I2C SDA pin used by the example board.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00015">mag_test.ino:15</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_a70317553f12ff1d3b53c82107a6cb5cf"><div class="ttname"><a href="mag__test_8ino.html#a70317553f12ff1d3b53c82107a6cb5cf">N_OPM</a></div><div class="ttdeci">const uint8_t N_OPM</div><div class="ttdoc">Number of printable magnetometer operation modes.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00047">mag_test.ino:47</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_a8765c1cf679c82cf73a0a13af44b983b"><div class="ttname"><a href="mag__test_8ino.html#a8765c1cf679c82cf73a0a13af44b983b">printLinea</a></div><div class="ttdeci">void printLinea()</div><div class="ttdoc">Print a separator line to Serial.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00027">mag_test.ino:27</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_a8fb98755bd25ab9d5bf8739e15df6eeb"><div class="ttname"><a href="mag__test_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">ICM_ADDR</a></div><div class="ttdeci">#define ICM_ADDR</div><div class="ttdoc">ICM-20948 I2C address selected by the AD0 pin.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00021">mag_test.ino:21</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_a9d54bec7e353a4e4bd28e1b1d346f47d"><div class="ttname"><a href="mag__test_8ino.html#a9d54bec7e353a4e4bd28e1b1d346f47d">etiquetasOpModeCfg</a></div><div class="ttdeci">const char * etiquetasOpModeCfg[]</div><div class="ttdoc">Text labels matching the operating modes printed in the sweep.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00043">mag_test.ino:43</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_aa8226278adaa3f7fb2ad8b966f7787a1"><div class="ttname"><a href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a></div><div class="ttdeci">DevLab_ICM20948 imu</div><div class="ttdoc">Global ICM-20948 driver instance.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00024">mag_test.ino:24</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_aab69c51478cd4dd7461938611ebc08bf"><div class="ttname"><a href="mag__test_8ino.html#aab69c51478cd4dd7461938611ebc08bf">opMode</a></div><div class="ttdeci">const ICM20948_Op_Mode opMode[]</div><div class="ttdoc">Magnetometer operating modes tested by the sweep.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00032">mag_test.ino:32</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_af42a493b8d96759f43d866fbe725cf3d"><div class="ttname"><a href="mag__test_8ino.html#af42a493b8d96759f43d866fbe725cf3d">applySettings</a></div><div class="ttdeci">void applySettings()</div><div class="ttdoc">Initialize the magnetometer and collect samples for each mode.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00052">mag_test.ino:52</a></div></div>
-<div class="ttc" id="amag__test_8ino_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="mag__test_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdoc">Empty loop; this sketch runs the magnetometer sweep once in setup().</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00137">mag_test.ino:137</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_a06c967e78bcedcee909a70764f879433"><div class="ttname"><a href="mag__test_8ino.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a></div><div class="ttdeci">#define SCL_PIN</div><div class="ttdoc">I2C SCL pin used by the example board.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00018">mag_test.ino:18</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_a42633dcf8fe2689c57c8113825f74c66"><div class="ttname"><a href="mag__test_8ino.html#a42633dcf8fe2689c57c8113825f74c66">printDobleLinea</a></div><div class="ttdeci">void printDobleLinea()</div><div class="ttdoc">Print a double separator line to Serial.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00030">mag_test.ino:30</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="mag__test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">Initialize I2C, verify the IMU, enable sensors, and start the sweep.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00091">mag_test.ino:91</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_a526d580d324bce60a3e964066fae77e3"><div class="ttname"><a href="mag__test_8ino.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a></div><div class="ttdeci">#define SDA_PIN</div><div class="ttdoc">I2C SDA pin used by the example board.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00016">mag_test.ino:16</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_a70317553f12ff1d3b53c82107a6cb5cf"><div class="ttname"><a href="mag__test_8ino.html#a70317553f12ff1d3b53c82107a6cb5cf">N_OPM</a></div><div class="ttdeci">const uint8_t N_OPM</div><div class="ttdoc">Number of printable magnetometer operation modes.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00048">mag_test.ino:48</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_a8765c1cf679c82cf73a0a13af44b983b"><div class="ttname"><a href="mag__test_8ino.html#a8765c1cf679c82cf73a0a13af44b983b">printLinea</a></div><div class="ttdeci">void printLinea()</div><div class="ttdoc">Print a separator line to Serial.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00028">mag_test.ino:28</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_a8fb98755bd25ab9d5bf8739e15df6eeb"><div class="ttname"><a href="mag__test_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">ICM_ADDR</a></div><div class="ttdeci">#define ICM_ADDR</div><div class="ttdoc">ICM-20948 I2C address selected by the AD0 pin.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00022">mag_test.ino:22</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_a9d54bec7e353a4e4bd28e1b1d346f47d"><div class="ttname"><a href="mag__test_8ino.html#a9d54bec7e353a4e4bd28e1b1d346f47d">etiquetasOpModeCfg</a></div><div class="ttdeci">const char * etiquetasOpModeCfg[]</div><div class="ttdoc">Text labels matching the operating modes printed in the sweep.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00044">mag_test.ino:44</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_aa8226278adaa3f7fb2ad8b966f7787a1"><div class="ttname"><a href="mag__test_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a></div><div class="ttdeci">DevLab_ICM20948 imu</div><div class="ttdoc">Global ICM-20948 driver instance.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00025">mag_test.ino:25</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_aab69c51478cd4dd7461938611ebc08bf"><div class="ttname"><a href="mag__test_8ino.html#aab69c51478cd4dd7461938611ebc08bf">opMode</a></div><div class="ttdeci">const ICM20948_Op_Mode opMode[]</div><div class="ttdoc">Magnetometer operating modes tested by the sweep.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00033">mag_test.ino:33</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_af42a493b8d96759f43d866fbe725cf3d"><div class="ttname"><a href="mag__test_8ino.html#af42a493b8d96759f43d866fbe725cf3d">applySettings</a></div><div class="ttdeci">void applySettings()</div><div class="ttdoc">Initialize the magnetometer and collect samples for each mode.</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00053">mag_test.ino:53</a></div></div>
+<div class="ttc" id="amag__test_8ino_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="mag__test_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdoc">Empty loop; this sketch runs the magnetometer sweep once in setup().</div><div class="ttdef"><b>Definition</b> <a href="mag__test_8ino_source.html#l00138">mag_test.ino:138</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_373158612b3c48e428f6af49c66d1012.html">mag_test</a></li><li class="navelem"><a class="el" href="mag__test_8ino.html">mag_test.ino</a></li>
-    <li class="footer">Generated on Tue Jun 16 2026 17:37:03 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Wed Jun 17 2026 22:32:52 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

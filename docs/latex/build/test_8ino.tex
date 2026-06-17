@@ -53,7 +53,7 @@ void \mbox{\hyperlink{test_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
 \item 
 const \mbox{\hyperlink{structconfigDLPF}{config\+DLPF}} \mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}} \mbox{[}$\,$\mbox{]}
 \begin{DoxyCompactList}\small\item\em Accelerometer DLPF configurations exercised by this validation. \end{DoxyCompactList}\item 
-const uint8\+\_\+t \mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\+\_\+\+DLPF}} = sizeof(\mbox{\hyperlink{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}{configs\+DLPF}}) / sizeof(\mbox{\hyperlink{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}{configs\+DLPF}}\mbox{[}0\mbox{]})
+const uint8\+\_\+t \mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\+\_\+\+DLPF}} = sizeof(\mbox{\hyperlink{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}}) / sizeof(\mbox{\hyperlink{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}}\mbox{[}0\mbox{]})
 \begin{DoxyCompactList}\small\item\em Number of accelerometer DLPF configurations. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05}{ICM20948\+\_\+\+Accel\+\_\+\+Full\+Scale}} \mbox{\hyperlink{test_8ino_afba242a959acc49646be317c43c4bc51}{accel\+Cfg}} \mbox{[}$\,$\mbox{]} = \{ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05aade318cc7367b7f1b4127eddc5f4899f}{ICM20948\+\_\+\+Accel\+\_\+\+Full\+Scale\+::\+G\+\_\+2}}, \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05abda3c606e1ce64e3bda86c1fe6232693}{ICM20948\+\_\+\+Accel\+\_\+\+Full\+Scale\+::\+G\+\_\+4}}, \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05a7526fbbb8f59b17de642323ac8f156aa}{ICM20948\+\_\+\+Accel\+\_\+\+Full\+Scale\+::\+G\+\_\+8}}, \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05a0ab58ba0a5550a73055a08e4c20ee549}{ICM20948\+\_\+\+Accel\+\_\+\+Full\+Scale\+::\+G\+\_\+16}}\}
 \begin{DoxyCompactList}\small\item\em Accelerometer full-\/scale ranges available for validation. \end{DoxyCompactList}\item 
@@ -86,6 +86,9 @@ uint8\+\_\+t \mbox{\hyperlink{test_8ino_ae452872d489cfa87ffe02f8cf8718a43}{total
 \doxysubsection{Detailed Description}
 Accelerometer DLPF validation sketch for the 7Semi ICM-\/20948. 
 
+\begin{DoxyAuthor}{Author}
+Jonathan Mejorado Lopez
+\end{DoxyAuthor}
 Runs an I2C accelerometer sweep across DLPF settings, prints sample data to Serial, and is intended for bench validation with the sensor flat and stationary. 
 
 Definition in file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
@@ -105,7 +108,7 @@ I2C bus speed in hertz.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00019}{19}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00020}{20}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}\label{test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb} 
 \index{test.ino@{test.ino}!ICM\_ADDR@{ICM\_ADDR}}
@@ -119,7 +122,7 @@ ICM-\/20948 I2C address selected by the AD0 pin.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00025}{25}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00026}{26}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a06c967e78bcedcee909a70764f879433}\label{test_8ino_a06c967e78bcedcee909a70764f879433} 
 \index{test.ino@{test.ino}!SCL\_PIN@{SCL\_PIN}}
@@ -133,7 +136,7 @@ I2C SCL pin used by the example board.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00017}{17}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00018}{18}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a526d580d324bce60a3e964066fae77e3}\label{test_8ino_a526d580d324bce60a3e964066fae77e3} 
 \index{test.ino@{test.ino}!SDA\_PIN@{SDA\_PIN}}
@@ -147,7 +150,7 @@ I2C SDA pin used by the example board.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00015}{15}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00016}{16}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 
 
@@ -174,7 +177,7 @@ true if all configuration writes succeeded, otherwise false.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00114}{114}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00115}{115}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -196,7 +199,7 @@ Verify the IMU identity register.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00131}{131}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00132}{132}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -226,7 +229,7 @@ Optional post-\/sweep loop for manual accelerometer reads.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00225}{225}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00226}{226}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a42633dcf8fe2689c57c8113825f74c66}\label{test_8ino_a42633dcf8fe2689c57c8113825f74c66} 
 \index{test.ino@{test.ino}!printDobleLinea@{printDobleLinea}}
@@ -240,7 +243,7 @@ Print a double separator line to Serial.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00103}{103}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00104}{104}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -262,7 +265,7 @@ Print a separator line to Serial.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00098}{98}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00099}{99}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -284,7 +287,7 @@ Run the accelerometer DLPF validation sweep and print samples.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00144}{144}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00145}{145}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -314,7 +317,7 @@ Initialize I2C, reset/wake the IMU, enable sensors, and start sweep.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00186}{186}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00187}{187}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -339,7 +342,7 @@ Accelerometer averaging settings available for validation.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00072}{72}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00073}{73}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_afba242a959acc49646be317c43c4bc51}\label{test_8ino_afba242a959acc49646be317c43c4bc51} 
 \index{test.ino@{test.ino}!accelCfg@{accelCfg}}
@@ -353,7 +356,7 @@ Accelerometer full-\/scale ranges available for validation.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00060}{60}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00061}{61}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a1aaf273f25b97fc05866f455e73b7ba9}\label{test_8ino_a1aaf273f25b97fc05866f455e73b7ba9} 
 \index{test.ino@{test.ino}!accelDLPF@{accelDLPF}}
@@ -367,7 +370,7 @@ Accelerometer DLPF enum values matching configs\+DLPF.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00067}{67}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00068}{68}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_afa2564ef9650479c8ec39b52d193fbbd}\label{test_8ino_afa2564ef9650479c8ec39b52d193fbbd} 
 \index{test.ino@{test.ino}!accelSR@{accelSR}}
@@ -381,7 +384,7 @@ Raw accelerometer sample-\/rate divider values for experiments.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00077}{77}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00078}{78}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}\label{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a} 
 \index{test.ino@{test.ino}!configsDLPF@{configsDLPF}}
@@ -410,7 +413,7 @@ Accelerometer DLPF configurations exercised by this validation.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00042}{42}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00043}{43}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a1e7d1f7dded2d3dfeb778c3cfcc91dea}\label{test_8ino_a1e7d1f7dded2d3dfeb778c3cfcc91dea} 
 \index{test.ino@{test.ino}!etiquetasAccelAVG@{etiquetasAccelAVG}}
@@ -424,7 +427,7 @@ Text labels matching accel\+AVG.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00074}{74}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00075}{75}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a14ebfda2dc5c37c8a8080f828f9fecf8}\label{test_8ino_a14ebfda2dc5c37c8a8080f828f9fecf8} 
 \index{test.ino@{test.ino}!etiquetasAccelCfg@{etiquetasAccelCfg}}
@@ -438,7 +441,7 @@ Text labels matching accel\+Cfg.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00062}{62}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00063}{63}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a7d8148db97649efa472bd4ed2470fb4c}\label{test_8ino_a7d8148db97649efa472bd4ed2470fb4c} 
 \index{test.ino@{test.ino}!etiquetasAccelDLPFCFG@{etiquetasAccelDLPFCFG}}
@@ -452,7 +455,7 @@ Text labels describing accel\+DLPF bandwidth pairs.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00069}{69}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00070}{70}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_aab3a263352ee1fbbca9fe5acf2cd19eb}\label{test_8ino_aab3a263352ee1fbbca9fe5acf2cd19eb} 
 \index{test.ino@{test.ino}!etiquetasSR@{etiquetasSR}}
@@ -466,7 +469,7 @@ Text labels matching accel\+SR output data rates.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00079}{79}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00080}{80}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}\label{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1} 
 \index{test.ino@{test.ino}!imu@{imu}}
@@ -480,13 +483,13 @@ Global ICM-\/20948 driver instance.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00084}{84}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00085}{85}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}\label{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854} 
 \index{test.ino@{test.ino}!N\_DLPF@{N\_DLPF}}
 \index{N\_DLPF@{N\_DLPF}!test.ino@{test.ino}}
 \doxysubsubsection{\texorpdfstring{N\_DLPF}{N\_DLPF}}
-{\footnotesize\ttfamily const uint8\+\_\+t N\+\_\+\+DLPF = sizeof(\mbox{\hyperlink{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}{configs\+DLPF}}) / sizeof(\mbox{\hyperlink{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}{configs\+DLPF}}\mbox{[}0\mbox{]})}
+{\footnotesize\ttfamily const uint8\+\_\+t N\+\_\+\+DLPF = sizeof(\mbox{\hyperlink{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}}) / sizeof(\mbox{\hyperlink{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}}\mbox{[}0\mbox{]})}
 
 
 
@@ -494,7 +497,7 @@ Number of accelerometer DLPF configurations.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00057}{57}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00058}{58}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a6e9ca5bda437536b80c2d5b592629088}\label{test_8ino_a6e9ca5bda437536b80c2d5b592629088} 
 \index{test.ino@{test.ino}!N\_FS@{N\_FS}}
@@ -508,7 +511,7 @@ Number of accelerometer full-\/scale ranges.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00064}{64}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00065}{65}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_a1bf762e03a9be2534f36ec8a2611c341}\label{test_8ino_a1bf762e03a9be2534f36ec8a2611c341} 
 \index{test.ino@{test.ino}!total\_fail@{total\_fail}}
@@ -522,7 +525,7 @@ Count of validation failures reserved for future checks.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00089}{89}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00090}{90}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_ac52922d562439e55245447f152baaf1b}\label{test_8ino_ac52922d562439e55245447f152baaf1b} 
 \index{test.ino@{test.ino}!total\_pass@{total\_pass}}
@@ -536,7 +539,7 @@ Count of validation passes reserved for future checks.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00087}{87}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00088}{88}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 
 \Hypertarget{test_8ino_ae452872d489cfa87ffe02f8cf8718a43}\label{test_8ino_ae452872d489cfa87ffe02f8cf8718a43} 
 \index{test.ino@{test.ino}!total\_warn@{total\_warn}}
@@ -550,5 +553,5 @@ Count of validation warnings reserved for future checks.
 
 
 
-Definition at line \mbox{\hyperlink{test_8ino_source_l00091}{91}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
+Definition at line \mbox{\hyperlink{test_8ino_source_l00092}{92}} of file \mbox{\hyperlink{test_8ino_source}{test.\+ino}}.
 

@@ -1,38 +1,55 @@
 <map id="setup" name="setup">
-<area shape="rect" id="Node000001" title="Configure the IMU for accelerometer&#45;only operation over SPI." alt="" coords="5,256,64,281"/>
-<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#a4386f310503153f3e28935cbdda75b18" title=" " alt="" coords="120,256,327,281"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,266,106,266,106,271,64,271"/>
-<area shape="rect" id="Node000012" href="$classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186" title=" " alt="" coords="112,107,335,132"/>
-<area shape="poly" id="edge19_Node000001_Node000012" title=" " alt="" coords="50,254,194,138,197,143,54,258"/>
-<area shape="rect" id="Node000013" href="$spi__accel_8ino.html#a5f08ba3a5b3d8e5b3fa5a22429ecfa2b" title="SPI bus object used by the IMU driver." alt="" coords="188,305,259,331"/>
-<area shape="poly" id="edge23_Node000001_Node000013" title=" " alt="" coords="65,276,113,290,175,305,174,310,111,295,64,281"/>
-<area shape="rect" id="Node000003" href="$classDevLab__ICM20948.html#a31460c48549b1d3081e253706f8b15e6" title=" " alt="" coords="389,382,611,422"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="315,279,336,291,354,309,361,329,369,349,384,367,395,373,392,378,381,371,364,351,356,331,349,312,333,295,313,284"/>
-<area shape="rect" id="Node000004" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="665,281,888,307"/>
-<area shape="poly" id="edge10_Node000002_Node000004" title=" " alt="" coords="327,271,652,286,651,291,327,276"/>
-<area shape="rect" id="Node000005" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="936,307,1085,332"/>
-<area shape="poly" id="edge14_Node000002_Node000005" title=" " alt="" coords="320,279,336,291,351,309,358,327,360,365,362,401,369,417,384,432,421,454,460,469,501,479,543,483,586,483,630,478,716,458,797,430,871,397,978,337,980,342,873,401,799,435,717,464,630,483,587,488,543,488,500,484,459,474,419,459,381,436,365,420,357,402,354,366,353,328,346,311,333,295,317,284"/>
-<area shape="rect" id="Node000006" href="$classSPI__Interface.html#a24b5d68ff8da5578f56ee571d86ab289" title=" " alt="" coords="415,231,585,256"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="326,257,401,250,401,255,327,262"/>
-<area shape="rect" id="Node000007" href="$classDevLab__ICM20948.html#a8bef7eafb3b67eb736f491d0df453b9e" title=" " alt="" coords="383,181,617,207"/>
-<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="260,253,382,215,417,207,418,212,383,221,262,258"/>
-<area shape="rect" id="Node000009" href="$classDevLab__ICM20948.html#a0d6774b76298645ee45ec0e9065a8891" title=" " alt="" coords="394,332,606,357"/>
-<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="293,279,336,290,384,310,434,326,433,331,382,315,334,295,291,284"/>
-<area shape="rect" id="Node000010" href="$classBusIO__7Semi.html#ac7b3d1c425f7187abbe1bbec64d9ccea" title=" " alt="" coords="417,132,583,157"/>
-<area shape="poly" id="edge15_Node000002_Node000010" title=" " alt="" coords="239,254,299,210,339,187,382,166,404,158,406,163,384,171,342,191,302,215,242,258"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="577,379,616,366,681,339,738,311,740,316,684,343,618,371,579,384"/>
-<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="611,383,888,339,930,332,931,337,888,345,612,388"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="889,303,923,307,922,312,888,309"/>
-<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="577,204,618,215,685,243,742,272,740,277,683,248,616,221,576,209"/>
-<area shape="rect" id="Node000008" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="938,81,1083,107"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="566,179,931,107,932,112,567,184"/>
-<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="570,329,692,307,693,312,571,335"/>
-<area shape="poly" id="edge13_Node000009_Node000005" title=" " alt="" coords="606,337,922,321,922,326,607,342"/>
-<area shape="rect" id="Node000011" href="$classBusIO__7Semi.html#a855c7388d4118e632c84c7f8e2e3ddc2" title=" " alt="" coords="689,5,864,31"/>
-<area shape="poly" id="edge16_Node000010_Node000011" title=" " alt="" coords="528,129,734,34,737,39,530,134"/>
-<area shape="poly" id="edge18_Node000011_Node000005" title=" " alt="" coords="855,28,890,48,905,66,922,93,954,161,1003,293,998,295,949,163,917,95,901,69,886,52,853,33"/>
-<area shape="poly" id="edge17_Node000011_Node000008" title=" " alt="" coords="825,28,889,47,964,74,963,79,887,53,823,33"/>
-<area shape="poly" id="edge20_Node000012_Node000004" title=" " alt="" coords="276,104,346,92,434,85,480,86,528,91,574,101,618,117,644,131,668,148,709,189,742,231,764,267,760,270,737,234,705,192,664,152,641,135,616,122,573,106,527,96,480,92,434,91,347,97,277,109"/>
-<area shape="poly" id="edge21_Node000012_Node000005" title=" " alt="" coords="265,104,333,87,422,73,520,69,570,74,618,83,676,103,732,128,838,187,925,247,986,295,983,300,922,252,835,191,730,132,674,108,617,89,569,79,520,75,422,78,334,93,266,109"/>
-<area shape="poly" id="edge22_Node000012_Node000010" title=" " alt="" coords="335,127,403,133,403,138,335,132"/>
+<area shape="rect" id="Node000001" title="Configure the IMU for accelerometer&#45;only operation over SPI." alt="" coords="5,298,64,324"/>
+<area shape="rect" id="Node000002" href="$classDevLab__ICM20948.html#a4386f310503153f3e28935cbdda75b18" title=" " alt="" coords="128,406,335,432"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,321,196,397,194,402,58,326"/>
+<area shape="rect" id="Node000012" href="$classDevLab__ICM20948.html#a619f82390347cc173d1604d4d711b537" title=" " alt="" coords="413,291,619,331"/>
+<area shape="poly" id="edge19_Node000001_Node000012" title=" " alt="" coords="64,308,399,308,399,314,64,314"/>
+<area shape="rect" id="Node000013" href="$classDevLab__ICM20948.html#aca0cb8da36b8e9128299b9aeb5bb60ec" title=" " alt="" coords="413,671,619,711"/>
+<area shape="poly" id="edge22_Node000001_Node000013" title=" " alt="" coords="42,323,65,381,86,413,114,441,145,458,175,465,205,465,234,463,263,460,293,462,322,472,352,493,368,512,376,532,378,572,380,612,387,631,401,650,415,662,411,666,397,654,382,634,375,613,373,573,371,534,364,515,349,497,320,477,292,467,263,466,234,468,205,471,175,470,143,463,110,445,82,417,61,383,37,325"/>
+<area shape="rect" id="Node000014" href="$classDevLab__ICM20948.html#ac52d80aad738b90aa0f05e9d6404bb85" title=" " alt="" coords="112,50,351,76"/>
+<area shape="poly" id="edge25_Node000001_Node000014" title=" " alt="" coords="36,297,60,225,81,179,110,137,147,104,187,79,190,84,151,108,114,141,86,182,65,227,42,299"/>
+<area shape="rect" id="Node000015" href="$classDevLab__ICM20948.html#a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43" title=" " alt="" coords="413,227,619,267"/>
+<area shape="poly" id="edge29_Node000001_Node000015" title=" " alt="" coords="64,300,112,290,261,268,398,253,399,259,261,273,112,295,65,306"/>
+<area shape="rect" id="Node000016" href="$classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186" title=" " alt="" coords="120,152,343,177"/>
+<area shape="poly" id="edge32_Node000001_Node000016" title=" " alt="" coords="45,296,73,266,110,233,152,204,192,181,194,186,155,209,114,237,77,270,49,300"/>
+<area shape="rect" id="Node000017" href="$spi__accel_8ino.html#a5f08ba3a5b3d8e5b3fa5a22429ecfa2b" title="SPI bus object used by the IMU driver." alt="" coords="196,508,267,533"/>
+<area shape="poly" id="edge36_Node000001_Node000017" title=" " alt="" coords="40,323,47,356,60,400,82,447,96,468,114,486,147,505,183,514,182,520,145,510,110,490,92,471,77,449,55,402,41,358,35,324"/>
+<area shape="rect" id="Node000003" href="$classDevLab__ICM20948.html#a31460c48549b1d3081e253706f8b15e6" title=" " alt="" coords="405,456,627,496"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,429,403,451,402,456,295,434"/>
+<area shape="rect" id="Node000004" href="$classDevLab__ICM20948.html#aaa26fcbfea0e67d45cb1c3ae39654c55" title=" " alt="" coords="681,381,904,406"/>
+<area shape="poly" id="edge10_Node000002_Node000004" title=" " alt="" coords="335,412,667,397,667,402,335,417"/>
+<area shape="rect" id="Node000005" href="$classBusIO__7Semi.html#aa633479356af692cb9ea334771b7c0c5" title=" " alt="" coords="952,464,1101,489"/>
+<area shape="poly" id="edge14_Node000002_Node000005" title=" " alt="" coords="321,429,352,449,368,469,375,490,375,532,376,571,384,588,400,605,437,627,476,643,517,652,559,656,603,654,646,649,733,627,814,595,888,559,995,494,998,499,891,563,817,600,734,632,647,654,603,660,559,661,516,657,475,648,435,632,397,609,380,591,371,572,370,532,369,491,363,472,349,453,319,434"/>
+<area shape="rect" id="Node000006" href="$classSPI__Interface.html#a24b5d68ff8da5578f56ee571d86ab289" title=" " alt="" coords="431,570,601,596"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="318,429,352,449,365,462,372,476,377,504,382,531,389,543,400,556,419,567,416,572,397,560,384,547,377,533,372,505,367,478,360,465,349,453,315,434"/>
+<area shape="rect" id="Node000007" href="$classDevLab__ICM20948.html#a8bef7eafb3b67eb736f491d0df453b9e" title=" " alt="" coords="399,356,633,381"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="303,404,430,381,431,386,304,409"/>
+<area shape="rect" id="Node000009" href="$classDevLab__ICM20948.html#a0d6774b76298645ee45ec0e9065a8891" title=" " alt="" coords="410,521,622,546"/>
+<area shape="poly" id="edge11_Node000002_Node000009" title=" " alt="" coords="308,429,352,449,368,463,377,479,385,493,400,506,414,513,412,518,397,510,381,496,372,481,364,467,349,453,306,434"/>
+<area shape="rect" id="Node000010" href="$classBusIO__7Semi.html#ac7b3d1c425f7187abbe1bbec64d9ccea" title=" " alt="" coords="433,76,599,101"/>
+<area shape="poly" id="edge15_Node000002_Node000010" title=" " alt="" coords="241,404,397,213,491,109,495,113,401,217,245,407"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="583,454,735,408,737,413,584,459"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="628,474,938,474,938,479,628,479"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="831,404,978,456,976,461,829,409"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="634,376,668,379,668,385,633,382"/>
+<area shape="rect" id="Node000008" href="$classBusIO__7Semi.html#a933c66d9a1afe84102323e209a93dd31" title=" " alt="" coords="954,101,1099,126"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="591,353,632,340,742,290,845,232,933,176,996,132,999,137,936,180,848,236,744,295,634,345,593,358"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="596,518,632,506,671,485,708,461,766,414,769,418,711,465,674,490,634,511,598,523"/>
+<area shape="poly" id="edge13_Node000009_Node000005" title=" " alt="" coords="622,519,938,483,939,489,623,524"/>
+<area shape="rect" id="Node000011" href="$classBusIO__7Semi.html#a855c7388d4118e632c84c7f8e2e3ddc2" title=" " alt="" coords="705,76,880,101"/>
+<area shape="poly" id="edge16_Node000010_Node000011" title=" " alt="" coords="600,86,691,86,691,91,600,91"/>
+<area shape="poly" id="edge18_Node000011_Node000005" title=" " alt="" coords="820,99,863,128,886,147,906,169,930,205,952,243,986,322,1009,395,1023,449,1017,451,1004,396,981,324,947,246,926,208,902,173,882,151,860,132,817,103"/>
+<area shape="poly" id="edge17_Node000011_Node000008" title=" " alt="" coords="880,95,941,102,940,107,880,100"/>
+<area shape="poly" id="edge20_Node000012_Node000004" title=" " alt="" coords="592,328,634,340,741,374,739,379,633,345,591,334"/>
+<area shape="poly" id="edge21_Node000012_Node000011" title=" " alt="" coords="616,289,631,277,646,258,653,239,655,200,657,159,664,139,679,118,698,105,701,109,683,122,669,141,662,160,660,200,658,240,651,261,635,281,620,293"/>
+<area shape="poly" id="edge23_Node000013_Node000004" title=" " alt="" coords="549,669,590,640,631,605,676,556,716,504,774,417,779,420,721,507,680,559,635,609,593,645,552,673"/>
+<area shape="poly" id="edge24_Node000013_Node000005" title=" " alt="" coords="619,700,686,702,760,696,834,680,869,667,903,650,942,618,974,577,998,536,1014,501,1018,503,1002,538,978,580,946,622,905,654,871,672,836,685,761,701,687,707,619,706"/>
+<area shape="poly" id="edge26_Node000014_Node000004" title=" " alt="" coords="272,47,345,30,439,19,489,19,540,25,589,38,635,61,657,82,679,114,723,201,760,294,786,367,781,369,755,296,718,203,675,117,653,85,632,65,587,43,539,30,489,24,439,24,345,35,273,53"/>
+<area shape="poly" id="edge27_Node000014_Node000010" title=" " alt="" coords="351,71,419,77,419,82,351,76"/>
+<area shape="poly" id="edge28_Node000014_Node000011" title=" " alt="" coords="269,48,329,30,398,16,516,3,568,5,634,16,702,39,759,66,757,71,700,43,633,22,568,11,517,8,399,22,330,35,270,53"/>
+<area shape="poly" id="edge30_Node000015_Node000004" title=" " alt="" coords="604,264,634,277,673,298,710,323,769,370,765,374,707,327,670,303,632,281,603,269"/>
+<area shape="poly" id="edge31_Node000015_Node000011" title=" " alt="" coords="536,225,598,172,638,143,680,118,719,102,721,107,683,123,640,147,601,176,540,229"/>
+<area shape="poly" id="edge33_Node000016_Node000004" title=" " alt="" coords="343,155,412,157,487,166,563,183,635,213,683,246,724,289,757,331,780,367,775,370,752,335,720,292,680,251,632,217,561,188,486,171,411,163,343,160"/>
+<area shape="poly" id="edge34_Node000016_Node000005" title=" " alt="" coords="310,149,381,142,463,141,550,147,593,155,634,167,697,193,757,227,814,266,865,307,952,389,1008,451,1004,455,948,392,862,311,810,270,754,231,695,198,632,172,591,161,549,153,463,146,381,148,311,154"/>
+<area shape="poly" id="edge35_Node000016_Node000010" title=" " alt="" coords="279,149,454,102,455,107,281,154"/>
 </map>

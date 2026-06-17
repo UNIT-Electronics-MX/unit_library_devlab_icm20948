@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.6.16)  16 JUN 2026 17:37
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.6.17)  17 JUN 2026 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1092,13 +1092,14 @@ ile (type pdf)
 File: classBusIO__7Semi_af38d37d409c6d8bc956522465fa39390_cgraph.pdf Graphic fi
 le (type pdf)
 <use classBusIO__7Semi_af38d37d409c6d8bc956522465fa39390_cgraph.pdf>
+[21]
 File: classBusIO__7Semi_a855c7388d4118e632c84c7f8e2e3ddc2_cgraph.pdf Graphic fi
 le (type pdf)
 <use classBusIO__7Semi_a855c7388d4118e632c84c7f8e2e3ddc2_cgraph.pdf>
 File: classBusIO__7Semi_a855c7388d4118e632c84c7f8e2e3ddc2_icgraph.pdf Graphic f
 ile (type pdf)
 <use classBusIO__7Semi_a855c7388d4118e632c84c7f8e2e3ddc2_icgraph.pdf>
-[21]) (./structconfigDLPF.tex [22]) (./classDevLab__ICM20948.tex [23] [24]
+) (./structconfigDLPF.tex [22]) (./classDevLab__ICM20948.tex [23] [24]
 File: classDevLab__ICM20948_a31460c48549b1d3081e253706f8b15e6_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a31460c48549b1d3081e253706f8b15e6_cgraph.pdf>
@@ -1109,48 +1110,48 @@ ic file (type pdf)
 File: classDevLab__ICM20948_ab8336307b4096237d701d989d1f5e619_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_ab8336307b4096237d701d989d1f5e619_cgraph.pdf>
+[26]
 File: classDevLab__ICM20948_aab027c72832d1c7ec722187e6a64796a_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_aab027c72832d1c7ec722187e6a64796a_cgraph.pdf>
-[26]
 File: classDevLab__ICM20948_a357d1315ecc5a649ac4ce6b31cb47e7a_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a357d1315ecc5a649ac4ce6b31cb47e7a_cgraph.pdf>
+[27]
 File: classDevLab__ICM20948_a1b8cce13fe757b1b3a61f8437766d7eb_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a1b8cce13fe757b1b3a61f8437766d7eb_cgraph.pdf>
-[27]
+[28]
 File: classDevLab__ICM20948_a57d37173d6d5c54ab4c7027dfdd3a78f_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a57d37173d6d5c54ab4c7027dfdd3a78f_cgraph.pdf>
 File: classDevLab__ICM20948_a8f47c9f63642c35e5b5656e720667566_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a8f47c9f63642c35e5b5656e720667566_cgraph.pdf>
-[28]
 File: classDevLab__ICM20948_a8f47c9f63642c35e5b5656e720667566_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a8f47c9f63642c35e5b5656e720667566_icgraph.pdf>
+[29]
 File: classDevLab__ICM20948_a1079d6d89e4bda1f496cce90a820e102_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a1079d6d89e4bda1f496cce90a820e102_cgraph.pdf>
-[29]
 File: classDevLab__ICM20948_ac2a1cdaf078cac71e14e0629925a7808_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_ac2a1cdaf078cac71e14e0629925a7808_cgraph.pdf>
+[30]
 File: classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21_cgraph.pdf>
-[30]
 File: classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21_icgraph.pdf>
+[31]
 File: classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18_cgraph.pdf>
 File: classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18_icgraph.pdf>
-[31]
 File: classDevLab__ICM20948_a61f65c00baf13e2cd69eee7cb6688720_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a61f65c00baf13e2cd69eee7cb6688720_cgraph.pdf>
@@ -1158,65 +1159,65 @@ c file (type pdf)
 File: classDevLab__ICM20948_ae356f6810b038f90e706bd288bb79d19_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_ae356f6810b038f90e706bd288bb79d19_cgraph.pdf>
+[33]
 File: classDevLab__ICM20948_a95dae0d8f84175c0175e65b9981d86f9_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a95dae0d8f84175c0175e65b9981d86f9_cgraph.pdf>
-[33]
 File: classDevLab__ICM20948_ae4beff71dc469940c9ba561d57f04ec7_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_ae4beff71dc469940c9ba561d57f04ec7_cgraph.pdf>
+[34]
 File: classDevLab__ICM20948_a9f2da1c80e24d06ae0a0561eb850d8d9_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a9f2da1c80e24d06ae0a0561eb850d8d9_cgraph.pdf>
-[34]
 File: classDevLab__ICM20948_ace42a35300e82402626ce89eb8958e5f_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_ace42a35300e82402626ce89eb8958e5f_cgraph.pdf>
+[35]
 File: classDevLab__ICM20948_ac4585d35fd7444eee47ea7accd162b6d_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_ac4585d35fd7444eee47ea7accd162b6d_cgraph.pdf>
-[35]
 File: classDevLab__ICM20948_ab5ef83d7268ee07da27e9cce74c94e46_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_ab5ef83d7268ee07da27e9cce74c94e46_cgraph.pdf>
+[36]
 File: classDevLab__ICM20948_a3d407a299b73a9d6da88f724bcca0a36_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a3d407a299b73a9d6da88f724bcca0a36_cgraph.pdf>
-[36]
 File: classDevLab__ICM20948_a721c6c8151230452abfc6c36814f63a7_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a721c6c8151230452abfc6c36814f63a7_cgraph.pdf>
+[37]
 File: classDevLab__ICM20948_a5e21409c747b1345884dd0d05720f37f_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a5e21409c747b1345884dd0d05720f37f_cgraph.pdf>
-[37]
 File: classDevLab__ICM20948_a9832c13228e84e8ef74a631bfe1fdcd7_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a9832c13228e84e8ef74a631bfe1fdcd7_cgraph.pdf>
+[38]
 File: classDevLab__ICM20948_a8b3768ede281b8aa65900b1db8a7a7c7_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a8b3768ede281b8aa65900b1db8a7a7c7_cgraph.pdf>
-[38]
 File: classDevLab__ICM20948_a7b137192f8eb987cd221808c2c6c3561_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a7b137192f8eb987cd221808c2c6c3561_cgraph.pdf>
 File: classDevLab__ICM20948_a7b137192f8eb987cd221808c2c6c3561_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a7b137192f8eb987cd221808c2c6c3561_icgraph.pdf>
+[39]
 File: classDevLab__ICM20948_a3c5db22058479806072167f2c15319c7_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a3c5db22058479806072167f2c15319c7_cgraph.pdf>
-[39]
 File: classDevLab__ICM20948_a3c5db22058479806072167f2c15319c7_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a3c5db22058479806072167f2c15319c7_icgraph.pdf>
+[40]
 File: classDevLab__ICM20948_ab011f71e9466a0e1e8245638f81b0f43_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_ab011f71e9466a0e1e8245638f81b0f43_cgraph.pdf>
 File: classDevLab__ICM20948_ab011f71e9466a0e1e8245638f81b0f43_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_ab011f71e9466a0e1e8245638f81b0f43_icgraph.pdf>
-[40]
 File: classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b_cgraph.pdf>
@@ -1230,20 +1231,20 @@ c file (type pdf)
 File: classDevLab__ICM20948_a006c131f860f1fc81c587b3d8a77522d_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a006c131f860f1fc81c587b3d8a77522d_icgraph.pdf>
+[42]
 File: classDevLab__ICM20948_a9f9b29867c2b78efef3ef9688f886314_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a9f9b29867c2b78efef3ef9688f886314_cgraph.pdf>
-[42]
 File: classDevLab__ICM20948_a9f9b29867c2b78efef3ef9688f886314_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a9f9b29867c2b78efef3ef9688f886314_icgraph.pdf>
 File: classDevLab__ICM20948_aa5c2ecd855cebb1934bbbe020128ab5e_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_aa5c2ecd855cebb1934bbbe020128ab5e_cgraph.pdf>
+[43]
 File: classDevLab__ICM20948_aa5c2ecd855cebb1934bbbe020128ab5e_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_aa5c2ecd855cebb1934bbbe020128ab5e_icgraph.pdf>
-[43]
 File: classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e_cgraph.pdf>
@@ -1264,10 +1265,10 @@ c file (type pdf)
 File: classDevLab__ICM20948_a619f82390347cc173d1604d4d711b537_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a619f82390347cc173d1604d4d711b537_cgraph.pdf>
+[46]
 File: classDevLab__ICM20948_a619f82390347cc173d1604d4d711b537_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a619f82390347cc173d1604d4d711b537_icgraph.pdf>
-[46]
 File: classDevLab__ICM20948_aca0cb8da36b8e9128299b9aeb5bb60ec_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_aca0cb8da36b8e9128299b9aeb5bb60ec_cgraph.pdf>
@@ -1285,23 +1286,24 @@ ic file (type pdf)
 File: classDevLab__ICM20948_a7c150c665140086d7937fa4b2f39cd45_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a7c150c665140086d7937fa4b2f39cd45_cgraph.pdf>
+[49]
 File: classDevLab__ICM20948_afe657b6e9d21f02dad2599ea04feefe2_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_afe657b6e9d21f02dad2599ea04feefe2_cgraph.pdf>
 File: classDevLab__ICM20948_afe657b6e9d21f02dad2599ea04feefe2_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_afe657b6e9d21f02dad2599ea04feefe2_icgraph.pdf>
-[49]
 File: classDevLab__ICM20948_a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43_cgraph.pdf>
+[50]
 File: classDevLab__ICM20948_a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43_icgraph.pdf>
 File: classDevLab__ICM20948_a18de038f48173c77483f4be1c04204d6_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a18de038f48173c77483f4be1c04204d6_cgraph.pdf>
-[50]
+[51]
 File: classDevLab__ICM20948_a0bea2c662c285120253851c80289e077_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a0bea2c662c285120253851c80289e077_cgraph.pdf>
@@ -1311,31 +1313,31 @@ ic file (type pdf)
 File: classDevLab__ICM20948_a7ae5665d5e835f8024df82f43bae46e7_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a7ae5665d5e835f8024df82f43bae46e7_cgraph.pdf>
-[51]
+[52]
 File: classDevLab__ICM20948_a16cc9db132bb7a2b706275c9f5a03773_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a16cc9db132bb7a2b706275c9f5a03773_cgraph.pdf>
 File: classDevLab__ICM20948_a16cc9db132bb7a2b706275c9f5a03773_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a16cc9db132bb7a2b706275c9f5a03773_icgraph.pdf>
-[52]
 File: classDevLab__ICM20948_a631e6298058a3c54f1c02bae5cf8db54_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a631e6298058a3c54f1c02bae5cf8db54_cgraph.pdf>
+[53]
 File: classDevLab__ICM20948_a70bbcf97fd1c211e2bea203a5039b1bb_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a70bbcf97fd1c211e2bea203a5039b1bb_cgraph.pdf>
-[53]
 File: classDevLab__ICM20948_a6a06dbd14558e50d40595de82502d632_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a6a06dbd14558e50d40595de82502d632_cgraph.pdf>
+[54]
 File: classDevLab__ICM20948_a6a06dbd14558e50d40595de82502d632_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a6a06dbd14558e50d40595de82502d632_icgraph.pdf>
 File: classDevLab__ICM20948_a6c9c09f8b2ab39f5de7f48c6c743ffc4_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a6c9c09f8b2ab39f5de7f48c6c743ffc4_cgraph.pdf>
-[54]
+[55]
 File: classDevLab__ICM20948_a0882a30454b0716953f5f375613d24b3_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a0882a30454b0716953f5f375613d24b3_icgraph.pdf>
@@ -1345,14 +1347,14 @@ c file (type pdf)
 File: classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186_icgraph.pdf>
-[55]
+[56]
 File: classDevLab__ICM20948_a4210e842050486637a5967b2a9ef7b57_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a4210e842050486637a5967b2a9ef7b57_cgraph.pdf>
 File: classDevLab__ICM20948_a4210e842050486637a5967b2a9ef7b57_icgraph.pdf Graph
 ic file (type pdf)
 <use classDevLab__ICM20948_a4210e842050486637a5967b2a9ef7b57_icgraph.pdf>
-[56]
+[57]
 File: classDevLab__ICM20948_a0d6774b76298645ee45ec0e9065a8891_cgraph.pdf Graphi
 c file (type pdf)
 <use classDevLab__ICM20948_a0d6774b76298645ee45ec0e9065a8891_cgraph.pdf>
@@ -1362,37 +1364,47 @@ ic file (type pdf)
 ) (./classI2C__Interface.tex
 File: classI2C__Interface__inherit__graph.pdf Graphic file (type pdf)
 <use classI2C__Interface__inherit__graph.pdf>
-[57]
+[58]
 File: classI2C__Interface__coll__graph.pdf Graphic file (type pdf)
 <use classI2C__Interface__coll__graph.pdf>
-[58]
+[59]
 File: classI2C__Interface_ae8147c4d6e54fe2622825d7e17493152_icgraph.pdf Graphic
  file (type pdf)
 <use classI2C__Interface_ae8147c4d6e54fe2622825d7e17493152_icgraph.pdf>
-[59]) (./structICM20948__IntEnableConfig.tex [60]) (./structICM20948__IntPinCon
-fig.tex [61]) (./structICM20948__IntStatus.tex [62] [63]) (./structicm__plat__t
-.tex [64]) (./classInterface__7Semi.tex
+[60]) (./structICM20948__IntEnableConfig.tex [61]) (./structICM20948__IntPinCon
+fig.tex [62]) (./structICM20948__IntStatus.tex [63] [64]) (./structicm__plat__t
+.tex [65]) (./classInterface__7Semi.tex
 File: classInterface__7Semi__inherit__graph.pdf Graphic file (type pdf)
 <use classInterface__7Semi__inherit__graph.pdf>
-[65] [66]) (./classSPI__Interface.tex
+[66] [67]) (./classSPI__Interface.tex
 File: classSPI__Interface__inherit__graph.pdf Graphic file (type pdf)
 <use classSPI__Interface__inherit__graph.pdf>
-[67]
+[68]
 File: classSPI__Interface__coll__graph.pdf Graphic file (type pdf)
 <use classSPI__Interface__coll__graph.pdf>
-[68]
+[69]
 File: classSPI__Interface_a24b5d68ff8da5578f56ee571d86ab289_icgraph.pdf Graphic
  file (type pdf)
 <use classSPI__Interface_a24b5d68ff8da5578f56ee571d86ab289_icgraph.pdf>
-[69]) [70]
+[70]) [71] [72
+
+]
 Chapter 6.
 (./gyr__test_8ino.tex
 File: gyr__test_8ino__incl.pdf Graphic file (type pdf)
 <use gyr__test_8ino__incl.pdf>
-[71
+[73]
 
-] [72]
-Underfull \hbox (badness 10000) detected at line 162
+LaTeX Font Warning: Font shape `TU/Tinos(0)/bc/n' undefined
+(Font)              using `TU/Tinos(0)/m/n' instead on input line 79.
+
+
+Underfull \hbox (badness 10000) detected at line 79
+[][][]
+ []
+
+[74]
+Underfull \hbox (badness 10000) detected at line 165
 [][][]
  []
 
@@ -1402,138 +1414,148 @@ File: gyr__test_8ino_a327f4fbd9f22daba4f8a6f3f1c13f729_cgraph.pdf Graphic file
 File: gyr__test_8ino_a1cf9f29034d9373db6498335da3d661c_cgraph.pdf Graphic file 
 (type pdf)
 <use gyr__test_8ino_a1cf9f29034d9373db6498335da3d661c_cgraph.pdf>
+[75]
 File: gyr__test_8ino_a1cf9f29034d9373db6498335da3d661c_icgraph.pdf Graphic file
  (type pdf)
 <use gyr__test_8ino_a1cf9f29034d9373db6498335da3d661c_icgraph.pdf>
-[73]
 File: gyr__test_8ino_a42633dcf8fe2689c57c8113825f74c66_icgraph.pdf Graphic file
  (type pdf)
 <use gyr__test_8ino_a42633dcf8fe2689c57c8113825f74c66_icgraph.pdf>
 File: gyr__test_8ino_a59a0400232b9ffe7d4395b166f74593a_cgraph.pdf Graphic file 
 (type pdf)
 <use gyr__test_8ino_a59a0400232b9ffe7d4395b166f74593a_cgraph.pdf>
-[74]
+[76]
 File: gyr__test_8ino_a59a0400232b9ffe7d4395b166f74593a_icgraph.pdf Graphic file
  (type pdf)
 <use gyr__test_8ino_a59a0400232b9ffe7d4395b166f74593a_icgraph.pdf>
 File: gyr__test_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file 
 (type pdf)
 <use gyr__test_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-[75] [76]) (./gyr__test_8ino_source.tex [77] [78] [79]) (./i2c__accel_8ino.tex
+[77] [78]) (./gyr__test_8ino_source.tex [79] [80] [81]) (./i2c__accel_8ino.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-[80]
+[82]
 File: i2c__accel_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf Graphic file
  (type pdf)
 <use i2c__accel_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf>
 File: i2c__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file
  (type pdf)
 <use i2c__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-[81]) (./i2c__accel_8ino_source.tex [82] [83]) (./i2c__basic_8ino.tex
+[83]) (./i2c__accel_8ino_source.tex [84]) (./i2c__basic_8ino.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-[84]
+[85]
 File: i2c__basic_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf Graphic file
  (type pdf)
 <use i2c__basic_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf>
+[86]
 File: i2c__basic_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file
  (type pdf)
 <use i2c__basic_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-[85]) (./i2c__basic_8ino_source.tex [86] [87]) (./i2c__gyro_8ino.tex
+) (./i2c__basic_8ino_source.tex [87] [88]) (./i2c__gyro_8ino.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-[88]
+[89]
 File: i2c__gyro_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf Graphic file 
 (type pdf)
 <use i2c__gyro_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf>
 File: i2c__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file 
 (type pdf)
 <use i2c__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-) (./i2c__gyro_8ino_source.tex [89] [90]) (./i2c__magneto_8ino.tex
+[90]) (./i2c__gyro_8ino_source.tex [91] [92]) (./i2c__magneto_8ino.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-[91]
+[93]
 File: i2c__magneto_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf Graphic fi
 le (type pdf)
 <use i2c__magneto_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf>
-[92]
 File: i2c__magneto_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic fi
 le (type pdf)
 <use i2c__magneto_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-) (./i2c__magneto_8ino_source.tex [93]) (./interrupt_8ino.tex [94]
+[94]) (./i2c__magneto_8ino_source.tex [95]) (./interrupt_8ino.tex
 File: interrupt_8ino__incl.pdf Graphic file (type pdf)
 <use interrupt_8ino__incl.pdf>
-[95]
+[96]
+Underfull \hbox (badness 10000) detected at line 60
+[][][]
+ []
+
+[97]
 File: interrupt_8ino_aef596810c644e9f3853919b365e8270f_icgraph.pdf Graphic file
  (type pdf)
 <use interrupt_8ino_aef596810c644e9f3853919b365e8270f_icgraph.pdf>
-[96]
 File: interrupt_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file 
 (type pdf)
 <use interrupt_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-[97]) (./interrupt_8ino_source.tex [98]) (./mag__test_8ino.tex
+[98]) (./interrupt_8ino_source.tex [99] [100]) (./mag__test_8ino.tex
 File: mag__test_8ino__incl.pdf Graphic file (type pdf)
 <use mag__test_8ino__incl.pdf>
-[99] [100]
+[101]
+Underfull \hbox (badness 10000) detected at line 58
+[][][]
+ []
+
 File: mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d_cgraph.pdf Graphic file 
 (type pdf)
 <use mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d_cgraph.pdf>
+[102]
 File: mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d_icgraph.pdf Graphic file
  (type pdf)
 <use mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d_icgraph.pdf>
-[101]
 File: mag__test_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file 
 (type pdf)
 <use mag__test_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-[102]) (./mag__test_8ino_source.tex [103] [104]) (./spi__accel_8ino.tex
+[103]) (./mag__test_8ino_source.tex [104] [105]) (./spi__accel_8ino.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
+[106]
 File: spi__accel_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf Graphic file
  (type pdf)
 <use spi__accel_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf>
-[105]
-Underfull \hbox (badness 10000) detected at line 75
+
+Underfull \hbox (badness 10000) detected at line 87
 [][][]
  []
 
 File: spi__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file
  (type pdf)
 <use spi__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
+[107]
 File: spi__accel_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b_icgraph.pdf Graphic fil
 e (type pdf)
 <use spi__accel_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b_icgraph.pdf>
-[106]) (./spi__accel_8ino_source.tex [107]) (./spi__basic_8ino.tex
+) (./spi__accel_8ino_source.tex [108] [109]) (./spi__basic_8ino.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
-[108]
+[110]
 File: spi__basic_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf Graphic file
  (type pdf)
 <use spi__basic_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf>
 
-Underfull \hbox (badness 10000) detected at line 75
+Underfull \hbox (badness 10000) detected at line 91
 [][][]
  []
 
 File: spi__basic_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file
  (type pdf)
 <use spi__basic_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-[109]
+[111]
 File: spi__basic_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b_icgraph.pdf Graphic fil
 e (type pdf)
 <use spi__basic_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b_icgraph.pdf>
-) (./spi__basic_8ino_source.tex [110] [111]) (./spi__gyro_8ino.tex
+) (./spi__basic_8ino_source.tex [112] [113]) (./spi__gyro_8ino.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
@@ -1541,8 +1563,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--4
 File: spi__gyro_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf Graphic file 
 (type pdf)
 <use spi__gyro_8ino_afe461d27b9c48d5921c00d521181f12f_cgraph.pdf>
-[112]
-Underfull \hbox (badness 10000) detected at line 75
+[114]
+Underfull \hbox (badness 10000) detected at line 87
 [][][]
  []
 
@@ -1552,15 +1574,15 @@ File: spi__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file
 File: spi__gyro_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b_icgraph.pdf Graphic file
  (type pdf)
 <use spi__gyro_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b_icgraph.pdf>
-) (./spi__gyro_8ino_source.tex [113] [114]) (./test_8ino.tex
+[115]) (./spi__gyro_8ino_source.tex [116]) (./test_8ino.tex
 File: test_8ino__incl.pdf Graphic file (type pdf)
 <use test_8ino__incl.pdf>
-[115]
+[117]
 Overfull \hbox (52.49417pt too wide) in paragraph at lines 58--59
 []\TU/Tinos(0)/bc/n/10 const [] [] []$ $[] = { [], [],
  []
 
-
+[118]
 Underfull \hbox (badness 1226) in paragraph at lines 64--65
 []\TU/Tinos(0)/bc/n/10 const [] [] []$ $[] = { [],
  []
@@ -1580,184 +1602,195 @@ Overfull \hbox (97.29169pt too wide) in paragraph at lines 68--69
 []\TU/Tinos(0)/bc/n/10 const [] [] []$ $[] = {[] ,[],
  []
 
-[116] [117]
-Underfull \hbox (badness 10000) detected at line 172
+
+Underfull \hbox (badness 10000) detected at line 89
+[][][]
+ []
+
+[119]
+Underfull \hbox (badness 10000) detected at line 175
 [][][]
  []
 
 File: test_8ino_a327f4fbd9f22daba4f8a6f3f1c13f729_cgraph.pdf Graphic file (type
  pdf)
 <use test_8ino_a327f4fbd9f22daba4f8a6f3f1c13f729_cgraph.pdf>
+[120]
 File: test_8ino_a1cf9f29034d9373db6498335da3d661c_cgraph.pdf Graphic file (type
  pdf)
 <use test_8ino_a1cf9f29034d9373db6498335da3d661c_cgraph.pdf>
 File: test_8ino_a1cf9f29034d9373db6498335da3d661c_icgraph.pdf Graphic file (typ
 e pdf)
 <use test_8ino_a1cf9f29034d9373db6498335da3d661c_icgraph.pdf>
-[118]
 File: test_8ino_a42633dcf8fe2689c57c8113825f74c66_icgraph.pdf Graphic file (typ
 e pdf)
 <use test_8ino_a42633dcf8fe2689c57c8113825f74c66_icgraph.pdf>
 File: test_8ino_a8765c1cf679c82cf73a0a13af44b983b_icgraph.pdf Graphic file (typ
 e pdf)
 <use test_8ino_a8765c1cf679c82cf73a0a13af44b983b_icgraph.pdf>
+[121]
 File: test_8ino_a59a0400232b9ffe7d4395b166f74593a_cgraph.pdf Graphic file (type
  pdf)
 <use test_8ino_a59a0400232b9ffe7d4395b166f74593a_cgraph.pdf>
 File: test_8ino_a59a0400232b9ffe7d4395b166f74593a_icgraph.pdf Graphic file (typ
 e pdf)
 <use test_8ino_a59a0400232b9ffe7d4395b166f74593a_icgraph.pdf>
-[119]
 File: test_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file (type
  pdf)
 <use test_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-
-Overfull \hbox (69.45773pt too wide) in paragraph at lines 334--335
+[122]
+Overfull \hbox (69.45773pt too wide) in paragraph at lines 337--338
 \TU/Cousine(0)/m/n/8 const [] accelAVG[]$ $[] = {[] ,[],
  []
 
 
-Overfull \hbox (59.85617pt too wide) in paragraph at lines 348--349
+Overfull \hbox (59.85617pt too wide) in paragraph at lines 351--352
 \TU/Cousine(0)/m/n/8 const [] accelCfg[]$ $[] = { [], [],
  []
 
 
-Overfull \hbox (107.86398pt too wide) in paragraph at lines 362--363
+Overfull \hbox (107.86398pt too wide) in paragraph at lines 365--366
 \TU/Cousine(0)/m/n/8 const [] accelDLPF[]$ $[] = { [], [],
  []
 
 
-Overfull \hbox (48.83792pt too wide) in paragraph at lines 362--363
+Overfull \hbox (48.83792pt too wide) in paragraph at lines 365--366
 []\TU/Cousine(0)/m/n/8 , [], [],
  []
 
 
-Overfull \hbox (34.43558pt too wide) in paragraph at lines 362--363
+Overfull \hbox (34.43558pt too wide) in paragraph at lines 365--366
 []\TU/Cousine(0)/m/n/8 , [],[]
  []
 
-[120]
-Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--380
 \TU/Cousine(0)/m/n/8 const uint16_t accelSR[]$ $[] = {0, 1, 3, 5, 7 , 10, 15, 2
 2, 31, 63, 127, 255, 513, 1022, 2044,
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--448
+[123]
+Underfull \hbox (badness 10000) in paragraph at lines 450--451
 \TU/Cousine(0)/m/n/8 const char$\OMS/cmsy/m/n/8 ^^C$ \TU/Cousine(0)/m/n/8 etiqu
 etasAccelDLPFCFG[]$ $[] = { "246/265", "246/265", "111/136", "50.4/68.8","23.[]
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 461--462
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 \TU/Cousine(0)/m/n/8 const char$\OMS/cmsy/m/n/8 ^^C$ \TU/Cousine(0)/m/n/8 etiqu
 etasSR[]$ $[] = { "1125.0","562.5", "281.3", "187.5","140.6", "102.3", "70.3",
  []
 
-[121]) (./test_8ino_source.tex [122] [123] [124]) (./test2_8ino.tex
+[124]) (./test_8ino_source.tex [125] [126] [127]) (./test2_8ino.tex
 File: test2_8ino__incl.pdf Graphic file (type pdf)
 <use test2_8ino__incl.pdf>
-[125] [126]
-Underfull \hbox (badness 10000) detected at line 174
+[128]
+Underfull \hbox (badness 10000) detected at line 89
+[][][]
+ []
+
+[129]
+Underfull \hbox (badness 10000) detected at line 177
 [][][]
  []
 
 File: test2_8ino_a73c1d2766fc4db839bb9adf5cab93c80_cgraph.pdf Graphic file (typ
 e pdf)
 <use test2_8ino_a73c1d2766fc4db839bb9adf5cab93c80_cgraph.pdf>
-[127]
 File: test2_8ino_a1cf9f29034d9373db6498335da3d661c_cgraph.pdf Graphic file (typ
 e pdf)
 <use test2_8ino_a1cf9f29034d9373db6498335da3d661c_cgraph.pdf>
+[130]
 File: test2_8ino_a1cf9f29034d9373db6498335da3d661c_icgraph.pdf Graphic file (ty
 pe pdf)
 <use test2_8ino_a1cf9f29034d9373db6498335da3d661c_icgraph.pdf>
 File: test2_8ino_a42633dcf8fe2689c57c8113825f74c66_icgraph.pdf Graphic file (ty
 pe pdf)
 <use test2_8ino_a42633dcf8fe2689c57c8113825f74c66_icgraph.pdf>
-[128]
 File: test2_8ino_a59a0400232b9ffe7d4395b166f74593a_cgraph.pdf Graphic file (typ
 e pdf)
 <use test2_8ino_a59a0400232b9ffe7d4395b166f74593a_cgraph.pdf>
+[131]
 File: test2_8ino_a59a0400232b9ffe7d4395b166f74593a_icgraph.pdf Graphic file (ty
 pe pdf)
 <use test2_8ino_a59a0400232b9ffe7d4395b166f74593a_icgraph.pdf>
 File: test2_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf Graphic file (typ
 e pdf)
 <use test2_8ino_a4fc01d736fe50cf5b977f755b675f11d_cgraph.pdf>
-[129] [130] [131]) (./test2_8ino_source.tex [132] [133] [134]) (./README_8md.te
+[132] [133]) (./test2_8ino_source.tex [134] [135] [136] [137]) (./README_8md.te
 x) (./7Semi__I2C__Interface_8h.tex
 File: 7Semi__I2C__Interface_8h__incl.pdf Graphic file (type pdf)
 <use 7Semi__I2C__Interface_8h__incl.pdf>
-[135]
+[138]
 File: 7Semi__I2C__Interface_8h__dep__incl.pdf Graphic file (type pdf)
 <use 7Semi__I2C__Interface_8h__dep__incl.pdf>
-) (./7Semi__I2C__Interface_8h_source.tex [136]) (./7Semi__Interface_8h.tex
+) (./7Semi__I2C__Interface_8h_source.tex [139]) (./7Semi__Interface_8h.tex
 File: 7Semi__Interface_8h__incl.pdf Graphic file (type pdf)
 <use 7Semi__Interface_8h__incl.pdf>
-[137]
+[140]
 File: 7Semi__Interface_8h__dep__incl.pdf Graphic file (type pdf)
 <use 7Semi__Interface_8h__dep__incl.pdf>
-) (./7Semi__Interface_8h_source.tex [138]) (./7Semi__SPI__Interface_8h.tex
+) (./7Semi__Interface_8h_source.tex [141]) (./7Semi__SPI__Interface_8h.tex
 File: 7Semi__SPI__Interface_8h__incl.pdf Graphic file (type pdf)
 <use 7Semi__SPI__Interface_8h__incl.pdf>
 File: 7Semi__SPI__Interface_8h__dep__incl.pdf Graphic file (type pdf)
 <use 7Semi__SPI__Interface_8h__dep__incl.pdf>
-[139]) (./7Semi__SPI__Interface_8h_source.tex [140]) (./BusIO__7Semi_8h.tex
+[142]) (./7Semi__SPI__Interface_8h_source.tex [143]) (./BusIO__7Semi_8h.tex
 File: BusIO__7Semi_8h__incl.pdf Graphic file (type pdf)
 <use BusIO__7Semi_8h__incl.pdf>
-[141]
+[144]
 File: BusIO__7Semi_8h__dep__incl.pdf Graphic file (type pdf)
 <use BusIO__7Semi_8h__dep__incl.pdf>
-) (./BusIO__7Semi_8h_source.tex [142] [143]) (./DevLab__ICM20948_8cpp.tex
+) (./BusIO__7Semi_8h_source.tex [145] [146]) (./DevLab__ICM20948_8cpp.tex
 File: DevLab__ICM20948_8cpp__incl.pdf Graphic file (type pdf)
 <use DevLab__ICM20948_8cpp__incl.pdf>
-) (./DevLab__ICM20948_8cpp_source.tex [144] [145] [146] [147] [148] [149] [150]
-[151] [152] [153] [154] [155] [156] [157] [158] [159] [160]) (./DevLab__ICM2094
+) (./DevLab__ICM20948_8cpp_source.tex [147] [148] [149] [150] [151] [152] [153]
+[154] [155] [156] [157] [158] [159] [160] [161] [162] [163]) (./DevLab__ICM2094
 8_8h.tex
 File: DevLab__ICM20948_8h__incl.pdf Graphic file (type pdf)
 <use DevLab__ICM20948_8h__incl.pdf>
 File: DevLab__ICM20948_8h__dep__incl.pdf Graphic file (type pdf)
 <use DevLab__ICM20948_8h__dep__incl.pdf>
-[161] [162] [163]) (./DevLab__ICM20948_8h_source.tex [164] [165] [166] [167] [1
-68] [169] [170] [171] [172] [173] [174]) (./ICM20948__platform_8h.tex) (./ICM20
-948__platform_8h_source.tex [175]) (./ICM20948__regs_8h.tex
+[164] [165] [166]) (./DevLab__ICM20948_8h_source.tex [167] [168] [169] [170] [1
+71] [172] [173] [174] [175] [176] [177]) (./ICM20948__platform_8h.tex) (./ICM20
+948__platform_8h_source.tex [178]) (./ICM20948__regs_8h.tex
 File: ICM20948__regs_8h__dep__incl.pdf Graphic file (type pdf)
 <use ICM20948__regs_8h__dep__incl.pdf>
-[176] [177]
+[179] [180]
 Underfull \hbox (badness 5460) in paragraph at lines 240--242
 []\TU/Tinos(0)/bc/n/10 #define [] 0x02 /$\OMS/cmsy/m/n/10 ^^C$ [] [] [] \TU/Tin
 os(0)/bc/n/10 GYRO_[][]
  []
 
-[178] [179] [180] [181] [182] [183] [184] [185] [186] [187] [188] [189] [190]
+[181] [182] [183] [184] [185] [186] [187] [188] [189] [190] [191] [192] [193]
 Overfull \hbox (33.18098pt too wide) in paragraph at lines 1757--1758
 |   \TU/Cousine(0)/m/it/8 rate_request \TU/Cousine(0)/m/n/8 ) (rate_request) /$
 \OMS/cmsy/m/n/8 ^^C$ \TU/Cousine(0)/m/n/8 symbolic; your driver computes DIV = 
 round(1100/rate)-1
  []
 
-[191] [192] [193] [194] [195] [196] [197]
+[194] [195] [196] [197] [198] [199] [200]
 Underfull \hbox (badness 10000) in paragraph at lines 2640--2641
 \TU/Cousine(0)/m/n/8 #define INT_[][]PIN_[][]CFG 0x0F /$\OMS/cmsy/m/n/8 ^^C$ []
  [] [] [] \TU/Cousine(0)/m/n/8 ACTL_[][]FSYNC
  []
 
-[198] [199] [200] [201] [202] [203]
+[201] [202] [203] [204] [205] [206]
 Underfull \hbox (badness 10000) in paragraph at lines 3293--3294
 \TU/Cousine(0)/m/n/8 #define USER_[][]CTRL 0x03 /$\OMS/cmsy/m/n/8 ^^C$ \TU/Cous
 ine(0)/m/n/8 DMP_[][]EN FIFO_[][]EN I2C_[][]MST_[][]EN I2C_[][]IF_[][]DIS DMP_[
 ][]RST SRAM_[][]RST I2C_[][]MST_[][]RST -
  []
 
-[204] [205]) (./ICM20948__regs_8h_source.tex [206] [207] [208] [209] [210] [211
-]) [212] (./refman.ind [213
+[207] [208]) (./ICM20948__regs_8h_source.tex [209] [210] [211] [212] [213] [214
+]) [215] [216
+
+] (./refman.ind [217
 
 
-
-] [214] [215] [216] [217] [218] [219] [220] [221] [222] [223] [224] [225] [226]
-[227] [228
+] [218] [219] [220] [221] [222] [223] [224] [225] [226] [227] [228] [229] [230]
+[231] [232
 
 ]) (./refman.aux)
  ***********
@@ -1768,16 +1801,16 @@ L3 programming layer <2024-01-22>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 49AC0E8177A434B7941E692B1AA6BB4E;141231.
+(rerunfilecheck)             Checksum: D567E40D27198985D645A80AD3F30D8C;141699.
 
  ) 
 Here is how much of TeX's memory you used:
- 22508 strings out of 476878
- 519209 string characters out of 5805249
+ 22513 strings out of 476878
+ 519425 string characters out of 5805249
  1968627 words of memory out of 5000000
- 43891 multiletter control sequences out of 15000+600000
+ 43896 multiletter control sequences out of 15000+600000
  566618 words of font info for 123 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  101i,16n,117p,1605b,645s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on refman.pdf (248 pages).
+Output written on refman.pdf (252 pages).

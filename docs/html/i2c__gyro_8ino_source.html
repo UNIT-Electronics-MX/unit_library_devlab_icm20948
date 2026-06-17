@@ -101,123 +101,123 @@ $(document).ready(function(){initNavTree('i2c__gyro_8ino_source.html',''); initR
 <div class="contents">
 <a href="i2c__gyro_8ino.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/***************************************************************</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * @file    I2C_Gyro.ino</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @brief   Minimal I2C bring-up for 7Semi ICM-20948 on ESP32/UNO +</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *          continuous gyroscope readout.</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Features</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * - I2C init on default/custom pins</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * - IMU begin() on I2C (addr 0x68/0x69)</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * - Safe defaults (applyBasicDefaults)</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * - Optional sensor gating: gyro only</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * - Gyro config: DLPF, full-scale, ODR, AVG</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * - Read gyro (dps) at ~2 Hz print</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * Wiring (Arduino UNO, I2C)</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * - SDA  -&gt; A4</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * - SCL  -&gt; A5</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * - VCC  -&gt; 3V3 (or 5V if your board supports it)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * - GND  -&gt; GND</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * Wiring (ESP32, I2C)</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * - SDA  -&gt; GPIO21 (default)</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * - SCL  -&gt; GPIO22 (default)</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * - VCC  -&gt; 3V3</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * - GND  -&gt; GND</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * Address</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * - Default ICM-20948 I2C address is 0x68 (AD0=LOW). If AD0=HIGH, use 0x69.</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> ***************************************************************/</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;<a class="code" href="DevLab__ICM20948_8h.html">DevLab_ICM20948.h</a>&gt;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/* ====================== User Config =======================</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * - Edit pins/addr if needed</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * - UNO uses fixed SDA=A4, SCL=A5 (no need to call Wire.begin with pins)</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * - ESP32 can use default Wire (SDA=21, SCL=22) or custom pins via Wire.begin(sda,scl)</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/* ====================== User Config ======================= */</span><span class="comment"></span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/** @brief I2C SDA pin used by the example board. */</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a526d580d324bce60a3e964066fae77e3">   41</a></span><span class="preprocessor">#define SDA_PIN   6</span><span class="comment"></span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/** @brief I2C SCL pin used by the example board. */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a06c967e78bcedcee909a70764f879433">   43</a></span><span class="preprocessor">#define SCL_PIN   7</span><span class="comment"></span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/** @brief I2C bus speed in hertz. */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a8b7500a141450a9df212017430c0df9e">   45</a></span><span class="preprocessor">#define I2C_FREQ  400000UL</span><span class="comment"></span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/** @brief ICM-20948 I2C address selected by the AD0 pin. */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">   47</a></span><span class="preprocessor">#define ICM_ADDR  0x69</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"></span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/** @brief Global ICM-20948 driver instance. */</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">   50</a></span><a class="code hl_class" href="classDevLab__ICM20948.html">DevLab_ICM20948</a> <a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"></span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> * @brief Configure the IMU for gyroscope-only operation over I2C.</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> * The function initializes the I2C interface, applies safe defaults, enables</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> * the gyroscope, and configures DLPF, full-scale range, and output data rate.</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> */</span></div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">   58</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="i2c__gyro_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  Serial.begin(115200);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  delay(200);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  Serial.println(F(<span class="stringliteral">&quot;ICM-20948 — I2C Basic&quot;</span>));</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  Wire.begin(<a class="code hl_define" href="i2c__gyro_8ino.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a>, <a class="code hl_define" href="i2c__gyro_8ino.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">/* Initialize IMU. */</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a91147b3cd4c45bffc8e024f985be7b21">beginI2C</a>(<a class="code hl_define" href="i2c__gyro_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">ICM_ADDR</a>, Wire, 400000)) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: beginI2C() failed&quot;</span>));</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">/* Apply safe defaults. */</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a31460c48549b1d3081e253706f8b15e6">applyBasicDefaults</a>()) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: applyBasicDefaults() failed.&quot;</span>));</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  Serial.println(F(<span class="stringliteral">&quot;ICM-20948 ready.&quot;</span>));</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="comment">/* Optional: gate sensors</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">   * - setSensors(accel_on, gyro_on, temp_on)</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">   * - Here: enable only gyro (accel/temp off)</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186">setSensors</a>(<span class="comment">/*accel*/</span> <span class="keyword">false</span>, <span class="comment">/*gyro*/</span> <span class="keyword">true</span>, <span class="comment">/*temp*/</span> <span class="keyword">false</span>)) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    Serial.println(F(<span class="stringliteral">&quot;setSensors failed.&quot;</span>));</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="comment">/* ----------------- GYRO DLPF Config (reference) ----------------</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">   * GyroConfig(DLPFCFG, FS_SEL, FCHOICE, XGYRO, YGYRO, ZGYRO, AVGCFG)</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">   * - DLPF     : GYRO_DLPFCFG_0..7 (use 3 or 4 for balanced settings)</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">   * - FS_SEL   : dps250 / dps500 / dps1000 / dps2000</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">   * - FCHOICE  : false → DLPF path (recommended), true → bypass (very wide BW)</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">   * - XGYRO/YGYRO/ZGYRO : per-axis enable (true = enable axis)</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">   * - AVGCFG   : 0..7 internal averaging (higher = more smoothing, more delay)</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">   * FCHOICE=0 (DLPF on):</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">   * - GYRO_DLPFCFG_1 : 3dB ≈ 196.6 Hz, NBW ≈ 229.8 Hz</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">   * - GYRO_DLPFCFG_2 : 3dB ≈ 151.8 Hz, NBW ≈ 187.6 Hz</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">   * - GYRO_DLPFCFG_3 : 3dB ≈ 119.5 Hz, NBW ≈ 154.3 Hz   ← good default</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">   * - GYRO_DLPFCFG_4 : 3dB ≈ 51.2  Hz, NBW ≈ 73.3  Hz</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">   * - GYRO_DLPFCFG_5 : 3dB ≈ 23.9  Hz, NBW ≈ 35.9  Hz</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">   * - GYRO_DLPFCFG_6 : 3dB ≈ 5.7   Hz, NBW ≈ 8.3   Hz</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">   * - GYRO_DLPFCFG_7 : 3dB ≈ 473   Hz, NBW ≈ 499   Hz</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">   *</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">   * FCHOICE=1 (Bypass) : very wide (use with care; highest noise)</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.GyroConfig(<span class="comment">/*DLPFCFG*/</span> <a class="code hl_define" href="ICM20948__regs_8h.html#a6ec833d2b53c943952ae9c1c4e548356">GYRO_DLPFCFG_4</a>,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                      <span class="comment">/*FS_SEL*/</span>   <a class="code hl_define" href="ICM20948__regs_8h.html#aa7f66cc9e98bb2743e0dade1f35f6e4e">dps2000</a>,</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                      <span class="comment">/*FCHOICE*/</span>  <span class="keyword">true</span>,       <span class="comment">// DLPF ON (recommended)</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                      <span class="comment">/*X*/</span> <span class="keyword">true</span>, <span class="comment">/*Y*/</span> <span class="keyword">true</span>, <span class="comment">/*Z*/</span> <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                      <span class="comment">/*AVGCFG*/</span>   0)) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    Serial.println(F(<span class="stringliteral">&quot;GyroConfig failed.&quot;</span>));</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="comment">/* Set gyroscope output data rate (ODR)</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">   * - Gyro_SMPLRT(rate_hz)</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">   * - Base (DLPF path) = 1100 Hz</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">   * - Valid range: ~4.3–1100 Hz</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">   * - Example: 1000 Hz</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * @author  7Semi,Jonathan Mejorado Lopez </span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * @brief   Minimal I2C bring-up for 7Semi ICM-20948 on ESP32/UNO +</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *          continuous gyroscope readout.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Features</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * - I2C init on default/custom pins</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> * - IMU begin() on I2C (addr 0x68/0x69)</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * - Safe defaults (applyBasicDefaults)</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * - Optional sensor gating: gyro only</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * - Gyro config: DLPF, full-scale, ODR, AVG</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * - Read gyro (dps) at ~2 Hz print</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> * Wiring (Arduino UNO, I2C)</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * - SDA  -&gt; A4</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> * - SCL  -&gt; A5</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> * - VCC  -&gt; 3V3 (or 5V if your board supports it)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> * - GND  -&gt; GND</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * Wiring (ESP32, I2C)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * - SDA  -&gt; GPIO21 (default)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * - SCL  -&gt; GPIO22 (default)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * - VCC  -&gt; 3V3</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * - GND  -&gt; GND</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * Address</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * - Default ICM-20948 I2C address is 0x68 (AD0=LOW). If AD0=HIGH, use 0x69.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> ***************************************************************/</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;<a class="code" href="DevLab__ICM20948_8h.html">DevLab_ICM20948.h</a>&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/* ====================== User Config =======================</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> * - Edit pins/addr if needed</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> * - UNO uses fixed SDA=A4, SCL=A5 (no need to call Wire.begin with pins)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * - ESP32 can use default Wire (SDA=21, SCL=22) or custom pins via Wire.begin(sda,scl)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/* ====================== User Config ======================= */</span><span class="comment"></span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">/** @brief I2C SDA pin used by the example board. */</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a526d580d324bce60a3e964066fae77e3">   42</a></span><span class="preprocessor">#define SDA_PIN   6</span><span class="comment"></span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">/** @brief I2C SCL pin used by the example board. */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a06c967e78bcedcee909a70764f879433">   44</a></span><span class="preprocessor">#define SCL_PIN   7</span><span class="comment"></span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/** @brief I2C bus speed in hertz. */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a8b7500a141450a9df212017430c0df9e">   46</a></span><span class="preprocessor">#define I2C_FREQ  400000UL</span><span class="comment"></span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">/** @brief ICM-20948 I2C address selected by the AD0 pin. */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">   48</a></span><span class="preprocessor">#define ICM_ADDR  0x69</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"></span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">/** @brief Global ICM-20948 driver instance. */</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">   51</a></span><a class="code hl_class" href="classDevLab__ICM20948.html">DevLab_ICM20948</a> <a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"></span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> * @brief Configure the IMU for gyroscope-only operation over I2C.</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> * The function initializes the I2C interface, applies safe defaults, enables</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> * the gyroscope, and configures DLPF, full-scale range, and output data rate.</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="i2c__gyro_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">   59</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="i2c__gyro_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  Serial.begin(115200);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  delay(200);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  Serial.println(F(<span class="stringliteral">&quot;ICM-20948 — I2C Basic&quot;</span>));</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  Wire.begin(<a class="code hl_define" href="i2c__gyro_8ino.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a>, <a class="code hl_define" href="i2c__gyro_8ino.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">/* Initialize IMU. */</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a91147b3cd4c45bffc8e024f985be7b21">beginI2C</a>(<a class="code hl_define" href="i2c__gyro_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">ICM_ADDR</a>, Wire, 400000)) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: beginI2C() failed&quot;</span>));</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="comment">/* Apply safe defaults. */</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a31460c48549b1d3081e253706f8b15e6">applyBasicDefaults</a>()) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    Serial.println(F(<span class="stringliteral">&quot;ERROR: applyBasicDefaults() failed.&quot;</span>));</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">while</span> (1) delay(200);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  Serial.println(F(<span class="stringliteral">&quot;ICM-20948 ready.&quot;</span>));</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">/* Optional: gate sensors</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">   * - setSensors(accel_on, gyro_on, temp_on)</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">   * - Here: enable only gyro (accel/temp off)</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186">setSensors</a>(<span class="comment">/*accel*/</span> <span class="keyword">false</span>, <span class="comment">/*gyro*/</span> <span class="keyword">true</span>, <span class="comment">/*temp*/</span> <span class="keyword">false</span>)) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    Serial.println(F(<span class="stringliteral">&quot;setSensors failed.&quot;</span>));</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="comment">/* ----------------- GYRO DLPF Config (reference) ----------------</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">   * GyroConfig(DLPFCFG, FS_SEL, FCHOICE, XGYRO, YGYRO, ZGYRO, AVGCFG)</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">   * - DLPF     : GYRO_DLPFCFG_0..7 (use 3 or 4 for balanced settings)</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">   * - FS_SEL   : dps250 / dps500 / dps1000 / dps2000</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">   * - FCHOICE  : false → DLPF path (recommended), true → bypass (very wide BW)</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">   * - XGYRO/YGYRO/ZGYRO : per-axis enable (true = enable axis)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">   * - AVGCFG   : 0..7 internal averaging (higher = more smoothing, more delay)</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">   * FCHOICE=0 (DLPF on):</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">   * - GYRO_DLPFCFG_1 : 3dB ≈ 196.6 Hz, NBW ≈ 229.8 Hz</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">   * - GYRO_DLPFCFG_2 : 3dB ≈ 151.8 Hz, NBW ≈ 187.6 Hz</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">   * - GYRO_DLPFCFG_3 : 3dB ≈ 119.5 Hz, NBW ≈ 154.3 Hz    </span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">   * - GYRO_DLPFCFG_4 : 3dB ≈ 51.2  Hz, NBW ≈ 73.3  Hz</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">   * - GYRO_DLPFCFG_5 : 3dB ≈ 23.9  Hz, NBW ≈ 35.9  Hz  ← good default</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">   * - GYRO_DLPFCFG_6 : 3dB ≈ 5.7   Hz, NBW ≈ 8.3   Hz</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">   * - GYRO_DLPFCFG_7 : 3dB ≈ 473   Hz, NBW ≈ 499   Hz</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">   *</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">   * FCHOICE=1 (Bypass) : very wide (use with care; highest noise)</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordflow">if</span>(!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a0bea2c662c285120253851c80289e077">setDLPF</a>(<a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#a9f4d08566440cf9c577724b075c59aa1af0563928829b8e022a67761651b4ccd3">ICM20948_Gyro_DLPF::DLPF_23HZ</a>, <span class="keyword">false</span>)) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    Serial.println(F(<span class="stringliteral">&quot;setDLPF failed.&quot;</span>));</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="comment">/* Set gyroscope full-scale range. */</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="keywordflow">if</span>(!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a6a06dbd14558e50d40595de82502d632">setGyroScale</a>(<a class="code hl_enumvalue" href="DevLab__ICM20948_8h.html#a409a608f5c864bb503bf1a65b164de7da7a03fe4c8dae7b2cc724db90de97f53f">ICM20948_Gyro_FullScale::DPS_2000</a>)) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    Serial.println(F(<span class="stringliteral">&quot;setGyroScale failed.&quot;</span>));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="comment">/* Set gyroscope output data rate (ODR)</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">   * - Gyro_DIV_RATE = 1100 / (1 + DIV_RATE)</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">   * - DIV_RATE = 0..255</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">   * - Example: DIV_RATE=5 → ODR ≈ 183.33 Hz</span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.Gyro_SMPLRT(1000)) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    Serial.println(F(<span class="stringliteral">&quot;Gyro_SMPLRT failed.&quot;</span>));</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a>.<a class="code hl_function" href="classDevLab__ICM20948.html#a16cc9db132bb7a2b706275c9f5a03773">setGyroDivRate</a>(5)) { <span class="comment">// 1100 / (1 + 5) = 183.33 Hz</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    Serial.println(F(<span class="stringliteral">&quot;setGyroDivRate failed.&quot;</span>));</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  }</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
 </div>
@@ -251,18 +251,21 @@ $(document).ready(function(){initNavTree('i2c__gyro_8ino_source.html',''); initR
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>}</div>
 </div>
 <div class="ttc" id="aDevLab__ICM20948_8h_html"><div class="ttname"><a href="DevLab__ICM20948_8h.html">DevLab_ICM20948.h</a></div></div>
-<div class="ttc" id="aICM20948__regs_8h_html_a6ec833d2b53c943952ae9c1c4e548356"><div class="ttname"><a href="ICM20948__regs_8h.html#a6ec833d2b53c943952ae9c1c4e548356">GYRO_DLPFCFG_4</a></div><div class="ttdeci">#define GYRO_DLPFCFG_4</div><div class="ttdef"><b>Definition</b> <a href="ICM20948__regs_8h_source.html#l00419">ICM20948_regs.h:419</a></div></div>
-<div class="ttc" id="aICM20948__regs_8h_html_aa7f66cc9e98bb2743e0dade1f35f6e4e"><div class="ttname"><a href="ICM20948__regs_8h.html#aa7f66cc9e98bb2743e0dade1f35f6e4e">dps2000</a></div><div class="ttdeci">#define dps2000</div><div class="ttdef"><b>Definition</b> <a href="ICM20948__regs_8h_source.html#l00399">ICM20948_regs.h:399</a></div></div>
+<div class="ttc" id="aDevLab__ICM20948_8h_html_a409a608f5c864bb503bf1a65b164de7da7a03fe4c8dae7b2cc724db90de97f53f"><div class="ttname"><a href="DevLab__ICM20948_8h.html#a409a608f5c864bb503bf1a65b164de7da7a03fe4c8dae7b2cc724db90de97f53f">ICM20948_Gyro_FullScale::DPS_2000</a></div><div class="ttdeci">@ DPS_2000</div></div>
+<div class="ttc" id="aDevLab__ICM20948_8h_html_a9f4d08566440cf9c577724b075c59aa1af0563928829b8e022a67761651b4ccd3"><div class="ttname"><a href="DevLab__ICM20948_8h.html#a9f4d08566440cf9c577724b075c59aa1af0563928829b8e022a67761651b4ccd3">ICM20948_Gyro_DLPF::DLPF_23HZ</a></div><div class="ttdeci">@ DLPF_23HZ</div></div>
 <div class="ttc" id="aclassDevLab__ICM20948_html"><div class="ttname"><a href="classDevLab__ICM20948.html">DevLab_ICM20948</a></div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8h_source.html#l00172">DevLab_ICM20948.h:173</a></div></div>
 <div class="ttc" id="aclassDevLab__ICM20948_html_a006c131f860f1fc81c587b3d8a77522d"><div class="ttname"><a href="classDevLab__ICM20948.html#a006c131f860f1fc81c587b3d8a77522d">DevLab_ICM20948::readGyro</a></div><div class="ttdeci">bool readGyro(float &amp;x, float &amp;y, float &amp;z)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00258">DevLab_ICM20948.cpp:258</a></div></div>
+<div class="ttc" id="aclassDevLab__ICM20948_html_a0bea2c662c285120253851c80289e077"><div class="ttname"><a href="classDevLab__ICM20948.html#a0bea2c662c285120253851c80289e077">DevLab_ICM20948::setDLPF</a></div><div class="ttdeci">bool setDLPF(ICM20948_Gyro_DLPF dlpf, bool bypass)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00593">DevLab_ICM20948.cpp:593</a></div></div>
+<div class="ttc" id="aclassDevLab__ICM20948_html_a16cc9db132bb7a2b706275c9f5a03773"><div class="ttname"><a href="classDevLab__ICM20948.html#a16cc9db132bb7a2b706275c9f5a03773">DevLab_ICM20948::setGyroDivRate</a></div><div class="ttdeci">bool setGyroDivRate(uint8_t divisor)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00780">DevLab_ICM20948.cpp:780</a></div></div>
 <div class="ttc" id="aclassDevLab__ICM20948_html_a31460c48549b1d3081e253706f8b15e6"><div class="ttname"><a href="classDevLab__ICM20948.html#a31460c48549b1d3081e253706f8b15e6">DevLab_ICM20948::applyBasicDefaults</a></div><div class="ttdeci">bool applyBasicDefaults()</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00181">DevLab_ICM20948.cpp:181</a></div></div>
+<div class="ttc" id="aclassDevLab__ICM20948_html_a6a06dbd14558e50d40595de82502d632"><div class="ttname"><a href="classDevLab__ICM20948.html#a6a06dbd14558e50d40595de82502d632">DevLab_ICM20948::setGyroScale</a></div><div class="ttdeci">bool setGyroScale(ICM20948_Gyro_FullScale fullScale)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00644">DevLab_ICM20948.cpp:644</a></div></div>
 <div class="ttc" id="aclassDevLab__ICM20948_html_a91147b3cd4c45bffc8e024f985be7b21"><div class="ttname"><a href="classDevLab__ICM20948.html#a91147b3cd4c45bffc8e024f985be7b21">DevLab_ICM20948::beginI2C</a></div><div class="ttdeci">bool beginI2C(uint8_t address=0x69, TwoWire &amp;i2cPort=Wire, uint32_t i2cSpeed=400000)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l00006">DevLab_ICM20948.cpp:6</a></div></div>
 <div class="ttc" id="aclassDevLab__ICM20948_html_ae9c088334d6ec706bb08b47ef29bd186"><div class="ttname"><a href="classDevLab__ICM20948.html#ae9c088334d6ec706bb08b47ef29bd186">DevLab_ICM20948::setSensors</a></div><div class="ttdeci">bool setSensors(bool accel_on, bool gyro_on, bool temp_on)</div><div class="ttdef"><b>Definition</b> <a href="DevLab__ICM20948_8cpp_source.html#l01006">DevLab_ICM20948.cpp:1006</a></div></div>
-<div class="ttc" id="ai2c__gyro_8ino_html_a06c967e78bcedcee909a70764f879433"><div class="ttname"><a href="i2c__gyro_8ino.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a></div><div class="ttdeci">#define SCL_PIN</div><div class="ttdoc">I2C SCL pin used by the example board.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00043">i2c_gyro.ino:43</a></div></div>
-<div class="ttc" id="ai2c__gyro_8ino_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="i2c__gyro_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">Configure the IMU for gyroscope-only operation over I2C.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00058">i2c_gyro.ino:58</a></div></div>
-<div class="ttc" id="ai2c__gyro_8ino_html_a526d580d324bce60a3e964066fae77e3"><div class="ttname"><a href="i2c__gyro_8ino.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a></div><div class="ttdeci">#define SDA_PIN</div><div class="ttdoc">I2C SDA pin used by the example board.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00041">i2c_gyro.ino:41</a></div></div>
-<div class="ttc" id="ai2c__gyro_8ino_html_a8fb98755bd25ab9d5bf8739e15df6eeb"><div class="ttname"><a href="i2c__gyro_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">ICM_ADDR</a></div><div class="ttdeci">#define ICM_ADDR</div><div class="ttdoc">ICM-20948 I2C address selected by the AD0 pin.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00047">i2c_gyro.ino:47</a></div></div>
-<div class="ttc" id="ai2c__gyro_8ino_html_aa8226278adaa3f7fb2ad8b966f7787a1"><div class="ttname"><a href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a></div><div class="ttdeci">DevLab_ICM20948 imu</div><div class="ttdoc">Global ICM-20948 driver instance.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00050">i2c_gyro.ino:50</a></div></div>
+<div class="ttc" id="ai2c__gyro_8ino_html_a06c967e78bcedcee909a70764f879433"><div class="ttname"><a href="i2c__gyro_8ino.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a></div><div class="ttdeci">#define SCL_PIN</div><div class="ttdoc">I2C SCL pin used by the example board.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00044">i2c_gyro.ino:44</a></div></div>
+<div class="ttc" id="ai2c__gyro_8ino_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="i2c__gyro_8ino.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdoc">Configure the IMU for gyroscope-only operation over I2C.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00059">i2c_gyro.ino:59</a></div></div>
+<div class="ttc" id="ai2c__gyro_8ino_html_a526d580d324bce60a3e964066fae77e3"><div class="ttname"><a href="i2c__gyro_8ino.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a></div><div class="ttdeci">#define SDA_PIN</div><div class="ttdoc">I2C SDA pin used by the example board.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00042">i2c_gyro.ino:42</a></div></div>
+<div class="ttc" id="ai2c__gyro_8ino_html_a8fb98755bd25ab9d5bf8739e15df6eeb"><div class="ttname"><a href="i2c__gyro_8ino.html#a8fb98755bd25ab9d5bf8739e15df6eeb">ICM_ADDR</a></div><div class="ttdeci">#define ICM_ADDR</div><div class="ttdoc">ICM-20948 I2C address selected by the AD0 pin.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00048">i2c_gyro.ino:48</a></div></div>
+<div class="ttc" id="ai2c__gyro_8ino_html_aa8226278adaa3f7fb2ad8b966f7787a1"><div class="ttname"><a href="i2c__gyro_8ino.html#aa8226278adaa3f7fb2ad8b966f7787a1">imu</a></div><div class="ttdeci">DevLab_ICM20948 imu</div><div class="ttdoc">Global ICM-20948 driver instance.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00051">i2c_gyro.ino:51</a></div></div>
 <div class="ttc" id="ai2c__gyro_8ino_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="i2c__gyro_8ino.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdoc">Read and print gyroscope data in degrees per second.</div><div class="ttdef"><b>Definition</b> <a href="i2c__gyro_8ino_source.html#l00125">i2c_gyro.ino:125</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -270,7 +273,7 @@ $(document).ready(function(){initNavTree('i2c__gyro_8ino_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_72b0ae39f9e205f9b537e4731b867472.html">i2c_gyro</a></li><li class="navelem"><a class="el" href="i2c__gyro_8ino.html">i2c_gyro.ino</a></li>
-    <li class="footer">Generated on Tue Jun 16 2026 17:37:03 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Wed Jun 17 2026 22:32:52 for DevLab_ICM20948 by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

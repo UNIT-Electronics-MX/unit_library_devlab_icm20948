@@ -4,104 +4,105 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00001}00001\ \textcolor{comment}{/**}}
 \DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ interrupt.ino}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ I2C\ interrupt\ example\ for\ the\ 7Semi\ ICM-\/20948.}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @details\ Configures\ the\ IMU\ raw-\/data-\/ready\ interrupt\ pin\ and\ counts\ ISR}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ events\ on\ an\ Arduino-\/compatible\ board.}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00006}00006\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00010}00010\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00011}00011\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00012}\mbox{\hyperlink{interrupt_8ino_a526d580d324bce60a3e964066fae77e3}{00012}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00013}00013\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00014}\mbox{\hyperlink{interrupt_8ino_a06c967e78bcedcee909a70764f879433}{00014}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00015}00015\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00016}\mbox{\hyperlink{interrupt_8ino_a8b7500a141450a9df212017430c0df9e}{00016}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00017}00017\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00018}\mbox{\hyperlink{interrupt_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00018}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00019}00019\ \textcolor{comment}{/**\ @brief\ MCU\ pin\ connected\ to\ the\ IMU\ interrupt\ output.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00020}\mbox{\hyperlink{interrupt_8ino_aeedc5a6d7f0f7fc5c87dd7e256bb5977}{00020}}\ \textcolor{preprocessor}{\#define\ PIN\_INT\ \ \ D7\ \ \ }\textcolor{comment}{//\ ajusta\ a\ tu\ pin\ real}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00021}00021\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00022}00022\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00023}\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00023}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00024}00024\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00025}00025\ \textcolor{comment}{/**\ @brief\ Print\ a\ separator\ line\ to\ Serial.\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00026}\mbox{\hyperlink{interrupt_8ino_a8765c1cf679c82cf73a0a13af44b983b}{00026}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interrupt_8ino_a8765c1cf679c82cf73a0a13af44b983b}{printLinea}}()\ \ \ \ \ \ \{\ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));\ \}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00027}00027\ \textcolor{comment}{/**\ @brief\ Print\ a\ double\ separator\ line\ to\ Serial.\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00028}\mbox{\hyperlink{interrupt_8ino_a42633dcf8fe2689c57c8113825f74c66}{00028}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interrupt_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}()\ \{\ Serial.println(F(\textcolor{stringliteral}{"{}============================================================"{}}));\ \}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00029}00029\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00030}00030\ \textcolor{comment}{/**\ @brief\ Interrupt\ pin\ electrical\ and\ latch\ configuration.\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00031}\mbox{\hyperlink{interrupt_8ino_af8536a7aea1fb9b62bdcad10835f1f53}{00031}}\ \mbox{\hyperlink{structICM20948__IntPinConfig}{ICM20948\_IntPinConfig}}\ \mbox{\hyperlink{interrupt_8ino_af8536a7aea1fb9b62bdcad10835f1f53}{pinCfg}}\ =\ \{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00032}00032\ \ \ .\mbox{\hyperlink{structICM20948__IntPinConfig_a5bab37898a5ad12279ae46748d5400cf}{activeLevel}}\ \ \ =\ 1,}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00033}00033\ \ \ .driveMode\ \ \ \ \ =\ 0,}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00034}00034\ \ \ .latchMode\ \ \ \ \ =\ 0,}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00035}00035\ \ \ .clearMode\ \ \ \ \ =\ 1,}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00036}00036\ \ \ .fsyncActLevel\ =\ 0,}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00037}00037\ \ \ .fsyncIntEn\ \ \ \ =\ 0,}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00038}00038\ \ \ .bypassEn\ \ \ \ \ \ =\ 0}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00039}00039\ \};}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00040}00040\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00041}00041\ \textcolor{comment}{/**\ @brief\ Interrupt\ enable\ flags\ used\ by\ this\ example.\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00042}\mbox{\hyperlink{interrupt_8ino_a3ed2ef4689db703e7ed0abe059695ca3}{00042}}\ \mbox{\hyperlink{structICM20948__IntEnableConfig}{ICM20948\_IntEnableConfig}}\ \mbox{\hyperlink{interrupt_8ino_a3ed2ef4689db703e7ed0abe059695ca3}{intEn}}\ =\ \{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00043}00043\ \ \ .\mbox{\hyperlink{structICM20948__IntEnableConfig_a6764938aee3f8d6c6e070851872cc388}{rawDataRdyEn}}\ =\ 1\ \ \ \textcolor{comment}{//\ inicializacion\ directa}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00044}00044\ \};}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00045}00045\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00046}00046\ \textcolor{comment}{/**\ @brief\ Number\ of\ interrupt\ events\ observed\ by\ the\ ISR.\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00047}\mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{00047}}\ \textcolor{keyword}{volatile}\ uint32\_t\ \mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00048}00048\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00049}00049\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00050}00050\ \textcolor{comment}{\ *\ @brief\ Interrupt\ service\ routine\ for\ the\ IMU\ data-\/ready\ signal.}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00051}00051\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00052}\mbox{\hyperlink{interrupt_8ino_aef596810c644e9f3853919b365e8270f}{00052}}\ \textcolor{keywordtype}{void}\ IRAM\_ATTR\ \mbox{\hyperlink{interrupt_8ino_aef596810c644e9f3853919b365e8270f}{isrHandler}}()\ \{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00053}00053\ \ \ \mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}}++;}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00054}00054\ \}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00055}00055\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00056}00056\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00057}00057\ \textcolor{comment}{\ *\ @brief\ Initialize\ I2C,\ verify\ the\ IMU,\ configure\ interrupts,\ and\ attach\ ISR.}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00058}00058\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00059}\mbox{\hyperlink{interrupt_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00059}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interrupt_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00060}00060\ \ \ Serial.begin(115200);}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00061}00061\ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00063}00063\ \ \ Wire.begin(\mbox{\hyperlink{interrupt_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\ \mbox{\hyperlink{interrupt_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00065}00065\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{interrupt_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ \mbox{\hyperlink{interrupt_8ino_a8b7500a141450a9df212017430c0df9e}{I2C\_FREQ}}))\ \{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00066}00066\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ beginI2C()\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00068}00068\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00069}00069\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00071}00071\ \ \ uint8\_t\ who;}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00072}00072\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who)\ ||\ who\ !=\ 0xEA)\ \{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00073}00073\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ WHO\_AM\_I\ mismatch"{}}));}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00075}00075\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00076}00076\ \ \ Serial.printf(\textcolor{stringliteral}{"{}WHO\_AM\_I\ =\ 0x\%02X\(\backslash\)n"{}},\ who);}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00078}00078\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ab011f71e9466a0e1e8245638f81b0f43}{intInit}}(\mbox{\hyperlink{interrupt_8ino_af8536a7aea1fb9b62bdcad10835f1f53}{pinCfg}}))\{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00079}00079\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ Initialization\ interruption\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{while}(1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00081}00081\ \ \ \};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ nombre\ correcto}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00082}00082\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3c5db22058479806072167f2c15319c7}{intEnableConfig}}(\mbox{\hyperlink{interrupt_8ino_a3ed2ef4689db703e7ed0abe059695ca3}{intEn}}))\{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00083}00083\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ Initialization\ interruption\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{while}(1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00085}00085\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00086}00086\ }
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00087}00087\ \ \ attachInterrupt(digitalPinToInterrupt(\mbox{\hyperlink{interrupt_8ino_aeedc5a6d7f0f7fc5c87dd7e256bb5977}{PIN\_INT}}),\ \mbox{\hyperlink{interrupt_8ino_aef596810c644e9f3853919b365e8270f}{isrHandler}},\ FALLING);}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00088}00088\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Interrupt\ configured.\ Waiting..."{}}));}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00089}00089\ \}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00090}00090\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00091}00091\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00092}00092\ \textcolor{comment}{\ *\ @brief\ Report\ interrupt\ events\ when\ the\ ISR\ count\ changes.}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00093}00093\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00094}\mbox{\hyperlink{interrupt_8ino_afe461d27b9c48d5921c00d521181f12f}{00094}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interrupt_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00095}00095\ \ \ \textcolor{keyword}{static}\ uint32\_t\ lastCount\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00096}00096\ }
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00097}00097\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}}\ !=\ lastCount)\ \{}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00098}00098\ \ \ \ \ lastCount\ =\ \mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}};}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00099}00099\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}>>>\ ISR\ disparada!\ Total:\ \%lu\(\backslash\)n"{}},\ \mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}});}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00100}00100\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ I2C\ interrupt\ example\ for\ the\ DevLab\ ICM-\/20948.}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @author\ Jonathan\ Mejorado\ Lopez}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ @details\ Configures\ the\ IMU\ raw-\/data-\/ready\ interrupt\ pin\ and\ counts\ ISR}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ events\ on\ an\ Arduino-\/compatible\ board.}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00007}00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00011}00011\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00012}00012\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00013}\mbox{\hyperlink{interrupt_8ino_a526d580d324bce60a3e964066fae77e3}{00013}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00014}00014\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00015}\mbox{\hyperlink{interrupt_8ino_a06c967e78bcedcee909a70764f879433}{00015}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00016}00016\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00017}\mbox{\hyperlink{interrupt_8ino_a8b7500a141450a9df212017430c0df9e}{00017}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00018}00018\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00019}\mbox{\hyperlink{interrupt_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00019}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00020}00020\ \textcolor{comment}{/**\ @brief\ MCU\ pin\ connected\ to\ the\ IMU\ interrupt\ output.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00021}\mbox{\hyperlink{interrupt_8ino_aeedc5a6d7f0f7fc5c87dd7e256bb5977}{00021}}\ \textcolor{preprocessor}{\#define\ PIN\_INT\ \ \ D7\ \ \ }\textcolor{comment}{//\ ajusta\ a\ tu\ pin\ real}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00022}00022\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00023}00023\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00024}\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00024}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00025}00025\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00026}00026\ \textcolor{comment}{/**\ @brief\ Print\ a\ separator\ line\ to\ Serial.\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00027}\mbox{\hyperlink{interrupt_8ino_a8765c1cf679c82cf73a0a13af44b983b}{00027}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interrupt_8ino_a8765c1cf679c82cf73a0a13af44b983b}{printLinea}}()\ \ \ \ \ \ \{\ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));\ \}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00028}00028\ \textcolor{comment}{/**\ @brief\ Print\ a\ double\ separator\ line\ to\ Serial.\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00029}\mbox{\hyperlink{interrupt_8ino_a42633dcf8fe2689c57c8113825f74c66}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interrupt_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}()\ \{\ Serial.println(F(\textcolor{stringliteral}{"{}============================================================"{}}));\ \}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00030}00030\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00031}00031\ \textcolor{comment}{/**\ @brief\ Interrupt\ pin\ electrical\ and\ latch\ configuration.\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00032}\mbox{\hyperlink{interrupt_8ino_af8536a7aea1fb9b62bdcad10835f1f53}{00032}}\ \mbox{\hyperlink{structICM20948__IntPinConfig}{ICM20948\_IntPinConfig}}\ \mbox{\hyperlink{interrupt_8ino_af8536a7aea1fb9b62bdcad10835f1f53}{pinCfg}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00033}00033\ \ \ .\mbox{\hyperlink{structICM20948__IntPinConfig_a5bab37898a5ad12279ae46748d5400cf}{activeLevel}}\ \ \ =\ 1,}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00034}00034\ \ \ .driveMode\ \ \ \ \ =\ 0,}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00035}00035\ \ \ .latchMode\ \ \ \ \ =\ 0,}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00036}00036\ \ \ .clearMode\ \ \ \ \ =\ 1,}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00037}00037\ \ \ .fsyncActLevel\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00038}00038\ \ \ .fsyncIntEn\ \ \ \ =\ 0,}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00039}00039\ \ \ .bypassEn\ \ \ \ \ \ =\ 0}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00040}00040\ \};}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00041}00041\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00042}00042\ \textcolor{comment}{/**\ @brief\ Interrupt\ enable\ flags\ used\ by\ this\ example.\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00043}\mbox{\hyperlink{interrupt_8ino_a3ed2ef4689db703e7ed0abe059695ca3}{00043}}\ \mbox{\hyperlink{structICM20948__IntEnableConfig}{ICM20948\_IntEnableConfig}}\ \mbox{\hyperlink{interrupt_8ino_a3ed2ef4689db703e7ed0abe059695ca3}{intEn}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00044}00044\ \ \ .\mbox{\hyperlink{structICM20948__IntEnableConfig_a6764938aee3f8d6c6e070851872cc388}{rawDataRdyEn}}\ =\ 1\ \ \ \textcolor{comment}{//\ inicializacion\ directa}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00045}00045\ \};}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00046}00046\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00047}00047\ \textcolor{comment}{/**\ @brief\ Number\ of\ interrupt\ events\ observed\ by\ the\ ISR.\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00048}\mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{00048}}\ \textcolor{keyword}{volatile}\ uint32\_t\ \mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00049}00049\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00050}00050\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00051}00051\ \textcolor{comment}{\ *\ @brief\ Interrupt\ service\ routine\ for\ the\ IMU\ data-\/ready\ signal.}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00052}00052\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00053}\mbox{\hyperlink{interrupt_8ino_aef596810c644e9f3853919b365e8270f}{00053}}\ \textcolor{keywordtype}{void}\ IRAM\_ATTR\ \mbox{\hyperlink{interrupt_8ino_aef596810c644e9f3853919b365e8270f}{isrHandler}}()\ \{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00054}00054\ \ \ \mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}}++;}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00056}00056\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00057}00057\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00058}00058\ \textcolor{comment}{\ *\ @brief\ Initialize\ I2C,\ verify\ the\ IMU,\ configure\ interrupts,\ and\ attach\ ISR.}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00059}00059\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00060}\mbox{\hyperlink{interrupt_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00060}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interrupt_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00061}00061\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00062}00062\ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00064}00064\ \ \ Wire.begin(\mbox{\hyperlink{interrupt_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\ \mbox{\hyperlink{interrupt_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00066}00066\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{interrupt_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ \mbox{\hyperlink{interrupt_8ino_a8b7500a141450a9df212017430c0df9e}{I2C\_FREQ}}))\ \{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00067}00067\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ beginI2C()\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00069}00069\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00070}00070\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00072}00072\ \ \ uint8\_t\ who;}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00073}00073\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who)\ ||\ who\ !=\ 0xEA)\ \{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00074}00074\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ WHO\_AM\_I\ mismatch"{}}));}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00076}00076\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00077}00077\ \ \ Serial.printf(\textcolor{stringliteral}{"{}WHO\_AM\_I\ =\ 0x\%02X\(\backslash\)n"{}},\ who);}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00079}00079\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ab011f71e9466a0e1e8245638f81b0f43}{intInit}}(\mbox{\hyperlink{interrupt_8ino_af8536a7aea1fb9b62bdcad10835f1f53}{pinCfg}}))\{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00080}00080\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ Initialization\ interruption\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{while}(1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00082}00082\ \ \ \};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ nombre\ correcto}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00083}00083\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{interrupt_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3c5db22058479806072167f2c15319c7}{intEnableConfig}}(\mbox{\hyperlink{interrupt_8ino_a3ed2ef4689db703e7ed0abe059695ca3}{intEn}}))\{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00084}00084\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ Initialization\ interruption\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{while}(1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00086}00086\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00088}00088\ \ \ attachInterrupt(digitalPinToInterrupt(\mbox{\hyperlink{interrupt_8ino_aeedc5a6d7f0f7fc5c87dd7e256bb5977}{PIN\_INT}}),\ \mbox{\hyperlink{interrupt_8ino_aef596810c644e9f3853919b365e8270f}{isrHandler}},\ FALLING);}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00089}00089\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Interrupt\ configured.\ Waiting..."{}}));}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00091}00091\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00092}00092\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00093}00093\ \textcolor{comment}{\ *\ @brief\ Report\ interrupt\ events\ when\ the\ ISR\ count\ changes.}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00094}00094\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00095}\mbox{\hyperlink{interrupt_8ino_afe461d27b9c48d5921c00d521181f12f}{00095}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interrupt_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00096}00096\ \ \ \textcolor{keyword}{static}\ uint32\_t\ lastCount\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00098}00098\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}}\ !=\ lastCount)\ \{}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00099}00099\ \ \ \ \ lastCount\ =\ \mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}};}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00100}00100\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}>>>\ ISR\ disparada!\ Total:\ \%lu\(\backslash\)n"{}},\ \mbox{\hyperlink{interrupt_8ino_af1bf977df8c9fcc5211d7331c2319268}{isrCount}});}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00101}00101\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{interrupt_8ino_source_l00102}00102\ \}}
 
 \end{DoxyCode}

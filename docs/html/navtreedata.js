@@ -54,7 +54,7 @@ var NAVTREEINDEX =
 "7Semi__I2C__Interface_8h.html",
 "ICM20948__regs_8h.html#a966007d39d833afbf07884f535d7c1fb",
 "globals_defs_r.html",
-"test_8ino.html#a8b7500a141450a9df212017430c0df9e"
+"test_8ino.html#a7a9c77b04f25920366c8b7b1e13d4854"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

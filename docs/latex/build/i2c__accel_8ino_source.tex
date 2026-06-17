@@ -4,144 +4,145 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00001}00001\ \textcolor{comment}{/***************************************************************}}
 \DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ \ \ \ I2C\_Accel.ino}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ I2C\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ on\ UNO/ESP32\ +}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ continuous\ accelerometer\ readout\ }}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00005}00005\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ Features}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ -\/\ I2C\ init\ on\ default/custom\ pins}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ IMU\ beginI2C()\ on\ I2C\ (addr\ 0x68/0x69)}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ Manual\ sensor\ enable\ (setSensors)}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Accel\ config:\ scale,\ DLPF,\ averaging,\ sample\ rate}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Read\ accel\ (g)\ at\ \string~2\ Hz\ print}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00012}00012\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00013}00013\ \textcolor{comment}{\ *\ Notes}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00014}00014\ \textcolor{comment}{\ *\ -\/\ WHO\_AM\_I\ must\ be\ 0xEA}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ Sensors\ must\ be\ explicitly\ enabled}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ Bank\ switching\ handled\ internally\ by\ library}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00017}00017\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO\ I2C)}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ A4}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ A5}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3\ (or\ 5V\ if\ your\ board\ supports\ it)}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00023}00023\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00024}00024\ \textcolor{comment}{\ *\ Wiring\ (ESP32\ default\ I2C)}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00025}00025\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ GPIO21}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ GPIO22}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00029}00029\ \textcolor{comment}{\ ***************************************************************/}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00034}00034\ \textcolor{comment}{/*\ ======================\ User\ Config\ =======================\ */}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00035}00035\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00036}\mbox{\hyperlink{i2c__accel_8ino_a526d580d324bce60a3e964066fae77e3}{00036}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00037}00037\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00038}\mbox{\hyperlink{i2c__accel_8ino_a06c967e78bcedcee909a70764f879433}{00038}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00039}00039\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00040}\mbox{\hyperlink{i2c__accel_8ino_a8b7500a141450a9df212017430c0df9e}{00040}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00041}00041\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00042}\mbox{\hyperlink{i2c__accel_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00042}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00043}00043\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00044}00044\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00045}\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00045}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00046}00046\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00047}00047\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00048}00048\ \textcolor{comment}{\ *\ @brief\ Configure\ the\ IMU\ for\ accelerometer-\/only\ operation\ over\ I2C.}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00049}00049\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00050}00050\ \textcolor{comment}{\ *\ The\ function\ initializes\ the\ bus,\ verifies\ the\ device\ identity,\ enables\ the}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00051}00051\ \textcolor{comment}{\ *\ accelerometer,\ and\ applies\ range,\ DLPF,\ averaging,\ and\ sample-\/rate\ settings.}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00052}00052\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00053}\mbox{\hyperlink{i2c__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00054}00054\ \ \ Serial.begin(115200);}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00055}00055\ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00056}00056\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ (I2C)\ —\ Accel\ Example"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00057}00057\ \ \ Wire.begin(\mbox{\hyperlink{i2c__accel_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\ \mbox{\hyperlink{i2c__accel_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00058}00058\ \ \ \textcolor{comment}{/*\ Initialize\ IMU\ using\ I2C.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00059}00059\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{i2c__accel_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ 400000))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00060}00060\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ ICM-\/20948\ beginI2C()\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00062}00062\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00064}00064\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00066}00066\ \ \ \textcolor{comment}{/*\ Verify\ device\ identity.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00067}00067\ \ \ uint8\_t\ who;}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00068}00068\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00069}00069\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}WHO\_AM\_I:\ 0x"{}});}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00070}00070\ \ \ \ \ Serial.println(who,\ HEX);}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00071}00071\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00073}00073\ \ \ \textcolor{comment}{/*\ Enable\ only\ accelerometer}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00074}00074\ \textcolor{comment}{\ \ \ *\ -\/\ accel\ =\ true}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00075}00075\ \textcolor{comment}{\ \ \ *\ -\/\ gyro\ \ =\ false}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00076}00076\ \textcolor{comment}{\ \ \ *\ -\/\ temp\ \ =\ false}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00077}00077\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00078}00078\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00079}00079\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00080}00080\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00082}00082\ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ ACCEL\ CONFIG\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00083}00083\ \textcolor{comment}{\ \ \ *\ -\/\ Scale:\ ±2/±4/±8/±16\ g}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00084}00084\ \textcolor{comment}{\ \ \ *\ -\/\ DLPF:\ noise\ filtering}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00085}00085\ \textcolor{comment}{\ \ \ *\ -\/\ Averaging:\ noise\ reduction}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00086}00086\ \textcolor{comment}{\ \ \ *\ -\/\ Sample\ rate:\ output\ frequency}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00087}00087\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00089}00089\ \ \ \textcolor{comment}{/*\ Set\ accelerometer\ full-\/scale\ range.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00090}00090\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43}{setAccelScale}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05abda3c606e1ce64e3bda86c1fe6232693}{ICM20948\_Accel\_FullScale::G\_4}}))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00091}00091\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelScale\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00092}00092\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00093}00093\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00094}00094\ \ \ \textcolor{comment}{/*\ Enable\ DLPF\ (recommended)}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00095}00095\ \textcolor{comment}{\ \ \ *\ -\/\ bypass\ =\ false\ →\ DLPF\ enabled}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00096}00096\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00097}00097\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ac52d80aad738b90aa0f05e9d6404bb85}{setAccelDLPF}}(\mbox{\hyperlink{ICM20948__regs_8h_a981a5bd41894531939c10568f7793069}{ACCEL\_DLPFCFG\_3}},\ \textcolor{keyword}{false}))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00098}00098\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelDLPF\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00099}00099\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00100}00100\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00101}00101\ \ \ \textcolor{comment}{/*\ Set\ averaging\ (noise\ reduction).\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00102}00102\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a619f82390347cc173d1604d4d711b537}{setAccelAveraging}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9a682b1e1305b78c070fc0d38523969924}{ICM20948\_Accel\_Average::AVG\_8}}))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00103}00103\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelAveraging\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00104}00104\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00106}00106\ \ \ \textcolor{comment}{/*\ Set\ output\ data\ rate\ (ODR)}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00107}00107\ \textcolor{comment}{\ \ \ *\ -\/\ Base\ =\ 1125\ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00108}00108\ \textcolor{comment}{\ \ \ *\ -\/\ ODR\ =\ 1125\ /\ (1\ +\ divider)}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00109}00109\ \textcolor{comment}{\ \ \ *\ -\/\ Example:\ 225\ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00110}00110\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00111}00111\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_afe657b6e9d21f02dad2599ea04feefe2}{setAccelSampleRate}}(225))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00112}00112\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelSampleRate\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00113}00113\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00114}00114\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00115}00115\ \ \ delay(10);}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00116}00116\ \}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00117}00117\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00118}00118\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00119}00119\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ accelerometer\ data\ in\ g.}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00120}00120\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00121}\mbox{\hyperlink{i2c__accel_8ino_afe461d27b9c48d5921c00d521181f12f}{00121}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__accel_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00122}00122\ \ \ \textcolor{keywordtype}{float}\ ax,\ ay,\ az;}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00123}00123\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00124}00124\ \ \ \textcolor{comment}{/*\ Read\ accelerometer\ data}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00125}00125\ \textcolor{comment}{\ \ \ *\ -\/\ Output\ in\ g\ units}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00126}00126\ \textcolor{comment}{\ \ \ *\ -\/\ Returns\ true\ on\ success}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00127}00127\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00128}00128\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b}{readAccel}}(ax,\ ay,\ az))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00129}00129\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}ACCEL\ [g]:\ "{}});}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00130}00130\ \ \ \ \ Serial.print(ax,\ 3);}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00131}00131\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00132}00132\ \ \ \ \ Serial.print(ay,\ 3);}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00133}00133\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00134}00134\ \ \ \ \ Serial.println(az,\ 3);}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00135}00135\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00136}00136\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ACCEL\ read\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00137}00137\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00138}00138\ }
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00139}00139\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00140}00140\ \ \ delay(500);}
-\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00141}00141\ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @author\ \ 7Semi,Jonathan\ Mejorado\ Lopez\ }}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ I2C\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ on\ UNO/ESP32\ +}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ continuous\ accelerometer\ readout\ }}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ Features}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ I2C\ init\ on\ default/custom\ pins}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ IMU\ beginI2C()\ on\ I2C\ (addr\ 0x68/0x69)}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Manual\ sensor\ enable\ (setSensors)}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Accel\ config:\ scale,\ DLPF,\ averaging,\ sample\ rate}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00012}00012\ \textcolor{comment}{\ *\ -\/\ Read\ accel\ (g)\ at\ \string~2\ Hz\ print}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00013}00013\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00014}00014\ \textcolor{comment}{\ *\ Notes}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ WHO\_AM\_I\ must\ be\ 0xEA}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ Sensors\ must\ be\ explicitly\ enabled}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ Bank\ switching\ handled\ internally\ by\ library}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00018}00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO\ I2C)}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ A4}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ A5}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3\ (or\ 5V\ if\ your\ board\ supports\ it)}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00025}00025\ \textcolor{comment}{\ *\ Wiring\ (ESP32\ default\ I2C)}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ GPIO21}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ GPIO22}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00029}00029\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00030}00030\ \textcolor{comment}{\ ***************************************************************/}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00033}00033\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00035}00035\ \textcolor{comment}{/*\ ======================\ User\ Config\ =======================\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00036}00036\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00037}\mbox{\hyperlink{i2c__accel_8ino_a526d580d324bce60a3e964066fae77e3}{00037}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00038}00038\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00039}\mbox{\hyperlink{i2c__accel_8ino_a06c967e78bcedcee909a70764f879433}{00039}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00040}00040\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00041}\mbox{\hyperlink{i2c__accel_8ino_a8b7500a141450a9df212017430c0df9e}{00041}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00042}00042\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00043}\mbox{\hyperlink{i2c__accel_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00043}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00044}00044\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00045}00045\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00046}\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00046}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00047}00047\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00048}00048\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00049}00049\ \textcolor{comment}{\ *\ @brief\ Configure\ the\ IMU\ for\ accelerometer-\/only\ operation\ over\ I2C.}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00050}00050\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00051}00051\ \textcolor{comment}{\ *\ The\ function\ initializes\ the\ bus,\ verifies\ the\ device\ identity,\ enables\ the}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00052}00052\ \textcolor{comment}{\ *\ accelerometer,\ and\ applies\ range,\ DLPF,\ averaging,\ and\ sample-\/rate\ settings.}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00053}00053\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00054}\mbox{\hyperlink{i2c__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00054}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00055}00055\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00056}00056\ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00057}00057\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ (I2C)\ —\ Accel\ Example"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00058}00058\ \ \ Wire.begin(\mbox{\hyperlink{i2c__accel_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\ \mbox{\hyperlink{i2c__accel_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00059}00059\ \ \ \textcolor{comment}{/*\ Initialize\ IMU\ using\ I2C.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00060}00060\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{i2c__accel_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ 400000))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00061}00061\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ ICM-\/20948\ beginI2C()\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00063}00063\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00065}00065\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00067}00067\ \ \ \textcolor{comment}{/*\ Verify\ device\ identity.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00068}00068\ \ \ uint8\_t\ who;}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00069}00069\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00070}00070\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}WHO\_AM\_I:\ 0x"{}});}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00071}00071\ \ \ \ \ Serial.println(who,\ HEX);}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00072}00072\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00074}00074\ \ \ \textcolor{comment}{/*\ Enable\ only\ accelerometer}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00075}00075\ \textcolor{comment}{\ \ \ *\ -\/\ accel\ =\ true}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00076}00076\ \textcolor{comment}{\ \ \ *\ -\/\ gyro\ \ =\ false}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00077}00077\ \textcolor{comment}{\ \ \ *\ -\/\ temp\ \ =\ false}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00078}00078\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00079}00079\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00080}00080\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00081}00081\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00083}00083\ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ ACCEL\ CONFIG\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00084}00084\ \textcolor{comment}{\ \ \ *\ -\/\ Scale:\ ±2/±4/±8/±16\ g}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00085}00085\ \textcolor{comment}{\ \ \ *\ -\/\ DLPF:\ noise\ filtering}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00086}00086\ \textcolor{comment}{\ \ \ *\ -\/\ Averaging:\ noise\ reduction}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00087}00087\ \textcolor{comment}{\ \ \ *\ -\/\ Sample\ rate:\ output\ frequency}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00088}00088\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00090}00090\ \ \ \textcolor{comment}{/*\ Set\ accelerometer\ full-\/scale\ range.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00091}00091\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43}{setAccelScale}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05abda3c606e1ce64e3bda86c1fe6232693}{ICM20948\_Accel\_FullScale::G\_4}}))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00092}00092\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelScale\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00093}00093\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00095}00095\ \ \ \textcolor{comment}{/*\ Enable\ DLPF\ (recommended)}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00096}00096\ \textcolor{comment}{\ \ \ *\ -\/\ bypass\ =\ false\ →\ DLPF\ enabled}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00097}00097\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00098}00098\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ac52d80aad738b90aa0f05e9d6404bb85}{setAccelDLPF}}(\mbox{\hyperlink{ICM20948__regs_8h_a981a5bd41894531939c10568f7793069}{ACCEL\_DLPFCFG\_3}},\ \textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00099}00099\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelDLPF\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00100}00100\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00102}00102\ \ \ \textcolor{comment}{/*\ Set\ averaging\ (noise\ reduction).\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00103}00103\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a619f82390347cc173d1604d4d711b537}{setAccelAveraging}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9a682b1e1305b78c070fc0d38523969924}{ICM20948\_Accel\_Average::AVG\_8}}))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00104}00104\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelAveraging\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00105}00105\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00107}00107\ \ \ \textcolor{comment}{/*\ Set\ output\ data\ rate\ (ODR)}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00108}00108\ \textcolor{comment}{\ \ \ *\ -\/\ Base\ =\ 1125\ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00109}00109\ \textcolor{comment}{\ \ \ *\ -\/\ ODR\ =\ 1125\ /\ (1\ +\ divider)}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00110}00110\ \textcolor{comment}{\ \ \ *\ -\/\ Example:\ 225\ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00111}00111\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00112}00112\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_afe657b6e9d21f02dad2599ea04feefe2}{setAccelSampleRate}}(225))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00113}00113\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelSampleRate\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00114}00114\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00116}00116\ \ \ delay(10);}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00118}00118\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00119}00119\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00120}00120\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ accelerometer\ data\ in\ g.}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00121}00121\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00122}\mbox{\hyperlink{i2c__accel_8ino_afe461d27b9c48d5921c00d521181f12f}{00122}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__accel_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00123}00123\ \ \ \textcolor{keywordtype}{float}\ ax,\ ay,\ az;}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00125}00125\ \ \ \textcolor{comment}{/*\ Read\ accelerometer\ data}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00126}00126\ \textcolor{comment}{\ \ \ *\ -\/\ Output\ in\ g\ units}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00127}00127\ \textcolor{comment}{\ \ \ *\ -\/\ Returns\ true\ on\ success}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00128}00128\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00129}00129\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{i2c__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b}{readAccel}}(ax,\ ay,\ az))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00130}00130\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}ACCEL\ [g]:\ "{}});}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00131}00131\ \ \ \ \ Serial.print(ax,\ 3);}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00132}00132\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00133}00133\ \ \ \ \ Serial.print(ay,\ 3);}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00134}00134\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00135}00135\ \ \ \ \ Serial.println(az,\ 3);}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00136}00136\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00137}00137\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ACCEL\ read\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00138}00138\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00140}00140\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00141}00141\ \ \ delay(500);}
+\DoxyCodeLine{\Hypertarget{i2c__accel_8ino_source_l00142}00142\ \}}
 
 \end{DoxyCode}

@@ -1,5 +1,5 @@
 <map id="examples/mag_test/mag_test.ino" name="examples/mag_test/mag_test.ino">
-<area shape="rect" id="Node000001" title="Magnetometer operation&#45;mode sweep for the 7Semi ICM&#45;20948." alt="" coords="481,5,665,45"/>
+<area shape="rect" id="Node000001" title="Magnetometer operation&#45;mode sweep for the DevLab ICM&#45;20948." alt="" coords="481,5,665,45"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="702,313,766,339"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="616,43,654,63,695,90,734,125,766,165,779,191,785,214,784,238,777,266,768,286,756,304,751,301,763,284,771,264,778,237,779,215,774,193,761,168,730,128,691,95,651,68,614,48"/>
 <area shape="rect" id="Node000003" href="$DevLab__ICM20948_8h.html" title=" " alt="" coords="253,93,407,119"/>

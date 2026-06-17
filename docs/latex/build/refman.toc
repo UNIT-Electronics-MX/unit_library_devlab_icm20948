@@ -47,672 +47,675 @@
 \contentsline {subsubsection}{\numberline {5.1.3.11}writeBit()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{19}{subsubsection.5.1.3.11}%
 \contentsline {subsubsection}{\numberline {5.1.3.12}writeBit()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{20}{subsubsection.5.1.3.12}%
 \contentsline {subsubsection}{\numberline {5.1.3.13}writeBits()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{21}{subsubsection.5.1.3.13}%
-\contentsline {subsubsection}{\numberline {5.1.3.14}writeBits()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{21}{subsubsection.5.1.3.14}%
-\contentsline {section}{\numberline {5.2}config\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DLPF Struct Reference}{22}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{22}{subsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.3.14}writeBits()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{22}{subsubsection.5.1.3.14}%
+\contentsline {section}{\numberline {5.2}config\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}DLPF Struct Reference}{23}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{23}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Member Data Documentation}{23}{subsection.5.2.2}%
 \contentsline {subsubsection}{\numberline {5.2.2.1}div}{23}{subsubsection.5.2.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2.2}dlpf\_idx}{23}{subsubsection.5.2.2.2}%
 \contentsline {subsubsection}{\numberline {5.2.2.3}nbw\_hz}{23}{subsubsection.5.2.2.3}%
 \contentsline {subsubsection}{\numberline {5.2.2.4}nombre}{23}{subsubsection.5.2.2.4}%
 \contentsline {subsubsection}{\numberline {5.2.2.5}odr\_hz}{23}{subsubsection.5.2.2.5}%
-\contentsline {section}{\numberline {5.3}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948 Class Reference}{23}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{24}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{24}{subsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.2.1}DevLab\_ICM20948()}{24}{subsubsection.5.3.2.1}%
+\contentsline {section}{\numberline {5.3}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948 Class Reference}{24}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{25}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{25}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}DevLab\_ICM20948()}{25}{subsubsection.5.3.2.1}%
 \contentsline {subsection}{\numberline {5.3.3}Member Function Documentation}{25}{subsection.5.3.3}%
 \contentsline {subsubsection}{\numberline {5.3.3.1}applyBasicDefaults()}{25}{subsubsection.5.3.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.3.2}auxConfigSlave()}{25}{subsubsection.5.3.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3.2}auxConfigSlave()}{26}{subsubsection.5.3.3.2}%
 \contentsline {subsubsection}{\numberline {5.3.3.3}auxMasterEnable()}{26}{subsubsection.5.3.3.3}%
-\contentsline {subsubsection}{\numberline {5.3.3.4}auxRead12bit()}{26}{subsubsection.5.3.3.4}%
-\contentsline {subsubsection}{\numberline {5.3.3.5}auxReadByte()}{27}{subsubsection.5.3.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.3.4}auxRead12bit()}{27}{subsubsection.5.3.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.3.5}auxReadByte()}{28}{subsubsection.5.3.3.5}%
 \contentsline {subsubsection}{\numberline {5.3.3.6}auxReadResponse()}{28}{subsubsection.5.3.3.6}%
-\contentsline {subsubsection}{\numberline {5.3.3.7}auxReadSensorData()}{28}{subsubsection.5.3.3.7}%
-\contentsline {subsubsection}{\numberline {5.3.3.8}auxWriteByte()}{29}{subsubsection.5.3.3.8}%
+\contentsline {subsubsection}{\numberline {5.3.3.7}auxReadSensorData()}{29}{subsubsection.5.3.3.7}%
+\contentsline {subsubsection}{\numberline {5.3.3.8}auxWriteByte()}{30}{subsubsection.5.3.3.8}%
 \contentsline {subsubsection}{\numberline {5.3.3.9}auxWriteCommand()}{30}{subsubsection.5.3.3.9}%
-\contentsline {subsubsection}{\numberline {5.3.3.10}beginI2C()}{30}{subsubsection.5.3.3.10}%
-\contentsline {subsubsection}{\numberline {5.3.3.11}beginSPI()}{31}{subsubsection.5.3.3.11}%
+\contentsline {subsubsection}{\numberline {5.3.3.10}beginI2C()}{31}{subsubsection.5.3.3.10}%
+\contentsline {subsubsection}{\numberline {5.3.3.11}beginSPI()}{32}{subsubsection.5.3.3.11}%
 \contentsline {subsubsection}{\numberline {5.3.3.12}checkIntStatus()}{32}{subsubsection.5.3.3.12}%
-\contentsline {subsubsection}{\numberline {5.3.3.13}getAccelAveraging()}{32}{subsubsection.5.3.3.13}%
+\contentsline {subsubsection}{\numberline {5.3.3.13}getAccelAveraging()}{33}{subsubsection.5.3.3.13}%
 \contentsline {subsubsection}{\numberline {5.3.3.14}getAccelDLPF()}{33}{subsubsection.5.3.3.14}%
 \contentsline {subsubsection}{\numberline {5.3.3.15}getAccelOffset()}{34}{subsubsection.5.3.3.15}%
-\contentsline {subsubsection}{\numberline {5.3.3.16}getAccelSampleRate()}{34}{subsubsection.5.3.3.16}%
+\contentsline {subsubsection}{\numberline {5.3.3.16}getAccelSampleRate()}{35}{subsubsection.5.3.3.16}%
 \contentsline {subsubsection}{\numberline {5.3.3.17}getAccelScale()}{35}{subsubsection.5.3.3.17}%
 \contentsline {subsubsection}{\numberline {5.3.3.18}getClock()}{35}{subsubsection.5.3.3.18}%
-\contentsline {subsubsection}{\numberline {5.3.3.19}getDLPF()}{35}{subsubsection.5.3.3.19}%
+\contentsline {subsubsection}{\numberline {5.3.3.19}getDLPF()}{36}{subsubsection.5.3.3.19}%
 \contentsline {subsubsection}{\numberline {5.3.3.20}getGyroOffset()}{36}{subsubsection.5.3.3.20}%
 \contentsline {subsubsection}{\numberline {5.3.3.21}getGyroSampleRate()}{37}{subsubsection.5.3.3.21}%
 \contentsline {subsubsection}{\numberline {5.3.3.22}getGyroScale()}{37}{subsubsection.5.3.3.22}%
-\contentsline {subsubsection}{\numberline {5.3.3.23}getLowPower()}{37}{subsubsection.5.3.3.23}%
+\contentsline {subsubsection}{\numberline {5.3.3.23}getLowPower()}{38}{subsubsection.5.3.3.23}%
 \contentsline {subsubsection}{\numberline {5.3.3.24}getSensors()}{38}{subsubsection.5.3.3.24}%
 \contentsline {subsubsection}{\numberline {5.3.3.25}initMag()}{39}{subsubsection.5.3.3.25}%
-\contentsline {subsubsection}{\numberline {5.3.3.26}intEnableConfig()}{39}{subsubsection.5.3.3.26}%
+\contentsline {subsubsection}{\numberline {5.3.3.26}intEnableConfig()}{40}{subsubsection.5.3.3.26}%
 \contentsline {subsubsection}{\numberline {5.3.3.27}intInit()}{40}{subsubsection.5.3.3.27}%
 \contentsline {subsubsection}{\numberline {5.3.3.28}readAccel()}{41}{subsubsection.5.3.3.28}%
 \contentsline {subsubsection}{\numberline {5.3.3.29}readGyro()}{42}{subsubsection.5.3.3.29}%
-\contentsline {subsubsection}{\numberline {5.3.3.30}readMag()}{42}{subsubsection.5.3.3.30}%
+\contentsline {subsubsection}{\numberline {5.3.3.30}readMag()}{43}{subsubsection.5.3.3.30}%
 \contentsline {subsubsection}{\numberline {5.3.3.31}readTemperature()}{43}{subsubsection.5.3.3.31}%
 \contentsline {subsubsection}{\numberline {5.3.3.32}readWhoAmI()}{44}{subsubsection.5.3.3.32}%
 \contentsline {subsubsection}{\numberline {5.3.3.33}selectBank()}{45}{subsubsection.5.3.3.33}%
 \contentsline {subsubsection}{\numberline {5.3.3.34}selfTestAccel()}{45}{subsubsection.5.3.3.34}%
-\contentsline {subsubsection}{\numberline {5.3.3.35}selfTestGyro()}{45}{subsubsection.5.3.3.35}%
+\contentsline {subsubsection}{\numberline {5.3.3.35}selfTestGyro()}{46}{subsubsection.5.3.3.35}%
 \contentsline {subsubsection}{\numberline {5.3.3.36}setAccelAveraging()}{46}{subsubsection.5.3.3.36}%
 \contentsline {subsubsection}{\numberline {5.3.3.37}setAccelDivRate()}{47}{subsubsection.5.3.3.37}%
-\contentsline {subsubsection}{\numberline {5.3.3.38}setAccelDLPF()}{47}{subsubsection.5.3.3.38}%
-\contentsline {subsubsection}{\numberline {5.3.3.39}setAccelOffset()}{48}{subsubsection.5.3.3.39}%
-\contentsline {subsubsection}{\numberline {5.3.3.40}setAccelSampleRate()}{49}{subsubsection.5.3.3.40}%
+\contentsline {subsubsection}{\numberline {5.3.3.38}setAccelDLPF()}{48}{subsubsection.5.3.3.38}%
+\contentsline {subsubsection}{\numberline {5.3.3.39}setAccelOffset()}{49}{subsubsection.5.3.3.39}%
+\contentsline {subsubsection}{\numberline {5.3.3.40}setAccelSampleRate()}{50}{subsubsection.5.3.3.40}%
 \contentsline {subsubsection}{\numberline {5.3.3.41}setAccelScale()}{50}{subsubsection.5.3.3.41}%
-\contentsline {subsubsection}{\numberline {5.3.3.42}setClock()}{50}{subsubsection.5.3.3.42}%
-\contentsline {subsubsection}{\numberline {5.3.3.43}setDLPF()}{51}{subsubsection.5.3.3.43}%
-\contentsline {subsubsection}{\numberline {5.3.3.44}setGyroAveraging()}{51}{subsubsection.5.3.3.44}%
-\contentsline {subsubsection}{\numberline {5.3.3.45}setGyroDivRate()}{52}{subsubsection.5.3.3.45}%
-\contentsline {subsubsection}{\numberline {5.3.3.46}setGyroOffset()}{52}{subsubsection.5.3.3.46}%
-\contentsline {subsubsection}{\numberline {5.3.3.47}setGyroSampleRate()}{53}{subsubsection.5.3.3.47}%
-\contentsline {subsubsection}{\numberline {5.3.3.48}setGyroScale()}{53}{subsubsection.5.3.3.48}%
-\contentsline {subsubsection}{\numberline {5.3.3.49}setLowPower()}{54}{subsubsection.5.3.3.49}%
+\contentsline {subsubsection}{\numberline {5.3.3.42}setClock()}{51}{subsubsection.5.3.3.42}%
+\contentsline {subsubsection}{\numberline {5.3.3.43}setDLPF()}{52}{subsubsection.5.3.3.43}%
+\contentsline {subsubsection}{\numberline {5.3.3.44}setGyroAveraging()}{52}{subsubsection.5.3.3.44}%
+\contentsline {subsubsection}{\numberline {5.3.3.45}setGyroDivRate()}{53}{subsubsection.5.3.3.45}%
+\contentsline {subsubsection}{\numberline {5.3.3.46}setGyroOffset()}{53}{subsubsection.5.3.3.46}%
+\contentsline {subsubsection}{\numberline {5.3.3.47}setGyroSampleRate()}{54}{subsubsection.5.3.3.47}%
+\contentsline {subsubsection}{\numberline {5.3.3.48}setGyroScale()}{54}{subsubsection.5.3.3.48}%
+\contentsline {subsubsection}{\numberline {5.3.3.49}setLowPower()}{55}{subsubsection.5.3.3.49}%
 \contentsline {subsubsection}{\numberline {5.3.3.50}setMagOpMode()}{55}{subsubsection.5.3.3.50}%
-\contentsline {subsubsection}{\numberline {5.3.3.51}setSensors()}{55}{subsubsection.5.3.3.51}%
-\contentsline {subsubsection}{\numberline {5.3.3.52}sleep()}{56}{subsubsection.5.3.3.52}%
-\contentsline {subsubsection}{\numberline {5.3.3.53}softReset()}{57}{subsubsection.5.3.3.53}%
-\contentsline {section}{\numberline {5.4}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface Class Reference}{57}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{58}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Member Function Documentation}{59}{subsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.2.1}beginI2C()}{59}{subsubsection.5.4.2.1}%
-\contentsline {subsubsection}{\numberline {5.4.2.2}beginSPI()}{59}{subsubsection.5.4.2.2}%
-\contentsline {subsubsection}{\numberline {5.4.2.3}read()}{59}{subsubsection.5.4.2.3}%
-\contentsline {subsubsection}{\numberline {5.4.2.4}write()}{60}{subsubsection.5.4.2.4}%
-\contentsline {subsection}{\numberline {5.4.3}Member Data Documentation}{60}{subsection.5.4.3}%
-\contentsline {subsubsection}{\numberline {5.4.3.1}address}{60}{subsubsection.5.4.3.1}%
-\contentsline {subsubsection}{\numberline {5.4.3.2}i2c}{60}{subsubsection.5.4.3.2}%
-\contentsline {section}{\numberline {5.5}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Struct Reference}{60}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{61}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Member Data Documentation}{61}{subsection.5.5.2}%
-\contentsline {subsubsection}{\numberline {5.5.2.1}dmpInt1En}{61}{subsubsection.5.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.5.2.2}fifoOvfEn}{61}{subsubsection.5.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.5.2.3}fifoWmEn}{61}{subsubsection.5.5.2.3}%
-\contentsline {subsubsection}{\numberline {5.5.2.4}i2cMstIntEn}{61}{subsubsection.5.5.2.4}%
-\contentsline {subsubsection}{\numberline {5.5.2.5}pllRdyEn}{61}{subsubsection.5.5.2.5}%
-\contentsline {subsubsection}{\numberline {5.5.2.6}rawDataRdyEn}{61}{subsubsection.5.5.2.6}%
-\contentsline {subsubsection}{\numberline {5.5.2.7}wofEn}{61}{subsubsection.5.5.2.7}%
-\contentsline {subsubsection}{\numberline {5.5.2.8}womIntEn}{61}{subsubsection.5.5.2.8}%
-\contentsline {section}{\numberline {5.6}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Struct Reference}{61}{section.5.6}%
-\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{62}{subsection.5.6.1}%
-\contentsline {subsection}{\numberline {5.6.2}Member Data Documentation}{62}{subsection.5.6.2}%
-\contentsline {subsubsection}{\numberline {5.6.2.1}activeLevel}{62}{subsubsection.5.6.2.1}%
-\contentsline {subsubsection}{\numberline {5.6.2.2}bypassEn}{62}{subsubsection.5.6.2.2}%
-\contentsline {subsubsection}{\numberline {5.6.2.3}clearMode}{62}{subsubsection.5.6.2.3}%
-\contentsline {subsubsection}{\numberline {5.6.2.4}driveMode}{62}{subsubsection.5.6.2.4}%
-\contentsline {subsubsection}{\numberline {5.6.2.5}fsyncActLevel}{62}{subsubsection.5.6.2.5}%
-\contentsline {subsubsection}{\numberline {5.6.2.6}fsyncIntEn}{62}{subsubsection.5.6.2.6}%
-\contentsline {subsubsection}{\numberline {5.6.2.7}latchMode}{62}{subsubsection.5.6.2.7}%
-\contentsline {section}{\numberline {5.7}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Status Struct Reference}{63}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{63}{subsection.5.7.1}%
-\contentsline {subsection}{\numberline {5.7.2}Member Data Documentation}{63}{subsection.5.7.2}%
-\contentsline {subsubsection}{\numberline {5.7.2.1}dmpInt1}{63}{subsubsection.5.7.2.1}%
-\contentsline {subsubsection}{\numberline {5.7.2.2}fifoOvf}{63}{subsubsection.5.7.2.2}%
-\contentsline {subsubsection}{\numberline {5.7.2.3}fifoWm}{63}{subsubsection.5.7.2.3}%
-\contentsline {subsubsection}{\numberline {5.7.2.4}i2cMstInt}{63}{subsubsection.5.7.2.4}%
-\contentsline {subsubsection}{\numberline {5.7.2.5}pllRdyInt}{63}{subsubsection.5.7.2.5}%
-\contentsline {subsubsection}{\numberline {5.7.2.6}rawDataRdy}{63}{subsubsection.5.7.2.6}%
-\contentsline {subsubsection}{\numberline {5.7.2.7}womInt}{64}{subsubsection.5.7.2.7}%
-\contentsline {section}{\numberline {5.8}icm\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}plat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{64}{section.5.8}%
-\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{64}{subsection.5.8.1}%
-\contentsline {subsection}{\numberline {5.8.2}Member Data Documentation}{64}{subsection.5.8.2}%
-\contentsline {subsubsection}{\numberline {5.8.2.1}delay\_ms}{64}{subsubsection.5.8.2.1}%
-\contentsline {subsubsection}{\numberline {5.8.2.2}i2c\_addr}{64}{subsubsection.5.8.2.2}%
-\contentsline {subsubsection}{\numberline {5.8.2.3}read}{64}{subsubsection.5.8.2.3}%
-\contentsline {subsubsection}{\numberline {5.8.2.4}spi\_cs}{65}{subsubsection.5.8.2.4}%
-\contentsline {subsubsection}{\numberline {5.8.2.5}spi\_reg\_rw\_bits}{65}{subsubsection.5.8.2.5}%
-\contentsline {subsubsection}{\numberline {5.8.2.6}user}{65}{subsubsection.5.8.2.6}%
-\contentsline {subsubsection}{\numberline {5.8.2.7}write}{65}{subsubsection.5.8.2.7}%
-\contentsline {section}{\numberline {5.9}Interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi Class Reference}{65}{section.5.9}%
-\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{66}{subsection.5.9.1}%
-\contentsline {subsection}{\numberline {5.9.2}Constructor \& Destructor Documentation}{66}{subsection.5.9.2}%
-\contentsline {subsubsection}{\numberline {5.9.2.1}$\sim $Interface\_7Semi()}{66}{subsubsection.5.9.2.1}%
-\contentsline {subsection}{\numberline {5.9.3}Member Function Documentation}{66}{subsection.5.9.3}%
-\contentsline {subsubsection}{\numberline {5.9.3.1}beginI2C()}{66}{subsubsection.5.9.3.1}%
-\contentsline {subsubsection}{\numberline {5.9.3.2}beginSPI()}{66}{subsubsection.5.9.3.2}%
-\contentsline {subsubsection}{\numberline {5.9.3.3}delay\_us()}{67}{subsubsection.5.9.3.3}%
-\contentsline {subsubsection}{\numberline {5.9.3.4}read()}{67}{subsubsection.5.9.3.4}%
-\contentsline {subsubsection}{\numberline {5.9.3.5}write()}{67}{subsubsection.5.9.3.5}%
-\contentsline {section}{\numberline {5.10}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface Class Reference}{67}{section.5.10}%
-\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{69}{subsection.5.10.1}%
-\contentsline {subsection}{\numberline {5.10.2}Member Function Documentation}{69}{subsection.5.10.2}%
-\contentsline {subsubsection}{\numberline {5.10.2.1}beginI2C()}{69}{subsubsection.5.10.2.1}%
-\contentsline {subsubsection}{\numberline {5.10.2.2}beginSPI()}{69}{subsubsection.5.10.2.2}%
-\contentsline {subsubsection}{\numberline {5.10.2.3}read()}{70}{subsubsection.5.10.2.3}%
-\contentsline {subsubsection}{\numberline {5.10.2.4}write()}{70}{subsubsection.5.10.2.4}%
-\contentsline {subsection}{\numberline {5.10.3}Member Data Documentation}{70}{subsection.5.10.3}%
-\contentsline {subsubsection}{\numberline {5.10.3.1}cs}{70}{subsubsection.5.10.3.1}%
-\contentsline {subsubsection}{\numberline {5.10.3.2}speed}{70}{subsubsection.5.10.3.2}%
-\contentsline {subsubsection}{\numberline {5.10.3.3}spi}{70}{subsubsection.5.10.3.3}%
-\contentsline {chapter}{\numberline {6}File Documentation}{71}{chapter.6}%
-\contentsline {section}{\numberline {6.1}examples/gyr\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test/gyr\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test.ino File Reference}{71}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{72}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Macro Definition Documentation}{72}{subsection.6.1.2}%
-\contentsline {subsubsection}{\numberline {6.1.2.1}I2C\_FREQ}{72}{subsubsection.6.1.2.1}%
-\contentsline {subsubsection}{\numberline {6.1.2.2}ICM\_ADDR}{72}{subsubsection.6.1.2.2}%
-\contentsline {subsubsection}{\numberline {6.1.2.3}SCL\_PIN}{73}{subsubsection.6.1.2.3}%
-\contentsline {subsubsection}{\numberline {6.1.2.4}SDA\_PIN}{73}{subsubsection.6.1.2.4}%
-\contentsline {subsection}{\numberline {6.1.3}Function Documentation}{73}{subsection.6.1.3}%
-\contentsline {subsubsection}{\numberline {6.1.3.1}applySettings()}{73}{subsubsection.6.1.3.1}%
-\contentsline {subsubsection}{\numberline {6.1.3.2}firstStage()}{73}{subsubsection.6.1.3.2}%
-\contentsline {subsubsection}{\numberline {6.1.3.3}loop()}{74}{subsubsection.6.1.3.3}%
-\contentsline {subsubsection}{\numberline {6.1.3.4}printDobleLinea()}{74}{subsubsection.6.1.3.4}%
-\contentsline {subsubsection}{\numberline {6.1.3.5}printLinea()}{74}{subsubsection.6.1.3.5}%
-\contentsline {subsubsection}{\numberline {6.1.3.6}runSweep()}{74}{subsubsection.6.1.3.6}%
-\contentsline {subsubsection}{\numberline {6.1.3.7}setup()}{75}{subsubsection.6.1.3.7}%
-\contentsline {subsection}{\numberline {6.1.4}Variable Documentation}{75}{subsection.6.1.4}%
-\contentsline {subsubsection}{\numberline {6.1.4.1}configsDLPF}{75}{subsubsection.6.1.4.1}%
-\contentsline {subsubsection}{\numberline {6.1.4.2}etiquetasGyroAVGCfg}{76}{subsubsection.6.1.4.2}%
-\contentsline {subsubsection}{\numberline {6.1.4.3}etiquetasGyroFSCfg}{76}{subsubsection.6.1.4.3}%
-\contentsline {subsubsection}{\numberline {6.1.4.4}gyroAVGCfg}{76}{subsubsection.6.1.4.4}%
-\contentsline {subsubsection}{\numberline {6.1.4.5}gyroDLPF}{76}{subsubsection.6.1.4.5}%
-\contentsline {subsubsection}{\numberline {6.1.4.6}gyroFSCfg}{76}{subsubsection.6.1.4.6}%
-\contentsline {subsubsection}{\numberline {6.1.4.7}imu}{77}{subsubsection.6.1.4.7}%
-\contentsline {subsubsection}{\numberline {6.1.4.8}N\_AVG}{77}{subsubsection.6.1.4.8}%
-\contentsline {subsubsection}{\numberline {6.1.4.9}N\_DLPF}{77}{subsubsection.6.1.4.9}%
-\contentsline {subsubsection}{\numberline {6.1.4.10}N\_FS}{77}{subsubsection.6.1.4.10}%
-\contentsline {section}{\numberline {6.2}gyr\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{77}{section.6.2}%
-\contentsline {section}{\numberline {6.3}examples/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel.ino File Reference}{80}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Macro Definition Documentation}{80}{subsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.1.1}I2C\_FREQ}{80}{subsubsection.6.3.1.1}%
-\contentsline {subsubsection}{\numberline {6.3.1.2}ICM\_ADDR}{81}{subsubsection.6.3.1.2}%
-\contentsline {subsubsection}{\numberline {6.3.1.3}SCL\_PIN}{81}{subsubsection.6.3.1.3}%
-\contentsline {subsubsection}{\numberline {6.3.1.4}SDA\_PIN}{81}{subsubsection.6.3.1.4}%
-\contentsline {subsection}{\numberline {6.3.2}Function Documentation}{81}{subsection.6.3.2}%
-\contentsline {subsubsection}{\numberline {6.3.2.1}loop()}{81}{subsubsection.6.3.2.1}%
-\contentsline {subsubsection}{\numberline {6.3.2.2}setup()}{81}{subsubsection.6.3.2.2}%
-\contentsline {subsection}{\numberline {6.3.3}Variable Documentation}{82}{subsection.6.3.3}%
-\contentsline {subsubsection}{\numberline {6.3.3.1}imu}{82}{subsubsection.6.3.3.1}%
-\contentsline {section}{\numberline {6.4}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{82}{section.6.4}%
-\contentsline {section}{\numberline {6.5}examples/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic.ino File Reference}{84}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}Macro Definition Documentation}{84}{subsection.6.5.1}%
-\contentsline {subsubsection}{\numberline {6.5.1.1}I2C\_FREQ}{84}{subsubsection.6.5.1.1}%
-\contentsline {subsubsection}{\numberline {6.5.1.2}ICM\_ADDR}{84}{subsubsection.6.5.1.2}%
-\contentsline {subsubsection}{\numberline {6.5.1.3}SCL\_PIN}{85}{subsubsection.6.5.1.3}%
-\contentsline {subsubsection}{\numberline {6.5.1.4}SDA\_PIN}{85}{subsubsection.6.5.1.4}%
-\contentsline {subsection}{\numberline {6.5.2}Function Documentation}{85}{subsection.6.5.2}%
-\contentsline {subsubsection}{\numberline {6.5.2.1}loop()}{85}{subsubsection.6.5.2.1}%
-\contentsline {subsubsection}{\numberline {6.5.2.2}setup()}{85}{subsubsection.6.5.2.2}%
-\contentsline {subsection}{\numberline {6.5.3}Variable Documentation}{86}{subsection.6.5.3}%
-\contentsline {subsubsection}{\numberline {6.5.3.1}imu}{86}{subsubsection.6.5.3.1}%
-\contentsline {section}{\numberline {6.6}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{86}{section.6.6}%
-\contentsline {section}{\numberline {6.7}examples/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro.ino File Reference}{88}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1}Macro Definition Documentation}{88}{subsection.6.7.1}%
-\contentsline {subsubsection}{\numberline {6.7.1.1}I2C\_FREQ}{88}{subsubsection.6.7.1.1}%
-\contentsline {subsubsection}{\numberline {6.7.1.2}ICM\_ADDR}{88}{subsubsection.6.7.1.2}%
-\contentsline {subsubsection}{\numberline {6.7.1.3}SCL\_PIN}{89}{subsubsection.6.7.1.3}%
-\contentsline {subsubsection}{\numberline {6.7.1.4}SDA\_PIN}{89}{subsubsection.6.7.1.4}%
-\contentsline {subsection}{\numberline {6.7.2}Function Documentation}{89}{subsection.6.7.2}%
-\contentsline {subsubsection}{\numberline {6.7.2.1}loop()}{89}{subsubsection.6.7.2.1}%
-\contentsline {subsubsection}{\numberline {6.7.2.2}setup()}{89}{subsubsection.6.7.2.2}%
-\contentsline {subsection}{\numberline {6.7.3}Variable Documentation}{89}{subsection.6.7.3}%
-\contentsline {subsubsection}{\numberline {6.7.3.1}imu}{89}{subsubsection.6.7.3.1}%
-\contentsline {section}{\numberline {6.8}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{90}{section.6.8}%
-\contentsline {section}{\numberline {6.9}examples/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}magneto/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}magneto.ino File Reference}{91}{section.6.9}%
-\contentsline {subsection}{\numberline {6.9.1}Macro Definition Documentation}{92}{subsection.6.9.1}%
-\contentsline {subsubsection}{\numberline {6.9.1.1}I2C\_FREQ}{92}{subsubsection.6.9.1.1}%
-\contentsline {subsubsection}{\numberline {6.9.1.2}ICM\_ADDR}{92}{subsubsection.6.9.1.2}%
-\contentsline {subsubsection}{\numberline {6.9.1.3}SCL\_PIN}{92}{subsubsection.6.9.1.3}%
-\contentsline {subsubsection}{\numberline {6.9.1.4}SDA\_PIN}{92}{subsubsection.6.9.1.4}%
-\contentsline {subsection}{\numberline {6.9.2}Function Documentation}{92}{subsection.6.9.2}%
-\contentsline {subsubsection}{\numberline {6.9.2.1}loop()}{92}{subsubsection.6.9.2.1}%
-\contentsline {subsubsection}{\numberline {6.9.2.2}setup()}{93}{subsubsection.6.9.2.2}%
-\contentsline {subsection}{\numberline {6.9.3}Variable Documentation}{93}{subsection.6.9.3}%
-\contentsline {subsubsection}{\numberline {6.9.3.1}imu}{93}{subsubsection.6.9.3.1}%
-\contentsline {section}{\numberline {6.10}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}magneto.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{93}{section.6.10}%
-\contentsline {section}{\numberline {6.11}examples/interrupt/interrupt.ino File Reference}{95}{section.6.11}%
-\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{96}{subsection.6.11.1}%
-\contentsline {subsection}{\numberline {6.11.2}Macro Definition Documentation}{96}{subsection.6.11.2}%
-\contentsline {subsubsection}{\numberline {6.11.2.1}I2C\_FREQ}{96}{subsubsection.6.11.2.1}%
-\contentsline {subsubsection}{\numberline {6.11.2.2}ICM\_ADDR}{96}{subsubsection.6.11.2.2}%
-\contentsline {subsubsection}{\numberline {6.11.2.3}PIN\_INT}{96}{subsubsection.6.11.2.3}%
-\contentsline {subsubsection}{\numberline {6.11.2.4}SCL\_PIN}{96}{subsubsection.6.11.2.4}%
-\contentsline {subsubsection}{\numberline {6.11.2.5}SDA\_PIN}{96}{subsubsection.6.11.2.5}%
-\contentsline {subsection}{\numberline {6.11.3}Function Documentation}{96}{subsection.6.11.3}%
-\contentsline {subsubsection}{\numberline {6.11.3.1}isrHandler()}{96}{subsubsection.6.11.3.1}%
-\contentsline {subsubsection}{\numberline {6.11.3.2}loop()}{97}{subsubsection.6.11.3.2}%
-\contentsline {subsubsection}{\numberline {6.11.3.3}printDobleLinea()}{97}{subsubsection.6.11.3.3}%
-\contentsline {subsubsection}{\numberline {6.11.3.4}printLinea()}{97}{subsubsection.6.11.3.4}%
-\contentsline {subsubsection}{\numberline {6.11.3.5}setup()}{97}{subsubsection.6.11.3.5}%
-\contentsline {subsection}{\numberline {6.11.4}Variable Documentation}{97}{subsection.6.11.4}%
-\contentsline {subsubsection}{\numberline {6.11.4.1}imu}{97}{subsubsection.6.11.4.1}%
-\contentsline {subsubsection}{\numberline {6.11.4.2}intEn}{98}{subsubsection.6.11.4.2}%
-\contentsline {subsubsection}{\numberline {6.11.4.3}isrCount}{98}{subsubsection.6.11.4.3}%
-\contentsline {subsubsection}{\numberline {6.11.4.4}pinCfg}{98}{subsubsection.6.11.4.4}%
-\contentsline {section}{\numberline {6.12}interrupt.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{98}{section.6.12}%
-\contentsline {section}{\numberline {6.13}examples/mag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test/mag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test.ino File Reference}{99}{section.6.13}%
-\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{101}{subsection.6.13.1}%
-\contentsline {subsection}{\numberline {6.13.2}Macro Definition Documentation}{101}{subsection.6.13.2}%
-\contentsline {subsubsection}{\numberline {6.13.2.1}I2C\_FREQ}{101}{subsubsection.6.13.2.1}%
-\contentsline {subsubsection}{\numberline {6.13.2.2}ICM\_ADDR}{101}{subsubsection.6.13.2.2}%
-\contentsline {subsubsection}{\numberline {6.13.2.3}SCL\_PIN}{101}{subsubsection.6.13.2.3}%
-\contentsline {subsubsection}{\numberline {6.13.2.4}SDA\_PIN}{101}{subsubsection.6.13.2.4}%
-\contentsline {subsection}{\numberline {6.13.3}Function Documentation}{101}{subsection.6.13.3}%
-\contentsline {subsubsection}{\numberline {6.13.3.1}applySettings()}{101}{subsubsection.6.13.3.1}%
-\contentsline {subsubsection}{\numberline {6.13.3.2}loop()}{102}{subsubsection.6.13.3.2}%
-\contentsline {subsubsection}{\numberline {6.13.3.3}printDobleLinea()}{102}{subsubsection.6.13.3.3}%
-\contentsline {subsubsection}{\numberline {6.13.3.4}printLinea()}{102}{subsubsection.6.13.3.4}%
-\contentsline {subsubsection}{\numberline {6.13.3.5}setup()}{102}{subsubsection.6.13.3.5}%
-\contentsline {subsection}{\numberline {6.13.4}Variable Documentation}{103}{subsection.6.13.4}%
-\contentsline {subsubsection}{\numberline {6.13.4.1}etiquetasOpModeCfg}{103}{subsubsection.6.13.4.1}%
-\contentsline {subsubsection}{\numberline {6.13.4.2}imu}{103}{subsubsection.6.13.4.2}%
-\contentsline {subsubsection}{\numberline {6.13.4.3}N\_OPM}{103}{subsubsection.6.13.4.3}%
-\contentsline {subsubsection}{\numberline {6.13.4.4}opMode}{103}{subsubsection.6.13.4.4}%
-\contentsline {section}{\numberline {6.14}mag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{103}{section.6.14}%
-\contentsline {section}{\numberline {6.15}examples/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel.ino File Reference}{105}{section.6.15}%
-\contentsline {subsection}{\numberline {6.15.1}Macro Definition Documentation}{105}{subsection.6.15.1}%
-\contentsline {subsubsection}{\numberline {6.15.1.1}SPI\_FAST\_SPEED}{105}{subsubsection.6.15.1.1}%
-\contentsline {subsection}{\numberline {6.15.2}Function Documentation}{105}{subsection.6.15.2}%
-\contentsline {subsubsection}{\numberline {6.15.2.1}loop()}{105}{subsubsection.6.15.2.1}%
-\contentsline {subsubsection}{\numberline {6.15.2.2}setup()}{106}{subsubsection.6.15.2.2}%
-\contentsline {subsubsection}{\numberline {6.15.2.3}spi\_bus()}{106}{subsubsection.6.15.2.3}%
-\contentsline {subsection}{\numberline {6.15.3}Variable Documentation}{107}{subsection.6.15.3}%
-\contentsline {subsubsection}{\numberline {6.15.3.1}imu}{107}{subsubsection.6.15.3.1}%
-\contentsline {section}{\numberline {6.16}spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{107}{section.6.16}%
-\contentsline {section}{\numberline {6.17}examples/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic.ino File Reference}{108}{section.6.17}%
-\contentsline {subsection}{\numberline {6.17.1}Macro Definition Documentation}{109}{subsection.6.17.1}%
-\contentsline {subsubsection}{\numberline {6.17.1.1}SPI\_FAST\_SPEED}{109}{subsubsection.6.17.1.1}%
-\contentsline {subsection}{\numberline {6.17.2}Function Documentation}{109}{subsection.6.17.2}%
-\contentsline {subsubsection}{\numberline {6.17.2.1}loop()}{109}{subsubsection.6.17.2.1}%
-\contentsline {subsubsection}{\numberline {6.17.2.2}setup()}{109}{subsubsection.6.17.2.2}%
-\contentsline {subsubsection}{\numberline {6.17.2.3}spi\_bus()}{110}{subsubsection.6.17.2.3}%
-\contentsline {subsection}{\numberline {6.17.3}Variable Documentation}{110}{subsection.6.17.3}%
-\contentsline {subsubsection}{\numberline {6.17.3.1}imu}{110}{subsubsection.6.17.3.1}%
-\contentsline {section}{\numberline {6.18}spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{110}{section.6.18}%
-\contentsline {section}{\numberline {6.19}examples/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro.ino File Reference}{112}{section.6.19}%
-\contentsline {subsection}{\numberline {6.19.1}Macro Definition Documentation}{112}{subsection.6.19.1}%
-\contentsline {subsubsection}{\numberline {6.19.1.1}SPI\_FAST\_SPEED}{112}{subsubsection.6.19.1.1}%
-\contentsline {subsection}{\numberline {6.19.2}Function Documentation}{112}{subsection.6.19.2}%
-\contentsline {subsubsection}{\numberline {6.19.2.1}loop()}{112}{subsubsection.6.19.2.1}%
-\contentsline {subsubsection}{\numberline {6.19.2.2}setup()}{112}{subsubsection.6.19.2.2}%
-\contentsline {subsubsection}{\numberline {6.19.2.3}spi\_bus()}{113}{subsubsection.6.19.2.3}%
-\contentsline {subsection}{\numberline {6.19.3}Variable Documentation}{113}{subsection.6.19.3}%
-\contentsline {subsubsection}{\numberline {6.19.3.1}imu}{113}{subsubsection.6.19.3.1}%
-\contentsline {section}{\numberline {6.20}spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{113}{section.6.20}%
-\contentsline {section}{\numberline {6.21}examples/test/test.ino File Reference}{115}{section.6.21}%
-\contentsline {subsection}{\numberline {6.21.1}Detailed Description}{117}{subsection.6.21.1}%
-\contentsline {subsection}{\numberline {6.21.2}Macro Definition Documentation}{117}{subsection.6.21.2}%
-\contentsline {subsubsection}{\numberline {6.21.2.1}I2C\_FREQ}{117}{subsubsection.6.21.2.1}%
-\contentsline {subsubsection}{\numberline {6.21.2.2}ICM\_ADDR}{117}{subsubsection.6.21.2.2}%
-\contentsline {subsubsection}{\numberline {6.21.2.3}SCL\_PIN}{117}{subsubsection.6.21.2.3}%
-\contentsline {subsubsection}{\numberline {6.21.2.4}SDA\_PIN}{117}{subsubsection.6.21.2.4}%
-\contentsline {subsection}{\numberline {6.21.3}Function Documentation}{117}{subsection.6.21.3}%
-\contentsline {subsubsection}{\numberline {6.21.3.1}applySettings()}{117}{subsubsection.6.21.3.1}%
-\contentsline {subsubsection}{\numberline {6.21.3.2}firstStage()}{118}{subsubsection.6.21.3.2}%
-\contentsline {subsubsection}{\numberline {6.21.3.3}loop()}{118}{subsubsection.6.21.3.3}%
-\contentsline {subsubsection}{\numberline {6.21.3.4}printDobleLinea()}{119}{subsubsection.6.21.3.4}%
-\contentsline {subsubsection}{\numberline {6.21.3.5}printLinea()}{119}{subsubsection.6.21.3.5}%
-\contentsline {subsubsection}{\numberline {6.21.3.6}runSweep()}{119}{subsubsection.6.21.3.6}%
-\contentsline {subsubsection}{\numberline {6.21.3.7}setup()}{120}{subsubsection.6.21.3.7}%
-\contentsline {subsection}{\numberline {6.21.4}Variable Documentation}{120}{subsection.6.21.4}%
-\contentsline {subsubsection}{\numberline {6.21.4.1}accelAVG}{120}{subsubsection.6.21.4.1}%
-\contentsline {subsubsection}{\numberline {6.21.4.2}accelCfg}{120}{subsubsection.6.21.4.2}%
-\contentsline {subsubsection}{\numberline {6.21.4.3}accelDLPF}{120}{subsubsection.6.21.4.3}%
-\contentsline {subsubsection}{\numberline {6.21.4.4}accelSR}{121}{subsubsection.6.21.4.4}%
-\contentsline {subsubsection}{\numberline {6.21.4.5}configsDLPF}{121}{subsubsection.6.21.4.5}%
-\contentsline {subsubsection}{\numberline {6.21.4.6}etiquetasAccelAVG}{121}{subsubsection.6.21.4.6}%
-\contentsline {subsubsection}{\numberline {6.21.4.7}etiquetasAccelCfg}{121}{subsubsection.6.21.4.7}%
-\contentsline {subsubsection}{\numberline {6.21.4.8}etiquetasAccelDLPFCFG}{121}{subsubsection.6.21.4.8}%
-\contentsline {subsubsection}{\numberline {6.21.4.9}etiquetasSR}{121}{subsubsection.6.21.4.9}%
-\contentsline {subsubsection}{\numberline {6.21.4.10}imu}{121}{subsubsection.6.21.4.10}%
-\contentsline {subsubsection}{\numberline {6.21.4.11}N\_DLPF}{121}{subsubsection.6.21.4.11}%
-\contentsline {subsubsection}{\numberline {6.21.4.12}N\_FS}{122}{subsubsection.6.21.4.12}%
-\contentsline {subsubsection}{\numberline {6.21.4.13}total\_fail}{122}{subsubsection.6.21.4.13}%
-\contentsline {subsubsection}{\numberline {6.21.4.14}total\_pass}{122}{subsubsection.6.21.4.14}%
-\contentsline {subsubsection}{\numberline {6.21.4.15}total\_warn}{122}{subsubsection.6.21.4.15}%
-\contentsline {section}{\numberline {6.22}test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{122}{section.6.22}%
-\contentsline {section}{\numberline {6.23}examples/test2/test2.ino File Reference}{125}{section.6.23}%
-\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{127}{subsection.6.23.1}%
-\contentsline {subsection}{\numberline {6.23.2}Macro Definition Documentation}{127}{subsection.6.23.2}%
-\contentsline {subsubsection}{\numberline {6.23.2.1}I2C\_FREQ}{127}{subsubsection.6.23.2.1}%
-\contentsline {subsubsection}{\numberline {6.23.2.2}ICM\_ADDR}{127}{subsubsection.6.23.2.2}%
-\contentsline {subsubsection}{\numberline {6.23.2.3}SCL\_PIN}{127}{subsubsection.6.23.2.3}%
-\contentsline {subsubsection}{\numberline {6.23.2.4}SDA\_PIN}{127}{subsubsection.6.23.2.4}%
-\contentsline {subsection}{\numberline {6.23.3}Function Documentation}{127}{subsection.6.23.3}%
-\contentsline {subsubsection}{\numberline {6.23.3.1}applySettings()}{127}{subsubsection.6.23.3.1}%
-\contentsline {subsubsection}{\numberline {6.23.3.2}firstStage()}{128}{subsubsection.6.23.3.2}%
-\contentsline {subsubsection}{\numberline {6.23.3.3}loop()}{128}{subsubsection.6.23.3.3}%
-\contentsline {subsubsection}{\numberline {6.23.3.4}printDobleLinea()}{128}{subsubsection.6.23.3.4}%
-\contentsline {subsubsection}{\numberline {6.23.3.5}printLinea()}{129}{subsubsection.6.23.3.5}%
-\contentsline {subsubsection}{\numberline {6.23.3.6}runSweep()}{129}{subsubsection.6.23.3.6}%
-\contentsline {subsubsection}{\numberline {6.23.3.7}setup()}{129}{subsubsection.6.23.3.7}%
-\contentsline {subsection}{\numberline {6.23.4}Variable Documentation}{130}{subsection.6.23.4}%
-\contentsline {subsubsection}{\numberline {6.23.4.1}accelAVG}{130}{subsubsection.6.23.4.1}%
-\contentsline {subsubsection}{\numberline {6.23.4.2}accelCfg}{130}{subsubsection.6.23.4.2}%
-\contentsline {subsubsection}{\numberline {6.23.4.3}accelDLPF}{130}{subsubsection.6.23.4.3}%
-\contentsline {subsubsection}{\numberline {6.23.4.4}accelSR}{130}{subsubsection.6.23.4.4}%
-\contentsline {subsubsection}{\numberline {6.23.4.5}configsDLPF}{131}{subsubsection.6.23.4.5}%
-\contentsline {subsubsection}{\numberline {6.23.4.6}etiquetasAccelAVG}{131}{subsubsection.6.23.4.6}%
-\contentsline {subsubsection}{\numberline {6.23.4.7}etiquetasAccelCfg}{131}{subsubsection.6.23.4.7}%
-\contentsline {subsubsection}{\numberline {6.23.4.8}etiquetasSR}{131}{subsubsection.6.23.4.8}%
-\contentsline {subsubsection}{\numberline {6.23.4.9}imu}{131}{subsubsection.6.23.4.9}%
-\contentsline {subsubsection}{\numberline {6.23.4.10}N\_AVG}{131}{subsubsection.6.23.4.10}%
-\contentsline {subsubsection}{\numberline {6.23.4.11}N\_DLPF}{131}{subsubsection.6.23.4.11}%
-\contentsline {subsubsection}{\numberline {6.23.4.12}N\_FS}{132}{subsubsection.6.23.4.12}%
-\contentsline {subsubsection}{\numberline {6.23.4.13}total\_fail}{132}{subsubsection.6.23.4.13}%
-\contentsline {subsubsection}{\numberline {6.23.4.14}total\_pass}{132}{subsubsection.6.23.4.14}%
-\contentsline {subsubsection}{\numberline {6.23.4.15}total\_warn}{132}{subsubsection.6.23.4.15}%
-\contentsline {section}{\numberline {6.24}test2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{132}{section.6.24}%
-\contentsline {section}{\numberline {6.25}README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{136}{section.6.25}%
-\contentsline {section}{\numberline {6.26}src/7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.h File Reference}{136}{section.6.26}%
-\contentsline {section}{\numberline {6.27}7Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{136}{section.6.27}%
-\contentsline {section}{\numberline {6.28}src/7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.h File Reference}{137}{section.6.28}%
-\contentsline {section}{\numberline {6.29}7Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{138}{section.6.29}%
-\contentsline {section}{\numberline {6.30}src/7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.h File Reference}{139}{section.6.30}%
-\contentsline {section}{\numberline {6.31}7Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{140}{section.6.31}%
-\contentsline {section}{\numberline {6.32}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bus\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi.h File Reference}{142}{section.6.32}%
-\contentsline {section}{\numberline {6.33}Bus\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{142}{section.6.33}%
-\contentsline {section}{\numberline {6.34}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.cpp File Reference}{144}{section.6.34}%
-\contentsline {section}{\numberline {6.35}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{144}{section.6.35}%
-\contentsline {section}{\numberline {6.36}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.h File Reference}{161}{section.6.36}%
-\contentsline {subsection}{\numberline {6.36.1}Enumeration Type Documentation}{162}{subsection.6.36.1}%
-\contentsline {subsubsection}{\numberline {6.36.1.1}ICM20948\_Accel\_Average}{162}{subsubsection.6.36.1.1}%
-\contentsline {subsubsection}{\numberline {6.36.1.2}ICM20948\_Accel\_DLPFCFG}{162}{subsubsection.6.36.1.2}%
-\contentsline {subsubsection}{\numberline {6.36.1.3}ICM20948\_Accel\_FullScale}{163}{subsubsection.6.36.1.3}%
-\contentsline {subsubsection}{\numberline {6.36.1.4}ICM20948\_Clock\_Source}{163}{subsubsection.6.36.1.4}%
-\contentsline {subsubsection}{\numberline {6.36.1.5}ICM20948\_Gyro\_Average}{163}{subsubsection.6.36.1.5}%
-\contentsline {subsubsection}{\numberline {6.36.1.6}ICM20948\_Gyro\_DLPF}{163}{subsubsection.6.36.1.6}%
-\contentsline {subsubsection}{\numberline {6.36.1.7}ICM20948\_Gyro\_FullScale}{164}{subsubsection.6.36.1.7}%
-\contentsline {subsubsection}{\numberline {6.36.1.8}ICM20948\_Op\_Mode}{164}{subsubsection.6.36.1.8}%
-\contentsline {section}{\numberline {6.37}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{164}{section.6.37}%
-\contentsline {section}{\numberline {6.38}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}platform.h File Reference}{175}{section.6.38}%
-\contentsline {section}{\numberline {6.39}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}platform.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{175}{section.6.39}%
-\contentsline {section}{\numberline {6.40}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}regs.h File Reference}{176}{section.6.40}%
-\contentsline {subsection}{\numberline {6.40.1}Macro Definition Documentation}{181}{subsection.6.40.1}%
-\contentsline {subsubsection}{\numberline {6.40.1.1}ACCEL\_BYPASS\_3DB\_BW\_HZ}{181}{subsubsection.6.40.1.1}%
-\contentsline {subsubsection}{\numberline {6.40.1.2}ACCEL\_BYPASS\_NBW\_HZ}{181}{subsubsection.6.40.1.2}%
-\contentsline {subsubsection}{\numberline {6.40.1.3}ACCEL\_BYPASS\_RATE\_HZ}{182}{subsubsection.6.40.1.3}%
-\contentsline {subsubsection}{\numberline {6.40.1.4}ACCEL\_CONFIG}{182}{subsubsection.6.40.1.4}%
-\contentsline {subsubsection}{\numberline {6.40.1.5}ACCEL\_CONFIG\_2}{182}{subsubsection.6.40.1.5}%
-\contentsline {subsubsection}{\numberline {6.40.1.6}ACCEL\_DEC3\_AVG\_16}{182}{subsubsection.6.40.1.6}%
-\contentsline {subsubsection}{\numberline {6.40.1.7}ACCEL\_DEC3\_AVG\_32}{182}{subsubsection.6.40.1.7}%
-\contentsline {subsubsection}{\numberline {6.40.1.8}ACCEL\_DEC3\_AVG\_4}{182}{subsubsection.6.40.1.8}%
-\contentsline {subsubsection}{\numberline {6.40.1.9}ACCEL\_DEC3\_AVG\_8}{182}{subsubsection.6.40.1.9}%
-\contentsline {subsubsection}{\numberline {6.40.1.10}ACCEL\_DLPF0\_3DB\_BW\_HZ}{182}{subsubsection.6.40.1.10}%
-\contentsline {subsubsection}{\numberline {6.40.1.11}ACCEL\_DLPF0\_NBW\_HZ}{182}{subsubsection.6.40.1.11}%
-\contentsline {subsubsection}{\numberline {6.40.1.12}ACCEL\_DLPF1\_3DB\_BW\_HZ}{182}{subsubsection.6.40.1.12}%
-\contentsline {subsubsection}{\numberline {6.40.1.13}ACCEL\_DLPF1\_NBW\_HZ}{182}{subsubsection.6.40.1.13}%
-\contentsline {subsubsection}{\numberline {6.40.1.14}ACCEL\_DLPF2\_3DB\_BW\_HZ}{182}{subsubsection.6.40.1.14}%
-\contentsline {subsubsection}{\numberline {6.40.1.15}ACCEL\_DLPF2\_NBW\_HZ}{183}{subsubsection.6.40.1.15}%
-\contentsline {subsubsection}{\numberline {6.40.1.16}ACCEL\_DLPF3\_3DB\_BW\_HZ}{183}{subsubsection.6.40.1.16}%
-\contentsline {subsubsection}{\numberline {6.40.1.17}ACCEL\_DLPF3\_NBW\_HZ}{183}{subsubsection.6.40.1.17}%
-\contentsline {subsubsection}{\numberline {6.40.1.18}ACCEL\_DLPF4\_3DB\_BW\_HZ}{183}{subsubsection.6.40.1.18}%
-\contentsline {subsubsection}{\numberline {6.40.1.19}ACCEL\_DLPF4\_NBW\_HZ}{183}{subsubsection.6.40.1.19}%
-\contentsline {subsubsection}{\numberline {6.40.1.20}ACCEL\_DLPF5\_3DB\_BW\_HZ}{183}{subsubsection.6.40.1.20}%
-\contentsline {subsubsection}{\numberline {6.40.1.21}ACCEL\_DLPF5\_NBW\_HZ}{183}{subsubsection.6.40.1.21}%
-\contentsline {subsubsection}{\numberline {6.40.1.22}ACCEL\_DLPF6\_3DB\_BW\_HZ}{183}{subsubsection.6.40.1.22}%
-\contentsline {subsubsection}{\numberline {6.40.1.23}ACCEL\_DLPF6\_NBW\_HZ}{183}{subsubsection.6.40.1.23}%
-\contentsline {subsubsection}{\numberline {6.40.1.24}ACCEL\_DLPF7\_3DB\_BW\_HZ}{183}{subsubsection.6.40.1.24}%
-\contentsline {subsubsection}{\numberline {6.40.1.25}ACCEL\_DLPF7\_NBW\_HZ}{183}{subsubsection.6.40.1.25}%
-\contentsline {subsubsection}{\numberline {6.40.1.26}ACCEL\_DLPF\_BASE\_HZ}{183}{subsubsection.6.40.1.26}%
-\contentsline {subsubsection}{\numberline {6.40.1.27}ACCEL\_DLPF\_ODR\_HZ}{184}{subsubsection.6.40.1.27}%
-\contentsline {subsubsection}{\numberline {6.40.1.28}ACCEL\_DLPFCFG\_0}{184}{subsubsection.6.40.1.28}%
-\contentsline {subsubsection}{\numberline {6.40.1.29}ACCEL\_DLPFCFG\_1}{184}{subsubsection.6.40.1.29}%
-\contentsline {subsubsection}{\numberline {6.40.1.30}ACCEL\_DLPFCFG\_2}{184}{subsubsection.6.40.1.30}%
-\contentsline {subsubsection}{\numberline {6.40.1.31}ACCEL\_DLPFCFG\_3}{184}{subsubsection.6.40.1.31}%
-\contentsline {subsubsection}{\numberline {6.40.1.32}ACCEL\_DLPFCFG\_4}{184}{subsubsection.6.40.1.32}%
-\contentsline {subsubsection}{\numberline {6.40.1.33}ACCEL\_DLPFCFG\_5}{184}{subsubsection.6.40.1.33}%
-\contentsline {subsubsection}{\numberline {6.40.1.34}ACCEL\_DLPFCFG\_6}{184}{subsubsection.6.40.1.34}%
-\contentsline {subsubsection}{\numberline {6.40.1.35}ACCEL\_DLPFCFG\_7}{184}{subsubsection.6.40.1.35}%
-\contentsline {subsubsection}{\numberline {6.40.1.36}ACCEL\_DLPFCFG\_MASK}{184}{subsubsection.6.40.1.36}%
-\contentsline {subsubsection}{\numberline {6.40.1.37}ACCEL\_DLPFCFG\_SHIFT}{184}{subsubsection.6.40.1.37}%
-\contentsline {subsubsection}{\numberline {6.40.1.38}ACCEL\_FCHOICE}{185}{subsubsection.6.40.1.38}%
-\contentsline {subsubsection}{\numberline {6.40.1.39}ACCEL\_FCHOICE\_BYPASS}{185}{subsubsection.6.40.1.39}%
-\contentsline {subsubsection}{\numberline {6.40.1.40}ACCEL\_FCHOICE\_DLPF}{185}{subsubsection.6.40.1.40}%
-\contentsline {subsubsection}{\numberline {6.40.1.41}ACCEL\_FS\_16G}{185}{subsubsection.6.40.1.41}%
-\contentsline {subsubsection}{\numberline {6.40.1.42}ACCEL\_FS\_2G}{185}{subsubsection.6.40.1.42}%
-\contentsline {subsubsection}{\numberline {6.40.1.43}ACCEL\_FS\_4G}{185}{subsubsection.6.40.1.43}%
-\contentsline {subsubsection}{\numberline {6.40.1.44}ACCEL\_FS\_8G}{185}{subsubsection.6.40.1.44}%
-\contentsline {subsubsection}{\numberline {6.40.1.45}ACCEL\_FS\_SEL\_MASK}{185}{subsubsection.6.40.1.45}%
-\contentsline {subsubsection}{\numberline {6.40.1.46}ACCEL\_FS\_SEL\_SHIFT}{185}{subsubsection.6.40.1.46}%
-\contentsline {subsubsection}{\numberline {6.40.1.47}ACCEL\_INTEL\_CTRL}{185}{subsubsection.6.40.1.47}%
-\contentsline {subsubsection}{\numberline {6.40.1.48}ACCEL\_INTEL\_EN}{185}{subsubsection.6.40.1.48}%
-\contentsline {subsubsection}{\numberline {6.40.1.49}ACCEL\_INTEL\_MODE\_INT}{186}{subsubsection.6.40.1.49}%
-\contentsline {subsubsection}{\numberline {6.40.1.50}ACCEL\_SMPLRT\_DIV\_1}{186}{subsubsection.6.40.1.50}%
-\contentsline {subsubsection}{\numberline {6.40.1.51}ACCEL\_SMPLRT\_DIV\_2}{186}{subsubsection.6.40.1.51}%
-\contentsline {subsubsection}{\numberline {6.40.1.52}ACCEL\_SMPLRT\_DIV\_MAX}{186}{subsubsection.6.40.1.52}%
-\contentsline {subsubsection}{\numberline {6.40.1.53}ACCEL\_SMPLRT\_DIV\_MIN}{186}{subsubsection.6.40.1.53}%
-\contentsline {subsubsection}{\numberline {6.40.1.54}ACCEL\_WOM\_THR}{186}{subsubsection.6.40.1.54}%
-\contentsline {subsubsection}{\numberline {6.40.1.55}ACCEL\_XOUT\_H}{186}{subsubsection.6.40.1.55}%
-\contentsline {subsubsection}{\numberline {6.40.1.56}ACCEL\_XOUT\_L}{186}{subsubsection.6.40.1.56}%
-\contentsline {subsubsection}{\numberline {6.40.1.57}ACCEL\_YOUT\_H}{186}{subsubsection.6.40.1.57}%
-\contentsline {subsubsection}{\numberline {6.40.1.58}ACCEL\_YOUT\_L}{186}{subsubsection.6.40.1.58}%
-\contentsline {subsubsection}{\numberline {6.40.1.59}ACCEL\_ZOUT\_H}{186}{subsubsection.6.40.1.59}%
-\contentsline {subsubsection}{\numberline {6.40.1.60}ACCEL\_ZOUT\_L}{186}{subsubsection.6.40.1.60}%
-\contentsline {subsubsection}{\numberline {6.40.1.61}AK09916\_I2C\_ADDR}{187}{subsubsection.6.40.1.61}%
-\contentsline {subsubsection}{\numberline {6.40.1.62}AK\_CNTL2}{187}{subsubsection.6.40.1.62}%
-\contentsline {subsubsection}{\numberline {6.40.1.63}AK\_CNTL3}{187}{subsubsection.6.40.1.63}%
-\contentsline {subsubsection}{\numberline {6.40.1.64}AK\_HXL}{187}{subsubsection.6.40.1.64}%
-\contentsline {subsubsection}{\numberline {6.40.1.65}AK\_ST1}{187}{subsubsection.6.40.1.65}%
-\contentsline {subsubsection}{\numberline {6.40.1.66}AK\_ST2}{187}{subsubsection.6.40.1.66}%
-\contentsline {subsubsection}{\numberline {6.40.1.67}AK\_WIA2}{187}{subsubsection.6.40.1.67}%
-\contentsline {subsubsection}{\numberline {6.40.1.68}AK\_WIA2\_VAL}{187}{subsubsection.6.40.1.68}%
-\contentsline {subsubsection}{\numberline {6.40.1.69}AUTO\_SEL}{187}{subsubsection.6.40.1.69}%
-\contentsline {subsubsection}{\numberline {6.40.1.70}AX\_ST\_EN\_REG}{187}{subsubsection.6.40.1.70}%
-\contentsline {subsubsection}{\numberline {6.40.1.71}AY\_ST\_EN\_REG}{187}{subsubsection.6.40.1.71}%
-\contentsline {subsubsection}{\numberline {6.40.1.72}AZ\_ST\_EN\_REG}{187}{subsubsection.6.40.1.72}%
-\contentsline {subsubsection}{\numberline {6.40.1.73}BANK1\_REG\_BANK\_SEL}{188}{subsubsection.6.40.1.73}%
-\contentsline {subsubsection}{\numberline {6.40.1.74}BANK2\_REG\_BANK\_SEL}{188}{subsubsection.6.40.1.74}%
-\contentsline {subsubsection}{\numberline {6.40.1.75}BANK3\_REG\_BANK\_SEL}{188}{subsubsection.6.40.1.75}%
-\contentsline {subsubsection}{\numberline {6.40.1.76}BYPASS\_EN}{188}{subsubsection.6.40.1.76}%
-\contentsline {subsubsection}{\numberline {6.40.1.77}CLK\_STOP}{188}{subsubsection.6.40.1.77}%
-\contentsline {subsubsection}{\numberline {6.40.1.78}DEC3\_CFG\_MASK}{188}{subsubsection.6.40.1.78}%
-\contentsline {subsubsection}{\numberline {6.40.1.79}DEC3\_CFG\_SHIFT}{188}{subsubsection.6.40.1.79}%
-\contentsline {subsubsection}{\numberline {6.40.1.80}DELAY\_ES\_SHADOW}{188}{subsubsection.6.40.1.80}%
-\contentsline {subsubsection}{\numberline {6.40.1.81}DELAY\_TIME\_EN}{188}{subsubsection.6.40.1.81}%
-\contentsline {subsubsection}{\numberline {6.40.1.82}DELAY\_TIMEH}{188}{subsubsection.6.40.1.82}%
-\contentsline {subsubsection}{\numberline {6.40.1.83}DELAY\_TIMEL}{188}{subsubsection.6.40.1.83}%
-\contentsline {subsubsection}{\numberline {6.40.1.84}dps1000}{188}{subsubsection.6.40.1.84}%
-\contentsline {subsubsection}{\numberline {6.40.1.85}dps2000}{189}{subsubsection.6.40.1.85}%
-\contentsline {subsubsection}{\numberline {6.40.1.86}dps250}{189}{subsubsection.6.40.1.86}%
-\contentsline {subsubsection}{\numberline {6.40.1.87}dps500}{189}{subsubsection.6.40.1.87}%
-\contentsline {subsubsection}{\numberline {6.40.1.88}EnhancedRegular}{189}{subsubsection.6.40.1.88}%
-\contentsline {subsubsection}{\numberline {6.40.1.89}EXT\_SLV\_SENS\_DATA\_00}{189}{subsubsection.6.40.1.89}%
-\contentsline {subsubsection}{\numberline {6.40.1.90}EXT\_SLV\_SENS\_DATA\_23}{189}{subsubsection.6.40.1.90}%
-\contentsline {subsubsection}{\numberline {6.40.1.91}EXT\_SYNC\_SET\_MASK}{189}{subsubsection.6.40.1.91}%
-\contentsline {subsubsection}{\numberline {6.40.1.92}FIFO\_CFG}{189}{subsubsection.6.40.1.92}%
-\contentsline {subsubsection}{\numberline {6.40.1.93}FIFO\_COUNTH}{189}{subsubsection.6.40.1.93}%
-\contentsline {subsubsection}{\numberline {6.40.1.94}FIFO\_COUNTL}{189}{subsubsection.6.40.1.94}%
-\contentsline {subsubsection}{\numberline {6.40.1.95}FIFO\_EN\_1}{189}{subsubsection.6.40.1.95}%
-\contentsline {subsubsection}{\numberline {6.40.1.96}FIFO\_EN\_2}{189}{subsubsection.6.40.1.96}%
-\contentsline {subsubsection}{\numberline {6.40.1.97}FIFO\_MODE}{190}{subsubsection.6.40.1.97}%
-\contentsline {subsubsection}{\numberline {6.40.1.98}FIFO\_R\_W}{190}{subsubsection.6.40.1.98}%
-\contentsline {subsubsection}{\numberline {6.40.1.99}FIFO\_RST}{190}{subsubsection.6.40.1.99}%
-\contentsline {subsubsection}{\numberline {6.40.1.100}FSYNC\_CONFIG}{190}{subsubsection.6.40.1.100}%
-\contentsline {subsubsection}{\numberline {6.40.1.101}FSYNC\_INT\_MODE\_EN}{190}{subsubsection.6.40.1.101}%
-\contentsline {subsubsection}{\numberline {6.40.1.102}g16}{190}{subsubsection.6.40.1.102}%
-\contentsline {subsubsection}{\numberline {6.40.1.103}g2}{190}{subsubsection.6.40.1.103}%
-\contentsline {subsubsection}{\numberline {6.40.1.104}g4}{190}{subsubsection.6.40.1.104}%
-\contentsline {subsubsection}{\numberline {6.40.1.105}g8}{190}{subsubsection.6.40.1.105}%
-\contentsline {subsubsection}{\numberline {6.40.1.106}GYRO\_AVGCFG\_MASK}{190}{subsubsection.6.40.1.106}%
-\contentsline {subsubsection}{\numberline {6.40.1.107}GYRO\_AVGCFG\_SHIFT}{190}{subsubsection.6.40.1.107}%
-\contentsline {subsubsection}{\numberline {6.40.1.108}GYRO\_BW\_MEDIUM}{190}{subsubsection.6.40.1.108}%
-\contentsline {subsubsection}{\numberline {6.40.1.109}GYRO\_BW\_NARROW}{191}{subsubsection.6.40.1.109}%
-\contentsline {subsubsection}{\numberline {6.40.1.110}GYRO\_BW\_ULTRA\_WIDE}{191}{subsubsection.6.40.1.110}%
-\contentsline {subsubsection}{\numberline {6.40.1.111}GYRO\_BW\_WIDE}{191}{subsubsection.6.40.1.111}%
-\contentsline {subsubsection}{\numberline {6.40.1.112}GYRO\_CONFIG\_1}{191}{subsubsection.6.40.1.112}%
-\contentsline {subsubsection}{\numberline {6.40.1.113}GYRO\_CONFIG\_2}{191}{subsubsection.6.40.1.113}%
-\contentsline {subsubsection}{\numberline {6.40.1.114}GYRO\_DLPF\_BASE\_HZ}{191}{subsubsection.6.40.1.114}%
-\contentsline {subsubsection}{\numberline {6.40.1.115}GYRO\_DLPF\_ODR\_HZ}{191}{subsubsection.6.40.1.115}%
-\contentsline {subsubsection}{\numberline {6.40.1.116}GYRO\_DLPFCFG\_0}{191}{subsubsection.6.40.1.116}%
-\contentsline {subsubsection}{\numberline {6.40.1.117}GYRO\_DLPFCFG\_1}{191}{subsubsection.6.40.1.117}%
-\contentsline {subsubsection}{\numberline {6.40.1.118}GYRO\_DLPFCFG\_2}{191}{subsubsection.6.40.1.118}%
-\contentsline {subsubsection}{\numberline {6.40.1.119}GYRO\_DLPFCFG\_3}{191}{subsubsection.6.40.1.119}%
-\contentsline {subsubsection}{\numberline {6.40.1.120}GYRO\_DLPFCFG\_4}{192}{subsubsection.6.40.1.120}%
-\contentsline {subsubsection}{\numberline {6.40.1.121}GYRO\_DLPFCFG\_5}{192}{subsubsection.6.40.1.121}%
-\contentsline {subsubsection}{\numberline {6.40.1.122}GYRO\_DLPFCFG\_6}{192}{subsubsection.6.40.1.122}%
-\contentsline {subsubsection}{\numberline {6.40.1.123}GYRO\_DLPFCFG\_7}{192}{subsubsection.6.40.1.123}%
-\contentsline {subsubsection}{\numberline {6.40.1.124}GYRO\_DLPFCFG\_MASK}{192}{subsubsection.6.40.1.124}%
-\contentsline {subsubsection}{\numberline {6.40.1.125}GYRO\_DLPFCFG\_SHIFT}{192}{subsubsection.6.40.1.125}%
-\contentsline {subsubsection}{\numberline {6.40.1.126}GYRO\_FCHOICE}{192}{subsubsection.6.40.1.126}%
-\contentsline {subsubsection}{\numberline {6.40.1.127}GYRO\_FCHOICE\_BYPASS}{192}{subsubsection.6.40.1.127}%
-\contentsline {subsubsection}{\numberline {6.40.1.128}GYRO\_FCHOICE\_DLPF}{192}{subsubsection.6.40.1.128}%
-\contentsline {subsubsection}{\numberline {6.40.1.129}GYRO\_FS\_1000DPS}{192}{subsubsection.6.40.1.129}%
-\contentsline {subsubsection}{\numberline {6.40.1.130}GYRO\_FS\_2000DPS}{192}{subsubsection.6.40.1.130}%
-\contentsline {subsubsection}{\numberline {6.40.1.131}GYRO\_FS\_250DPS}{193}{subsubsection.6.40.1.131}%
-\contentsline {subsubsection}{\numberline {6.40.1.132}GYRO\_FS\_500DPS}{193}{subsubsection.6.40.1.132}%
-\contentsline {subsubsection}{\numberline {6.40.1.133}GYRO\_FS\_SEL\_MASK}{193}{subsubsection.6.40.1.133}%
-\contentsline {subsubsection}{\numberline {6.40.1.134}GYRO\_FS\_SEL\_SHIFT}{193}{subsubsection.6.40.1.134}%
-\contentsline {subsubsection}{\numberline {6.40.1.135}GYRO\_SMPLRT\_DIV}{193}{subsubsection.6.40.1.135}%
-\contentsline {subsubsection}{\numberline {6.40.1.136}GYRO\_SMPLRT\_MIN\_HZ}{193}{subsubsection.6.40.1.136}%
-\contentsline {subsubsection}{\numberline {6.40.1.137}GYRO\_XOUT\_H}{193}{subsubsection.6.40.1.137}%
-\contentsline {subsubsection}{\numberline {6.40.1.138}GYRO\_XOUT\_L}{193}{subsubsection.6.40.1.138}%
-\contentsline {subsubsection}{\numberline {6.40.1.139}GYRO\_YOUT\_H}{193}{subsubsection.6.40.1.139}%
-\contentsline {subsubsection}{\numberline {6.40.1.140}GYRO\_YOUT\_L}{193}{subsubsection.6.40.1.140}%
-\contentsline {subsubsection}{\numberline {6.40.1.141}GYRO\_ZOUT\_H}{193}{subsubsection.6.40.1.141}%
-\contentsline {subsubsection}{\numberline {6.40.1.142}GYRO\_ZOUT\_L}{193}{subsubsection.6.40.1.142}%
-\contentsline {subsubsection}{\numberline {6.40.1.143}HighAccuracy}{194}{subsubsection.6.40.1.143}%
-\contentsline {subsubsection}{\numberline {6.40.1.144}Hz10}{194}{subsubsection.6.40.1.144}%
-\contentsline {subsubsection}{\numberline {6.40.1.145}Hz15}{194}{subsubsection.6.40.1.145}%
-\contentsline {subsubsection}{\numberline {6.40.1.146}Hz2}{194}{subsubsection.6.40.1.146}%
-\contentsline {subsubsection}{\numberline {6.40.1.147}Hz20}{194}{subsubsection.6.40.1.147}%
-\contentsline {subsubsection}{\numberline {6.40.1.148}Hz25}{194}{subsubsection.6.40.1.148}%
-\contentsline {subsubsection}{\numberline {6.40.1.149}Hz30}{194}{subsubsection.6.40.1.149}%
-\contentsline {subsubsection}{\numberline {6.40.1.150}Hz6}{194}{subsubsection.6.40.1.150}%
-\contentsline {subsubsection}{\numberline {6.40.1.151}Hz8}{194}{subsubsection.6.40.1.151}%
-\contentsline {subsubsection}{\numberline {6.40.1.152}I2C\_MST\_CLK\_MASK}{194}{subsubsection.6.40.1.152}%
-\contentsline {subsubsection}{\numberline {6.40.1.153}I2C\_MST\_CTRL}{194}{subsubsection.6.40.1.153}%
-\contentsline {subsubsection}{\numberline {6.40.1.154}I2C\_MST\_DELAY\_CTRL}{194}{subsubsection.6.40.1.154}%
-\contentsline {subsubsection}{\numberline {6.40.1.155}I2C\_MST\_ODR\_CONFIG}{195}{subsubsection.6.40.1.155}%
-\contentsline {subsubsection}{\numberline {6.40.1.156}I2C\_MST\_P\_NSR}{195}{subsubsection.6.40.1.156}%
-\contentsline {subsubsection}{\numberline {6.40.1.157}I2C\_MST\_STATUS}{195}{subsubsection.6.40.1.157}%
-\contentsline {subsubsection}{\numberline {6.40.1.158}I2C\_SLV0\_ADDR}{195}{subsubsection.6.40.1.158}%
-\contentsline {subsubsection}{\numberline {6.40.1.159}I2C\_SLV0\_CTRL}{195}{subsubsection.6.40.1.159}%
-\contentsline {subsubsection}{\numberline {6.40.1.160}I2C\_SLV0\_DELAY\_EN}{195}{subsubsection.6.40.1.160}%
-\contentsline {subsubsection}{\numberline {6.40.1.161}I2C\_SLV0\_DO}{195}{subsubsection.6.40.1.161}%
-\contentsline {subsubsection}{\numberline {6.40.1.162}I2C\_SLV0\_REG}{195}{subsubsection.6.40.1.162}%
-\contentsline {subsubsection}{\numberline {6.40.1.163}I2C\_SLV1\_ADDR}{195}{subsubsection.6.40.1.163}%
-\contentsline {subsubsection}{\numberline {6.40.1.164}I2C\_SLV1\_CTRL}{195}{subsubsection.6.40.1.164}%
-\contentsline {subsubsection}{\numberline {6.40.1.165}I2C\_SLV1\_DELAY\_EN}{195}{subsubsection.6.40.1.165}%
-\contentsline {subsubsection}{\numberline {6.40.1.166}I2C\_SLV1\_DO}{195}{subsubsection.6.40.1.166}%
-\contentsline {subsubsection}{\numberline {6.40.1.167}I2C\_SLV1\_REG}{196}{subsubsection.6.40.1.167}%
-\contentsline {subsubsection}{\numberline {6.40.1.168}I2C\_SLV2\_ADDR}{196}{subsubsection.6.40.1.168}%
-\contentsline {subsubsection}{\numberline {6.40.1.169}I2C\_SLV2\_CTRL}{196}{subsubsection.6.40.1.169}%
-\contentsline {subsubsection}{\numberline {6.40.1.170}I2C\_SLV2\_DELAY\_EN}{196}{subsubsection.6.40.1.170}%
-\contentsline {subsubsection}{\numberline {6.40.1.171}I2C\_SLV2\_DO}{196}{subsubsection.6.40.1.171}%
-\contentsline {subsubsection}{\numberline {6.40.1.172}I2C\_SLV2\_REG}{196}{subsubsection.6.40.1.172}%
-\contentsline {subsubsection}{\numberline {6.40.1.173}I2C\_SLV3\_ADDR}{196}{subsubsection.6.40.1.173}%
-\contentsline {subsubsection}{\numberline {6.40.1.174}I2C\_SLV3\_CTRL}{196}{subsubsection.6.40.1.174}%
-\contentsline {subsubsection}{\numberline {6.40.1.175}I2C\_SLV3\_DELAY\_EN}{196}{subsubsection.6.40.1.175}%
-\contentsline {subsubsection}{\numberline {6.40.1.176}I2C\_SLV3\_DO}{196}{subsubsection.6.40.1.176}%
-\contentsline {subsubsection}{\numberline {6.40.1.177}I2C\_SLV3\_REG}{196}{subsubsection.6.40.1.177}%
-\contentsline {subsubsection}{\numberline {6.40.1.178}I2C\_SLV4\_ADDR}{196}{subsubsection.6.40.1.178}%
-\contentsline {subsubsection}{\numberline {6.40.1.179}I2C\_SLV4\_CTRL}{197}{subsubsection.6.40.1.179}%
-\contentsline {subsubsection}{\numberline {6.40.1.180}I2C\_SLV4\_DELAY\_EN}{197}{subsubsection.6.40.1.180}%
-\contentsline {subsubsection}{\numberline {6.40.1.181}I2C\_SLV4\_DI}{197}{subsubsection.6.40.1.181}%
-\contentsline {subsubsection}{\numberline {6.40.1.182}I2C\_SLV4\_DLY\_MASK}{197}{subsubsection.6.40.1.182}%
-\contentsline {subsubsection}{\numberline {6.40.1.183}I2C\_SLV4\_DO}{197}{subsubsection.6.40.1.183}%
-\contentsline {subsubsection}{\numberline {6.40.1.184}I2C\_SLV4\_REG}{197}{subsubsection.6.40.1.184}%
-\contentsline {subsubsection}{\numberline {6.40.1.185}I2C\_SLVx\_BYTE\_SW}{197}{subsubsection.6.40.1.185}%
-\contentsline {subsubsection}{\numberline {6.40.1.186}I2C\_SLVx\_EN}{197}{subsubsection.6.40.1.186}%
-\contentsline {subsubsection}{\numberline {6.40.1.187}I2C\_SLVx\_GRP}{197}{subsubsection.6.40.1.187}%
-\contentsline {subsubsection}{\numberline {6.40.1.188}I2C\_SLVx\_LENG\_MASK}{197}{subsubsection.6.40.1.188}%
-\contentsline {subsubsection}{\numberline {6.40.1.189}I2C\_SLVx\_REG\_DIS}{197}{subsubsection.6.40.1.189}%
-\contentsline {subsubsection}{\numberline {6.40.1.190}I2C\_SLVx\_RNW}{197}{subsubsection.6.40.1.190}%
-\contentsline {subsubsection}{\numberline {6.40.1.191}INT1\_ACTL}{198}{subsubsection.6.40.1.191}%
-\contentsline {subsubsection}{\numberline {6.40.1.192}INT1\_LATCH\_INT\_EN}{198}{subsubsection.6.40.1.192}%
-\contentsline {subsubsection}{\numberline {6.40.1.193}INT1\_OPEN}{198}{subsubsection.6.40.1.193}%
-\contentsline {subsubsection}{\numberline {6.40.1.194}INT\_ACTL\_FSYNC}{198}{subsubsection.6.40.1.194}%
-\contentsline {subsubsection}{\numberline {6.40.1.195}INT\_ANYRD\_2CLEAR}{198}{subsubsection.6.40.1.195}%
-\contentsline {subsubsection}{\numberline {6.40.1.196}INT\_DMP\_INT1\_EN}{198}{subsubsection.6.40.1.196}%
-\contentsline {subsubsection}{\numberline {6.40.1.197}INT\_ENABLE}{198}{subsubsection.6.40.1.197}%
-\contentsline {subsubsection}{\numberline {6.40.1.198}INT\_ENABLE\_1}{198}{subsubsection.6.40.1.198}%
-\contentsline {subsubsection}{\numberline {6.40.1.199}INT\_ENABLE\_2}{198}{subsubsection.6.40.1.199}%
-\contentsline {subsubsection}{\numberline {6.40.1.200}INT\_ENABLE\_3}{198}{subsubsection.6.40.1.200}%
-\contentsline {subsubsection}{\numberline {6.40.1.201}INT\_I2C\_MST\_INT\_EN}{198}{subsubsection.6.40.1.201}%
-\contentsline {subsubsection}{\numberline {6.40.1.202}INT\_PIN\_CFG}{198}{subsubsection.6.40.1.202}%
-\contentsline {subsubsection}{\numberline {6.40.1.203}INT\_PLL\_RDY\_EN}{199}{subsubsection.6.40.1.203}%
-\contentsline {subsubsection}{\numberline {6.40.1.204}INT\_RAW\_DATA\_0\_RDY\_EN}{199}{subsubsection.6.40.1.204}%
-\contentsline {subsubsection}{\numberline {6.40.1.205}INT\_REG\_WOF\_EN}{199}{subsubsection.6.40.1.205}%
-\contentsline {subsubsection}{\numberline {6.40.1.206}INT\_STATUS}{199}{subsubsection.6.40.1.206}%
-\contentsline {subsubsection}{\numberline {6.40.1.207}INT\_STATUS\_1}{199}{subsubsection.6.40.1.207}%
-\contentsline {subsubsection}{\numberline {6.40.1.208}INT\_STATUS\_2}{199}{subsubsection.6.40.1.208}%
-\contentsline {subsubsection}{\numberline {6.40.1.209}INT\_STATUS\_3}{199}{subsubsection.6.40.1.209}%
-\contentsline {subsubsection}{\numberline {6.40.1.210}INT\_WOM\_INT\_EN}{199}{subsubsection.6.40.1.210}%
-\contentsline {subsubsection}{\numberline {6.40.1.211}INTERNAL\_20MHZ}{199}{subsubsection.6.40.1.211}%
-\contentsline {subsubsection}{\numberline {6.40.1.212}LowPower}{199}{subsubsection.6.40.1.212}%
-\contentsline {subsubsection}{\numberline {6.40.1.213}LP\_ACCEL\_CYCLE}{199}{subsubsection.6.40.1.213}%
-\contentsline {subsubsection}{\numberline {6.40.1.214}LP\_CONFIG}{199}{subsubsection.6.40.1.214}%
-\contentsline {subsubsection}{\numberline {6.40.1.215}LP\_GYRO\_CYCLE}{200}{subsubsection.6.40.1.215}%
-\contentsline {subsubsection}{\numberline {6.40.1.216}LP\_I2C\_MST\_CYCLE}{200}{subsubsection.6.40.1.216}%
-\contentsline {subsubsection}{\numberline {6.40.1.217}MOD\_CTRL\_USR}{200}{subsubsection.6.40.1.217}%
-\contentsline {subsubsection}{\numberline {6.40.1.218}MST\_LOST\_ARB}{200}{subsubsection.6.40.1.218}%
-\contentsline {subsubsection}{\numberline {6.40.1.219}MST\_ODR\_CFG\_MASK}{200}{subsubsection.6.40.1.219}%
-\contentsline {subsubsection}{\numberline {6.40.1.220}MST\_PASS\_THROUGH}{200}{subsubsection.6.40.1.220}%
-\contentsline {subsubsection}{\numberline {6.40.1.221}MST\_SLV0\_NACK}{200}{subsubsection.6.40.1.221}%
-\contentsline {subsubsection}{\numberline {6.40.1.222}MST\_SLV1\_NACK}{200}{subsubsection.6.40.1.222}%
-\contentsline {subsubsection}{\numberline {6.40.1.223}MST\_SLV2\_NACK}{200}{subsubsection.6.40.1.223}%
-\contentsline {subsubsection}{\numberline {6.40.1.224}MST\_SLV3\_NACK}{200}{subsubsection.6.40.1.224}%
-\contentsline {subsubsection}{\numberline {6.40.1.225}MST\_SLV4\_DONE}{200}{subsubsection.6.40.1.225}%
-\contentsline {subsubsection}{\numberline {6.40.1.226}MST\_SLV4\_NACK}{200}{subsubsection.6.40.1.226}%
-\contentsline {subsubsection}{\numberline {6.40.1.227}MULT\_MST\_EN}{201}{subsubsection.6.40.1.227}%
-\contentsline {subsubsection}{\numberline {6.40.1.228}ODR\_ALIGN\_EN}{201}{subsubsection.6.40.1.228}%
-\contentsline {subsubsection}{\numberline {6.40.1.229}ODR\_ALIGN\_EN\_BIT}{201}{subsubsection.6.40.1.229}%
-\contentsline {subsubsection}{\numberline {6.40.1.230}PWR\_CLKSEL\_AUTO}{201}{subsubsection.6.40.1.230}%
-\contentsline {subsubsection}{\numberline {6.40.1.231}PWR\_CLKSEL\_INT\_20MHZ}{201}{subsubsection.6.40.1.231}%
-\contentsline {subsubsection}{\numberline {6.40.1.232}PWR\_CLKSEL\_MASK}{201}{subsubsection.6.40.1.232}%
-\contentsline {subsubsection}{\numberline {6.40.1.233}PWR\_DEVICE\_RESET}{201}{subsubsection.6.40.1.233}%
-\contentsline {subsubsection}{\numberline {6.40.1.234}PWR\_DISABLE\_ACCEL}{201}{subsubsection.6.40.1.234}%
-\contentsline {subsubsection}{\numberline {6.40.1.235}PWR\_DISABLE\_GYRO}{201}{subsubsection.6.40.1.235}%
-\contentsline {subsubsection}{\numberline {6.40.1.236}PWR\_LP\_EN}{201}{subsubsection.6.40.1.236}%
-\contentsline {subsubsection}{\numberline {6.40.1.237}PWR\_MGMT\_1}{201}{subsubsection.6.40.1.237}%
-\contentsline {subsubsection}{\numberline {6.40.1.238}PWR\_MGMT\_2}{201}{subsubsection.6.40.1.238}%
-\contentsline {subsubsection}{\numberline {6.40.1.239}PWR\_SLEEP}{202}{subsubsection.6.40.1.239}%
-\contentsline {subsubsection}{\numberline {6.40.1.240}PWR\_TEMP\_DIS}{202}{subsubsection.6.40.1.240}%
-\contentsline {subsubsection}{\numberline {6.40.1.241}REG\_BANK\_SEL}{202}{subsubsection.6.40.1.241}%
-\contentsline {subsubsection}{\numberline {6.40.1.242}REG\_BANK\_SEL\_USER\_BANK\_MASK}{202}{subsubsection.6.40.1.242}%
-\contentsline {subsubsection}{\numberline {6.40.1.243}REG\_BANK\_SEL\_USER\_BANK\_SHIFT}{202}{subsubsection.6.40.1.243}%
-\contentsline {subsubsection}{\numberline {6.40.1.244}REG\_LP\_DMP\_EN}{202}{subsubsection.6.40.1.244}%
-\contentsline {subsubsection}{\numberline {6.40.1.245}Regular}{202}{subsubsection.6.40.1.245}%
-\contentsline {subsubsection}{\numberline {6.40.1.246}SELF\_TEST\_X\_ACCEL}{202}{subsubsection.6.40.1.246}%
-\contentsline {subsubsection}{\numberline {6.40.1.247}SELF\_TEST\_X\_GYRO}{202}{subsubsection.6.40.1.247}%
-\contentsline {subsubsection}{\numberline {6.40.1.248}SELF\_TEST\_Y\_ACCEL}{202}{subsubsection.6.40.1.248}%
-\contentsline {subsubsection}{\numberline {6.40.1.249}SELF\_TEST\_Y\_GYRO}{202}{subsubsection.6.40.1.249}%
-\contentsline {subsubsection}{\numberline {6.40.1.250}SELF\_TEST\_Z\_ACCEL}{202}{subsubsection.6.40.1.250}%
-\contentsline {subsubsection}{\numberline {6.40.1.251}SELF\_TEST\_Z\_GYRO}{203}{subsubsection.6.40.1.251}%
-\contentsline {subsubsection}{\numberline {6.40.1.252}STS\_DMP\_INT1}{203}{subsubsection.6.40.1.252}%
-\contentsline {subsubsection}{\numberline {6.40.1.253}STS\_I2C\_MST\_INT}{203}{subsubsection.6.40.1.253}%
-\contentsline {subsubsection}{\numberline {6.40.1.254}STS\_PLL\_RDY\_INT}{203}{subsubsection.6.40.1.254}%
-\contentsline {subsubsection}{\numberline {6.40.1.255}STS\_RAW\_DATA\_0\_RDY\_INT}{203}{subsubsection.6.40.1.255}%
-\contentsline {subsubsection}{\numberline {6.40.1.256}STS\_WOM\_INT}{203}{subsubsection.6.40.1.256}%
-\contentsline {subsubsection}{\numberline {6.40.1.257}TEMP\_CONFIG}{203}{subsubsection.6.40.1.257}%
-\contentsline {subsubsection}{\numberline {6.40.1.258}TEMP\_DLPFCFG\_MASK}{203}{subsubsection.6.40.1.258}%
-\contentsline {subsubsection}{\numberline {6.40.1.259}TEMP\_DLPFCFG\_SHIFT}{203}{subsubsection.6.40.1.259}%
-\contentsline {subsubsection}{\numberline {6.40.1.260}TEMP\_OUT\_H}{203}{subsubsection.6.40.1.260}%
-\contentsline {subsubsection}{\numberline {6.40.1.261}TEMP\_OUT\_L}{203}{subsubsection.6.40.1.261}%
-\contentsline {subsubsection}{\numberline {6.40.1.262}TIMEBASE\_CORRECTION\_PLL}{203}{subsubsection.6.40.1.262}%
-\contentsline {subsubsection}{\numberline {6.40.1.263}USER\_BANK\_0}{204}{subsubsection.6.40.1.263}%
-\contentsline {subsubsection}{\numberline {6.40.1.264}USER\_BANK\_1}{204}{subsubsection.6.40.1.264}%
-\contentsline {subsubsection}{\numberline {6.40.1.265}USER\_BANK\_2}{204}{subsubsection.6.40.1.265}%
-\contentsline {subsubsection}{\numberline {6.40.1.266}USER\_BANK\_3}{204}{subsubsection.6.40.1.266}%
-\contentsline {subsubsection}{\numberline {6.40.1.267}USER\_CTRL}{204}{subsubsection.6.40.1.267}%
-\contentsline {subsubsection}{\numberline {6.40.1.268}USER\_CTRL\_DMP\_EN}{204}{subsubsection.6.40.1.268}%
-\contentsline {subsubsection}{\numberline {6.40.1.269}USER\_CTRL\_DMP\_RST}{204}{subsubsection.6.40.1.269}%
-\contentsline {subsubsection}{\numberline {6.40.1.270}USER\_CTRL\_FIFO\_EN}{204}{subsubsection.6.40.1.270}%
-\contentsline {subsubsection}{\numberline {6.40.1.271}USER\_CTRL\_I2C\_IF\_DIS}{204}{subsubsection.6.40.1.271}%
-\contentsline {subsubsection}{\numberline {6.40.1.272}USER\_CTRL\_I2C\_MST\_EN}{204}{subsubsection.6.40.1.272}%
-\contentsline {subsubsection}{\numberline {6.40.1.273}USER\_CTRL\_I2C\_MST\_RST}{204}{subsubsection.6.40.1.273}%
-\contentsline {subsubsection}{\numberline {6.40.1.274}USER\_CTRL\_SRAM\_RST}{204}{subsubsection.6.40.1.274}%
-\contentsline {subsubsection}{\numberline {6.40.1.275}WHO\_AM\_I}{205}{subsubsection.6.40.1.275}%
-\contentsline {subsubsection}{\numberline {6.40.1.276}WHO\_AM\_I\_VAL}{205}{subsubsection.6.40.1.276}%
-\contentsline {subsubsection}{\numberline {6.40.1.277}WOF\_DEGLITCH\_EN}{205}{subsubsection.6.40.1.277}%
-\contentsline {subsubsection}{\numberline {6.40.1.278}WOF\_EDGE\_INT}{205}{subsubsection.6.40.1.278}%
-\contentsline {subsubsection}{\numberline {6.40.1.279}XA\_OFFS\_H}{205}{subsubsection.6.40.1.279}%
-\contentsline {subsubsection}{\numberline {6.40.1.280}XA\_OFFS\_L}{205}{subsubsection.6.40.1.280}%
-\contentsline {subsubsection}{\numberline {6.40.1.281}XG\_OFFS\_USRH}{205}{subsubsection.6.40.1.281}%
-\contentsline {subsubsection}{\numberline {6.40.1.282}XG\_OFFS\_USRL}{205}{subsubsection.6.40.1.282}%
-\contentsline {subsubsection}{\numberline {6.40.1.283}XGYRO\_CTEN}{205}{subsubsection.6.40.1.283}%
-\contentsline {subsubsection}{\numberline {6.40.1.284}YA\_OFFS\_H}{206}{subsubsection.6.40.1.284}%
-\contentsline {subsubsection}{\numberline {6.40.1.285}YA\_OFFS\_L}{206}{subsubsection.6.40.1.285}%
-\contentsline {subsubsection}{\numberline {6.40.1.286}YG\_OFFS\_USRH}{206}{subsubsection.6.40.1.286}%
-\contentsline {subsubsection}{\numberline {6.40.1.287}YG\_OFFS\_USRL}{206}{subsubsection.6.40.1.287}%
-\contentsline {subsubsection}{\numberline {6.40.1.288}YGYRO\_CTEN}{206}{subsubsection.6.40.1.288}%
-\contentsline {subsubsection}{\numberline {6.40.1.289}ZA\_OFFS\_H}{206}{subsubsection.6.40.1.289}%
-\contentsline {subsubsection}{\numberline {6.40.1.290}ZA\_OFFS\_L}{206}{subsubsection.6.40.1.290}%
-\contentsline {subsubsection}{\numberline {6.40.1.291}ZG\_OFFS\_USRH}{206}{subsubsection.6.40.1.291}%
-\contentsline {subsubsection}{\numberline {6.40.1.292}ZG\_OFFS\_USRL}{206}{subsubsection.6.40.1.292}%
-\contentsline {subsubsection}{\numberline {6.40.1.293}ZGYRO\_CTEN}{206}{subsubsection.6.40.1.293}%
-\contentsline {section}{\numberline {6.41}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}regs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{206}{section.6.41}%
-\contentsline {chapter}{Index}{213}{section*.226}%
+\contentsline {subsubsection}{\numberline {5.3.3.51}setSensors()}{56}{subsubsection.5.3.3.51}%
+\contentsline {subsubsection}{\numberline {5.3.3.52}sleep()}{57}{subsubsection.5.3.3.52}%
+\contentsline {subsubsection}{\numberline {5.3.3.53}softReset()}{58}{subsubsection.5.3.3.53}%
+\contentsline {section}{\numberline {5.4}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface Class Reference}{58}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{59}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Member Function Documentation}{60}{subsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}beginI2C()}{60}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.2}beginSPI()}{60}{subsubsection.5.4.2.2}%
+\contentsline {subsubsection}{\numberline {5.4.2.3}read()}{60}{subsubsection.5.4.2.3}%
+\contentsline {subsubsection}{\numberline {5.4.2.4}write()}{61}{subsubsection.5.4.2.4}%
+\contentsline {subsection}{\numberline {5.4.3}Member Data Documentation}{61}{subsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.3.1}address}{61}{subsubsection.5.4.3.1}%
+\contentsline {subsubsection}{\numberline {5.4.3.2}i2c}{61}{subsubsection.5.4.3.2}%
+\contentsline {section}{\numberline {5.5}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enable\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Struct Reference}{61}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{62}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Member Data Documentation}{62}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}dmpInt1En}{62}{subsubsection.5.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.5.2.2}fifoOvfEn}{62}{subsubsection.5.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.3}fifoWmEn}{62}{subsubsection.5.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.5.2.4}i2cMstIntEn}{62}{subsubsection.5.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.5.2.5}pllRdyEn}{62}{subsubsection.5.5.2.5}%
+\contentsline {subsubsection}{\numberline {5.5.2.6}rawDataRdyEn}{62}{subsubsection.5.5.2.6}%
+\contentsline {subsubsection}{\numberline {5.5.2.7}wofEn}{62}{subsubsection.5.5.2.7}%
+\contentsline {subsubsection}{\numberline {5.5.2.8}womIntEn}{62}{subsubsection.5.5.2.8}%
+\contentsline {section}{\numberline {5.6}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pin\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Struct Reference}{62}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{63}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Member Data Documentation}{63}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}activeLevel}{63}{subsubsection.5.6.2.1}%
+\contentsline {subsubsection}{\numberline {5.6.2.2}bypassEn}{63}{subsubsection.5.6.2.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.3}clearMode}{63}{subsubsection.5.6.2.3}%
+\contentsline {subsubsection}{\numberline {5.6.2.4}driveMode}{63}{subsubsection.5.6.2.4}%
+\contentsline {subsubsection}{\numberline {5.6.2.5}fsyncActLevel}{63}{subsubsection.5.6.2.5}%
+\contentsline {subsubsection}{\numberline {5.6.2.6}fsyncIntEn}{63}{subsubsection.5.6.2.6}%
+\contentsline {subsubsection}{\numberline {5.6.2.7}latchMode}{63}{subsubsection.5.6.2.7}%
+\contentsline {section}{\numberline {5.7}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Status Struct Reference}{64}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{64}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Member Data Documentation}{64}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}dmpInt1}{64}{subsubsection.5.7.2.1}%
+\contentsline {subsubsection}{\numberline {5.7.2.2}fifoOvf}{64}{subsubsection.5.7.2.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.3}fifoWm}{64}{subsubsection.5.7.2.3}%
+\contentsline {subsubsection}{\numberline {5.7.2.4}i2cMstInt}{64}{subsubsection.5.7.2.4}%
+\contentsline {subsubsection}{\numberline {5.7.2.5}pllRdyInt}{64}{subsubsection.5.7.2.5}%
+\contentsline {subsubsection}{\numberline {5.7.2.6}rawDataRdy}{64}{subsubsection.5.7.2.6}%
+\contentsline {subsubsection}{\numberline {5.7.2.7}womInt}{65}{subsubsection.5.7.2.7}%
+\contentsline {section}{\numberline {5.8}icm\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}plat\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{65}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{65}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Member Data Documentation}{65}{subsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.1}delay\_ms}{65}{subsubsection.5.8.2.1}%
+\contentsline {subsubsection}{\numberline {5.8.2.2}i2c\_addr}{65}{subsubsection.5.8.2.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.3}read}{65}{subsubsection.5.8.2.3}%
+\contentsline {subsubsection}{\numberline {5.8.2.4}spi\_cs}{66}{subsubsection.5.8.2.4}%
+\contentsline {subsubsection}{\numberline {5.8.2.5}spi\_reg\_rw\_bits}{66}{subsubsection.5.8.2.5}%
+\contentsline {subsubsection}{\numberline {5.8.2.6}user}{66}{subsubsection.5.8.2.6}%
+\contentsline {subsubsection}{\numberline {5.8.2.7}write}{66}{subsubsection.5.8.2.7}%
+\contentsline {section}{\numberline {5.9}Interface\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi Class Reference}{66}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{67}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Constructor \& Destructor Documentation}{67}{subsection.5.9.2}%
+\contentsline {subsubsection}{\numberline {5.9.2.1}$\sim $Interface\_7Semi()}{67}{subsubsection.5.9.2.1}%
+\contentsline {subsection}{\numberline {5.9.3}Member Function Documentation}{67}{subsection.5.9.3}%
+\contentsline {subsubsection}{\numberline {5.9.3.1}beginI2C()}{67}{subsubsection.5.9.3.1}%
+\contentsline {subsubsection}{\numberline {5.9.3.2}beginSPI()}{67}{subsubsection.5.9.3.2}%
+\contentsline {subsubsection}{\numberline {5.9.3.3}delay\_us()}{68}{subsubsection.5.9.3.3}%
+\contentsline {subsubsection}{\numberline {5.9.3.4}read()}{68}{subsubsection.5.9.3.4}%
+\contentsline {subsubsection}{\numberline {5.9.3.5}write()}{68}{subsubsection.5.9.3.5}%
+\contentsline {section}{\numberline {5.10}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface Class Reference}{68}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{70}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Member Function Documentation}{70}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}beginI2C()}{70}{subsubsection.5.10.2.1}%
+\contentsline {subsubsection}{\numberline {5.10.2.2}beginSPI()}{70}{subsubsection.5.10.2.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.3}read()}{71}{subsubsection.5.10.2.3}%
+\contentsline {subsubsection}{\numberline {5.10.2.4}write()}{71}{subsubsection.5.10.2.4}%
+\contentsline {subsection}{\numberline {5.10.3}Member Data Documentation}{71}{subsection.5.10.3}%
+\contentsline {subsubsection}{\numberline {5.10.3.1}cs}{71}{subsubsection.5.10.3.1}%
+\contentsline {subsubsection}{\numberline {5.10.3.2}speed}{71}{subsubsection.5.10.3.2}%
+\contentsline {subsubsection}{\numberline {5.10.3.3}spi}{71}{subsubsection.5.10.3.3}%
+\contentsline {chapter}{\numberline {6}File Documentation}{73}{chapter.6}%
+\contentsline {section}{\numberline {6.1}examples/gyr\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test/gyr\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test.ino File Reference}{73}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{74}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Macro Definition Documentation}{74}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}I2C\_FREQ}{74}{subsubsection.6.1.2.1}%
+\contentsline {subsubsection}{\numberline {6.1.2.2}ICM\_ADDR}{75}{subsubsection.6.1.2.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.3}SCL\_PIN}{75}{subsubsection.6.1.2.3}%
+\contentsline {subsubsection}{\numberline {6.1.2.4}SDA\_PIN}{75}{subsubsection.6.1.2.4}%
+\contentsline {subsection}{\numberline {6.1.3}Function Documentation}{75}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}applySettings()}{75}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}firstStage()}{75}{subsubsection.6.1.3.2}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}loop()}{76}{subsubsection.6.1.3.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.4}printDobleLinea()}{76}{subsubsection.6.1.3.4}%
+\contentsline {subsubsection}{\numberline {6.1.3.5}printLinea()}{76}{subsubsection.6.1.3.5}%
+\contentsline {subsubsection}{\numberline {6.1.3.6}runSweep()}{76}{subsubsection.6.1.3.6}%
+\contentsline {subsubsection}{\numberline {6.1.3.7}setup()}{77}{subsubsection.6.1.3.7}%
+\contentsline {subsection}{\numberline {6.1.4}Variable Documentation}{77}{subsection.6.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.4.1}configsDLPF}{77}{subsubsection.6.1.4.1}%
+\contentsline {subsubsection}{\numberline {6.1.4.2}etiquetasGyroAVGCfg}{78}{subsubsection.6.1.4.2}%
+\contentsline {subsubsection}{\numberline {6.1.4.3}etiquetasGyroFSCfg}{78}{subsubsection.6.1.4.3}%
+\contentsline {subsubsection}{\numberline {6.1.4.4}gyroAVGCfg}{78}{subsubsection.6.1.4.4}%
+\contentsline {subsubsection}{\numberline {6.1.4.5}gyroDLPF}{78}{subsubsection.6.1.4.5}%
+\contentsline {subsubsection}{\numberline {6.1.4.6}gyroFSCfg}{78}{subsubsection.6.1.4.6}%
+\contentsline {subsubsection}{\numberline {6.1.4.7}imu}{79}{subsubsection.6.1.4.7}%
+\contentsline {subsubsection}{\numberline {6.1.4.8}N\_AVG}{79}{subsubsection.6.1.4.8}%
+\contentsline {subsubsection}{\numberline {6.1.4.9}N\_DLPF}{79}{subsubsection.6.1.4.9}%
+\contentsline {subsubsection}{\numberline {6.1.4.10}N\_FS}{79}{subsubsection.6.1.4.10}%
+\contentsline {section}{\numberline {6.2}gyr\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{79}{section.6.2}%
+\contentsline {section}{\numberline {6.3}examples/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel.ino File Reference}{82}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Macro Definition Documentation}{82}{subsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.1}I2C\_FREQ}{82}{subsubsection.6.3.1.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.2}ICM\_ADDR}{82}{subsubsection.6.3.1.2}%
+\contentsline {subsubsection}{\numberline {6.3.1.3}SCL\_PIN}{83}{subsubsection.6.3.1.3}%
+\contentsline {subsubsection}{\numberline {6.3.1.4}SDA\_PIN}{83}{subsubsection.6.3.1.4}%
+\contentsline {subsection}{\numberline {6.3.2}Function Documentation}{83}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}loop()}{83}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}setup()}{83}{subsubsection.6.3.2.2}%
+\contentsline {subsection}{\numberline {6.3.3}Variable Documentation}{84}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}imu}{84}{subsubsection.6.3.3.1}%
+\contentsline {section}{\numberline {6.4}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{84}{section.6.4}%
+\contentsline {section}{\numberline {6.5}examples/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic.ino File Reference}{85}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}Macro Definition Documentation}{86}{subsection.6.5.1}%
+\contentsline {subsubsection}{\numberline {6.5.1.1}I2C\_FREQ}{86}{subsubsection.6.5.1.1}%
+\contentsline {subsubsection}{\numberline {6.5.1.2}ICM\_ADDR}{86}{subsubsection.6.5.1.2}%
+\contentsline {subsubsection}{\numberline {6.5.1.3}SCL\_PIN}{86}{subsubsection.6.5.1.3}%
+\contentsline {subsubsection}{\numberline {6.5.1.4}SDA\_PIN}{86}{subsubsection.6.5.1.4}%
+\contentsline {subsection}{\numberline {6.5.2}Function Documentation}{86}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}loop()}{86}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}setup()}{87}{subsubsection.6.5.2.2}%
+\contentsline {subsection}{\numberline {6.5.3}Variable Documentation}{87}{subsection.6.5.3}%
+\contentsline {subsubsection}{\numberline {6.5.3.1}imu}{87}{subsubsection.6.5.3.1}%
+\contentsline {section}{\numberline {6.6}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{87}{section.6.6}%
+\contentsline {section}{\numberline {6.7}examples/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro.ino File Reference}{89}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Macro Definition Documentation}{90}{subsection.6.7.1}%
+\contentsline {subsubsection}{\numberline {6.7.1.1}I2C\_FREQ}{90}{subsubsection.6.7.1.1}%
+\contentsline {subsubsection}{\numberline {6.7.1.2}ICM\_ADDR}{90}{subsubsection.6.7.1.2}%
+\contentsline {subsubsection}{\numberline {6.7.1.3}SCL\_PIN}{90}{subsubsection.6.7.1.3}%
+\contentsline {subsubsection}{\numberline {6.7.1.4}SDA\_PIN}{90}{subsubsection.6.7.1.4}%
+\contentsline {subsection}{\numberline {6.7.2}Function Documentation}{90}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}loop()}{90}{subsubsection.6.7.2.1}%
+\contentsline {subsubsection}{\numberline {6.7.2.2}setup()}{90}{subsubsection.6.7.2.2}%
+\contentsline {subsection}{\numberline {6.7.3}Variable Documentation}{91}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}imu}{91}{subsubsection.6.7.3.1}%
+\contentsline {section}{\numberline {6.8}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{91}{section.6.8}%
+\contentsline {section}{\numberline {6.9}examples/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}magneto/i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}magneto.ino File Reference}{93}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}Macro Definition Documentation}{93}{subsection.6.9.1}%
+\contentsline {subsubsection}{\numberline {6.9.1.1}I2C\_FREQ}{93}{subsubsection.6.9.1.1}%
+\contentsline {subsubsection}{\numberline {6.9.1.2}ICM\_ADDR}{93}{subsubsection.6.9.1.2}%
+\contentsline {subsubsection}{\numberline {6.9.1.3}SCL\_PIN}{94}{subsubsection.6.9.1.3}%
+\contentsline {subsubsection}{\numberline {6.9.1.4}SDA\_PIN}{94}{subsubsection.6.9.1.4}%
+\contentsline {subsection}{\numberline {6.9.2}Function Documentation}{94}{subsection.6.9.2}%
+\contentsline {subsubsection}{\numberline {6.9.2.1}loop()}{94}{subsubsection.6.9.2.1}%
+\contentsline {subsubsection}{\numberline {6.9.2.2}setup()}{94}{subsubsection.6.9.2.2}%
+\contentsline {subsection}{\numberline {6.9.3}Variable Documentation}{95}{subsection.6.9.3}%
+\contentsline {subsubsection}{\numberline {6.9.3.1}imu}{95}{subsubsection.6.9.3.1}%
+\contentsline {section}{\numberline {6.10}i2c\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}magneto.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{95}{section.6.10}%
+\contentsline {section}{\numberline {6.11}examples/interrupt/interrupt.ino File Reference}{96}{section.6.11}%
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{97}{subsection.6.11.1}%
+\contentsline {subsection}{\numberline {6.11.2}Macro Definition Documentation}{97}{subsection.6.11.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.1}I2C\_FREQ}{97}{subsubsection.6.11.2.1}%
+\contentsline {subsubsection}{\numberline {6.11.2.2}ICM\_ADDR}{97}{subsubsection.6.11.2.2}%
+\contentsline {subsubsection}{\numberline {6.11.2.3}PIN\_INT}{98}{subsubsection.6.11.2.3}%
+\contentsline {subsubsection}{\numberline {6.11.2.4}SCL\_PIN}{98}{subsubsection.6.11.2.4}%
+\contentsline {subsubsection}{\numberline {6.11.2.5}SDA\_PIN}{98}{subsubsection.6.11.2.5}%
+\contentsline {subsection}{\numberline {6.11.3}Function Documentation}{98}{subsection.6.11.3}%
+\contentsline {subsubsection}{\numberline {6.11.3.1}isrHandler()}{98}{subsubsection.6.11.3.1}%
+\contentsline {subsubsection}{\numberline {6.11.3.2}loop()}{98}{subsubsection.6.11.3.2}%
+\contentsline {subsubsection}{\numberline {6.11.3.3}printDobleLinea()}{98}{subsubsection.6.11.3.3}%
+\contentsline {subsubsection}{\numberline {6.11.3.4}printLinea()}{98}{subsubsection.6.11.3.4}%
+\contentsline {subsubsection}{\numberline {6.11.3.5}setup()}{98}{subsubsection.6.11.3.5}%
+\contentsline {subsection}{\numberline {6.11.4}Variable Documentation}{99}{subsection.6.11.4}%
+\contentsline {subsubsection}{\numberline {6.11.4.1}imu}{99}{subsubsection.6.11.4.1}%
+\contentsline {subsubsection}{\numberline {6.11.4.2}intEn}{99}{subsubsection.6.11.4.2}%
+\contentsline {subsubsection}{\numberline {6.11.4.3}isrCount}{99}{subsubsection.6.11.4.3}%
+\contentsline {subsubsection}{\numberline {6.11.4.4}pinCfg}{99}{subsubsection.6.11.4.4}%
+\contentsline {section}{\numberline {6.12}interrupt.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{99}{section.6.12}%
+\contentsline {section}{\numberline {6.13}examples/mag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test/mag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test.ino File Reference}{101}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Detailed Description}{102}{subsection.6.13.1}%
+\contentsline {subsection}{\numberline {6.13.2}Macro Definition Documentation}{102}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}I2C\_FREQ}{102}{subsubsection.6.13.2.1}%
+\contentsline {subsubsection}{\numberline {6.13.2.2}ICM\_ADDR}{102}{subsubsection.6.13.2.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.3}SCL\_PIN}{102}{subsubsection.6.13.2.3}%
+\contentsline {subsubsection}{\numberline {6.13.2.4}SDA\_PIN}{102}{subsubsection.6.13.2.4}%
+\contentsline {subsection}{\numberline {6.13.3}Function Documentation}{102}{subsection.6.13.3}%
+\contentsline {subsubsection}{\numberline {6.13.3.1}applySettings()}{102}{subsubsection.6.13.3.1}%
+\contentsline {subsubsection}{\numberline {6.13.3.2}loop()}{103}{subsubsection.6.13.3.2}%
+\contentsline {subsubsection}{\numberline {6.13.3.3}printDobleLinea()}{103}{subsubsection.6.13.3.3}%
+\contentsline {subsubsection}{\numberline {6.13.3.4}printLinea()}{103}{subsubsection.6.13.3.4}%
+\contentsline {subsubsection}{\numberline {6.13.3.5}setup()}{103}{subsubsection.6.13.3.5}%
+\contentsline {subsection}{\numberline {6.13.4}Variable Documentation}{104}{subsection.6.13.4}%
+\contentsline {subsubsection}{\numberline {6.13.4.1}etiquetasOpModeCfg}{104}{subsubsection.6.13.4.1}%
+\contentsline {subsubsection}{\numberline {6.13.4.2}imu}{104}{subsubsection.6.13.4.2}%
+\contentsline {subsubsection}{\numberline {6.13.4.3}N\_OPM}{104}{subsubsection.6.13.4.3}%
+\contentsline {subsubsection}{\numberline {6.13.4.4}opMode}{104}{subsubsection.6.13.4.4}%
+\contentsline {section}{\numberline {6.14}mag\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{104}{section.6.14}%
+\contentsline {section}{\numberline {6.15}examples/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel.ino File Reference}{106}{section.6.15}%
+\contentsline {subsection}{\numberline {6.15.1}Macro Definition Documentation}{107}{subsection.6.15.1}%
+\contentsline {subsubsection}{\numberline {6.15.1.1}CS\_PIN}{107}{subsubsection.6.15.1.1}%
+\contentsline {subsubsection}{\numberline {6.15.1.2}SPI\_FAST\_SPEED}{107}{subsubsection.6.15.1.2}%
+\contentsline {subsection}{\numberline {6.15.2}Function Documentation}{107}{subsection.6.15.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.1}loop()}{107}{subsubsection.6.15.2.1}%
+\contentsline {subsubsection}{\numberline {6.15.2.2}setup()}{107}{subsubsection.6.15.2.2}%
+\contentsline {subsubsection}{\numberline {6.15.2.3}spi\_bus()}{108}{subsubsection.6.15.2.3}%
+\contentsline {subsection}{\numberline {6.15.3}Variable Documentation}{108}{subsection.6.15.3}%
+\contentsline {subsubsection}{\numberline {6.15.3.1}imu}{108}{subsubsection.6.15.3.1}%
+\contentsline {section}{\numberline {6.16}spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}accel.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{108}{section.6.16}%
+\contentsline {section}{\numberline {6.17}examples/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic.ino File Reference}{110}{section.6.17}%
+\contentsline {subsection}{\numberline {6.17.1}Macro Definition Documentation}{111}{subsection.6.17.1}%
+\contentsline {subsubsection}{\numberline {6.17.1.1}CS\_PIN}{111}{subsubsection.6.17.1.1}%
+\contentsline {subsubsection}{\numberline {6.17.1.2}SPI\_FAST\_SPEED}{111}{subsubsection.6.17.1.2}%
+\contentsline {subsection}{\numberline {6.17.2}Function Documentation}{111}{subsection.6.17.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.1}loop()}{111}{subsubsection.6.17.2.1}%
+\contentsline {subsubsection}{\numberline {6.17.2.2}setup()}{111}{subsubsection.6.17.2.2}%
+\contentsline {subsubsection}{\numberline {6.17.2.3}spi\_bus()}{112}{subsubsection.6.17.2.3}%
+\contentsline {subsection}{\numberline {6.17.3}Variable Documentation}{112}{subsection.6.17.3}%
+\contentsline {subsubsection}{\numberline {6.17.3.1}imu}{112}{subsubsection.6.17.3.1}%
+\contentsline {section}{\numberline {6.18}spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}basic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{112}{section.6.18}%
+\contentsline {section}{\numberline {6.19}examples/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro/spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro.ino File Reference}{114}{section.6.19}%
+\contentsline {subsection}{\numberline {6.19.1}Macro Definition Documentation}{114}{subsection.6.19.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.1}CS\_PIN}{114}{subsubsection.6.19.1.1}%
+\contentsline {subsubsection}{\numberline {6.19.1.2}SPI\_FAST\_SPEED}{114}{subsubsection.6.19.1.2}%
+\contentsline {subsection}{\numberline {6.19.2}Function Documentation}{114}{subsection.6.19.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.1}loop()}{114}{subsubsection.6.19.2.1}%
+\contentsline {subsubsection}{\numberline {6.19.2.2}setup()}{115}{subsubsection.6.19.2.2}%
+\contentsline {subsubsection}{\numberline {6.19.2.3}spi\_bus()}{115}{subsubsection.6.19.2.3}%
+\contentsline {subsection}{\numberline {6.19.3}Variable Documentation}{116}{subsection.6.19.3}%
+\contentsline {subsubsection}{\numberline {6.19.3.1}imu}{116}{subsubsection.6.19.3.1}%
+\contentsline {section}{\numberline {6.20}spi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gyro.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{116}{section.6.20}%
+\contentsline {section}{\numberline {6.21}examples/test/test.ino File Reference}{117}{section.6.21}%
+\contentsline {subsection}{\numberline {6.21.1}Detailed Description}{119}{subsection.6.21.1}%
+\contentsline {subsection}{\numberline {6.21.2}Macro Definition Documentation}{120}{subsection.6.21.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.1}I2C\_FREQ}{120}{subsubsection.6.21.2.1}%
+\contentsline {subsubsection}{\numberline {6.21.2.2}ICM\_ADDR}{120}{subsubsection.6.21.2.2}%
+\contentsline {subsubsection}{\numberline {6.21.2.3}SCL\_PIN}{120}{subsubsection.6.21.2.3}%
+\contentsline {subsubsection}{\numberline {6.21.2.4}SDA\_PIN}{120}{subsubsection.6.21.2.4}%
+\contentsline {subsection}{\numberline {6.21.3}Function Documentation}{120}{subsection.6.21.3}%
+\contentsline {subsubsection}{\numberline {6.21.3.1}applySettings()}{120}{subsubsection.6.21.3.1}%
+\contentsline {subsubsection}{\numberline {6.21.3.2}firstStage()}{120}{subsubsection.6.21.3.2}%
+\contentsline {subsubsection}{\numberline {6.21.3.3}loop()}{121}{subsubsection.6.21.3.3}%
+\contentsline {subsubsection}{\numberline {6.21.3.4}printDobleLinea()}{121}{subsubsection.6.21.3.4}%
+\contentsline {subsubsection}{\numberline {6.21.3.5}printLinea()}{121}{subsubsection.6.21.3.5}%
+\contentsline {subsubsection}{\numberline {6.21.3.6}runSweep()}{122}{subsubsection.6.21.3.6}%
+\contentsline {subsubsection}{\numberline {6.21.3.7}setup()}{122}{subsubsection.6.21.3.7}%
+\contentsline {subsection}{\numberline {6.21.4}Variable Documentation}{123}{subsection.6.21.4}%
+\contentsline {subsubsection}{\numberline {6.21.4.1}accelAVG}{123}{subsubsection.6.21.4.1}%
+\contentsline {subsubsection}{\numberline {6.21.4.2}accelCfg}{123}{subsubsection.6.21.4.2}%
+\contentsline {subsubsection}{\numberline {6.21.4.3}accelDLPF}{123}{subsubsection.6.21.4.3}%
+\contentsline {subsubsection}{\numberline {6.21.4.4}accelSR}{123}{subsubsection.6.21.4.4}%
+\contentsline {subsubsection}{\numberline {6.21.4.5}configsDLPF}{123}{subsubsection.6.21.4.5}%
+\contentsline {subsubsection}{\numberline {6.21.4.6}etiquetasAccelAVG}{124}{subsubsection.6.21.4.6}%
+\contentsline {subsubsection}{\numberline {6.21.4.7}etiquetasAccelCfg}{124}{subsubsection.6.21.4.7}%
+\contentsline {subsubsection}{\numberline {6.21.4.8}etiquetasAccelDLPFCFG}{124}{subsubsection.6.21.4.8}%
+\contentsline {subsubsection}{\numberline {6.21.4.9}etiquetasSR}{124}{subsubsection.6.21.4.9}%
+\contentsline {subsubsection}{\numberline {6.21.4.10}imu}{124}{subsubsection.6.21.4.10}%
+\contentsline {subsubsection}{\numberline {6.21.4.11}N\_DLPF}{124}{subsubsection.6.21.4.11}%
+\contentsline {subsubsection}{\numberline {6.21.4.12}N\_FS}{124}{subsubsection.6.21.4.12}%
+\contentsline {subsubsection}{\numberline {6.21.4.13}total\_fail}{124}{subsubsection.6.21.4.13}%
+\contentsline {subsubsection}{\numberline {6.21.4.14}total\_pass}{125}{subsubsection.6.21.4.14}%
+\contentsline {subsubsection}{\numberline {6.21.4.15}total\_warn}{125}{subsubsection.6.21.4.15}%
+\contentsline {section}{\numberline {6.22}test.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{125}{section.6.22}%
+\contentsline {section}{\numberline {6.23}examples/test2/test2.ino File Reference}{128}{section.6.23}%
+\contentsline {subsection}{\numberline {6.23.1}Detailed Description}{129}{subsection.6.23.1}%
+\contentsline {subsection}{\numberline {6.23.2}Macro Definition Documentation}{129}{subsection.6.23.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.1}I2C\_FREQ}{129}{subsubsection.6.23.2.1}%
+\contentsline {subsubsection}{\numberline {6.23.2.2}ICM\_ADDR}{130}{subsubsection.6.23.2.2}%
+\contentsline {subsubsection}{\numberline {6.23.2.3}SCL\_PIN}{130}{subsubsection.6.23.2.3}%
+\contentsline {subsubsection}{\numberline {6.23.2.4}SDA\_PIN}{130}{subsubsection.6.23.2.4}%
+\contentsline {subsection}{\numberline {6.23.3}Function Documentation}{130}{subsection.6.23.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.1}applySettings()}{130}{subsubsection.6.23.3.1}%
+\contentsline {subsubsection}{\numberline {6.23.3.2}firstStage()}{130}{subsubsection.6.23.3.2}%
+\contentsline {subsubsection}{\numberline {6.23.3.3}loop()}{131}{subsubsection.6.23.3.3}%
+\contentsline {subsubsection}{\numberline {6.23.3.4}printDobleLinea()}{131}{subsubsection.6.23.3.4}%
+\contentsline {subsubsection}{\numberline {6.23.3.5}printLinea()}{131}{subsubsection.6.23.3.5}%
+\contentsline {subsubsection}{\numberline {6.23.3.6}runSweep()}{131}{subsubsection.6.23.3.6}%
+\contentsline {subsubsection}{\numberline {6.23.3.7}setup()}{132}{subsubsection.6.23.3.7}%
+\contentsline {subsection}{\numberline {6.23.4}Variable Documentation}{132}{subsection.6.23.4}%
+\contentsline {subsubsection}{\numberline {6.23.4.1}accelAVG}{132}{subsubsection.6.23.4.1}%
+\contentsline {subsubsection}{\numberline {6.23.4.2}accelCfg}{133}{subsubsection.6.23.4.2}%
+\contentsline {subsubsection}{\numberline {6.23.4.3}accelDLPF}{133}{subsubsection.6.23.4.3}%
+\contentsline {subsubsection}{\numberline {6.23.4.4}accelSR}{133}{subsubsection.6.23.4.4}%
+\contentsline {subsubsection}{\numberline {6.23.4.5}configsDLPF}{133}{subsubsection.6.23.4.5}%
+\contentsline {subsubsection}{\numberline {6.23.4.6}etiquetasAccelAVG}{133}{subsubsection.6.23.4.6}%
+\contentsline {subsubsection}{\numberline {6.23.4.7}etiquetasAccelCfg}{134}{subsubsection.6.23.4.7}%
+\contentsline {subsubsection}{\numberline {6.23.4.8}etiquetasSR}{134}{subsubsection.6.23.4.8}%
+\contentsline {subsubsection}{\numberline {6.23.4.9}imu}{134}{subsubsection.6.23.4.9}%
+\contentsline {subsubsection}{\numberline {6.23.4.10}N\_AVG}{134}{subsubsection.6.23.4.10}%
+\contentsline {subsubsection}{\numberline {6.23.4.11}N\_DLPF}{134}{subsubsection.6.23.4.11}%
+\contentsline {subsubsection}{\numberline {6.23.4.12}N\_FS}{134}{subsubsection.6.23.4.12}%
+\contentsline {subsubsection}{\numberline {6.23.4.13}total\_fail}{134}{subsubsection.6.23.4.13}%
+\contentsline {subsubsection}{\numberline {6.23.4.14}total\_pass}{134}{subsubsection.6.23.4.14}%
+\contentsline {subsubsection}{\numberline {6.23.4.15}total\_warn}{134}{subsubsection.6.23.4.15}%
+\contentsline {section}{\numberline {6.24}test2.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ino}{135}{section.6.24}%
+\contentsline {section}{\numberline {6.25}README.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md File Reference}{138}{section.6.25}%
+\contentsline {section}{\numberline {6.26}src/7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.h File Reference}{138}{section.6.26}%
+\contentsline {section}{\numberline {6.27}7Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I2\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{139}{section.6.27}%
+\contentsline {section}{\numberline {6.28}src/7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.h File Reference}{140}{section.6.28}%
+\contentsline {section}{\numberline {6.29}7Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{141}{section.6.29}%
+\contentsline {section}{\numberline {6.30}src/7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.h File Reference}{142}{section.6.30}%
+\contentsline {section}{\numberline {6.31}7Semi\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SPI\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interface.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{143}{section.6.31}%
+\contentsline {section}{\numberline {6.32}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bus\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi.h File Reference}{145}{section.6.32}%
+\contentsline {section}{\numberline {6.33}Bus\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}IO\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}7\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Semi.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{145}{section.6.33}%
+\contentsline {section}{\numberline {6.34}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.cpp File Reference}{147}{section.6.34}%
+\contentsline {section}{\numberline {6.35}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp}{147}{section.6.35}%
+\contentsline {section}{\numberline {6.36}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.h File Reference}{164}{section.6.36}%
+\contentsline {subsection}{\numberline {6.36.1}Enumeration Type Documentation}{165}{subsection.6.36.1}%
+\contentsline {subsubsection}{\numberline {6.36.1.1}ICM20948\_Accel\_Average}{165}{subsubsection.6.36.1.1}%
+\contentsline {subsubsection}{\numberline {6.36.1.2}ICM20948\_Accel\_DLPFCFG}{165}{subsubsection.6.36.1.2}%
+\contentsline {subsubsection}{\numberline {6.36.1.3}ICM20948\_Accel\_FullScale}{166}{subsubsection.6.36.1.3}%
+\contentsline {subsubsection}{\numberline {6.36.1.4}ICM20948\_Clock\_Source}{166}{subsubsection.6.36.1.4}%
+\contentsline {subsubsection}{\numberline {6.36.1.5}ICM20948\_Gyro\_Average}{166}{subsubsection.6.36.1.5}%
+\contentsline {subsubsection}{\numberline {6.36.1.6}ICM20948\_Gyro\_DLPF}{166}{subsubsection.6.36.1.6}%
+\contentsline {subsubsection}{\numberline {6.36.1.7}ICM20948\_Gyro\_FullScale}{167}{subsubsection.6.36.1.7}%
+\contentsline {subsubsection}{\numberline {6.36.1.8}ICM20948\_Op\_Mode}{167}{subsubsection.6.36.1.8}%
+\contentsline {section}{\numberline {6.37}Dev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Lab\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{167}{section.6.37}%
+\contentsline {section}{\numberline {6.38}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}platform.h File Reference}{178}{section.6.38}%
+\contentsline {section}{\numberline {6.39}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}platform.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{178}{section.6.39}%
+\contentsline {section}{\numberline {6.40}src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}regs.h File Reference}{179}{section.6.40}%
+\contentsline {subsection}{\numberline {6.40.1}Macro Definition Documentation}{184}{subsection.6.40.1}%
+\contentsline {subsubsection}{\numberline {6.40.1.1}ACCEL\_BYPASS\_3DB\_BW\_HZ}{184}{subsubsection.6.40.1.1}%
+\contentsline {subsubsection}{\numberline {6.40.1.2}ACCEL\_BYPASS\_NBW\_HZ}{184}{subsubsection.6.40.1.2}%
+\contentsline {subsubsection}{\numberline {6.40.1.3}ACCEL\_BYPASS\_RATE\_HZ}{185}{subsubsection.6.40.1.3}%
+\contentsline {subsubsection}{\numberline {6.40.1.4}ACCEL\_CONFIG}{185}{subsubsection.6.40.1.4}%
+\contentsline {subsubsection}{\numberline {6.40.1.5}ACCEL\_CONFIG\_2}{185}{subsubsection.6.40.1.5}%
+\contentsline {subsubsection}{\numberline {6.40.1.6}ACCEL\_DEC3\_AVG\_16}{185}{subsubsection.6.40.1.6}%
+\contentsline {subsubsection}{\numberline {6.40.1.7}ACCEL\_DEC3\_AVG\_32}{185}{subsubsection.6.40.1.7}%
+\contentsline {subsubsection}{\numberline {6.40.1.8}ACCEL\_DEC3\_AVG\_4}{185}{subsubsection.6.40.1.8}%
+\contentsline {subsubsection}{\numberline {6.40.1.9}ACCEL\_DEC3\_AVG\_8}{185}{subsubsection.6.40.1.9}%
+\contentsline {subsubsection}{\numberline {6.40.1.10}ACCEL\_DLPF0\_3DB\_BW\_HZ}{185}{subsubsection.6.40.1.10}%
+\contentsline {subsubsection}{\numberline {6.40.1.11}ACCEL\_DLPF0\_NBW\_HZ}{185}{subsubsection.6.40.1.11}%
+\contentsline {subsubsection}{\numberline {6.40.1.12}ACCEL\_DLPF1\_3DB\_BW\_HZ}{185}{subsubsection.6.40.1.12}%
+\contentsline {subsubsection}{\numberline {6.40.1.13}ACCEL\_DLPF1\_NBW\_HZ}{185}{subsubsection.6.40.1.13}%
+\contentsline {subsubsection}{\numberline {6.40.1.14}ACCEL\_DLPF2\_3DB\_BW\_HZ}{185}{subsubsection.6.40.1.14}%
+\contentsline {subsubsection}{\numberline {6.40.1.15}ACCEL\_DLPF2\_NBW\_HZ}{186}{subsubsection.6.40.1.15}%
+\contentsline {subsubsection}{\numberline {6.40.1.16}ACCEL\_DLPF3\_3DB\_BW\_HZ}{186}{subsubsection.6.40.1.16}%
+\contentsline {subsubsection}{\numberline {6.40.1.17}ACCEL\_DLPF3\_NBW\_HZ}{186}{subsubsection.6.40.1.17}%
+\contentsline {subsubsection}{\numberline {6.40.1.18}ACCEL\_DLPF4\_3DB\_BW\_HZ}{186}{subsubsection.6.40.1.18}%
+\contentsline {subsubsection}{\numberline {6.40.1.19}ACCEL\_DLPF4\_NBW\_HZ}{186}{subsubsection.6.40.1.19}%
+\contentsline {subsubsection}{\numberline {6.40.1.20}ACCEL\_DLPF5\_3DB\_BW\_HZ}{186}{subsubsection.6.40.1.20}%
+\contentsline {subsubsection}{\numberline {6.40.1.21}ACCEL\_DLPF5\_NBW\_HZ}{186}{subsubsection.6.40.1.21}%
+\contentsline {subsubsection}{\numberline {6.40.1.22}ACCEL\_DLPF6\_3DB\_BW\_HZ}{186}{subsubsection.6.40.1.22}%
+\contentsline {subsubsection}{\numberline {6.40.1.23}ACCEL\_DLPF6\_NBW\_HZ}{186}{subsubsection.6.40.1.23}%
+\contentsline {subsubsection}{\numberline {6.40.1.24}ACCEL\_DLPF7\_3DB\_BW\_HZ}{186}{subsubsection.6.40.1.24}%
+\contentsline {subsubsection}{\numberline {6.40.1.25}ACCEL\_DLPF7\_NBW\_HZ}{186}{subsubsection.6.40.1.25}%
+\contentsline {subsubsection}{\numberline {6.40.1.26}ACCEL\_DLPF\_BASE\_HZ}{186}{subsubsection.6.40.1.26}%
+\contentsline {subsubsection}{\numberline {6.40.1.27}ACCEL\_DLPF\_ODR\_HZ}{187}{subsubsection.6.40.1.27}%
+\contentsline {subsubsection}{\numberline {6.40.1.28}ACCEL\_DLPFCFG\_0}{187}{subsubsection.6.40.1.28}%
+\contentsline {subsubsection}{\numberline {6.40.1.29}ACCEL\_DLPFCFG\_1}{187}{subsubsection.6.40.1.29}%
+\contentsline {subsubsection}{\numberline {6.40.1.30}ACCEL\_DLPFCFG\_2}{187}{subsubsection.6.40.1.30}%
+\contentsline {subsubsection}{\numberline {6.40.1.31}ACCEL\_DLPFCFG\_3}{187}{subsubsection.6.40.1.31}%
+\contentsline {subsubsection}{\numberline {6.40.1.32}ACCEL\_DLPFCFG\_4}{187}{subsubsection.6.40.1.32}%
+\contentsline {subsubsection}{\numberline {6.40.1.33}ACCEL\_DLPFCFG\_5}{187}{subsubsection.6.40.1.33}%
+\contentsline {subsubsection}{\numberline {6.40.1.34}ACCEL\_DLPFCFG\_6}{187}{subsubsection.6.40.1.34}%
+\contentsline {subsubsection}{\numberline {6.40.1.35}ACCEL\_DLPFCFG\_7}{187}{subsubsection.6.40.1.35}%
+\contentsline {subsubsection}{\numberline {6.40.1.36}ACCEL\_DLPFCFG\_MASK}{187}{subsubsection.6.40.1.36}%
+\contentsline {subsubsection}{\numberline {6.40.1.37}ACCEL\_DLPFCFG\_SHIFT}{187}{subsubsection.6.40.1.37}%
+\contentsline {subsubsection}{\numberline {6.40.1.38}ACCEL\_FCHOICE}{188}{subsubsection.6.40.1.38}%
+\contentsline {subsubsection}{\numberline {6.40.1.39}ACCEL\_FCHOICE\_BYPASS}{188}{subsubsection.6.40.1.39}%
+\contentsline {subsubsection}{\numberline {6.40.1.40}ACCEL\_FCHOICE\_DLPF}{188}{subsubsection.6.40.1.40}%
+\contentsline {subsubsection}{\numberline {6.40.1.41}ACCEL\_FS\_16G}{188}{subsubsection.6.40.1.41}%
+\contentsline {subsubsection}{\numberline {6.40.1.42}ACCEL\_FS\_2G}{188}{subsubsection.6.40.1.42}%
+\contentsline {subsubsection}{\numberline {6.40.1.43}ACCEL\_FS\_4G}{188}{subsubsection.6.40.1.43}%
+\contentsline {subsubsection}{\numberline {6.40.1.44}ACCEL\_FS\_8G}{188}{subsubsection.6.40.1.44}%
+\contentsline {subsubsection}{\numberline {6.40.1.45}ACCEL\_FS\_SEL\_MASK}{188}{subsubsection.6.40.1.45}%
+\contentsline {subsubsection}{\numberline {6.40.1.46}ACCEL\_FS\_SEL\_SHIFT}{188}{subsubsection.6.40.1.46}%
+\contentsline {subsubsection}{\numberline {6.40.1.47}ACCEL\_INTEL\_CTRL}{188}{subsubsection.6.40.1.47}%
+\contentsline {subsubsection}{\numberline {6.40.1.48}ACCEL\_INTEL\_EN}{188}{subsubsection.6.40.1.48}%
+\contentsline {subsubsection}{\numberline {6.40.1.49}ACCEL\_INTEL\_MODE\_INT}{189}{subsubsection.6.40.1.49}%
+\contentsline {subsubsection}{\numberline {6.40.1.50}ACCEL\_SMPLRT\_DIV\_1}{189}{subsubsection.6.40.1.50}%
+\contentsline {subsubsection}{\numberline {6.40.1.51}ACCEL\_SMPLRT\_DIV\_2}{189}{subsubsection.6.40.1.51}%
+\contentsline {subsubsection}{\numberline {6.40.1.52}ACCEL\_SMPLRT\_DIV\_MAX}{189}{subsubsection.6.40.1.52}%
+\contentsline {subsubsection}{\numberline {6.40.1.53}ACCEL\_SMPLRT\_DIV\_MIN}{189}{subsubsection.6.40.1.53}%
+\contentsline {subsubsection}{\numberline {6.40.1.54}ACCEL\_WOM\_THR}{189}{subsubsection.6.40.1.54}%
+\contentsline {subsubsection}{\numberline {6.40.1.55}ACCEL\_XOUT\_H}{189}{subsubsection.6.40.1.55}%
+\contentsline {subsubsection}{\numberline {6.40.1.56}ACCEL\_XOUT\_L}{189}{subsubsection.6.40.1.56}%
+\contentsline {subsubsection}{\numberline {6.40.1.57}ACCEL\_YOUT\_H}{189}{subsubsection.6.40.1.57}%
+\contentsline {subsubsection}{\numberline {6.40.1.58}ACCEL\_YOUT\_L}{189}{subsubsection.6.40.1.58}%
+\contentsline {subsubsection}{\numberline {6.40.1.59}ACCEL\_ZOUT\_H}{189}{subsubsection.6.40.1.59}%
+\contentsline {subsubsection}{\numberline {6.40.1.60}ACCEL\_ZOUT\_L}{189}{subsubsection.6.40.1.60}%
+\contentsline {subsubsection}{\numberline {6.40.1.61}AK09916\_I2C\_ADDR}{190}{subsubsection.6.40.1.61}%
+\contentsline {subsubsection}{\numberline {6.40.1.62}AK\_CNTL2}{190}{subsubsection.6.40.1.62}%
+\contentsline {subsubsection}{\numberline {6.40.1.63}AK\_CNTL3}{190}{subsubsection.6.40.1.63}%
+\contentsline {subsubsection}{\numberline {6.40.1.64}AK\_HXL}{190}{subsubsection.6.40.1.64}%
+\contentsline {subsubsection}{\numberline {6.40.1.65}AK\_ST1}{190}{subsubsection.6.40.1.65}%
+\contentsline {subsubsection}{\numberline {6.40.1.66}AK\_ST2}{190}{subsubsection.6.40.1.66}%
+\contentsline {subsubsection}{\numberline {6.40.1.67}AK\_WIA2}{190}{subsubsection.6.40.1.67}%
+\contentsline {subsubsection}{\numberline {6.40.1.68}AK\_WIA2\_VAL}{190}{subsubsection.6.40.1.68}%
+\contentsline {subsubsection}{\numberline {6.40.1.69}AUTO\_SEL}{190}{subsubsection.6.40.1.69}%
+\contentsline {subsubsection}{\numberline {6.40.1.70}AX\_ST\_EN\_REG}{190}{subsubsection.6.40.1.70}%
+\contentsline {subsubsection}{\numberline {6.40.1.71}AY\_ST\_EN\_REG}{190}{subsubsection.6.40.1.71}%
+\contentsline {subsubsection}{\numberline {6.40.1.72}AZ\_ST\_EN\_REG}{190}{subsubsection.6.40.1.72}%
+\contentsline {subsubsection}{\numberline {6.40.1.73}BANK1\_REG\_BANK\_SEL}{191}{subsubsection.6.40.1.73}%
+\contentsline {subsubsection}{\numberline {6.40.1.74}BANK2\_REG\_BANK\_SEL}{191}{subsubsection.6.40.1.74}%
+\contentsline {subsubsection}{\numberline {6.40.1.75}BANK3\_REG\_BANK\_SEL}{191}{subsubsection.6.40.1.75}%
+\contentsline {subsubsection}{\numberline {6.40.1.76}BYPASS\_EN}{191}{subsubsection.6.40.1.76}%
+\contentsline {subsubsection}{\numberline {6.40.1.77}CLK\_STOP}{191}{subsubsection.6.40.1.77}%
+\contentsline {subsubsection}{\numberline {6.40.1.78}DEC3\_CFG\_MASK}{191}{subsubsection.6.40.1.78}%
+\contentsline {subsubsection}{\numberline {6.40.1.79}DEC3\_CFG\_SHIFT}{191}{subsubsection.6.40.1.79}%
+\contentsline {subsubsection}{\numberline {6.40.1.80}DELAY\_ES\_SHADOW}{191}{subsubsection.6.40.1.80}%
+\contentsline {subsubsection}{\numberline {6.40.1.81}DELAY\_TIME\_EN}{191}{subsubsection.6.40.1.81}%
+\contentsline {subsubsection}{\numberline {6.40.1.82}DELAY\_TIMEH}{191}{subsubsection.6.40.1.82}%
+\contentsline {subsubsection}{\numberline {6.40.1.83}DELAY\_TIMEL}{191}{subsubsection.6.40.1.83}%
+\contentsline {subsubsection}{\numberline {6.40.1.84}dps1000}{191}{subsubsection.6.40.1.84}%
+\contentsline {subsubsection}{\numberline {6.40.1.85}dps2000}{192}{subsubsection.6.40.1.85}%
+\contentsline {subsubsection}{\numberline {6.40.1.86}dps250}{192}{subsubsection.6.40.1.86}%
+\contentsline {subsubsection}{\numberline {6.40.1.87}dps500}{192}{subsubsection.6.40.1.87}%
+\contentsline {subsubsection}{\numberline {6.40.1.88}EnhancedRegular}{192}{subsubsection.6.40.1.88}%
+\contentsline {subsubsection}{\numberline {6.40.1.89}EXT\_SLV\_SENS\_DATA\_00}{192}{subsubsection.6.40.1.89}%
+\contentsline {subsubsection}{\numberline {6.40.1.90}EXT\_SLV\_SENS\_DATA\_23}{192}{subsubsection.6.40.1.90}%
+\contentsline {subsubsection}{\numberline {6.40.1.91}EXT\_SYNC\_SET\_MASK}{192}{subsubsection.6.40.1.91}%
+\contentsline {subsubsection}{\numberline {6.40.1.92}FIFO\_CFG}{192}{subsubsection.6.40.1.92}%
+\contentsline {subsubsection}{\numberline {6.40.1.93}FIFO\_COUNTH}{192}{subsubsection.6.40.1.93}%
+\contentsline {subsubsection}{\numberline {6.40.1.94}FIFO\_COUNTL}{192}{subsubsection.6.40.1.94}%
+\contentsline {subsubsection}{\numberline {6.40.1.95}FIFO\_EN\_1}{192}{subsubsection.6.40.1.95}%
+\contentsline {subsubsection}{\numberline {6.40.1.96}FIFO\_EN\_2}{192}{subsubsection.6.40.1.96}%
+\contentsline {subsubsection}{\numberline {6.40.1.97}FIFO\_MODE}{193}{subsubsection.6.40.1.97}%
+\contentsline {subsubsection}{\numberline {6.40.1.98}FIFO\_R\_W}{193}{subsubsection.6.40.1.98}%
+\contentsline {subsubsection}{\numberline {6.40.1.99}FIFO\_RST}{193}{subsubsection.6.40.1.99}%
+\contentsline {subsubsection}{\numberline {6.40.1.100}FSYNC\_CONFIG}{193}{subsubsection.6.40.1.100}%
+\contentsline {subsubsection}{\numberline {6.40.1.101}FSYNC\_INT\_MODE\_EN}{193}{subsubsection.6.40.1.101}%
+\contentsline {subsubsection}{\numberline {6.40.1.102}g16}{193}{subsubsection.6.40.1.102}%
+\contentsline {subsubsection}{\numberline {6.40.1.103}g2}{193}{subsubsection.6.40.1.103}%
+\contentsline {subsubsection}{\numberline {6.40.1.104}g4}{193}{subsubsection.6.40.1.104}%
+\contentsline {subsubsection}{\numberline {6.40.1.105}g8}{193}{subsubsection.6.40.1.105}%
+\contentsline {subsubsection}{\numberline {6.40.1.106}GYRO\_AVGCFG\_MASK}{193}{subsubsection.6.40.1.106}%
+\contentsline {subsubsection}{\numberline {6.40.1.107}GYRO\_AVGCFG\_SHIFT}{193}{subsubsection.6.40.1.107}%
+\contentsline {subsubsection}{\numberline {6.40.1.108}GYRO\_BW\_MEDIUM}{193}{subsubsection.6.40.1.108}%
+\contentsline {subsubsection}{\numberline {6.40.1.109}GYRO\_BW\_NARROW}{194}{subsubsection.6.40.1.109}%
+\contentsline {subsubsection}{\numberline {6.40.1.110}GYRO\_BW\_ULTRA\_WIDE}{194}{subsubsection.6.40.1.110}%
+\contentsline {subsubsection}{\numberline {6.40.1.111}GYRO\_BW\_WIDE}{194}{subsubsection.6.40.1.111}%
+\contentsline {subsubsection}{\numberline {6.40.1.112}GYRO\_CONFIG\_1}{194}{subsubsection.6.40.1.112}%
+\contentsline {subsubsection}{\numberline {6.40.1.113}GYRO\_CONFIG\_2}{194}{subsubsection.6.40.1.113}%
+\contentsline {subsubsection}{\numberline {6.40.1.114}GYRO\_DLPF\_BASE\_HZ}{194}{subsubsection.6.40.1.114}%
+\contentsline {subsubsection}{\numberline {6.40.1.115}GYRO\_DLPF\_ODR\_HZ}{194}{subsubsection.6.40.1.115}%
+\contentsline {subsubsection}{\numberline {6.40.1.116}GYRO\_DLPFCFG\_0}{194}{subsubsection.6.40.1.116}%
+\contentsline {subsubsection}{\numberline {6.40.1.117}GYRO\_DLPFCFG\_1}{194}{subsubsection.6.40.1.117}%
+\contentsline {subsubsection}{\numberline {6.40.1.118}GYRO\_DLPFCFG\_2}{194}{subsubsection.6.40.1.118}%
+\contentsline {subsubsection}{\numberline {6.40.1.119}GYRO\_DLPFCFG\_3}{194}{subsubsection.6.40.1.119}%
+\contentsline {subsubsection}{\numberline {6.40.1.120}GYRO\_DLPFCFG\_4}{195}{subsubsection.6.40.1.120}%
+\contentsline {subsubsection}{\numberline {6.40.1.121}GYRO\_DLPFCFG\_5}{195}{subsubsection.6.40.1.121}%
+\contentsline {subsubsection}{\numberline {6.40.1.122}GYRO\_DLPFCFG\_6}{195}{subsubsection.6.40.1.122}%
+\contentsline {subsubsection}{\numberline {6.40.1.123}GYRO\_DLPFCFG\_7}{195}{subsubsection.6.40.1.123}%
+\contentsline {subsubsection}{\numberline {6.40.1.124}GYRO\_DLPFCFG\_MASK}{195}{subsubsection.6.40.1.124}%
+\contentsline {subsubsection}{\numberline {6.40.1.125}GYRO\_DLPFCFG\_SHIFT}{195}{subsubsection.6.40.1.125}%
+\contentsline {subsubsection}{\numberline {6.40.1.126}GYRO\_FCHOICE}{195}{subsubsection.6.40.1.126}%
+\contentsline {subsubsection}{\numberline {6.40.1.127}GYRO\_FCHOICE\_BYPASS}{195}{subsubsection.6.40.1.127}%
+\contentsline {subsubsection}{\numberline {6.40.1.128}GYRO\_FCHOICE\_DLPF}{195}{subsubsection.6.40.1.128}%
+\contentsline {subsubsection}{\numberline {6.40.1.129}GYRO\_FS\_1000DPS}{195}{subsubsection.6.40.1.129}%
+\contentsline {subsubsection}{\numberline {6.40.1.130}GYRO\_FS\_2000DPS}{195}{subsubsection.6.40.1.130}%
+\contentsline {subsubsection}{\numberline {6.40.1.131}GYRO\_FS\_250DPS}{196}{subsubsection.6.40.1.131}%
+\contentsline {subsubsection}{\numberline {6.40.1.132}GYRO\_FS\_500DPS}{196}{subsubsection.6.40.1.132}%
+\contentsline {subsubsection}{\numberline {6.40.1.133}GYRO\_FS\_SEL\_MASK}{196}{subsubsection.6.40.1.133}%
+\contentsline {subsubsection}{\numberline {6.40.1.134}GYRO\_FS\_SEL\_SHIFT}{196}{subsubsection.6.40.1.134}%
+\contentsline {subsubsection}{\numberline {6.40.1.135}GYRO\_SMPLRT\_DIV}{196}{subsubsection.6.40.1.135}%
+\contentsline {subsubsection}{\numberline {6.40.1.136}GYRO\_SMPLRT\_MIN\_HZ}{196}{subsubsection.6.40.1.136}%
+\contentsline {subsubsection}{\numberline {6.40.1.137}GYRO\_XOUT\_H}{196}{subsubsection.6.40.1.137}%
+\contentsline {subsubsection}{\numberline {6.40.1.138}GYRO\_XOUT\_L}{196}{subsubsection.6.40.1.138}%
+\contentsline {subsubsection}{\numberline {6.40.1.139}GYRO\_YOUT\_H}{196}{subsubsection.6.40.1.139}%
+\contentsline {subsubsection}{\numberline {6.40.1.140}GYRO\_YOUT\_L}{196}{subsubsection.6.40.1.140}%
+\contentsline {subsubsection}{\numberline {6.40.1.141}GYRO\_ZOUT\_H}{196}{subsubsection.6.40.1.141}%
+\contentsline {subsubsection}{\numberline {6.40.1.142}GYRO\_ZOUT\_L}{196}{subsubsection.6.40.1.142}%
+\contentsline {subsubsection}{\numberline {6.40.1.143}HighAccuracy}{197}{subsubsection.6.40.1.143}%
+\contentsline {subsubsection}{\numberline {6.40.1.144}Hz10}{197}{subsubsection.6.40.1.144}%
+\contentsline {subsubsection}{\numberline {6.40.1.145}Hz15}{197}{subsubsection.6.40.1.145}%
+\contentsline {subsubsection}{\numberline {6.40.1.146}Hz2}{197}{subsubsection.6.40.1.146}%
+\contentsline {subsubsection}{\numberline {6.40.1.147}Hz20}{197}{subsubsection.6.40.1.147}%
+\contentsline {subsubsection}{\numberline {6.40.1.148}Hz25}{197}{subsubsection.6.40.1.148}%
+\contentsline {subsubsection}{\numberline {6.40.1.149}Hz30}{197}{subsubsection.6.40.1.149}%
+\contentsline {subsubsection}{\numberline {6.40.1.150}Hz6}{197}{subsubsection.6.40.1.150}%
+\contentsline {subsubsection}{\numberline {6.40.1.151}Hz8}{197}{subsubsection.6.40.1.151}%
+\contentsline {subsubsection}{\numberline {6.40.1.152}I2C\_MST\_CLK\_MASK}{197}{subsubsection.6.40.1.152}%
+\contentsline {subsubsection}{\numberline {6.40.1.153}I2C\_MST\_CTRL}{197}{subsubsection.6.40.1.153}%
+\contentsline {subsubsection}{\numberline {6.40.1.154}I2C\_MST\_DELAY\_CTRL}{197}{subsubsection.6.40.1.154}%
+\contentsline {subsubsection}{\numberline {6.40.1.155}I2C\_MST\_ODR\_CONFIG}{198}{subsubsection.6.40.1.155}%
+\contentsline {subsubsection}{\numberline {6.40.1.156}I2C\_MST\_P\_NSR}{198}{subsubsection.6.40.1.156}%
+\contentsline {subsubsection}{\numberline {6.40.1.157}I2C\_MST\_STATUS}{198}{subsubsection.6.40.1.157}%
+\contentsline {subsubsection}{\numberline {6.40.1.158}I2C\_SLV0\_ADDR}{198}{subsubsection.6.40.1.158}%
+\contentsline {subsubsection}{\numberline {6.40.1.159}I2C\_SLV0\_CTRL}{198}{subsubsection.6.40.1.159}%
+\contentsline {subsubsection}{\numberline {6.40.1.160}I2C\_SLV0\_DELAY\_EN}{198}{subsubsection.6.40.1.160}%
+\contentsline {subsubsection}{\numberline {6.40.1.161}I2C\_SLV0\_DO}{198}{subsubsection.6.40.1.161}%
+\contentsline {subsubsection}{\numberline {6.40.1.162}I2C\_SLV0\_REG}{198}{subsubsection.6.40.1.162}%
+\contentsline {subsubsection}{\numberline {6.40.1.163}I2C\_SLV1\_ADDR}{198}{subsubsection.6.40.1.163}%
+\contentsline {subsubsection}{\numberline {6.40.1.164}I2C\_SLV1\_CTRL}{198}{subsubsection.6.40.1.164}%
+\contentsline {subsubsection}{\numberline {6.40.1.165}I2C\_SLV1\_DELAY\_EN}{198}{subsubsection.6.40.1.165}%
+\contentsline {subsubsection}{\numberline {6.40.1.166}I2C\_SLV1\_DO}{198}{subsubsection.6.40.1.166}%
+\contentsline {subsubsection}{\numberline {6.40.1.167}I2C\_SLV1\_REG}{199}{subsubsection.6.40.1.167}%
+\contentsline {subsubsection}{\numberline {6.40.1.168}I2C\_SLV2\_ADDR}{199}{subsubsection.6.40.1.168}%
+\contentsline {subsubsection}{\numberline {6.40.1.169}I2C\_SLV2\_CTRL}{199}{subsubsection.6.40.1.169}%
+\contentsline {subsubsection}{\numberline {6.40.1.170}I2C\_SLV2\_DELAY\_EN}{199}{subsubsection.6.40.1.170}%
+\contentsline {subsubsection}{\numberline {6.40.1.171}I2C\_SLV2\_DO}{199}{subsubsection.6.40.1.171}%
+\contentsline {subsubsection}{\numberline {6.40.1.172}I2C\_SLV2\_REG}{199}{subsubsection.6.40.1.172}%
+\contentsline {subsubsection}{\numberline {6.40.1.173}I2C\_SLV3\_ADDR}{199}{subsubsection.6.40.1.173}%
+\contentsline {subsubsection}{\numberline {6.40.1.174}I2C\_SLV3\_CTRL}{199}{subsubsection.6.40.1.174}%
+\contentsline {subsubsection}{\numberline {6.40.1.175}I2C\_SLV3\_DELAY\_EN}{199}{subsubsection.6.40.1.175}%
+\contentsline {subsubsection}{\numberline {6.40.1.176}I2C\_SLV3\_DO}{199}{subsubsection.6.40.1.176}%
+\contentsline {subsubsection}{\numberline {6.40.1.177}I2C\_SLV3\_REG}{199}{subsubsection.6.40.1.177}%
+\contentsline {subsubsection}{\numberline {6.40.1.178}I2C\_SLV4\_ADDR}{199}{subsubsection.6.40.1.178}%
+\contentsline {subsubsection}{\numberline {6.40.1.179}I2C\_SLV4\_CTRL}{200}{subsubsection.6.40.1.179}%
+\contentsline {subsubsection}{\numberline {6.40.1.180}I2C\_SLV4\_DELAY\_EN}{200}{subsubsection.6.40.1.180}%
+\contentsline {subsubsection}{\numberline {6.40.1.181}I2C\_SLV4\_DI}{200}{subsubsection.6.40.1.181}%
+\contentsline {subsubsection}{\numberline {6.40.1.182}I2C\_SLV4\_DLY\_MASK}{200}{subsubsection.6.40.1.182}%
+\contentsline {subsubsection}{\numberline {6.40.1.183}I2C\_SLV4\_DO}{200}{subsubsection.6.40.1.183}%
+\contentsline {subsubsection}{\numberline {6.40.1.184}I2C\_SLV4\_REG}{200}{subsubsection.6.40.1.184}%
+\contentsline {subsubsection}{\numberline {6.40.1.185}I2C\_SLVx\_BYTE\_SW}{200}{subsubsection.6.40.1.185}%
+\contentsline {subsubsection}{\numberline {6.40.1.186}I2C\_SLVx\_EN}{200}{subsubsection.6.40.1.186}%
+\contentsline {subsubsection}{\numberline {6.40.1.187}I2C\_SLVx\_GRP}{200}{subsubsection.6.40.1.187}%
+\contentsline {subsubsection}{\numberline {6.40.1.188}I2C\_SLVx\_LENG\_MASK}{200}{subsubsection.6.40.1.188}%
+\contentsline {subsubsection}{\numberline {6.40.1.189}I2C\_SLVx\_REG\_DIS}{200}{subsubsection.6.40.1.189}%
+\contentsline {subsubsection}{\numberline {6.40.1.190}I2C\_SLVx\_RNW}{200}{subsubsection.6.40.1.190}%
+\contentsline {subsubsection}{\numberline {6.40.1.191}INT1\_ACTL}{201}{subsubsection.6.40.1.191}%
+\contentsline {subsubsection}{\numberline {6.40.1.192}INT1\_LATCH\_INT\_EN}{201}{subsubsection.6.40.1.192}%
+\contentsline {subsubsection}{\numberline {6.40.1.193}INT1\_OPEN}{201}{subsubsection.6.40.1.193}%
+\contentsline {subsubsection}{\numberline {6.40.1.194}INT\_ACTL\_FSYNC}{201}{subsubsection.6.40.1.194}%
+\contentsline {subsubsection}{\numberline {6.40.1.195}INT\_ANYRD\_2CLEAR}{201}{subsubsection.6.40.1.195}%
+\contentsline {subsubsection}{\numberline {6.40.1.196}INT\_DMP\_INT1\_EN}{201}{subsubsection.6.40.1.196}%
+\contentsline {subsubsection}{\numberline {6.40.1.197}INT\_ENABLE}{201}{subsubsection.6.40.1.197}%
+\contentsline {subsubsection}{\numberline {6.40.1.198}INT\_ENABLE\_1}{201}{subsubsection.6.40.1.198}%
+\contentsline {subsubsection}{\numberline {6.40.1.199}INT\_ENABLE\_2}{201}{subsubsection.6.40.1.199}%
+\contentsline {subsubsection}{\numberline {6.40.1.200}INT\_ENABLE\_3}{201}{subsubsection.6.40.1.200}%
+\contentsline {subsubsection}{\numberline {6.40.1.201}INT\_I2C\_MST\_INT\_EN}{201}{subsubsection.6.40.1.201}%
+\contentsline {subsubsection}{\numberline {6.40.1.202}INT\_PIN\_CFG}{201}{subsubsection.6.40.1.202}%
+\contentsline {subsubsection}{\numberline {6.40.1.203}INT\_PLL\_RDY\_EN}{202}{subsubsection.6.40.1.203}%
+\contentsline {subsubsection}{\numberline {6.40.1.204}INT\_RAW\_DATA\_0\_RDY\_EN}{202}{subsubsection.6.40.1.204}%
+\contentsline {subsubsection}{\numberline {6.40.1.205}INT\_REG\_WOF\_EN}{202}{subsubsection.6.40.1.205}%
+\contentsline {subsubsection}{\numberline {6.40.1.206}INT\_STATUS}{202}{subsubsection.6.40.1.206}%
+\contentsline {subsubsection}{\numberline {6.40.1.207}INT\_STATUS\_1}{202}{subsubsection.6.40.1.207}%
+\contentsline {subsubsection}{\numberline {6.40.1.208}INT\_STATUS\_2}{202}{subsubsection.6.40.1.208}%
+\contentsline {subsubsection}{\numberline {6.40.1.209}INT\_STATUS\_3}{202}{subsubsection.6.40.1.209}%
+\contentsline {subsubsection}{\numberline {6.40.1.210}INT\_WOM\_INT\_EN}{202}{subsubsection.6.40.1.210}%
+\contentsline {subsubsection}{\numberline {6.40.1.211}INTERNAL\_20MHZ}{202}{subsubsection.6.40.1.211}%
+\contentsline {subsubsection}{\numberline {6.40.1.212}LowPower}{202}{subsubsection.6.40.1.212}%
+\contentsline {subsubsection}{\numberline {6.40.1.213}LP\_ACCEL\_CYCLE}{202}{subsubsection.6.40.1.213}%
+\contentsline {subsubsection}{\numberline {6.40.1.214}LP\_CONFIG}{202}{subsubsection.6.40.1.214}%
+\contentsline {subsubsection}{\numberline {6.40.1.215}LP\_GYRO\_CYCLE}{203}{subsubsection.6.40.1.215}%
+\contentsline {subsubsection}{\numberline {6.40.1.216}LP\_I2C\_MST\_CYCLE}{203}{subsubsection.6.40.1.216}%
+\contentsline {subsubsection}{\numberline {6.40.1.217}MOD\_CTRL\_USR}{203}{subsubsection.6.40.1.217}%
+\contentsline {subsubsection}{\numberline {6.40.1.218}MST\_LOST\_ARB}{203}{subsubsection.6.40.1.218}%
+\contentsline {subsubsection}{\numberline {6.40.1.219}MST\_ODR\_CFG\_MASK}{203}{subsubsection.6.40.1.219}%
+\contentsline {subsubsection}{\numberline {6.40.1.220}MST\_PASS\_THROUGH}{203}{subsubsection.6.40.1.220}%
+\contentsline {subsubsection}{\numberline {6.40.1.221}MST\_SLV0\_NACK}{203}{subsubsection.6.40.1.221}%
+\contentsline {subsubsection}{\numberline {6.40.1.222}MST\_SLV1\_NACK}{203}{subsubsection.6.40.1.222}%
+\contentsline {subsubsection}{\numberline {6.40.1.223}MST\_SLV2\_NACK}{203}{subsubsection.6.40.1.223}%
+\contentsline {subsubsection}{\numberline {6.40.1.224}MST\_SLV3\_NACK}{203}{subsubsection.6.40.1.224}%
+\contentsline {subsubsection}{\numberline {6.40.1.225}MST\_SLV4\_DONE}{203}{subsubsection.6.40.1.225}%
+\contentsline {subsubsection}{\numberline {6.40.1.226}MST\_SLV4\_NACK}{203}{subsubsection.6.40.1.226}%
+\contentsline {subsubsection}{\numberline {6.40.1.227}MULT\_MST\_EN}{204}{subsubsection.6.40.1.227}%
+\contentsline {subsubsection}{\numberline {6.40.1.228}ODR\_ALIGN\_EN}{204}{subsubsection.6.40.1.228}%
+\contentsline {subsubsection}{\numberline {6.40.1.229}ODR\_ALIGN\_EN\_BIT}{204}{subsubsection.6.40.1.229}%
+\contentsline {subsubsection}{\numberline {6.40.1.230}PWR\_CLKSEL\_AUTO}{204}{subsubsection.6.40.1.230}%
+\contentsline {subsubsection}{\numberline {6.40.1.231}PWR\_CLKSEL\_INT\_20MHZ}{204}{subsubsection.6.40.1.231}%
+\contentsline {subsubsection}{\numberline {6.40.1.232}PWR\_CLKSEL\_MASK}{204}{subsubsection.6.40.1.232}%
+\contentsline {subsubsection}{\numberline {6.40.1.233}PWR\_DEVICE\_RESET}{204}{subsubsection.6.40.1.233}%
+\contentsline {subsubsection}{\numberline {6.40.1.234}PWR\_DISABLE\_ACCEL}{204}{subsubsection.6.40.1.234}%
+\contentsline {subsubsection}{\numberline {6.40.1.235}PWR\_DISABLE\_GYRO}{204}{subsubsection.6.40.1.235}%
+\contentsline {subsubsection}{\numberline {6.40.1.236}PWR\_LP\_EN}{204}{subsubsection.6.40.1.236}%
+\contentsline {subsubsection}{\numberline {6.40.1.237}PWR\_MGMT\_1}{204}{subsubsection.6.40.1.237}%
+\contentsline {subsubsection}{\numberline {6.40.1.238}PWR\_MGMT\_2}{204}{subsubsection.6.40.1.238}%
+\contentsline {subsubsection}{\numberline {6.40.1.239}PWR\_SLEEP}{205}{subsubsection.6.40.1.239}%
+\contentsline {subsubsection}{\numberline {6.40.1.240}PWR\_TEMP\_DIS}{205}{subsubsection.6.40.1.240}%
+\contentsline {subsubsection}{\numberline {6.40.1.241}REG\_BANK\_SEL}{205}{subsubsection.6.40.1.241}%
+\contentsline {subsubsection}{\numberline {6.40.1.242}REG\_BANK\_SEL\_USER\_BANK\_MASK}{205}{subsubsection.6.40.1.242}%
+\contentsline {subsubsection}{\numberline {6.40.1.243}REG\_BANK\_SEL\_USER\_BANK\_SHIFT}{205}{subsubsection.6.40.1.243}%
+\contentsline {subsubsection}{\numberline {6.40.1.244}REG\_LP\_DMP\_EN}{205}{subsubsection.6.40.1.244}%
+\contentsline {subsubsection}{\numberline {6.40.1.245}Regular}{205}{subsubsection.6.40.1.245}%
+\contentsline {subsubsection}{\numberline {6.40.1.246}SELF\_TEST\_X\_ACCEL}{205}{subsubsection.6.40.1.246}%
+\contentsline {subsubsection}{\numberline {6.40.1.247}SELF\_TEST\_X\_GYRO}{205}{subsubsection.6.40.1.247}%
+\contentsline {subsubsection}{\numberline {6.40.1.248}SELF\_TEST\_Y\_ACCEL}{205}{subsubsection.6.40.1.248}%
+\contentsline {subsubsection}{\numberline {6.40.1.249}SELF\_TEST\_Y\_GYRO}{205}{subsubsection.6.40.1.249}%
+\contentsline {subsubsection}{\numberline {6.40.1.250}SELF\_TEST\_Z\_ACCEL}{205}{subsubsection.6.40.1.250}%
+\contentsline {subsubsection}{\numberline {6.40.1.251}SELF\_TEST\_Z\_GYRO}{206}{subsubsection.6.40.1.251}%
+\contentsline {subsubsection}{\numberline {6.40.1.252}STS\_DMP\_INT1}{206}{subsubsection.6.40.1.252}%
+\contentsline {subsubsection}{\numberline {6.40.1.253}STS\_I2C\_MST\_INT}{206}{subsubsection.6.40.1.253}%
+\contentsline {subsubsection}{\numberline {6.40.1.254}STS\_PLL\_RDY\_INT}{206}{subsubsection.6.40.1.254}%
+\contentsline {subsubsection}{\numberline {6.40.1.255}STS\_RAW\_DATA\_0\_RDY\_INT}{206}{subsubsection.6.40.1.255}%
+\contentsline {subsubsection}{\numberline {6.40.1.256}STS\_WOM\_INT}{206}{subsubsection.6.40.1.256}%
+\contentsline {subsubsection}{\numberline {6.40.1.257}TEMP\_CONFIG}{206}{subsubsection.6.40.1.257}%
+\contentsline {subsubsection}{\numberline {6.40.1.258}TEMP\_DLPFCFG\_MASK}{206}{subsubsection.6.40.1.258}%
+\contentsline {subsubsection}{\numberline {6.40.1.259}TEMP\_DLPFCFG\_SHIFT}{206}{subsubsection.6.40.1.259}%
+\contentsline {subsubsection}{\numberline {6.40.1.260}TEMP\_OUT\_H}{206}{subsubsection.6.40.1.260}%
+\contentsline {subsubsection}{\numberline {6.40.1.261}TEMP\_OUT\_L}{206}{subsubsection.6.40.1.261}%
+\contentsline {subsubsection}{\numberline {6.40.1.262}TIMEBASE\_CORRECTION\_PLL}{206}{subsubsection.6.40.1.262}%
+\contentsline {subsubsection}{\numberline {6.40.1.263}USER\_BANK\_0}{207}{subsubsection.6.40.1.263}%
+\contentsline {subsubsection}{\numberline {6.40.1.264}USER\_BANK\_1}{207}{subsubsection.6.40.1.264}%
+\contentsline {subsubsection}{\numberline {6.40.1.265}USER\_BANK\_2}{207}{subsubsection.6.40.1.265}%
+\contentsline {subsubsection}{\numberline {6.40.1.266}USER\_BANK\_3}{207}{subsubsection.6.40.1.266}%
+\contentsline {subsubsection}{\numberline {6.40.1.267}USER\_CTRL}{207}{subsubsection.6.40.1.267}%
+\contentsline {subsubsection}{\numberline {6.40.1.268}USER\_CTRL\_DMP\_EN}{207}{subsubsection.6.40.1.268}%
+\contentsline {subsubsection}{\numberline {6.40.1.269}USER\_CTRL\_DMP\_RST}{207}{subsubsection.6.40.1.269}%
+\contentsline {subsubsection}{\numberline {6.40.1.270}USER\_CTRL\_FIFO\_EN}{207}{subsubsection.6.40.1.270}%
+\contentsline {subsubsection}{\numberline {6.40.1.271}USER\_CTRL\_I2C\_IF\_DIS}{207}{subsubsection.6.40.1.271}%
+\contentsline {subsubsection}{\numberline {6.40.1.272}USER\_CTRL\_I2C\_MST\_EN}{207}{subsubsection.6.40.1.272}%
+\contentsline {subsubsection}{\numberline {6.40.1.273}USER\_CTRL\_I2C\_MST\_RST}{207}{subsubsection.6.40.1.273}%
+\contentsline {subsubsection}{\numberline {6.40.1.274}USER\_CTRL\_SRAM\_RST}{207}{subsubsection.6.40.1.274}%
+\contentsline {subsubsection}{\numberline {6.40.1.275}WHO\_AM\_I}{208}{subsubsection.6.40.1.275}%
+\contentsline {subsubsection}{\numberline {6.40.1.276}WHO\_AM\_I\_VAL}{208}{subsubsection.6.40.1.276}%
+\contentsline {subsubsection}{\numberline {6.40.1.277}WOF\_DEGLITCH\_EN}{208}{subsubsection.6.40.1.277}%
+\contentsline {subsubsection}{\numberline {6.40.1.278}WOF\_EDGE\_INT}{208}{subsubsection.6.40.1.278}%
+\contentsline {subsubsection}{\numberline {6.40.1.279}XA\_OFFS\_H}{208}{subsubsection.6.40.1.279}%
+\contentsline {subsubsection}{\numberline {6.40.1.280}XA\_OFFS\_L}{208}{subsubsection.6.40.1.280}%
+\contentsline {subsubsection}{\numberline {6.40.1.281}XG\_OFFS\_USRH}{208}{subsubsection.6.40.1.281}%
+\contentsline {subsubsection}{\numberline {6.40.1.282}XG\_OFFS\_USRL}{208}{subsubsection.6.40.1.282}%
+\contentsline {subsubsection}{\numberline {6.40.1.283}XGYRO\_CTEN}{208}{subsubsection.6.40.1.283}%
+\contentsline {subsubsection}{\numberline {6.40.1.284}YA\_OFFS\_H}{209}{subsubsection.6.40.1.284}%
+\contentsline {subsubsection}{\numberline {6.40.1.285}YA\_OFFS\_L}{209}{subsubsection.6.40.1.285}%
+\contentsline {subsubsection}{\numberline {6.40.1.286}YG\_OFFS\_USRH}{209}{subsubsection.6.40.1.286}%
+\contentsline {subsubsection}{\numberline {6.40.1.287}YG\_OFFS\_USRL}{209}{subsubsection.6.40.1.287}%
+\contentsline {subsubsection}{\numberline {6.40.1.288}YGYRO\_CTEN}{209}{subsubsection.6.40.1.288}%
+\contentsline {subsubsection}{\numberline {6.40.1.289}ZA\_OFFS\_H}{209}{subsubsection.6.40.1.289}%
+\contentsline {subsubsection}{\numberline {6.40.1.290}ZA\_OFFS\_L}{209}{subsubsection.6.40.1.290}%
+\contentsline {subsubsection}{\numberline {6.40.1.291}ZG\_OFFS\_USRH}{209}{subsubsection.6.40.1.291}%
+\contentsline {subsubsection}{\numberline {6.40.1.292}ZG\_OFFS\_USRL}{209}{subsubsection.6.40.1.292}%
+\contentsline {subsubsection}{\numberline {6.40.1.293}ZGYRO\_CTEN}{209}{subsubsection.6.40.1.293}%
+\contentsline {section}{\numberline {6.41}ICM20948\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}regs.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{209}{section.6.41}%
+\contentsline {chapter}{Index}{217}{section*.226}%

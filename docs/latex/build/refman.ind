@@ -1,240 +1,240 @@
 \begin{theindex}
 
   \item {\texorpdfstring{$\sim$}{\string~}Interface\_7Semi}
-    \subitem {Interface\_7Semi}, \hyperpage{66}
+    \subitem {Interface\_7Semi}, \hyperpage{67}
 
   \indexspace
 
   \item {ACCEL\_BYPASS\_3DB\_BW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{181}
+    \subitem {ICM20948\_regs.h}, \hyperpage{184}
   \item {ACCEL\_BYPASS\_NBW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{181}
+    \subitem {ICM20948\_regs.h}, \hyperpage{184}
   \item {ACCEL\_BYPASS\_RATE\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{181}
+    \subitem {ICM20948\_regs.h}, \hyperpage{184}
   \item {ACCEL\_CONFIG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_CONFIG\_2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DEC3\_AVG\_16}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DEC3\_AVG\_32}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DEC3\_AVG\_4}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DEC3\_AVG\_8}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DLPF0\_3DB\_BW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DLPF0\_NBW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DLPF1\_3DB\_BW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DLPF1\_NBW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DLPF2\_3DB\_BW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DLPF2\_NBW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{182}
+    \subitem {ICM20948\_regs.h}, \hyperpage{185}
   \item {ACCEL\_DLPF3\_3DB\_BW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF3\_NBW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF4\_3DB\_BW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF4\_NBW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF5\_3DB\_BW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF5\_NBW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF6\_3DB\_BW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF6\_NBW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF7\_3DB\_BW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF7\_NBW\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF\_BASE\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPF\_ODR\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{183}
+    \subitem {ICM20948\_regs.h}, \hyperpage{186}
   \item {ACCEL\_DLPFCFG\_0}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_DLPFCFG\_1}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_DLPFCFG\_2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_DLPFCFG\_3}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_DLPFCFG\_4}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_DLPFCFG\_5}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_DLPFCFG\_6}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_DLPFCFG\_7}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_DLPFCFG\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_DLPFCFG\_SHIFT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_FCHOICE}
-    \subitem {ICM20948\_regs.h}, \hyperpage{184}
+    \subitem {ICM20948\_regs.h}, \hyperpage{187}
   \item {ACCEL\_FCHOICE\_BYPASS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_FCHOICE\_DLPF}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_FS\_16G}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_FS\_2G}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_FS\_4G}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_FS\_8G}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_FS\_SEL\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_FS\_SEL\_SHIFT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_INTEL\_CTRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_INTEL\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_INTEL\_MODE\_INT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{185}
+    \subitem {ICM20948\_regs.h}, \hyperpage{188}
   \item {ACCEL\_SMPLRT\_DIV\_1}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_SMPLRT\_DIV\_2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_SMPLRT\_DIV\_MAX}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_SMPLRT\_DIV\_MIN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_WOM\_THR}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_XOUT\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_XOUT\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_YOUT\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_YOUT\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_ZOUT\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {ACCEL\_ZOUT\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {accelAVG}
-    \subitem {test.ino}, \hyperpage{120}
-    \subitem {test2.ino}, \hyperpage{130}
+    \subitem {test.ino}, \hyperpage{123}
+    \subitem {test2.ino}, \hyperpage{132}
   \item {accelCfg}
-    \subitem {test.ino}, \hyperpage{120}
-    \subitem {test2.ino}, \hyperpage{130}
+    \subitem {test.ino}, \hyperpage{123}
+    \subitem {test2.ino}, \hyperpage{133}
   \item {accelDLPF}
-    \subitem {test.ino}, \hyperpage{120}
-    \subitem {test2.ino}, \hyperpage{130}
+    \subitem {test.ino}, \hyperpage{123}
+    \subitem {test2.ino}, \hyperpage{133}
   \item {accelSR}
-    \subitem {test.ino}, \hyperpage{121}
-    \subitem {test2.ino}, \hyperpage{130}
+    \subitem {test.ino}, \hyperpage{123}
+    \subitem {test2.ino}, \hyperpage{133}
   \item {activeLevel}
-    \subitem {ICM20948\_IntPinConfig}, \hyperpage{62}
+    \subitem {ICM20948\_IntPinConfig}, \hyperpage{63}
   \item {address}
-    \subitem {I2C\_Interface}, \hyperpage{60}
+    \subitem {I2C\_Interface}, \hyperpage{61}
   \item {AK09916\_I2C\_ADDR}
-    \subitem {ICM20948\_regs.h}, \hyperpage{186}
+    \subitem {ICM20948\_regs.h}, \hyperpage{189}
   \item {AK\_CNTL2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {AK\_CNTL3}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {AK\_HXL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {AK\_ST1}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {AK\_ST2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {AK\_WIA2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {AK\_WIA2\_VAL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {applyBasicDefaults}
     \subitem {DevLab\_ICM20948}, \hyperpage{25}
   \item {applySettings}
-    \subitem {gyr\_test.ino}, \hyperpage{73}
-    \subitem {mag\_test.ino}, \hyperpage{101}
-    \subitem {test.ino}, \hyperpage{117}
-    \subitem {test2.ino}, \hyperpage{127}
+    \subitem {gyr\_test.ino}, \hyperpage{75}
+    \subitem {mag\_test.ino}, \hyperpage{102}
+    \subitem {test.ino}, \hyperpage{120}
+    \subitem {test2.ino}, \hyperpage{130}
   \item {AUTO\_PLL\_1}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AUTO\_PLL\_2}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AUTO\_PLL\_3}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AUTO\_PLL\_4}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AUTO\_PLL\_5}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AUTO\_SEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {auxConfigSlave}
-    \subitem {DevLab\_ICM20948}, \hyperpage{25}
+    \subitem {DevLab\_ICM20948}, \hyperpage{26}
   \item {auxMasterEnable}
     \subitem {DevLab\_ICM20948}, \hyperpage{26}
   \item {auxRead12bit}
-    \subitem {DevLab\_ICM20948}, \hyperpage{26}
+    \subitem {DevLab\_ICM20948}, \hyperpage{27}
   \item {auxReadByte}
     \subitem {DevLab\_ICM20948}, \hyperpage{27}
   \item {auxReadResponse}
-    \subitem {DevLab\_ICM20948}, \hyperpage{27}
-  \item {auxReadSensorData}
     \subitem {DevLab\_ICM20948}, \hyperpage{28}
+  \item {auxReadSensorData}
+    \subitem {DevLab\_ICM20948}, \hyperpage{29}
   \item {auxWriteByte}
-    \subitem {DevLab\_ICM20948}, \hyperpage{29}
+    \subitem {DevLab\_ICM20948}, \hyperpage{30}
   \item {auxWriteCommand}
-    \subitem {DevLab\_ICM20948}, \hyperpage{29}
+    \subitem {DevLab\_ICM20948}, \hyperpage{30}
   \item {AVG\_1}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AVG\_128}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AVG\_16}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162, 163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165, 166}
   \item {AVG\_1\_OR\_4}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
   \item {AVG\_2}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AVG\_32}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162, 163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165, 166}
   \item {AVG\_4}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AVG\_64}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {AVG\_8}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162, 163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165, 166}
   \item {AX\_ST\_EN\_REG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {AY\_ST\_EN\_REG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {AZ\_ST\_EN\_REG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
 
   \indexspace
 
   \item {BANK1\_REG\_BANK\_SEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{187}
+    \subitem {ICM20948\_regs.h}, \hyperpage{190}
   \item {BANK2\_REG\_BANK\_SEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {BANK3\_REG\_BANK\_SEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {beginI2C}
-    \subitem {DevLab\_ICM20948}, \hyperpage{30}
-    \subitem {I2C\_Interface}, \hyperpage{59}
-    \subitem {Interface\_7Semi}, \hyperpage{66}
-    \subitem {SPI\_Interface}, \hyperpage{69}
+    \subitem {DevLab\_ICM20948}, \hyperpage{31}
+    \subitem {I2C\_Interface}, \hyperpage{60}
+    \subitem {Interface\_7Semi}, \hyperpage{67}
+    \subitem {SPI\_Interface}, \hyperpage{70}
   \item {beginSPI}
     \subitem {DevLab\_ICM20948}, \hyperpage{31}
-    \subitem {I2C\_Interface}, \hyperpage{59}
-    \subitem {Interface\_7Semi}, \hyperpage{66}
-    \subitem {SPI\_Interface}, \hyperpage{69}
+    \subitem {I2C\_Interface}, \hyperpage{60}
+    \subitem {Interface\_7Semi}, \hyperpage{67}
+    \subitem {SPI\_Interface}, \hyperpage{70}
   \item {BusIO\_7Semi}
     \subitem {BusIO\_7Semi$<$ Bus $>$}, \hyperpage{13}
   \item {BusIO\_7Semi$<$ Bus $>$}, \hyperpage{13}
@@ -244,1158 +244,1163 @@
     \subitem {readBits}, \hyperpage{16, 17}
     \subitem {write}, \hyperpage{17, 18}
     \subitem {writeBit}, \hyperpage{19, 20}
-    \subitem {writeBits}, \hyperpage{20, 21}
+    \subitem {writeBits}, \hyperpage{21}
   \item {BYPASS\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {bypassEn}
-    \subitem {ICM20948\_IntPinConfig}, \hyperpage{62}
+    \subitem {ICM20948\_IntPinConfig}, \hyperpage{63}
 
   \indexspace
 
   \item {checkIntStatus}
     \subitem {DevLab\_ICM20948}, \hyperpage{32}
   \item {clearMode}
-    \subitem {ICM20948\_IntPinConfig}, \hyperpage{62}
+    \subitem {ICM20948\_IntPinConfig}, \hyperpage{63}
   \item {CLK\_STOP}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
-  \item {configDLPF}, \hyperpage{22}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+  \item {configDLPF}, \hyperpage{23}
     \subitem {div}, \hyperpage{23}
     \subitem {dlpf\_idx}, \hyperpage{23}
     \subitem {nbw\_hz}, \hyperpage{23}
     \subitem {nombre}, \hyperpage{23}
     \subitem {odr\_hz}, \hyperpage{23}
   \item {configsDLPF}
-    \subitem {gyr\_test.ino}, \hyperpage{75}
-    \subitem {test.ino}, \hyperpage{121}
-    \subitem {test2.ino}, \hyperpage{131}
+    \subitem {gyr\_test.ino}, \hyperpage{77}
+    \subitem {test.ino}, \hyperpage{123}
+    \subitem {test2.ino}, \hyperpage{133}
   \item {cs}
-    \subitem {SPI\_Interface}, \hyperpage{70}
+    \subitem {SPI\_Interface}, \hyperpage{71}
+  \item {CS\_PIN}
+    \subitem {spi\_accel.ino}, \hyperpage{107}
+    \subitem {spi\_basic.ino}, \hyperpage{111}
+    \subitem {spi\_gyro.ino}, \hyperpage{114}
 
   \indexspace
 
   \item {DEC3\_CFG\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {DEC3\_CFG\_SHIFT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {DELAY\_ES\_SHADOW}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {delay\_ms}
-    \subitem {icm\_plat\_t}, \hyperpage{64}
+    \subitem {icm\_plat\_t}, \hyperpage{65}
   \item {DELAY\_TIME\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {DELAY\_TIMEH}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {DELAY\_TIMEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {delay\_us}
-    \subitem {Interface\_7Semi}, \hyperpage{66}
+    \subitem {Interface\_7Semi}, \hyperpage{67}
   \item {DevLab ICM20948 Arduino Library}, \hyperpage{1}
-  \item {DevLab\_ICM20948}, \hyperpage{23}
+  \item {DevLab\_ICM20948}, \hyperpage{24}
     \subitem {applyBasicDefaults}, \hyperpage{25}
-    \subitem {auxConfigSlave}, \hyperpage{25}
+    \subitem {auxConfigSlave}, \hyperpage{26}
     \subitem {auxMasterEnable}, \hyperpage{26}
-    \subitem {auxRead12bit}, \hyperpage{26}
+    \subitem {auxRead12bit}, \hyperpage{27}
     \subitem {auxReadByte}, \hyperpage{27}
-    \subitem {auxReadResponse}, \hyperpage{27}
-    \subitem {auxReadSensorData}, \hyperpage{28}
-    \subitem {auxWriteByte}, \hyperpage{29}
-    \subitem {auxWriteCommand}, \hyperpage{29}
-    \subitem {beginI2C}, \hyperpage{30}
+    \subitem {auxReadResponse}, \hyperpage{28}
+    \subitem {auxReadSensorData}, \hyperpage{29}
+    \subitem {auxWriteByte}, \hyperpage{30}
+    \subitem {auxWriteCommand}, \hyperpage{30}
+    \subitem {beginI2C}, \hyperpage{31}
     \subitem {beginSPI}, \hyperpage{31}
     \subitem {checkIntStatus}, \hyperpage{32}
-    \subitem {DevLab\_ICM20948}, \hyperpage{24}
-    \subitem {getAccelAveraging}, \hyperpage{32}
+    \subitem {DevLab\_ICM20948}, \hyperpage{25}
+    \subitem {getAccelAveraging}, \hyperpage{33}
     \subitem {getAccelDLPF}, \hyperpage{33}
-    \subitem {getAccelOffset}, \hyperpage{33}
+    \subitem {getAccelOffset}, \hyperpage{34}
     \subitem {getAccelSampleRate}, \hyperpage{34}
-    \subitem {getAccelScale}, \hyperpage{34}
+    \subitem {getAccelScale}, \hyperpage{35}
     \subitem {getClock}, \hyperpage{35}
-    \subitem {getDLPF}, \hyperpage{35}
+    \subitem {getDLPF}, \hyperpage{36}
     \subitem {getGyroOffset}, \hyperpage{36}
-    \subitem {getGyroSampleRate}, \hyperpage{36}
+    \subitem {getGyroSampleRate}, \hyperpage{37}
     \subitem {getGyroScale}, \hyperpage{37}
-    \subitem {getLowPower}, \hyperpage{37}
+    \subitem {getLowPower}, \hyperpage{38}
     \subitem {getSensors}, \hyperpage{38}
-    \subitem {initMag}, \hyperpage{38}
+    \subitem {initMag}, \hyperpage{39}
     \subitem {intEnableConfig}, \hyperpage{39}
     \subitem {intInit}, \hyperpage{40}
     \subitem {readAccel}, \hyperpage{41}
-    \subitem {readGyro}, \hyperpage{41}
+    \subitem {readGyro}, \hyperpage{42}
     \subitem {readMag}, \hyperpage{42}
     \subitem {readTemperature}, \hyperpage{43}
     \subitem {readWhoAmI}, \hyperpage{44}
-    \subitem {selectBank}, \hyperpage{44}
+    \subitem {selectBank}, \hyperpage{45}
     \subitem {selfTestAccel}, \hyperpage{45}
-    \subitem {selfTestGyro}, \hyperpage{45}
+    \subitem {selfTestGyro}, \hyperpage{46}
     \subitem {setAccelAveraging}, \hyperpage{46}
     \subitem {setAccelDivRate}, \hyperpage{47}
-    \subitem {setAccelDLPF}, \hyperpage{47}
-    \subitem {setAccelOffset}, \hyperpage{48}
+    \subitem {setAccelDLPF}, \hyperpage{48}
+    \subitem {setAccelOffset}, \hyperpage{49}
     \subitem {setAccelSampleRate}, \hyperpage{49}
-    \subitem {setAccelScale}, \hyperpage{49}
-    \subitem {setClock}, \hyperpage{50}
+    \subitem {setAccelScale}, \hyperpage{50}
+    \subitem {setClock}, \hyperpage{51}
     \subitem {setDLPF}, \hyperpage{51}
-    \subitem {setGyroAveraging}, \hyperpage{51}
+    \subitem {setGyroAveraging}, \hyperpage{52}
     \subitem {setGyroDivRate}, \hyperpage{52}
-    \subitem {setGyroOffset}, \hyperpage{52}
-    \subitem {setGyroSampleRate}, \hyperpage{53}
-    \subitem {setGyroScale}, \hyperpage{53}
-    \subitem {setLowPower}, \hyperpage{54}
-    \subitem {setMagOpMode}, \hyperpage{54}
-    \subitem {setSensors}, \hyperpage{55}
-    \subitem {sleep}, \hyperpage{56}
-    \subitem {softReset}, \hyperpage{56}
+    \subitem {setGyroOffset}, \hyperpage{53}
+    \subitem {setGyroSampleRate}, \hyperpage{54}
+    \subitem {setGyroScale}, \hyperpage{54}
+    \subitem {setLowPower}, \hyperpage{55}
+    \subitem {setMagOpMode}, \hyperpage{55}
+    \subitem {setSensors}, \hyperpage{56}
+    \subitem {sleep}, \hyperpage{57}
+    \subitem {softReset}, \hyperpage{57}
   \item {DevLab\_ICM20948.h}
-    \subitem {AUTO\_PLL\_1}, \hyperpage{163}
-    \subitem {AUTO\_PLL\_2}, \hyperpage{163}
-    \subitem {AUTO\_PLL\_3}, \hyperpage{163}
-    \subitem {AUTO\_PLL\_4}, \hyperpage{163}
-    \subitem {AUTO\_PLL\_5}, \hyperpage{163}
-    \subitem {AVG\_1}, \hyperpage{163}
-    \subitem {AVG\_128}, \hyperpage{163}
-    \subitem {AVG\_16}, \hyperpage{162, 163}
-    \subitem {AVG\_1\_OR\_4}, \hyperpage{162}
-    \subitem {AVG\_2}, \hyperpage{163}
-    \subitem {AVG\_32}, \hyperpage{162, 163}
-    \subitem {AVG\_4}, \hyperpage{163}
-    \subitem {AVG\_64}, \hyperpage{163}
-    \subitem {AVG\_8}, \hyperpage{162, 163}
-    \subitem {DLPF0\_246HZ}, \hyperpage{162}
-    \subitem {DLPF\_111HZ}, \hyperpage{162}
-    \subitem {DLPF\_119HZ}, \hyperpage{164}
-    \subitem {DLPF\_11HZ}, \hyperpage{164}
-    \subitem {DLPF\_12HZ}, \hyperpage{162}
-    \subitem {DLPF\_151HZ}, \hyperpage{164}
-    \subitem {DLPF\_196HZ}, \hyperpage{164}
-    \subitem {DLPF\_23HZ}, \hyperpage{164}
-    \subitem {DLPF\_246HZ}, \hyperpage{162}
-    \subitem {DLPF\_24HZ}, \hyperpage{162}
-    \subitem {DLPF\_361HZ}, \hyperpage{164}
-    \subitem {DLPF\_473HZ}, \hyperpage{162}
-    \subitem {DLPF\_50HZ}, \hyperpage{162}
-    \subitem {DLPF\_51HZ}, \hyperpage{164}
-    \subitem {DLPF\_5HZ}, \hyperpage{164}
-    \subitem {DLPF\_6HZ}, \hyperpage{162}
-    \subitem {DPS\_1000}, \hyperpage{164}
-    \subitem {DPS\_2000}, \hyperpage{164}
-    \subitem {DPS\_250}, \hyperpage{164}
-    \subitem {DPS\_500}, \hyperpage{164}
-    \subitem {G\_16}, \hyperpage{163}
-    \subitem {G\_2}, \hyperpage{163}
-    \subitem {G\_4}, \hyperpage{163}
-    \subitem {G\_8}, \hyperpage{163}
-    \subitem {ICM20948\_Accel\_Average}, \hyperpage{162}
-    \subitem {ICM20948\_Accel\_DLPFCFG}, \hyperpage{162}
-    \subitem {ICM20948\_Accel\_FullScale}, \hyperpage{163}
-    \subitem {ICM20948\_Clock\_Source}, \hyperpage{163}
-    \subitem {ICM20948\_Gyro\_Average}, \hyperpage{163}
-    \subitem {ICM20948\_Gyro\_DLPF}, \hyperpage{163}
-    \subitem {ICM20948\_Gyro\_FullScale}, \hyperpage{164}
-    \subitem {ICM20948\_Op\_Mode}, \hyperpage{164}
-    \subitem {INTERNAL\_20MHZ\_0}, \hyperpage{163}
-    \subitem {INTERNAL\_20MHZ\_6}, \hyperpage{163}
-    \subitem {MODE\_CONTINUOUS\_1}, \hyperpage{164}
-    \subitem {MODE\_CONTINUOUS\_2}, \hyperpage{164}
-    \subitem {MODE\_CONTINUOUS\_3}, \hyperpage{164}
-    \subitem {MODE\_CONTINUOUS\_4}, \hyperpage{164}
-    \subitem {MODE\_POWER\_DOWN}, \hyperpage{164}
-    \subitem {MODE\_SELF\_TEST}, \hyperpage{164}
-    \subitem {MODE\_SINGLE\_MEASUREMENT}, \hyperpage{164}
-    \subitem {STOP\_CLOCK}, \hyperpage{163}
+    \subitem {AUTO\_PLL\_1}, \hyperpage{166}
+    \subitem {AUTO\_PLL\_2}, \hyperpage{166}
+    \subitem {AUTO\_PLL\_3}, \hyperpage{166}
+    \subitem {AUTO\_PLL\_4}, \hyperpage{166}
+    \subitem {AUTO\_PLL\_5}, \hyperpage{166}
+    \subitem {AVG\_1}, \hyperpage{166}
+    \subitem {AVG\_128}, \hyperpage{166}
+    \subitem {AVG\_16}, \hyperpage{165, 166}
+    \subitem {AVG\_1\_OR\_4}, \hyperpage{165}
+    \subitem {AVG\_2}, \hyperpage{166}
+    \subitem {AVG\_32}, \hyperpage{165, 166}
+    \subitem {AVG\_4}, \hyperpage{166}
+    \subitem {AVG\_64}, \hyperpage{166}
+    \subitem {AVG\_8}, \hyperpage{165, 166}
+    \subitem {DLPF0\_246HZ}, \hyperpage{165}
+    \subitem {DLPF\_111HZ}, \hyperpage{165}
+    \subitem {DLPF\_119HZ}, \hyperpage{167}
+    \subitem {DLPF\_11HZ}, \hyperpage{167}
+    \subitem {DLPF\_12HZ}, \hyperpage{165}
+    \subitem {DLPF\_151HZ}, \hyperpage{167}
+    \subitem {DLPF\_196HZ}, \hyperpage{167}
+    \subitem {DLPF\_23HZ}, \hyperpage{167}
+    \subitem {DLPF\_246HZ}, \hyperpage{165}
+    \subitem {DLPF\_24HZ}, \hyperpage{165}
+    \subitem {DLPF\_361HZ}, \hyperpage{167}
+    \subitem {DLPF\_473HZ}, \hyperpage{165}
+    \subitem {DLPF\_50HZ}, \hyperpage{165}
+    \subitem {DLPF\_51HZ}, \hyperpage{167}
+    \subitem {DLPF\_5HZ}, \hyperpage{167}
+    \subitem {DLPF\_6HZ}, \hyperpage{165}
+    \subitem {DPS\_1000}, \hyperpage{167}
+    \subitem {DPS\_2000}, \hyperpage{167}
+    \subitem {DPS\_250}, \hyperpage{167}
+    \subitem {DPS\_500}, \hyperpage{167}
+    \subitem {G\_16}, \hyperpage{166}
+    \subitem {G\_2}, \hyperpage{166}
+    \subitem {G\_4}, \hyperpage{166}
+    \subitem {G\_8}, \hyperpage{166}
+    \subitem {ICM20948\_Accel\_Average}, \hyperpage{165}
+    \subitem {ICM20948\_Accel\_DLPFCFG}, \hyperpage{165}
+    \subitem {ICM20948\_Accel\_FullScale}, \hyperpage{166}
+    \subitem {ICM20948\_Clock\_Source}, \hyperpage{166}
+    \subitem {ICM20948\_Gyro\_Average}, \hyperpage{166}
+    \subitem {ICM20948\_Gyro\_DLPF}, \hyperpage{166}
+    \subitem {ICM20948\_Gyro\_FullScale}, \hyperpage{167}
+    \subitem {ICM20948\_Op\_Mode}, \hyperpage{167}
+    \subitem {INTERNAL\_20MHZ\_0}, \hyperpage{166}
+    \subitem {INTERNAL\_20MHZ\_6}, \hyperpage{166}
+    \subitem {MODE\_CONTINUOUS\_1}, \hyperpage{167}
+    \subitem {MODE\_CONTINUOUS\_2}, \hyperpage{167}
+    \subitem {MODE\_CONTINUOUS\_3}, \hyperpage{167}
+    \subitem {MODE\_CONTINUOUS\_4}, \hyperpage{167}
+    \subitem {MODE\_POWER\_DOWN}, \hyperpage{167}
+    \subitem {MODE\_SELF\_TEST}, \hyperpage{167}
+    \subitem {MODE\_SINGLE\_MEASUREMENT}, \hyperpage{167}
+    \subitem {STOP\_CLOCK}, \hyperpage{166}
   \item {div}
     \subitem {configDLPF}, \hyperpage{23}
   \item {DLPF0\_246HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
   \item {DLPF\_111HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
   \item {DLPF\_119HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DLPF\_11HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DLPF\_12HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
   \item {DLPF\_151HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DLPF\_196HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DLPF\_23HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DLPF\_246HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
   \item {DLPF\_24HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
   \item {DLPF\_361HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DLPF\_473HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
   \item {DLPF\_50HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
   \item {DLPF\_51HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DLPF\_5HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DLPF\_6HZ}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
   \item {dlpf\_idx}
     \subitem {configDLPF}, \hyperpage{23}
   \item {dmpInt1}
-    \subitem {ICM20948\_IntStatus}, \hyperpage{63}
+    \subitem {ICM20948\_IntStatus}, \hyperpage{64}
   \item {dmpInt1En}
-    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{61}
+    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{62}
   \item {dps1000}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {dps2000}
-    \subitem {ICM20948\_regs.h}, \hyperpage{188}
+    \subitem {ICM20948\_regs.h}, \hyperpage{191}
   \item {dps250}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {dps500}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {DPS\_1000}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DPS\_2000}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DPS\_250}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {DPS\_500}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {driveMode}
-    \subitem {ICM20948\_IntPinConfig}, \hyperpage{62}
+    \subitem {ICM20948\_IntPinConfig}, \hyperpage{63}
 
   \indexspace
 
   \item {EnhancedRegular}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {etiquetasAccelAVG}
-    \subitem {test.ino}, \hyperpage{121}
-    \subitem {test2.ino}, \hyperpage{131}
+    \subitem {test.ino}, \hyperpage{124}
+    \subitem {test2.ino}, \hyperpage{133}
   \item {etiquetasAccelCfg}
-    \subitem {test.ino}, \hyperpage{121}
-    \subitem {test2.ino}, \hyperpage{131}
+    \subitem {test.ino}, \hyperpage{124}
+    \subitem {test2.ino}, \hyperpage{133}
   \item {etiquetasAccelDLPFCFG}
-    \subitem {test.ino}, \hyperpage{121}
+    \subitem {test.ino}, \hyperpage{124}
   \item {etiquetasGyroAVGCfg}
-    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {gyr\_test.ino}, \hyperpage{78}
   \item {etiquetasGyroFSCfg}
-    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {gyr\_test.ino}, \hyperpage{78}
   \item {etiquetasOpModeCfg}
-    \subitem {mag\_test.ino}, \hyperpage{103}
+    \subitem {mag\_test.ino}, \hyperpage{104}
   \item {etiquetasSR}
-    \subitem {test.ino}, \hyperpage{121}
-    \subitem {test2.ino}, \hyperpage{131}
-  \item {examples/gyr\_test/gyr\_test.ino}, \hyperpage{71}, 
-		\hyperpage{77}
-  \item {examples/i2c\_accel/i2c\_accel.ino}, \hyperpage{80}, 
-		\hyperpage{82}
-  \item {examples/i2c\_basic/i2c\_basic.ino}, \hyperpage{84}, 
-		\hyperpage{86}
-  \item {examples/i2c\_gyro/i2c\_gyro.ino}, \hyperpage{88}, 
-		\hyperpage{90}
-  \item {examples/i2c\_magneto/i2c\_magneto.ino}, \hyperpage{91}, 
-		\hyperpage{93}
-  \item {examples/interrupt/interrupt.ino}, \hyperpage{95}, 
-		\hyperpage{98}
-  \item {examples/mag\_test/mag\_test.ino}, \hyperpage{99}, 
-		\hyperpage{103}
-  \item {examples/spi\_accel/spi\_accel.ino}, \hyperpage{105}, 
-		\hyperpage{107}
-  \item {examples/spi\_basic/spi\_basic.ino}, \hyperpage{108}, 
-		\hyperpage{110}
-  \item {examples/spi\_gyro/spi\_gyro.ino}, \hyperpage{112, 113}
-  \item {examples/test/test.ino}, \hyperpage{115}, \hyperpage{122}
-  \item {examples/test2/test2.ino}, \hyperpage{125}, \hyperpage{132}
+    \subitem {test.ino}, \hyperpage{124}
+    \subitem {test2.ino}, \hyperpage{134}
+  \item {examples/gyr\_test/gyr\_test.ino}, \hyperpage{73}, 
+		\hyperpage{79}
+  \item {examples/i2c\_accel/i2c\_accel.ino}, \hyperpage{82}, 
+		\hyperpage{84}
+  \item {examples/i2c\_basic/i2c\_basic.ino}, \hyperpage{85}, 
+		\hyperpage{87}
+  \item {examples/i2c\_gyro/i2c\_gyro.ino}, \hyperpage{89}, 
+		\hyperpage{91}
+  \item {examples/i2c\_magneto/i2c\_magneto.ino}, \hyperpage{93}, 
+		\hyperpage{95}
+  \item {examples/interrupt/interrupt.ino}, \hyperpage{96}, 
+		\hyperpage{99}
+  \item {examples/mag\_test/mag\_test.ino}, \hyperpage{101}, 
+		\hyperpage{104}
+  \item {examples/spi\_accel/spi\_accel.ino}, \hyperpage{106}, 
+		\hyperpage{108}
+  \item {examples/spi\_basic/spi\_basic.ino}, \hyperpage{110}, 
+		\hyperpage{112}
+  \item {examples/spi\_gyro/spi\_gyro.ino}, \hyperpage{114}, 
+		\hyperpage{116}
+  \item {examples/test/test.ino}, \hyperpage{117}, \hyperpage{125}
+  \item {examples/test2/test2.ino}, \hyperpage{128}, \hyperpage{135}
   \item {EXT\_SLV\_SENS\_DATA\_00}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {EXT\_SLV\_SENS\_DATA\_23}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {EXT\_SYNC\_SET\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
 
   \indexspace
 
   \item {FIFO\_CFG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {FIFO\_COUNTH}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {FIFO\_COUNTL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {FIFO\_EN\_1}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {FIFO\_EN\_2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {FIFO\_MODE}
-    \subitem {ICM20948\_regs.h}, \hyperpage{189}
+    \subitem {ICM20948\_regs.h}, \hyperpage{192}
   \item {FIFO\_R\_W}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {FIFO\_RST}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {fifoOvf}
-    \subitem {ICM20948\_IntStatus}, \hyperpage{63}
+    \subitem {ICM20948\_IntStatus}, \hyperpage{64}
   \item {fifoOvfEn}
-    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{61}
+    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{62}
   \item {fifoWm}
-    \subitem {ICM20948\_IntStatus}, \hyperpage{63}
+    \subitem {ICM20948\_IntStatus}, \hyperpage{64}
   \item {fifoWmEn}
-    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{61}
+    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{62}
   \item {firstStage}
-    \subitem {gyr\_test.ino}, \hyperpage{73}
-    \subitem {test.ino}, \hyperpage{118}
-    \subitem {test2.ino}, \hyperpage{128}
+    \subitem {gyr\_test.ino}, \hyperpage{75}
+    \subitem {test.ino}, \hyperpage{120}
+    \subitem {test2.ino}, \hyperpage{130}
   \item {FSYNC\_CONFIG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {FSYNC\_INT\_MODE\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {fsyncActLevel}
-    \subitem {ICM20948\_IntPinConfig}, \hyperpage{62}
+    \subitem {ICM20948\_IntPinConfig}, \hyperpage{63}
   \item {fsyncIntEn}
-    \subitem {ICM20948\_IntPinConfig}, \hyperpage{62}
+    \subitem {ICM20948\_IntPinConfig}, \hyperpage{63}
 
   \indexspace
 
   \item {g16}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {g2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {g4}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {g8}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {G\_16}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {G\_2}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {G\_4}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {G\_8}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {getAccelAveraging}
-    \subitem {DevLab\_ICM20948}, \hyperpage{32}
+    \subitem {DevLab\_ICM20948}, \hyperpage{33}
   \item {getAccelDLPF}
     \subitem {DevLab\_ICM20948}, \hyperpage{33}
   \item {getAccelOffset}
-    \subitem {DevLab\_ICM20948}, \hyperpage{33}
+    \subitem {DevLab\_ICM20948}, \hyperpage{34}
   \item {getAccelSampleRate}
     \subitem {DevLab\_ICM20948}, \hyperpage{34}
   \item {getAccelScale}
-    \subitem {DevLab\_ICM20948}, \hyperpage{34}
+    \subitem {DevLab\_ICM20948}, \hyperpage{35}
   \item {getClock}
     \subitem {DevLab\_ICM20948}, \hyperpage{35}
   \item {getDLPF}
-    \subitem {DevLab\_ICM20948}, \hyperpage{35}
+    \subitem {DevLab\_ICM20948}, \hyperpage{36}
   \item {getGyroOffset}
     \subitem {DevLab\_ICM20948}, \hyperpage{36}
   \item {getGyroSampleRate}
-    \subitem {DevLab\_ICM20948}, \hyperpage{36}
+    \subitem {DevLab\_ICM20948}, \hyperpage{37}
   \item {getGyroScale}
     \subitem {DevLab\_ICM20948}, \hyperpage{37}
   \item {getLowPower}
-    \subitem {DevLab\_ICM20948}, \hyperpage{37}
+    \subitem {DevLab\_ICM20948}, \hyperpage{38}
   \item {getSensors}
     \subitem {DevLab\_ICM20948}, \hyperpage{38}
   \item {gyr\_test.ino}
-    \subitem {applySettings}, \hyperpage{73}
-    \subitem {configsDLPF}, \hyperpage{75}
-    \subitem {etiquetasGyroAVGCfg}, \hyperpage{76}
-    \subitem {etiquetasGyroFSCfg}, \hyperpage{76}
-    \subitem {firstStage}, \hyperpage{73}
-    \subitem {gyroAVGCfg}, \hyperpage{76}
-    \subitem {gyroDLPF}, \hyperpage{76}
-    \subitem {gyroFSCfg}, \hyperpage{76}
-    \subitem {I2C\_FREQ}, \hyperpage{72}
-    \subitem {ICM\_ADDR}, \hyperpage{72}
-    \subitem {imu}, \hyperpage{76}
-    \subitem {loop}, \hyperpage{74}
-    \subitem {N\_AVG}, \hyperpage{77}
-    \subitem {N\_DLPF}, \hyperpage{77}
-    \subitem {N\_FS}, \hyperpage{77}
-    \subitem {printDobleLinea}, \hyperpage{74}
-    \subitem {printLinea}, \hyperpage{74}
-    \subitem {runSweep}, \hyperpage{74}
-    \subitem {SCL\_PIN}, \hyperpage{72}
-    \subitem {SDA\_PIN}, \hyperpage{73}
-    \subitem {setup}, \hyperpage{75}
+    \subitem {applySettings}, \hyperpage{75}
+    \subitem {configsDLPF}, \hyperpage{77}
+    \subitem {etiquetasGyroAVGCfg}, \hyperpage{78}
+    \subitem {etiquetasGyroFSCfg}, \hyperpage{78}
+    \subitem {firstStage}, \hyperpage{75}
+    \subitem {gyroAVGCfg}, \hyperpage{78}
+    \subitem {gyroDLPF}, \hyperpage{78}
+    \subitem {gyroFSCfg}, \hyperpage{78}
+    \subitem {I2C\_FREQ}, \hyperpage{74}
+    \subitem {ICM\_ADDR}, \hyperpage{74}
+    \subitem {imu}, \hyperpage{78}
+    \subitem {loop}, \hyperpage{76}
+    \subitem {N\_AVG}, \hyperpage{79}
+    \subitem {N\_DLPF}, \hyperpage{79}
+    \subitem {N\_FS}, \hyperpage{79}
+    \subitem {printDobleLinea}, \hyperpage{76}
+    \subitem {printLinea}, \hyperpage{76}
+    \subitem {runSweep}, \hyperpage{76}
+    \subitem {SCL\_PIN}, \hyperpage{75}
+    \subitem {SDA\_PIN}, \hyperpage{75}
+    \subitem {setup}, \hyperpage{77}
   \item {GYRO\_AVGCFG\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {GYRO\_AVGCFG\_SHIFT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {GYRO\_BW\_MEDIUM}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {GYRO\_BW\_NARROW}
-    \subitem {ICM20948\_regs.h}, \hyperpage{190}
+    \subitem {ICM20948\_regs.h}, \hyperpage{193}
   \item {GYRO\_BW\_ULTRA\_WIDE}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_BW\_WIDE}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_CONFIG\_1}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_CONFIG\_2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_DLPF\_BASE\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_DLPF\_ODR\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_DLPFCFG\_0}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_DLPFCFG\_1}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_DLPFCFG\_2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_DLPFCFG\_3}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_DLPFCFG\_4}
-    \subitem {ICM20948\_regs.h}, \hyperpage{191}
+    \subitem {ICM20948\_regs.h}, \hyperpage{194}
   \item {GYRO\_DLPFCFG\_5}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_DLPFCFG\_6}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_DLPFCFG\_7}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_DLPFCFG\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_DLPFCFG\_SHIFT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_FCHOICE}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_FCHOICE\_BYPASS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_FCHOICE\_DLPF}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_FS\_1000DPS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_FS\_2000DPS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_FS\_250DPS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{192}
+    \subitem {ICM20948\_regs.h}, \hyperpage{195}
   \item {GYRO\_FS\_500DPS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_FS\_SEL\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_FS\_SEL\_SHIFT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_SMPLRT\_DIV}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_SMPLRT\_MIN\_HZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_XOUT\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_XOUT\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_YOUT\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_YOUT\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_ZOUT\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {GYRO\_ZOUT\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {gyroAVGCfg}
-    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {gyr\_test.ino}, \hyperpage{78}
   \item {gyroDLPF}
-    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {gyr\_test.ino}, \hyperpage{78}
   \item {gyroFSCfg}
-    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {gyr\_test.ino}, \hyperpage{78}
 
   \indexspace
 
   \item {HighAccuracy}
-    \subitem {ICM20948\_regs.h}, \hyperpage{193}
+    \subitem {ICM20948\_regs.h}, \hyperpage{196}
   \item {Hz10}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
   \item {Hz15}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
   \item {Hz2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
   \item {Hz20}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
   \item {Hz25}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
   \item {Hz30}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
   \item {Hz6}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
   \item {Hz8}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
 
   \indexspace
 
   \item {i2c}
-    \subitem {I2C\_Interface}, \hyperpage{60}
+    \subitem {I2C\_Interface}, \hyperpage{61}
   \item {i2c\_accel.ino}
-    \subitem {I2C\_FREQ}, \hyperpage{80}
-    \subitem {ICM\_ADDR}, \hyperpage{80}
-    \subitem {imu}, \hyperpage{82}
-    \subitem {loop}, \hyperpage{81}
-    \subitem {SCL\_PIN}, \hyperpage{81}
-    \subitem {SDA\_PIN}, \hyperpage{81}
-    \subitem {setup}, \hyperpage{81}
+    \subitem {I2C\_FREQ}, \hyperpage{82}
+    \subitem {ICM\_ADDR}, \hyperpage{82}
+    \subitem {imu}, \hyperpage{84}
+    \subitem {loop}, \hyperpage{83}
+    \subitem {SCL\_PIN}, \hyperpage{82}
+    \subitem {SDA\_PIN}, \hyperpage{83}
+    \subitem {setup}, \hyperpage{83}
   \item {i2c\_addr}
-    \subitem {icm\_plat\_t}, \hyperpage{64}
+    \subitem {icm\_plat\_t}, \hyperpage{65}
   \item {i2c\_basic.ino}
-    \subitem {I2C\_FREQ}, \hyperpage{84}
-    \subitem {ICM\_ADDR}, \hyperpage{84}
-    \subitem {imu}, \hyperpage{86}
-    \subitem {loop}, \hyperpage{85}
-    \subitem {SCL\_PIN}, \hyperpage{84}
-    \subitem {SDA\_PIN}, \hyperpage{85}
-    \subitem {setup}, \hyperpage{85}
+    \subitem {I2C\_FREQ}, \hyperpage{86}
+    \subitem {ICM\_ADDR}, \hyperpage{86}
+    \subitem {imu}, \hyperpage{87}
+    \subitem {loop}, \hyperpage{86}
+    \subitem {SCL\_PIN}, \hyperpage{86}
+    \subitem {SDA\_PIN}, \hyperpage{86}
+    \subitem {setup}, \hyperpage{87}
   \item {I2C\_FREQ}
-    \subitem {gyr\_test.ino}, \hyperpage{72}
-    \subitem {i2c\_accel.ino}, \hyperpage{80}
-    \subitem {i2c\_basic.ino}, \hyperpage{84}
-    \subitem {i2c\_gyro.ino}, \hyperpage{88}
-    \subitem {i2c\_magneto.ino}, \hyperpage{92}
-    \subitem {interrupt.ino}, \hyperpage{96}
-    \subitem {mag\_test.ino}, \hyperpage{101}
-    \subitem {test.ino}, \hyperpage{117}
-    \subitem {test2.ino}, \hyperpage{127}
-  \item {i2c\_gyro.ino}
-    \subitem {I2C\_FREQ}, \hyperpage{88}
-    \subitem {ICM\_ADDR}, \hyperpage{88}
-    \subitem {imu}, \hyperpage{89}
-    \subitem {loop}, \hyperpage{89}
-    \subitem {SCL\_PIN}, \hyperpage{88}
-    \subitem {SDA\_PIN}, \hyperpage{89}
-    \subitem {setup}, \hyperpage{89}
-  \item {I2C\_Interface}, \hyperpage{57}
-    \subitem {address}, \hyperpage{60}
-    \subitem {beginI2C}, \hyperpage{59}
-    \subitem {beginSPI}, \hyperpage{59}
-    \subitem {i2c}, \hyperpage{60}
-    \subitem {read}, \hyperpage{59}
-    \subitem {write}, \hyperpage{60}
-  \item {i2c\_magneto.ino}
-    \subitem {I2C\_FREQ}, \hyperpage{92}
-    \subitem {ICM\_ADDR}, \hyperpage{92}
-    \subitem {imu}, \hyperpage{93}
-    \subitem {loop}, \hyperpage{92}
-    \subitem {SCL\_PIN}, \hyperpage{92}
-    \subitem {SDA\_PIN}, \hyperpage{92}
-    \subitem {setup}, \hyperpage{92}
-  \item {I2C\_MST\_CLK\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
-  \item {I2C\_MST\_CTRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
-  \item {I2C\_MST\_DELAY\_CTRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
-  \item {I2C\_MST\_ODR\_CONFIG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{194}
-  \item {I2C\_MST\_P\_NSR}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_MST\_STATUS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV0\_ADDR}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV0\_CTRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV0\_DELAY\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV0\_DO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV0\_REG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV1\_ADDR}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV1\_CTRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV1\_DELAY\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV1\_DO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV1\_REG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{195}
-  \item {I2C\_SLV2\_ADDR}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV2\_CTRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV2\_DELAY\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV2\_DO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV2\_REG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV3\_ADDR}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV3\_CTRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV3\_DELAY\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV3\_DO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV3\_REG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV4\_ADDR}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV4\_CTRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{196}
-  \item {I2C\_SLV4\_DELAY\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLV4\_DI}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLV4\_DLY\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLV4\_DO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLV4\_REG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLVx\_BYTE\_SW}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLVx\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLVx\_GRP}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLVx\_LENG\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLVx\_REG\_DIS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {I2C\_SLVx\_RNW}
-    \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {i2cMstInt}
-    \subitem {ICM20948\_IntStatus}, \hyperpage{63}
-  \item {i2cMstIntEn}
-    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{61}
-  \item {ICM20948\_Accel\_Average}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
-  \item {ICM20948\_Accel\_DLPFCFG}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{162}
-  \item {ICM20948\_Accel\_FullScale}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
-  \item {ICM20948\_Clock\_Source}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
-  \item {ICM20948\_Gyro\_Average}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
-  \item {ICM20948\_Gyro\_DLPF}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
-  \item {ICM20948\_Gyro\_FullScale}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
-  \item {ICM20948\_IntEnableConfig}, \hyperpage{60}
-    \subitem {dmpInt1En}, \hyperpage{61}
-    \subitem {fifoOvfEn}, \hyperpage{61}
-    \subitem {fifoWmEn}, \hyperpage{61}
-    \subitem {i2cMstIntEn}, \hyperpage{61}
-    \subitem {pllRdyEn}, \hyperpage{61}
-    \subitem {rawDataRdyEn}, \hyperpage{61}
-    \subitem {wofEn}, \hyperpage{61}
-    \subitem {womIntEn}, \hyperpage{61}
-  \item {ICM20948\_IntPinConfig}, \hyperpage{61}
-    \subitem {activeLevel}, \hyperpage{62}
-    \subitem {bypassEn}, \hyperpage{62}
-    \subitem {clearMode}, \hyperpage{62}
-    \subitem {driveMode}, \hyperpage{62}
-    \subitem {fsyncActLevel}, \hyperpage{62}
-    \subitem {fsyncIntEn}, \hyperpage{62}
-    \subitem {latchMode}, \hyperpage{62}
-  \item {ICM20948\_IntStatus}, \hyperpage{63}
-    \subitem {dmpInt1}, \hyperpage{63}
-    \subitem {fifoOvf}, \hyperpage{63}
-    \subitem {fifoWm}, \hyperpage{63}
-    \subitem {i2cMstInt}, \hyperpage{63}
-    \subitem {pllRdyInt}, \hyperpage{63}
-    \subitem {rawDataRdy}, \hyperpage{63}
-    \subitem {womInt}, \hyperpage{63}
-  \item {ICM20948\_Op\_Mode}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
-  \item {ICM20948\_regs.h}
-    \subitem {ACCEL\_BYPASS\_3DB\_BW\_HZ}, \hyperpage{181}
-    \subitem {ACCEL\_BYPASS\_NBW\_HZ}, \hyperpage{181}
-    \subitem {ACCEL\_BYPASS\_RATE\_HZ}, \hyperpage{181}
-    \subitem {ACCEL\_CONFIG}, \hyperpage{182}
-    \subitem {ACCEL\_CONFIG\_2}, \hyperpage{182}
-    \subitem {ACCEL\_DEC3\_AVG\_16}, \hyperpage{182}
-    \subitem {ACCEL\_DEC3\_AVG\_32}, \hyperpage{182}
-    \subitem {ACCEL\_DEC3\_AVG\_4}, \hyperpage{182}
-    \subitem {ACCEL\_DEC3\_AVG\_8}, \hyperpage{182}
-    \subitem {ACCEL\_DLPF0\_3DB\_BW\_HZ}, \hyperpage{182}
-    \subitem {ACCEL\_DLPF0\_NBW\_HZ}, \hyperpage{182}
-    \subitem {ACCEL\_DLPF1\_3DB\_BW\_HZ}, \hyperpage{182}
-    \subitem {ACCEL\_DLPF1\_NBW\_HZ}, \hyperpage{182}
-    \subitem {ACCEL\_DLPF2\_3DB\_BW\_HZ}, \hyperpage{182}
-    \subitem {ACCEL\_DLPF2\_NBW\_HZ}, \hyperpage{182}
-    \subitem {ACCEL\_DLPF3\_3DB\_BW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF3\_NBW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF4\_3DB\_BW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF4\_NBW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF5\_3DB\_BW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF5\_NBW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF6\_3DB\_BW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF6\_NBW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF7\_3DB\_BW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF7\_NBW\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF\_BASE\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPF\_ODR\_HZ}, \hyperpage{183}
-    \subitem {ACCEL\_DLPFCFG\_0}, \hyperpage{184}
-    \subitem {ACCEL\_DLPFCFG\_1}, \hyperpage{184}
-    \subitem {ACCEL\_DLPFCFG\_2}, \hyperpage{184}
-    \subitem {ACCEL\_DLPFCFG\_3}, \hyperpage{184}
-    \subitem {ACCEL\_DLPFCFG\_4}, \hyperpage{184}
-    \subitem {ACCEL\_DLPFCFG\_5}, \hyperpage{184}
-    \subitem {ACCEL\_DLPFCFG\_6}, \hyperpage{184}
-    \subitem {ACCEL\_DLPFCFG\_7}, \hyperpage{184}
-    \subitem {ACCEL\_DLPFCFG\_MASK}, \hyperpage{184}
-    \subitem {ACCEL\_DLPFCFG\_SHIFT}, \hyperpage{184}
-    \subitem {ACCEL\_FCHOICE}, \hyperpage{184}
-    \subitem {ACCEL\_FCHOICE\_BYPASS}, \hyperpage{185}
-    \subitem {ACCEL\_FCHOICE\_DLPF}, \hyperpage{185}
-    \subitem {ACCEL\_FS\_16G}, \hyperpage{185}
-    \subitem {ACCEL\_FS\_2G}, \hyperpage{185}
-    \subitem {ACCEL\_FS\_4G}, \hyperpage{185}
-    \subitem {ACCEL\_FS\_8G}, \hyperpage{185}
-    \subitem {ACCEL\_FS\_SEL\_MASK}, \hyperpage{185}
-    \subitem {ACCEL\_FS\_SEL\_SHIFT}, \hyperpage{185}
-    \subitem {ACCEL\_INTEL\_CTRL}, \hyperpage{185}
-    \subitem {ACCEL\_INTEL\_EN}, \hyperpage{185}
-    \subitem {ACCEL\_INTEL\_MODE\_INT}, \hyperpage{185}
-    \subitem {ACCEL\_SMPLRT\_DIV\_1}, \hyperpage{186}
-    \subitem {ACCEL\_SMPLRT\_DIV\_2}, \hyperpage{186}
-    \subitem {ACCEL\_SMPLRT\_DIV\_MAX}, \hyperpage{186}
-    \subitem {ACCEL\_SMPLRT\_DIV\_MIN}, \hyperpage{186}
-    \subitem {ACCEL\_WOM\_THR}, \hyperpage{186}
-    \subitem {ACCEL\_XOUT\_H}, \hyperpage{186}
-    \subitem {ACCEL\_XOUT\_L}, \hyperpage{186}
-    \subitem {ACCEL\_YOUT\_H}, \hyperpage{186}
-    \subitem {ACCEL\_YOUT\_L}, \hyperpage{186}
-    \subitem {ACCEL\_ZOUT\_H}, \hyperpage{186}
-    \subitem {ACCEL\_ZOUT\_L}, \hyperpage{186}
-    \subitem {AK09916\_I2C\_ADDR}, \hyperpage{186}
-    \subitem {AK\_CNTL2}, \hyperpage{187}
-    \subitem {AK\_CNTL3}, \hyperpage{187}
-    \subitem {AK\_HXL}, \hyperpage{187}
-    \subitem {AK\_ST1}, \hyperpage{187}
-    \subitem {AK\_ST2}, \hyperpage{187}
-    \subitem {AK\_WIA2}, \hyperpage{187}
-    \subitem {AK\_WIA2\_VAL}, \hyperpage{187}
-    \subitem {AUTO\_SEL}, \hyperpage{187}
-    \subitem {AX\_ST\_EN\_REG}, \hyperpage{187}
-    \subitem {AY\_ST\_EN\_REG}, \hyperpage{187}
-    \subitem {AZ\_ST\_EN\_REG}, \hyperpage{187}
-    \subitem {BANK1\_REG\_BANK\_SEL}, \hyperpage{187}
-    \subitem {BANK2\_REG\_BANK\_SEL}, \hyperpage{188}
-    \subitem {BANK3\_REG\_BANK\_SEL}, \hyperpage{188}
-    \subitem {BYPASS\_EN}, \hyperpage{188}
-    \subitem {CLK\_STOP}, \hyperpage{188}
-    \subitem {DEC3\_CFG\_MASK}, \hyperpage{188}
-    \subitem {DEC3\_CFG\_SHIFT}, \hyperpage{188}
-    \subitem {DELAY\_ES\_SHADOW}, \hyperpage{188}
-    \subitem {DELAY\_TIME\_EN}, \hyperpage{188}
-    \subitem {DELAY\_TIMEH}, \hyperpage{188}
-    \subitem {DELAY\_TIMEL}, \hyperpage{188}
-    \subitem {dps1000}, \hyperpage{188}
-    \subitem {dps2000}, \hyperpage{188}
-    \subitem {dps250}, \hyperpage{189}
-    \subitem {dps500}, \hyperpage{189}
-    \subitem {EnhancedRegular}, \hyperpage{189}
-    \subitem {EXT\_SLV\_SENS\_DATA\_00}, \hyperpage{189}
-    \subitem {EXT\_SLV\_SENS\_DATA\_23}, \hyperpage{189}
-    \subitem {EXT\_SYNC\_SET\_MASK}, \hyperpage{189}
-    \subitem {FIFO\_CFG}, \hyperpage{189}
-    \subitem {FIFO\_COUNTH}, \hyperpage{189}
-    \subitem {FIFO\_COUNTL}, \hyperpage{189}
-    \subitem {FIFO\_EN\_1}, \hyperpage{189}
-    \subitem {FIFO\_EN\_2}, \hyperpage{189}
-    \subitem {FIFO\_MODE}, \hyperpage{189}
-    \subitem {FIFO\_R\_W}, \hyperpage{190}
-    \subitem {FIFO\_RST}, \hyperpage{190}
-    \subitem {FSYNC\_CONFIG}, \hyperpage{190}
-    \subitem {FSYNC\_INT\_MODE\_EN}, \hyperpage{190}
-    \subitem {g16}, \hyperpage{190}
-    \subitem {g2}, \hyperpage{190}
-    \subitem {g4}, \hyperpage{190}
-    \subitem {g8}, \hyperpage{190}
-    \subitem {GYRO\_AVGCFG\_MASK}, \hyperpage{190}
-    \subitem {GYRO\_AVGCFG\_SHIFT}, \hyperpage{190}
-    \subitem {GYRO\_BW\_MEDIUM}, \hyperpage{190}
-    \subitem {GYRO\_BW\_NARROW}, \hyperpage{190}
-    \subitem {GYRO\_BW\_ULTRA\_WIDE}, \hyperpage{191}
-    \subitem {GYRO\_BW\_WIDE}, \hyperpage{191}
-    \subitem {GYRO\_CONFIG\_1}, \hyperpage{191}
-    \subitem {GYRO\_CONFIG\_2}, \hyperpage{191}
-    \subitem {GYRO\_DLPF\_BASE\_HZ}, \hyperpage{191}
-    \subitem {GYRO\_DLPF\_ODR\_HZ}, \hyperpage{191}
-    \subitem {GYRO\_DLPFCFG\_0}, \hyperpage{191}
-    \subitem {GYRO\_DLPFCFG\_1}, \hyperpage{191}
-    \subitem {GYRO\_DLPFCFG\_2}, \hyperpage{191}
-    \subitem {GYRO\_DLPFCFG\_3}, \hyperpage{191}
-    \subitem {GYRO\_DLPFCFG\_4}, \hyperpage{191}
-    \subitem {GYRO\_DLPFCFG\_5}, \hyperpage{192}
-    \subitem {GYRO\_DLPFCFG\_6}, \hyperpage{192}
-    \subitem {GYRO\_DLPFCFG\_7}, \hyperpage{192}
-    \subitem {GYRO\_DLPFCFG\_MASK}, \hyperpage{192}
-    \subitem {GYRO\_DLPFCFG\_SHIFT}, \hyperpage{192}
-    \subitem {GYRO\_FCHOICE}, \hyperpage{192}
-    \subitem {GYRO\_FCHOICE\_BYPASS}, \hyperpage{192}
-    \subitem {GYRO\_FCHOICE\_DLPF}, \hyperpage{192}
-    \subitem {GYRO\_FS\_1000DPS}, \hyperpage{192}
-    \subitem {GYRO\_FS\_2000DPS}, \hyperpage{192}
-    \subitem {GYRO\_FS\_250DPS}, \hyperpage{192}
-    \subitem {GYRO\_FS\_500DPS}, \hyperpage{193}
-    \subitem {GYRO\_FS\_SEL\_MASK}, \hyperpage{193}
-    \subitem {GYRO\_FS\_SEL\_SHIFT}, \hyperpage{193}
-    \subitem {GYRO\_SMPLRT\_DIV}, \hyperpage{193}
-    \subitem {GYRO\_SMPLRT\_MIN\_HZ}, \hyperpage{193}
-    \subitem {GYRO\_XOUT\_H}, \hyperpage{193}
-    \subitem {GYRO\_XOUT\_L}, \hyperpage{193}
-    \subitem {GYRO\_YOUT\_H}, \hyperpage{193}
-    \subitem {GYRO\_YOUT\_L}, \hyperpage{193}
-    \subitem {GYRO\_ZOUT\_H}, \hyperpage{193}
-    \subitem {GYRO\_ZOUT\_L}, \hyperpage{193}
-    \subitem {HighAccuracy}, \hyperpage{193}
-    \subitem {Hz10}, \hyperpage{194}
-    \subitem {Hz15}, \hyperpage{194}
-    \subitem {Hz2}, \hyperpage{194}
-    \subitem {Hz20}, \hyperpage{194}
-    \subitem {Hz25}, \hyperpage{194}
-    \subitem {Hz30}, \hyperpage{194}
-    \subitem {Hz6}, \hyperpage{194}
-    \subitem {Hz8}, \hyperpage{194}
-    \subitem {I2C\_MST\_CLK\_MASK}, \hyperpage{194}
-    \subitem {I2C\_MST\_CTRL}, \hyperpage{194}
-    \subitem {I2C\_MST\_DELAY\_CTRL}, \hyperpage{194}
-    \subitem {I2C\_MST\_ODR\_CONFIG}, \hyperpage{194}
-    \subitem {I2C\_MST\_P\_NSR}, \hyperpage{195}
-    \subitem {I2C\_MST\_STATUS}, \hyperpage{195}
-    \subitem {I2C\_SLV0\_ADDR}, \hyperpage{195}
-    \subitem {I2C\_SLV0\_CTRL}, \hyperpage{195}
-    \subitem {I2C\_SLV0\_DELAY\_EN}, \hyperpage{195}
-    \subitem {I2C\_SLV0\_DO}, \hyperpage{195}
-    \subitem {I2C\_SLV0\_REG}, \hyperpage{195}
-    \subitem {I2C\_SLV1\_ADDR}, \hyperpage{195}
-    \subitem {I2C\_SLV1\_CTRL}, \hyperpage{195}
-    \subitem {I2C\_SLV1\_DELAY\_EN}, \hyperpage{195}
-    \subitem {I2C\_SLV1\_DO}, \hyperpage{195}
-    \subitem {I2C\_SLV1\_REG}, \hyperpage{195}
-    \subitem {I2C\_SLV2\_ADDR}, \hyperpage{196}
-    \subitem {I2C\_SLV2\_CTRL}, \hyperpage{196}
-    \subitem {I2C\_SLV2\_DELAY\_EN}, \hyperpage{196}
-    \subitem {I2C\_SLV2\_DO}, \hyperpage{196}
-    \subitem {I2C\_SLV2\_REG}, \hyperpage{196}
-    \subitem {I2C\_SLV3\_ADDR}, \hyperpage{196}
-    \subitem {I2C\_SLV3\_CTRL}, \hyperpage{196}
-    \subitem {I2C\_SLV3\_DELAY\_EN}, \hyperpage{196}
-    \subitem {I2C\_SLV3\_DO}, \hyperpage{196}
-    \subitem {I2C\_SLV3\_REG}, \hyperpage{196}
-    \subitem {I2C\_SLV4\_ADDR}, \hyperpage{196}
-    \subitem {I2C\_SLV4\_CTRL}, \hyperpage{196}
-    \subitem {I2C\_SLV4\_DELAY\_EN}, \hyperpage{197}
-    \subitem {I2C\_SLV4\_DI}, \hyperpage{197}
-    \subitem {I2C\_SLV4\_DLY\_MASK}, \hyperpage{197}
-    \subitem {I2C\_SLV4\_DO}, \hyperpage{197}
-    \subitem {I2C\_SLV4\_REG}, \hyperpage{197}
-    \subitem {I2C\_SLVx\_BYTE\_SW}, \hyperpage{197}
-    \subitem {I2C\_SLVx\_EN}, \hyperpage{197}
-    \subitem {I2C\_SLVx\_GRP}, \hyperpage{197}
-    \subitem {I2C\_SLVx\_LENG\_MASK}, \hyperpage{197}
-    \subitem {I2C\_SLVx\_REG\_DIS}, \hyperpage{197}
-    \subitem {I2C\_SLVx\_RNW}, \hyperpage{197}
-    \subitem {INT1\_ACTL}, \hyperpage{197}
-    \subitem {INT1\_LATCH\_INT\_EN}, \hyperpage{198}
-    \subitem {INT1\_OPEN}, \hyperpage{198}
-    \subitem {INT\_ACTL\_FSYNC}, \hyperpage{198}
-    \subitem {INT\_ANYRD\_2CLEAR}, \hyperpage{198}
-    \subitem {INT\_DMP\_INT1\_EN}, \hyperpage{198}
-    \subitem {INT\_ENABLE}, \hyperpage{198}
-    \subitem {INT\_ENABLE\_1}, \hyperpage{198}
-    \subitem {INT\_ENABLE\_2}, \hyperpage{198}
-    \subitem {INT\_ENABLE\_3}, \hyperpage{198}
-    \subitem {INT\_I2C\_MST\_INT\_EN}, \hyperpage{198}
-    \subitem {INT\_PIN\_CFG}, \hyperpage{198}
-    \subitem {INT\_PLL\_RDY\_EN}, \hyperpage{198}
-    \subitem {INT\_RAW\_DATA\_0\_RDY\_EN}, \hyperpage{199}
-    \subitem {INT\_REG\_WOF\_EN}, \hyperpage{199}
-    \subitem {INT\_STATUS}, \hyperpage{199}
-    \subitem {INT\_STATUS\_1}, \hyperpage{199}
-    \subitem {INT\_STATUS\_2}, \hyperpage{199}
-    \subitem {INT\_STATUS\_3}, \hyperpage{199}
-    \subitem {INT\_WOM\_INT\_EN}, \hyperpage{199}
-    \subitem {INTERNAL\_20MHZ}, \hyperpage{199}
-    \subitem {LowPower}, \hyperpage{199}
-    \subitem {LP\_ACCEL\_CYCLE}, \hyperpage{199}
-    \subitem {LP\_CONFIG}, \hyperpage{199}
-    \subitem {LP\_GYRO\_CYCLE}, \hyperpage{199}
-    \subitem {LP\_I2C\_MST\_CYCLE}, \hyperpage{200}
-    \subitem {MOD\_CTRL\_USR}, \hyperpage{200}
-    \subitem {MST\_LOST\_ARB}, \hyperpage{200}
-    \subitem {MST\_ODR\_CFG\_MASK}, \hyperpage{200}
-    \subitem {MST\_PASS\_THROUGH}, \hyperpage{200}
-    \subitem {MST\_SLV0\_NACK}, \hyperpage{200}
-    \subitem {MST\_SLV1\_NACK}, \hyperpage{200}
-    \subitem {MST\_SLV2\_NACK}, \hyperpage{200}
-    \subitem {MST\_SLV3\_NACK}, \hyperpage{200}
-    \subitem {MST\_SLV4\_DONE}, \hyperpage{200}
-    \subitem {MST\_SLV4\_NACK}, \hyperpage{200}
-    \subitem {MULT\_MST\_EN}, \hyperpage{200}
-    \subitem {ODR\_ALIGN\_EN}, \hyperpage{201}
-    \subitem {ODR\_ALIGN\_EN\_BIT}, \hyperpage{201}
-    \subitem {PWR\_CLKSEL\_AUTO}, \hyperpage{201}
-    \subitem {PWR\_CLKSEL\_INT\_20MHZ}, \hyperpage{201}
-    \subitem {PWR\_CLKSEL\_MASK}, \hyperpage{201}
-    \subitem {PWR\_DEVICE\_RESET}, \hyperpage{201}
-    \subitem {PWR\_DISABLE\_ACCEL}, \hyperpage{201}
-    \subitem {PWR\_DISABLE\_GYRO}, \hyperpage{201}
-    \subitem {PWR\_LP\_EN}, \hyperpage{201}
-    \subitem {PWR\_MGMT\_1}, \hyperpage{201}
-    \subitem {PWR\_MGMT\_2}, \hyperpage{201}
-    \subitem {PWR\_SLEEP}, \hyperpage{201}
-    \subitem {PWR\_TEMP\_DIS}, \hyperpage{202}
-    \subitem {REG\_BANK\_SEL}, \hyperpage{202}
-    \subitem {REG\_BANK\_SEL\_USER\_BANK\_MASK}, \hyperpage{202}
-    \subitem {REG\_BANK\_SEL\_USER\_BANK\_SHIFT}, \hyperpage{202}
-    \subitem {REG\_LP\_DMP\_EN}, \hyperpage{202}
-    \subitem {Regular}, \hyperpage{202}
-    \subitem {SELF\_TEST\_X\_ACCEL}, \hyperpage{202}
-    \subitem {SELF\_TEST\_X\_GYRO}, \hyperpage{202}
-    \subitem {SELF\_TEST\_Y\_ACCEL}, \hyperpage{202}
-    \subitem {SELF\_TEST\_Y\_GYRO}, \hyperpage{202}
-    \subitem {SELF\_TEST\_Z\_ACCEL}, \hyperpage{202}
-    \subitem {SELF\_TEST\_Z\_GYRO}, \hyperpage{202}
-    \subitem {STS\_DMP\_INT1}, \hyperpage{203}
-    \subitem {STS\_I2C\_MST\_INT}, \hyperpage{203}
-    \subitem {STS\_PLL\_RDY\_INT}, \hyperpage{203}
-    \subitem {STS\_RAW\_DATA\_0\_RDY\_INT}, \hyperpage{203}
-    \subitem {STS\_WOM\_INT}, \hyperpage{203}
-    \subitem {TEMP\_CONFIG}, \hyperpage{203}
-    \subitem {TEMP\_DLPFCFG\_MASK}, \hyperpage{203}
-    \subitem {TEMP\_DLPFCFG\_SHIFT}, \hyperpage{203}
-    \subitem {TEMP\_OUT\_H}, \hyperpage{203}
-    \subitem {TEMP\_OUT\_L}, \hyperpage{203}
-    \subitem {TIMEBASE\_CORRECTION\_PLL}, \hyperpage{203}
-    \subitem {USER\_BANK\_0}, \hyperpage{203}
-    \subitem {USER\_BANK\_1}, \hyperpage{204}
-    \subitem {USER\_BANK\_2}, \hyperpage{204}
-    \subitem {USER\_BANK\_3}, \hyperpage{204}
-    \subitem {USER\_CTRL}, \hyperpage{204}
-    \subitem {USER\_CTRL\_DMP\_EN}, \hyperpage{204}
-    \subitem {USER\_CTRL\_DMP\_RST}, \hyperpage{204}
-    \subitem {USER\_CTRL\_FIFO\_EN}, \hyperpage{204}
-    \subitem {USER\_CTRL\_I2C\_IF\_DIS}, \hyperpage{204}
-    \subitem {USER\_CTRL\_I2C\_MST\_EN}, \hyperpage{204}
-    \subitem {USER\_CTRL\_I2C\_MST\_RST}, \hyperpage{204}
-    \subitem {USER\_CTRL\_SRAM\_RST}, \hyperpage{204}
-    \subitem {WHO\_AM\_I}, \hyperpage{204}
-    \subitem {WHO\_AM\_I\_VAL}, \hyperpage{205}
-    \subitem {WOF\_DEGLITCH\_EN}, \hyperpage{205}
-    \subitem {WOF\_EDGE\_INT}, \hyperpage{205}
-    \subitem {XA\_OFFS\_H}, \hyperpage{205}
-    \subitem {XA\_OFFS\_L}, \hyperpage{205}
-    \subitem {XG\_OFFS\_USRH}, \hyperpage{205}
-    \subitem {XG\_OFFS\_USRL}, \hyperpage{205}
-    \subitem {XGYRO\_CTEN}, \hyperpage{205}
-    \subitem {YA\_OFFS\_H}, \hyperpage{205}
-    \subitem {YA\_OFFS\_L}, \hyperpage{206}
-    \subitem {YG\_OFFS\_USRH}, \hyperpage{206}
-    \subitem {YG\_OFFS\_USRL}, \hyperpage{206}
-    \subitem {YGYRO\_CTEN}, \hyperpage{206}
-    \subitem {ZA\_OFFS\_H}, \hyperpage{206}
-    \subitem {ZA\_OFFS\_L}, \hyperpage{206}
-    \subitem {ZG\_OFFS\_USRH}, \hyperpage{206}
-    \subitem {ZG\_OFFS\_USRL}, \hyperpage{206}
-    \subitem {ZGYRO\_CTEN}, \hyperpage{206}
-  \item {ICM\_ADDR}
-    \subitem {gyr\_test.ino}, \hyperpage{72}
-    \subitem {i2c\_accel.ino}, \hyperpage{80}
-    \subitem {i2c\_basic.ino}, \hyperpage{84}
-    \subitem {i2c\_gyro.ino}, \hyperpage{88}
-    \subitem {i2c\_magneto.ino}, \hyperpage{92}
-    \subitem {interrupt.ino}, \hyperpage{96}
-    \subitem {mag\_test.ino}, \hyperpage{101}
-    \subitem {test.ino}, \hyperpage{117}
-    \subitem {test2.ino}, \hyperpage{127}
-  \item {icm\_plat\_t}, \hyperpage{64}
-    \subitem {delay\_ms}, \hyperpage{64}
-    \subitem {i2c\_addr}, \hyperpage{64}
-    \subitem {read}, \hyperpage{64}
-    \subitem {spi\_cs}, \hyperpage{64}
-    \subitem {spi\_reg\_rw\_bits}, \hyperpage{65}
-    \subitem {user}, \hyperpage{65}
-    \subitem {write}, \hyperpage{65}
-  \item {imu}
-    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {gyr\_test.ino}, \hyperpage{74}
     \subitem {i2c\_accel.ino}, \hyperpage{82}
     \subitem {i2c\_basic.ino}, \hyperpage{86}
-    \subitem {i2c\_gyro.ino}, \hyperpage{89}
+    \subitem {i2c\_gyro.ino}, \hyperpage{90}
     \subitem {i2c\_magneto.ino}, \hyperpage{93}
     \subitem {interrupt.ino}, \hyperpage{97}
-    \subitem {mag\_test.ino}, \hyperpage{103}
-    \subitem {spi\_accel.ino}, \hyperpage{107}
-    \subitem {spi\_basic.ino}, \hyperpage{110}
-    \subitem {spi\_gyro.ino}, \hyperpage{113}
-    \subitem {test.ino}, \hyperpage{121}
-    \subitem {test2.ino}, \hyperpage{131}
-  \item {initMag}
-    \subitem {DevLab\_ICM20948}, \hyperpage{38}
-  \item {INT1\_ACTL}
+    \subitem {mag\_test.ino}, \hyperpage{102}
+    \subitem {test.ino}, \hyperpage{120}
+    \subitem {test2.ino}, \hyperpage{129}
+  \item {i2c\_gyro.ino}
+    \subitem {I2C\_FREQ}, \hyperpage{90}
+    \subitem {ICM\_ADDR}, \hyperpage{90}
+    \subitem {imu}, \hyperpage{91}
+    \subitem {loop}, \hyperpage{90}
+    \subitem {SCL\_PIN}, \hyperpage{90}
+    \subitem {SDA\_PIN}, \hyperpage{90}
+    \subitem {setup}, \hyperpage{90}
+  \item {I2C\_Interface}, \hyperpage{58}
+    \subitem {address}, \hyperpage{61}
+    \subitem {beginI2C}, \hyperpage{60}
+    \subitem {beginSPI}, \hyperpage{60}
+    \subitem {i2c}, \hyperpage{61}
+    \subitem {read}, \hyperpage{60}
+    \subitem {write}, \hyperpage{61}
+  \item {i2c\_magneto.ino}
+    \subitem {I2C\_FREQ}, \hyperpage{93}
+    \subitem {ICM\_ADDR}, \hyperpage{93}
+    \subitem {imu}, \hyperpage{95}
+    \subitem {loop}, \hyperpage{94}
+    \subitem {SCL\_PIN}, \hyperpage{93}
+    \subitem {SDA\_PIN}, \hyperpage{94}
+    \subitem {setup}, \hyperpage{94}
+  \item {I2C\_MST\_CLK\_MASK}
     \subitem {ICM20948\_regs.h}, \hyperpage{197}
-  \item {INT1\_LATCH\_INT\_EN}
+  \item {I2C\_MST\_CTRL}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
+  \item {I2C\_MST\_DELAY\_CTRL}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
+  \item {I2C\_MST\_ODR\_CONFIG}
+    \subitem {ICM20948\_regs.h}, \hyperpage{197}
+  \item {I2C\_MST\_P\_NSR}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT1\_OPEN}
+  \item {I2C\_MST\_STATUS}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_ACTL\_FSYNC}
+  \item {I2C\_SLV0\_ADDR}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_ANYRD\_2CLEAR}
+  \item {I2C\_SLV0\_CTRL}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_DMP\_INT1\_EN}
+  \item {I2C\_SLV0\_DELAY\_EN}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_ENABLE}
+  \item {I2C\_SLV0\_DO}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_ENABLE\_1}
+  \item {I2C\_SLV0\_REG}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_ENABLE\_2}
+  \item {I2C\_SLV1\_ADDR}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_ENABLE\_3}
+  \item {I2C\_SLV1\_CTRL}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_I2C\_MST\_INT\_EN}
+  \item {I2C\_SLV1\_DELAY\_EN}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_PIN\_CFG}
+  \item {I2C\_SLV1\_DO}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_PLL\_RDY\_EN}
+  \item {I2C\_SLV1\_REG}
     \subitem {ICM20948\_regs.h}, \hyperpage{198}
-  \item {INT\_RAW\_DATA\_0\_RDY\_EN}
+  \item {I2C\_SLV2\_ADDR}
     \subitem {ICM20948\_regs.h}, \hyperpage{199}
-  \item {INT\_REG\_WOF\_EN}
+  \item {I2C\_SLV2\_CTRL}
     \subitem {ICM20948\_regs.h}, \hyperpage{199}
-  \item {INT\_STATUS}
+  \item {I2C\_SLV2\_DELAY\_EN}
     \subitem {ICM20948\_regs.h}, \hyperpage{199}
-  \item {INT\_STATUS\_1}
+  \item {I2C\_SLV2\_DO}
     \subitem {ICM20948\_regs.h}, \hyperpage{199}
-  \item {INT\_STATUS\_2}
+  \item {I2C\_SLV2\_REG}
     \subitem {ICM20948\_regs.h}, \hyperpage{199}
-  \item {INT\_STATUS\_3}
+  \item {I2C\_SLV3\_ADDR}
     \subitem {ICM20948\_regs.h}, \hyperpage{199}
-  \item {INT\_WOM\_INT\_EN}
+  \item {I2C\_SLV3\_CTRL}
     \subitem {ICM20948\_regs.h}, \hyperpage{199}
-  \item {intEn}
+  \item {I2C\_SLV3\_DELAY\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+  \item {I2C\_SLV3\_DO}
+    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+  \item {I2C\_SLV3\_REG}
+    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+  \item {I2C\_SLV4\_ADDR}
+    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+  \item {I2C\_SLV4\_CTRL}
+    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+  \item {I2C\_SLV4\_DELAY\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLV4\_DI}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLV4\_DLY\_MASK}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLV4\_DO}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLV4\_REG}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLVx\_BYTE\_SW}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLVx\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLVx\_GRP}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLVx\_LENG\_MASK}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLVx\_REG\_DIS}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {I2C\_SLVx\_RNW}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {i2cMstInt}
+    \subitem {ICM20948\_IntStatus}, \hyperpage{64}
+  \item {i2cMstIntEn}
+    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{62}
+  \item {ICM20948\_Accel\_Average}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
+  \item {ICM20948\_Accel\_DLPFCFG}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{165}
+  \item {ICM20948\_Accel\_FullScale}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
+  \item {ICM20948\_Clock\_Source}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
+  \item {ICM20948\_Gyro\_Average}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
+  \item {ICM20948\_Gyro\_DLPF}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
+  \item {ICM20948\_Gyro\_FullScale}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
+  \item {ICM20948\_IntEnableConfig}, \hyperpage{61}
+    \subitem {dmpInt1En}, \hyperpage{62}
+    \subitem {fifoOvfEn}, \hyperpage{62}
+    \subitem {fifoWmEn}, \hyperpage{62}
+    \subitem {i2cMstIntEn}, \hyperpage{62}
+    \subitem {pllRdyEn}, \hyperpage{62}
+    \subitem {rawDataRdyEn}, \hyperpage{62}
+    \subitem {wofEn}, \hyperpage{62}
+    \subitem {womIntEn}, \hyperpage{62}
+  \item {ICM20948\_IntPinConfig}, \hyperpage{62}
+    \subitem {activeLevel}, \hyperpage{63}
+    \subitem {bypassEn}, \hyperpage{63}
+    \subitem {clearMode}, \hyperpage{63}
+    \subitem {driveMode}, \hyperpage{63}
+    \subitem {fsyncActLevel}, \hyperpage{63}
+    \subitem {fsyncIntEn}, \hyperpage{63}
+    \subitem {latchMode}, \hyperpage{63}
+  \item {ICM20948\_IntStatus}, \hyperpage{64}
+    \subitem {dmpInt1}, \hyperpage{64}
+    \subitem {fifoOvf}, \hyperpage{64}
+    \subitem {fifoWm}, \hyperpage{64}
+    \subitem {i2cMstInt}, \hyperpage{64}
+    \subitem {pllRdyInt}, \hyperpage{64}
+    \subitem {rawDataRdy}, \hyperpage{64}
+    \subitem {womInt}, \hyperpage{64}
+  \item {ICM20948\_Op\_Mode}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
+  \item {ICM20948\_regs.h}
+    \subitem {ACCEL\_BYPASS\_3DB\_BW\_HZ}, \hyperpage{184}
+    \subitem {ACCEL\_BYPASS\_NBW\_HZ}, \hyperpage{184}
+    \subitem {ACCEL\_BYPASS\_RATE\_HZ}, \hyperpage{184}
+    \subitem {ACCEL\_CONFIG}, \hyperpage{185}
+    \subitem {ACCEL\_CONFIG\_2}, \hyperpage{185}
+    \subitem {ACCEL\_DEC3\_AVG\_16}, \hyperpage{185}
+    \subitem {ACCEL\_DEC3\_AVG\_32}, \hyperpage{185}
+    \subitem {ACCEL\_DEC3\_AVG\_4}, \hyperpage{185}
+    \subitem {ACCEL\_DEC3\_AVG\_8}, \hyperpage{185}
+    \subitem {ACCEL\_DLPF0\_3DB\_BW\_HZ}, \hyperpage{185}
+    \subitem {ACCEL\_DLPF0\_NBW\_HZ}, \hyperpage{185}
+    \subitem {ACCEL\_DLPF1\_3DB\_BW\_HZ}, \hyperpage{185}
+    \subitem {ACCEL\_DLPF1\_NBW\_HZ}, \hyperpage{185}
+    \subitem {ACCEL\_DLPF2\_3DB\_BW\_HZ}, \hyperpage{185}
+    \subitem {ACCEL\_DLPF2\_NBW\_HZ}, \hyperpage{185}
+    \subitem {ACCEL\_DLPF3\_3DB\_BW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF3\_NBW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF4\_3DB\_BW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF4\_NBW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF5\_3DB\_BW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF5\_NBW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF6\_3DB\_BW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF6\_NBW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF7\_3DB\_BW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF7\_NBW\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF\_BASE\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPF\_ODR\_HZ}, \hyperpage{186}
+    \subitem {ACCEL\_DLPFCFG\_0}, \hyperpage{187}
+    \subitem {ACCEL\_DLPFCFG\_1}, \hyperpage{187}
+    \subitem {ACCEL\_DLPFCFG\_2}, \hyperpage{187}
+    \subitem {ACCEL\_DLPFCFG\_3}, \hyperpage{187}
+    \subitem {ACCEL\_DLPFCFG\_4}, \hyperpage{187}
+    \subitem {ACCEL\_DLPFCFG\_5}, \hyperpage{187}
+    \subitem {ACCEL\_DLPFCFG\_6}, \hyperpage{187}
+    \subitem {ACCEL\_DLPFCFG\_7}, \hyperpage{187}
+    \subitem {ACCEL\_DLPFCFG\_MASK}, \hyperpage{187}
+    \subitem {ACCEL\_DLPFCFG\_SHIFT}, \hyperpage{187}
+    \subitem {ACCEL\_FCHOICE}, \hyperpage{187}
+    \subitem {ACCEL\_FCHOICE\_BYPASS}, \hyperpage{188}
+    \subitem {ACCEL\_FCHOICE\_DLPF}, \hyperpage{188}
+    \subitem {ACCEL\_FS\_16G}, \hyperpage{188}
+    \subitem {ACCEL\_FS\_2G}, \hyperpage{188}
+    \subitem {ACCEL\_FS\_4G}, \hyperpage{188}
+    \subitem {ACCEL\_FS\_8G}, \hyperpage{188}
+    \subitem {ACCEL\_FS\_SEL\_MASK}, \hyperpage{188}
+    \subitem {ACCEL\_FS\_SEL\_SHIFT}, \hyperpage{188}
+    \subitem {ACCEL\_INTEL\_CTRL}, \hyperpage{188}
+    \subitem {ACCEL\_INTEL\_EN}, \hyperpage{188}
+    \subitem {ACCEL\_INTEL\_MODE\_INT}, \hyperpage{188}
+    \subitem {ACCEL\_SMPLRT\_DIV\_1}, \hyperpage{189}
+    \subitem {ACCEL\_SMPLRT\_DIV\_2}, \hyperpage{189}
+    \subitem {ACCEL\_SMPLRT\_DIV\_MAX}, \hyperpage{189}
+    \subitem {ACCEL\_SMPLRT\_DIV\_MIN}, \hyperpage{189}
+    \subitem {ACCEL\_WOM\_THR}, \hyperpage{189}
+    \subitem {ACCEL\_XOUT\_H}, \hyperpage{189}
+    \subitem {ACCEL\_XOUT\_L}, \hyperpage{189}
+    \subitem {ACCEL\_YOUT\_H}, \hyperpage{189}
+    \subitem {ACCEL\_YOUT\_L}, \hyperpage{189}
+    \subitem {ACCEL\_ZOUT\_H}, \hyperpage{189}
+    \subitem {ACCEL\_ZOUT\_L}, \hyperpage{189}
+    \subitem {AK09916\_I2C\_ADDR}, \hyperpage{189}
+    \subitem {AK\_CNTL2}, \hyperpage{190}
+    \subitem {AK\_CNTL3}, \hyperpage{190}
+    \subitem {AK\_HXL}, \hyperpage{190}
+    \subitem {AK\_ST1}, \hyperpage{190}
+    \subitem {AK\_ST2}, \hyperpage{190}
+    \subitem {AK\_WIA2}, \hyperpage{190}
+    \subitem {AK\_WIA2\_VAL}, \hyperpage{190}
+    \subitem {AUTO\_SEL}, \hyperpage{190}
+    \subitem {AX\_ST\_EN\_REG}, \hyperpage{190}
+    \subitem {AY\_ST\_EN\_REG}, \hyperpage{190}
+    \subitem {AZ\_ST\_EN\_REG}, \hyperpage{190}
+    \subitem {BANK1\_REG\_BANK\_SEL}, \hyperpage{190}
+    \subitem {BANK2\_REG\_BANK\_SEL}, \hyperpage{191}
+    \subitem {BANK3\_REG\_BANK\_SEL}, \hyperpage{191}
+    \subitem {BYPASS\_EN}, \hyperpage{191}
+    \subitem {CLK\_STOP}, \hyperpage{191}
+    \subitem {DEC3\_CFG\_MASK}, \hyperpage{191}
+    \subitem {DEC3\_CFG\_SHIFT}, \hyperpage{191}
+    \subitem {DELAY\_ES\_SHADOW}, \hyperpage{191}
+    \subitem {DELAY\_TIME\_EN}, \hyperpage{191}
+    \subitem {DELAY\_TIMEH}, \hyperpage{191}
+    \subitem {DELAY\_TIMEL}, \hyperpage{191}
+    \subitem {dps1000}, \hyperpage{191}
+    \subitem {dps2000}, \hyperpage{191}
+    \subitem {dps250}, \hyperpage{192}
+    \subitem {dps500}, \hyperpage{192}
+    \subitem {EnhancedRegular}, \hyperpage{192}
+    \subitem {EXT\_SLV\_SENS\_DATA\_00}, \hyperpage{192}
+    \subitem {EXT\_SLV\_SENS\_DATA\_23}, \hyperpage{192}
+    \subitem {EXT\_SYNC\_SET\_MASK}, \hyperpage{192}
+    \subitem {FIFO\_CFG}, \hyperpage{192}
+    \subitem {FIFO\_COUNTH}, \hyperpage{192}
+    \subitem {FIFO\_COUNTL}, \hyperpage{192}
+    \subitem {FIFO\_EN\_1}, \hyperpage{192}
+    \subitem {FIFO\_EN\_2}, \hyperpage{192}
+    \subitem {FIFO\_MODE}, \hyperpage{192}
+    \subitem {FIFO\_R\_W}, \hyperpage{193}
+    \subitem {FIFO\_RST}, \hyperpage{193}
+    \subitem {FSYNC\_CONFIG}, \hyperpage{193}
+    \subitem {FSYNC\_INT\_MODE\_EN}, \hyperpage{193}
+    \subitem {g16}, \hyperpage{193}
+    \subitem {g2}, \hyperpage{193}
+    \subitem {g4}, \hyperpage{193}
+    \subitem {g8}, \hyperpage{193}
+    \subitem {GYRO\_AVGCFG\_MASK}, \hyperpage{193}
+    \subitem {GYRO\_AVGCFG\_SHIFT}, \hyperpage{193}
+    \subitem {GYRO\_BW\_MEDIUM}, \hyperpage{193}
+    \subitem {GYRO\_BW\_NARROW}, \hyperpage{193}
+    \subitem {GYRO\_BW\_ULTRA\_WIDE}, \hyperpage{194}
+    \subitem {GYRO\_BW\_WIDE}, \hyperpage{194}
+    \subitem {GYRO\_CONFIG\_1}, \hyperpage{194}
+    \subitem {GYRO\_CONFIG\_2}, \hyperpage{194}
+    \subitem {GYRO\_DLPF\_BASE\_HZ}, \hyperpage{194}
+    \subitem {GYRO\_DLPF\_ODR\_HZ}, \hyperpage{194}
+    \subitem {GYRO\_DLPFCFG\_0}, \hyperpage{194}
+    \subitem {GYRO\_DLPFCFG\_1}, \hyperpage{194}
+    \subitem {GYRO\_DLPFCFG\_2}, \hyperpage{194}
+    \subitem {GYRO\_DLPFCFG\_3}, \hyperpage{194}
+    \subitem {GYRO\_DLPFCFG\_4}, \hyperpage{194}
+    \subitem {GYRO\_DLPFCFG\_5}, \hyperpage{195}
+    \subitem {GYRO\_DLPFCFG\_6}, \hyperpage{195}
+    \subitem {GYRO\_DLPFCFG\_7}, \hyperpage{195}
+    \subitem {GYRO\_DLPFCFG\_MASK}, \hyperpage{195}
+    \subitem {GYRO\_DLPFCFG\_SHIFT}, \hyperpage{195}
+    \subitem {GYRO\_FCHOICE}, \hyperpage{195}
+    \subitem {GYRO\_FCHOICE\_BYPASS}, \hyperpage{195}
+    \subitem {GYRO\_FCHOICE\_DLPF}, \hyperpage{195}
+    \subitem {GYRO\_FS\_1000DPS}, \hyperpage{195}
+    \subitem {GYRO\_FS\_2000DPS}, \hyperpage{195}
+    \subitem {GYRO\_FS\_250DPS}, \hyperpage{195}
+    \subitem {GYRO\_FS\_500DPS}, \hyperpage{196}
+    \subitem {GYRO\_FS\_SEL\_MASK}, \hyperpage{196}
+    \subitem {GYRO\_FS\_SEL\_SHIFT}, \hyperpage{196}
+    \subitem {GYRO\_SMPLRT\_DIV}, \hyperpage{196}
+    \subitem {GYRO\_SMPLRT\_MIN\_HZ}, \hyperpage{196}
+    \subitem {GYRO\_XOUT\_H}, \hyperpage{196}
+    \subitem {GYRO\_XOUT\_L}, \hyperpage{196}
+    \subitem {GYRO\_YOUT\_H}, \hyperpage{196}
+    \subitem {GYRO\_YOUT\_L}, \hyperpage{196}
+    \subitem {GYRO\_ZOUT\_H}, \hyperpage{196}
+    \subitem {GYRO\_ZOUT\_L}, \hyperpage{196}
+    \subitem {HighAccuracy}, \hyperpage{196}
+    \subitem {Hz10}, \hyperpage{197}
+    \subitem {Hz15}, \hyperpage{197}
+    \subitem {Hz2}, \hyperpage{197}
+    \subitem {Hz20}, \hyperpage{197}
+    \subitem {Hz25}, \hyperpage{197}
+    \subitem {Hz30}, \hyperpage{197}
+    \subitem {Hz6}, \hyperpage{197}
+    \subitem {Hz8}, \hyperpage{197}
+    \subitem {I2C\_MST\_CLK\_MASK}, \hyperpage{197}
+    \subitem {I2C\_MST\_CTRL}, \hyperpage{197}
+    \subitem {I2C\_MST\_DELAY\_CTRL}, \hyperpage{197}
+    \subitem {I2C\_MST\_ODR\_CONFIG}, \hyperpage{197}
+    \subitem {I2C\_MST\_P\_NSR}, \hyperpage{198}
+    \subitem {I2C\_MST\_STATUS}, \hyperpage{198}
+    \subitem {I2C\_SLV0\_ADDR}, \hyperpage{198}
+    \subitem {I2C\_SLV0\_CTRL}, \hyperpage{198}
+    \subitem {I2C\_SLV0\_DELAY\_EN}, \hyperpage{198}
+    \subitem {I2C\_SLV0\_DO}, \hyperpage{198}
+    \subitem {I2C\_SLV0\_REG}, \hyperpage{198}
+    \subitem {I2C\_SLV1\_ADDR}, \hyperpage{198}
+    \subitem {I2C\_SLV1\_CTRL}, \hyperpage{198}
+    \subitem {I2C\_SLV1\_DELAY\_EN}, \hyperpage{198}
+    \subitem {I2C\_SLV1\_DO}, \hyperpage{198}
+    \subitem {I2C\_SLV1\_REG}, \hyperpage{198}
+    \subitem {I2C\_SLV2\_ADDR}, \hyperpage{199}
+    \subitem {I2C\_SLV2\_CTRL}, \hyperpage{199}
+    \subitem {I2C\_SLV2\_DELAY\_EN}, \hyperpage{199}
+    \subitem {I2C\_SLV2\_DO}, \hyperpage{199}
+    \subitem {I2C\_SLV2\_REG}, \hyperpage{199}
+    \subitem {I2C\_SLV3\_ADDR}, \hyperpage{199}
+    \subitem {I2C\_SLV3\_CTRL}, \hyperpage{199}
+    \subitem {I2C\_SLV3\_DELAY\_EN}, \hyperpage{199}
+    \subitem {I2C\_SLV3\_DO}, \hyperpage{199}
+    \subitem {I2C\_SLV3\_REG}, \hyperpage{199}
+    \subitem {I2C\_SLV4\_ADDR}, \hyperpage{199}
+    \subitem {I2C\_SLV4\_CTRL}, \hyperpage{199}
+    \subitem {I2C\_SLV4\_DELAY\_EN}, \hyperpage{200}
+    \subitem {I2C\_SLV4\_DI}, \hyperpage{200}
+    \subitem {I2C\_SLV4\_DLY\_MASK}, \hyperpage{200}
+    \subitem {I2C\_SLV4\_DO}, \hyperpage{200}
+    \subitem {I2C\_SLV4\_REG}, \hyperpage{200}
+    \subitem {I2C\_SLVx\_BYTE\_SW}, \hyperpage{200}
+    \subitem {I2C\_SLVx\_EN}, \hyperpage{200}
+    \subitem {I2C\_SLVx\_GRP}, \hyperpage{200}
+    \subitem {I2C\_SLVx\_LENG\_MASK}, \hyperpage{200}
+    \subitem {I2C\_SLVx\_REG\_DIS}, \hyperpage{200}
+    \subitem {I2C\_SLVx\_RNW}, \hyperpage{200}
+    \subitem {INT1\_ACTL}, \hyperpage{200}
+    \subitem {INT1\_LATCH\_INT\_EN}, \hyperpage{201}
+    \subitem {INT1\_OPEN}, \hyperpage{201}
+    \subitem {INT\_ACTL\_FSYNC}, \hyperpage{201}
+    \subitem {INT\_ANYRD\_2CLEAR}, \hyperpage{201}
+    \subitem {INT\_DMP\_INT1\_EN}, \hyperpage{201}
+    \subitem {INT\_ENABLE}, \hyperpage{201}
+    \subitem {INT\_ENABLE\_1}, \hyperpage{201}
+    \subitem {INT\_ENABLE\_2}, \hyperpage{201}
+    \subitem {INT\_ENABLE\_3}, \hyperpage{201}
+    \subitem {INT\_I2C\_MST\_INT\_EN}, \hyperpage{201}
+    \subitem {INT\_PIN\_CFG}, \hyperpage{201}
+    \subitem {INT\_PLL\_RDY\_EN}, \hyperpage{201}
+    \subitem {INT\_RAW\_DATA\_0\_RDY\_EN}, \hyperpage{202}
+    \subitem {INT\_REG\_WOF\_EN}, \hyperpage{202}
+    \subitem {INT\_STATUS}, \hyperpage{202}
+    \subitem {INT\_STATUS\_1}, \hyperpage{202}
+    \subitem {INT\_STATUS\_2}, \hyperpage{202}
+    \subitem {INT\_STATUS\_3}, \hyperpage{202}
+    \subitem {INT\_WOM\_INT\_EN}, \hyperpage{202}
+    \subitem {INTERNAL\_20MHZ}, \hyperpage{202}
+    \subitem {LowPower}, \hyperpage{202}
+    \subitem {LP\_ACCEL\_CYCLE}, \hyperpage{202}
+    \subitem {LP\_CONFIG}, \hyperpage{202}
+    \subitem {LP\_GYRO\_CYCLE}, \hyperpage{202}
+    \subitem {LP\_I2C\_MST\_CYCLE}, \hyperpage{203}
+    \subitem {MOD\_CTRL\_USR}, \hyperpage{203}
+    \subitem {MST\_LOST\_ARB}, \hyperpage{203}
+    \subitem {MST\_ODR\_CFG\_MASK}, \hyperpage{203}
+    \subitem {MST\_PASS\_THROUGH}, \hyperpage{203}
+    \subitem {MST\_SLV0\_NACK}, \hyperpage{203}
+    \subitem {MST\_SLV1\_NACK}, \hyperpage{203}
+    \subitem {MST\_SLV2\_NACK}, \hyperpage{203}
+    \subitem {MST\_SLV3\_NACK}, \hyperpage{203}
+    \subitem {MST\_SLV4\_DONE}, \hyperpage{203}
+    \subitem {MST\_SLV4\_NACK}, \hyperpage{203}
+    \subitem {MULT\_MST\_EN}, \hyperpage{203}
+    \subitem {ODR\_ALIGN\_EN}, \hyperpage{204}
+    \subitem {ODR\_ALIGN\_EN\_BIT}, \hyperpage{204}
+    \subitem {PWR\_CLKSEL\_AUTO}, \hyperpage{204}
+    \subitem {PWR\_CLKSEL\_INT\_20MHZ}, \hyperpage{204}
+    \subitem {PWR\_CLKSEL\_MASK}, \hyperpage{204}
+    \subitem {PWR\_DEVICE\_RESET}, \hyperpage{204}
+    \subitem {PWR\_DISABLE\_ACCEL}, \hyperpage{204}
+    \subitem {PWR\_DISABLE\_GYRO}, \hyperpage{204}
+    \subitem {PWR\_LP\_EN}, \hyperpage{204}
+    \subitem {PWR\_MGMT\_1}, \hyperpage{204}
+    \subitem {PWR\_MGMT\_2}, \hyperpage{204}
+    \subitem {PWR\_SLEEP}, \hyperpage{204}
+    \subitem {PWR\_TEMP\_DIS}, \hyperpage{205}
+    \subitem {REG\_BANK\_SEL}, \hyperpage{205}
+    \subitem {REG\_BANK\_SEL\_USER\_BANK\_MASK}, \hyperpage{205}
+    \subitem {REG\_BANK\_SEL\_USER\_BANK\_SHIFT}, \hyperpage{205}
+    \subitem {REG\_LP\_DMP\_EN}, \hyperpage{205}
+    \subitem {Regular}, \hyperpage{205}
+    \subitem {SELF\_TEST\_X\_ACCEL}, \hyperpage{205}
+    \subitem {SELF\_TEST\_X\_GYRO}, \hyperpage{205}
+    \subitem {SELF\_TEST\_Y\_ACCEL}, \hyperpage{205}
+    \subitem {SELF\_TEST\_Y\_GYRO}, \hyperpage{205}
+    \subitem {SELF\_TEST\_Z\_ACCEL}, \hyperpage{205}
+    \subitem {SELF\_TEST\_Z\_GYRO}, \hyperpage{205}
+    \subitem {STS\_DMP\_INT1}, \hyperpage{206}
+    \subitem {STS\_I2C\_MST\_INT}, \hyperpage{206}
+    \subitem {STS\_PLL\_RDY\_INT}, \hyperpage{206}
+    \subitem {STS\_RAW\_DATA\_0\_RDY\_INT}, \hyperpage{206}
+    \subitem {STS\_WOM\_INT}, \hyperpage{206}
+    \subitem {TEMP\_CONFIG}, \hyperpage{206}
+    \subitem {TEMP\_DLPFCFG\_MASK}, \hyperpage{206}
+    \subitem {TEMP\_DLPFCFG\_SHIFT}, \hyperpage{206}
+    \subitem {TEMP\_OUT\_H}, \hyperpage{206}
+    \subitem {TEMP\_OUT\_L}, \hyperpage{206}
+    \subitem {TIMEBASE\_CORRECTION\_PLL}, \hyperpage{206}
+    \subitem {USER\_BANK\_0}, \hyperpage{206}
+    \subitem {USER\_BANK\_1}, \hyperpage{207}
+    \subitem {USER\_BANK\_2}, \hyperpage{207}
+    \subitem {USER\_BANK\_3}, \hyperpage{207}
+    \subitem {USER\_CTRL}, \hyperpage{207}
+    \subitem {USER\_CTRL\_DMP\_EN}, \hyperpage{207}
+    \subitem {USER\_CTRL\_DMP\_RST}, \hyperpage{207}
+    \subitem {USER\_CTRL\_FIFO\_EN}, \hyperpage{207}
+    \subitem {USER\_CTRL\_I2C\_IF\_DIS}, \hyperpage{207}
+    \subitem {USER\_CTRL\_I2C\_MST\_EN}, \hyperpage{207}
+    \subitem {USER\_CTRL\_I2C\_MST\_RST}, \hyperpage{207}
+    \subitem {USER\_CTRL\_SRAM\_RST}, \hyperpage{207}
+    \subitem {WHO\_AM\_I}, \hyperpage{207}
+    \subitem {WHO\_AM\_I\_VAL}, \hyperpage{208}
+    \subitem {WOF\_DEGLITCH\_EN}, \hyperpage{208}
+    \subitem {WOF\_EDGE\_INT}, \hyperpage{208}
+    \subitem {XA\_OFFS\_H}, \hyperpage{208}
+    \subitem {XA\_OFFS\_L}, \hyperpage{208}
+    \subitem {XG\_OFFS\_USRH}, \hyperpage{208}
+    \subitem {XG\_OFFS\_USRL}, \hyperpage{208}
+    \subitem {XGYRO\_CTEN}, \hyperpage{208}
+    \subitem {YA\_OFFS\_H}, \hyperpage{208}
+    \subitem {YA\_OFFS\_L}, \hyperpage{209}
+    \subitem {YG\_OFFS\_USRH}, \hyperpage{209}
+    \subitem {YG\_OFFS\_USRL}, \hyperpage{209}
+    \subitem {YGYRO\_CTEN}, \hyperpage{209}
+    \subitem {ZA\_OFFS\_H}, \hyperpage{209}
+    \subitem {ZA\_OFFS\_L}, \hyperpage{209}
+    \subitem {ZG\_OFFS\_USRH}, \hyperpage{209}
+    \subitem {ZG\_OFFS\_USRL}, \hyperpage{209}
+    \subitem {ZGYRO\_CTEN}, \hyperpage{209}
+  \item {ICM\_ADDR}
+    \subitem {gyr\_test.ino}, \hyperpage{74}
+    \subitem {i2c\_accel.ino}, \hyperpage{82}
+    \subitem {i2c\_basic.ino}, \hyperpage{86}
+    \subitem {i2c\_gyro.ino}, \hyperpage{90}
+    \subitem {i2c\_magneto.ino}, \hyperpage{93}
     \subitem {interrupt.ino}, \hyperpage{97}
+    \subitem {mag\_test.ino}, \hyperpage{102}
+    \subitem {test.ino}, \hyperpage{120}
+    \subitem {test2.ino}, \hyperpage{129}
+  \item {icm\_plat\_t}, \hyperpage{65}
+    \subitem {delay\_ms}, \hyperpage{65}
+    \subitem {i2c\_addr}, \hyperpage{65}
+    \subitem {read}, \hyperpage{65}
+    \subitem {spi\_cs}, \hyperpage{65}
+    \subitem {spi\_reg\_rw\_bits}, \hyperpage{66}
+    \subitem {user}, \hyperpage{66}
+    \subitem {write}, \hyperpage{66}
+  \item {imu}
+    \subitem {gyr\_test.ino}, \hyperpage{78}
+    \subitem {i2c\_accel.ino}, \hyperpage{84}
+    \subitem {i2c\_basic.ino}, \hyperpage{87}
+    \subitem {i2c\_gyro.ino}, \hyperpage{91}
+    \subitem {i2c\_magneto.ino}, \hyperpage{95}
+    \subitem {interrupt.ino}, \hyperpage{99}
+    \subitem {mag\_test.ino}, \hyperpage{104}
+    \subitem {spi\_accel.ino}, \hyperpage{108}
+    \subitem {spi\_basic.ino}, \hyperpage{112}
+    \subitem {spi\_gyro.ino}, \hyperpage{116}
+    \subitem {test.ino}, \hyperpage{124}
+    \subitem {test2.ino}, \hyperpage{134}
+  \item {initMag}
+    \subitem {DevLab\_ICM20948}, \hyperpage{39}
+  \item {INT1\_ACTL}
+    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+  \item {INT1\_LATCH\_INT\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT1\_OPEN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_ACTL\_FSYNC}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_ANYRD\_2CLEAR}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_DMP\_INT1\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_ENABLE}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_ENABLE\_1}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_ENABLE\_2}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_ENABLE\_3}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_I2C\_MST\_INT\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_PIN\_CFG}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_PLL\_RDY\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+  \item {INT\_RAW\_DATA\_0\_RDY\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+  \item {INT\_REG\_WOF\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+  \item {INT\_STATUS}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+  \item {INT\_STATUS\_1}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+  \item {INT\_STATUS\_2}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+  \item {INT\_STATUS\_3}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+  \item {INT\_WOM\_INT\_EN}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+  \item {intEn}
+    \subitem {interrupt.ino}, \hyperpage{99}
   \item {intEnableConfig}
     \subitem {DevLab\_ICM20948}, \hyperpage{39}
-  \item {Interface\_7Semi}, \hyperpage{65}
+  \item {Interface\_7Semi}, \hyperpage{66}
     \subitem {\texorpdfstring{$\sim$}{\string~}Interface\_7Semi}, 
-		\hyperpage{66}
-    \subitem {beginI2C}, \hyperpage{66}
-    \subitem {beginSPI}, \hyperpage{66}
-    \subitem {delay\_us}, \hyperpage{66}
-    \subitem {read}, \hyperpage{67}
-    \subitem {write}, \hyperpage{67}
+		\hyperpage{67}
+    \subitem {beginI2C}, \hyperpage{67}
+    \subitem {beginSPI}, \hyperpage{67}
+    \subitem {delay\_us}, \hyperpage{67}
+    \subitem {read}, \hyperpage{68}
+    \subitem {write}, \hyperpage{68}
   \item {INTERNAL\_20MHZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
   \item {INTERNAL\_20MHZ\_0}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {INTERNAL\_20MHZ\_6}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {interrupt.ino}
-    \subitem {I2C\_FREQ}, \hyperpage{96}
-    \subitem {ICM\_ADDR}, \hyperpage{96}
-    \subitem {imu}, \hyperpage{97}
-    \subitem {intEn}, \hyperpage{97}
-    \subitem {isrCount}, \hyperpage{98}
-    \subitem {isrHandler}, \hyperpage{96}
-    \subitem {loop}, \hyperpage{97}
-    \subitem {PIN\_INT}, \hyperpage{96}
-    \subitem {pinCfg}, \hyperpage{98}
-    \subitem {printDobleLinea}, \hyperpage{97}
-    \subitem {printLinea}, \hyperpage{97}
-    \subitem {SCL\_PIN}, \hyperpage{96}
-    \subitem {SDA\_PIN}, \hyperpage{96}
-    \subitem {setup}, \hyperpage{97}
+    \subitem {I2C\_FREQ}, \hyperpage{97}
+    \subitem {ICM\_ADDR}, \hyperpage{97}
+    \subitem {imu}, \hyperpage{99}
+    \subitem {intEn}, \hyperpage{99}
+    \subitem {isrCount}, \hyperpage{99}
+    \subitem {isrHandler}, \hyperpage{98}
+    \subitem {loop}, \hyperpage{98}
+    \subitem {PIN\_INT}, \hyperpage{97}
+    \subitem {pinCfg}, \hyperpage{99}
+    \subitem {printDobleLinea}, \hyperpage{98}
+    \subitem {printLinea}, \hyperpage{98}
+    \subitem {SCL\_PIN}, \hyperpage{98}
+    \subitem {SDA\_PIN}, \hyperpage{98}
+    \subitem {setup}, \hyperpage{98}
   \item {intInit}
     \subitem {DevLab\_ICM20948}, \hyperpage{40}
   \item {isrCount}
-    \subitem {interrupt.ino}, \hyperpage{98}
+    \subitem {interrupt.ino}, \hyperpage{99}
   \item {isrHandler}
-    \subitem {interrupt.ino}, \hyperpage{96}
+    \subitem {interrupt.ino}, \hyperpage{98}
 
   \indexspace
 
   \item {latchMode}
-    \subitem {ICM20948\_IntPinConfig}, \hyperpage{62}
+    \subitem {ICM20948\_IntPinConfig}, \hyperpage{63}
   \item {loop}
-    \subitem {gyr\_test.ino}, \hyperpage{74}
-    \subitem {i2c\_accel.ino}, \hyperpage{81}
-    \subitem {i2c\_basic.ino}, \hyperpage{85}
-    \subitem {i2c\_gyro.ino}, \hyperpage{89}
-    \subitem {i2c\_magneto.ino}, \hyperpage{92}
-    \subitem {interrupt.ino}, \hyperpage{97}
-    \subitem {mag\_test.ino}, \hyperpage{102}
-    \subitem {spi\_accel.ino}, \hyperpage{105}
-    \subitem {spi\_basic.ino}, \hyperpage{109}
-    \subitem {spi\_gyro.ino}, \hyperpage{112}
-    \subitem {test.ino}, \hyperpage{118}
-    \subitem {test2.ino}, \hyperpage{128}
+    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {i2c\_accel.ino}, \hyperpage{83}
+    \subitem {i2c\_basic.ino}, \hyperpage{86}
+    \subitem {i2c\_gyro.ino}, \hyperpage{90}
+    \subitem {i2c\_magneto.ino}, \hyperpage{94}
+    \subitem {interrupt.ino}, \hyperpage{98}
+    \subitem {mag\_test.ino}, \hyperpage{103}
+    \subitem {spi\_accel.ino}, \hyperpage{107}
+    \subitem {spi\_basic.ino}, \hyperpage{111}
+    \subitem {spi\_gyro.ino}, \hyperpage{114}
+    \subitem {test.ino}, \hyperpage{121}
+    \subitem {test2.ino}, \hyperpage{131}
   \item {LowPower}
-    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
   \item {LP\_ACCEL\_CYCLE}
-    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
   \item {LP\_CONFIG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
   \item {LP\_GYRO\_CYCLE}
-    \subitem {ICM20948\_regs.h}, \hyperpage{199}
+    \subitem {ICM20948\_regs.h}, \hyperpage{202}
   \item {LP\_I2C\_MST\_CYCLE}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
 
   \indexspace
 
   \item {mag\_test.ino}
-    \subitem {applySettings}, \hyperpage{101}
-    \subitem {etiquetasOpModeCfg}, \hyperpage{103}
-    \subitem {I2C\_FREQ}, \hyperpage{101}
-    \subitem {ICM\_ADDR}, \hyperpage{101}
-    \subitem {imu}, \hyperpage{103}
-    \subitem {loop}, \hyperpage{102}
-    \subitem {N\_OPM}, \hyperpage{103}
-    \subitem {opMode}, \hyperpage{103}
-    \subitem {printDobleLinea}, \hyperpage{102}
-    \subitem {printLinea}, \hyperpage{102}
-    \subitem {SCL\_PIN}, \hyperpage{101}
-    \subitem {SDA\_PIN}, \hyperpage{101}
-    \subitem {setup}, \hyperpage{102}
+    \subitem {applySettings}, \hyperpage{102}
+    \subitem {etiquetasOpModeCfg}, \hyperpage{104}
+    \subitem {I2C\_FREQ}, \hyperpage{102}
+    \subitem {ICM\_ADDR}, \hyperpage{102}
+    \subitem {imu}, \hyperpage{104}
+    \subitem {loop}, \hyperpage{103}
+    \subitem {N\_OPM}, \hyperpage{104}
+    \subitem {opMode}, \hyperpage{104}
+    \subitem {printDobleLinea}, \hyperpage{103}
+    \subitem {printLinea}, \hyperpage{103}
+    \subitem {SCL\_PIN}, \hyperpage{102}
+    \subitem {SDA\_PIN}, \hyperpage{102}
+    \subitem {setup}, \hyperpage{103}
   \item {MOD\_CTRL\_USR}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MODE\_CONTINUOUS\_1}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {MODE\_CONTINUOUS\_2}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {MODE\_CONTINUOUS\_3}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {MODE\_CONTINUOUS\_4}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {MODE\_POWER\_DOWN}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {MODE\_SELF\_TEST}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {MODE\_SINGLE\_MEASUREMENT}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{164}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{167}
   \item {MST\_LOST\_ARB}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MST\_ODR\_CFG\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MST\_PASS\_THROUGH}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MST\_SLV0\_NACK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MST\_SLV1\_NACK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MST\_SLV2\_NACK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MST\_SLV3\_NACK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MST\_SLV4\_DONE}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MST\_SLV4\_NACK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
   \item {MULT\_MST\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{200}
+    \subitem {ICM20948\_regs.h}, \hyperpage{203}
 
   \indexspace
 
   \item {N\_AVG}
-    \subitem {gyr\_test.ino}, \hyperpage{77}
-    \subitem {test2.ino}, \hyperpage{131}
+    \subitem {gyr\_test.ino}, \hyperpage{79}
+    \subitem {test2.ino}, \hyperpage{134}
   \item {N\_DLPF}
-    \subitem {gyr\_test.ino}, \hyperpage{77}
-    \subitem {test.ino}, \hyperpage{121}
-    \subitem {test2.ino}, \hyperpage{131}
+    \subitem {gyr\_test.ino}, \hyperpage{79}
+    \subitem {test.ino}, \hyperpage{124}
+    \subitem {test2.ino}, \hyperpage{134}
   \item {N\_FS}
-    \subitem {gyr\_test.ino}, \hyperpage{77}
-    \subitem {test.ino}, \hyperpage{122}
-    \subitem {test2.ino}, \hyperpage{131}
+    \subitem {gyr\_test.ino}, \hyperpage{79}
+    \subitem {test.ino}, \hyperpage{124}
+    \subitem {test2.ino}, \hyperpage{134}
   \item {N\_OPM}
-    \subitem {mag\_test.ino}, \hyperpage{103}
+    \subitem {mag\_test.ino}, \hyperpage{104}
   \item {nbw\_hz}
     \subitem {configDLPF}, \hyperpage{23}
   \item {nombre}
@@ -1404,71 +1409,71 @@
   \indexspace
 
   \item {ODR\_ALIGN\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {ODR\_ALIGN\_EN\_BIT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {odr\_hz}
     \subitem {configDLPF}, \hyperpage{23}
   \item {opMode}
-    \subitem {mag\_test.ino}, \hyperpage{103}
+    \subitem {mag\_test.ino}, \hyperpage{104}
 
   \indexspace
 
   \item {PIN\_INT}
-    \subitem {interrupt.ino}, \hyperpage{96}
+    \subitem {interrupt.ino}, \hyperpage{97}
   \item {pinCfg}
-    \subitem {interrupt.ino}, \hyperpage{98}
+    \subitem {interrupt.ino}, \hyperpage{99}
   \item {pllRdyEn}
-    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{61}
+    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{62}
   \item {pllRdyInt}
-    \subitem {ICM20948\_IntStatus}, \hyperpage{63}
+    \subitem {ICM20948\_IntStatus}, \hyperpage{64}
   \item {printDobleLinea}
-    \subitem {gyr\_test.ino}, \hyperpage{74}
-    \subitem {interrupt.ino}, \hyperpage{97}
-    \subitem {mag\_test.ino}, \hyperpage{102}
-    \subitem {test.ino}, \hyperpage{118}
-    \subitem {test2.ino}, \hyperpage{128}
+    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {interrupt.ino}, \hyperpage{98}
+    \subitem {mag\_test.ino}, \hyperpage{103}
+    \subitem {test.ino}, \hyperpage{121}
+    \subitem {test2.ino}, \hyperpage{131}
   \item {printLinea}
-    \subitem {gyr\_test.ino}, \hyperpage{74}
-    \subitem {interrupt.ino}, \hyperpage{97}
-    \subitem {mag\_test.ino}, \hyperpage{102}
-    \subitem {test.ino}, \hyperpage{119}
-    \subitem {test2.ino}, \hyperpage{129}
+    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {interrupt.ino}, \hyperpage{98}
+    \subitem {mag\_test.ino}, \hyperpage{103}
+    \subitem {test.ino}, \hyperpage{121}
+    \subitem {test2.ino}, \hyperpage{131}
   \item {PWR\_CLKSEL\_AUTO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_CLKSEL\_INT\_20MHZ}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_CLKSEL\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_DEVICE\_RESET}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_DISABLE\_ACCEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_DISABLE\_GYRO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_LP\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_MGMT\_1}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_MGMT\_2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_SLEEP}
-    \subitem {ICM20948\_regs.h}, \hyperpage{201}
+    \subitem {ICM20948\_regs.h}, \hyperpage{204}
   \item {PWR\_TEMP\_DIS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
 
   \indexspace
 
   \item {rawDataRdy}
-    \subitem {ICM20948\_IntStatus}, \hyperpage{63}
+    \subitem {ICM20948\_IntStatus}, \hyperpage{64}
   \item {rawDataRdyEn}
-    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{61}
+    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{62}
   \item {read}
     \subitem {BusIO\_7Semi$<$ Bus $>$}, \hyperpage{14, 15}
-    \subitem {I2C\_Interface}, \hyperpage{59}
-    \subitem {icm\_plat\_t}, \hyperpage{64}
-    \subitem {Interface\_7Semi}, \hyperpage{67}
-    \subitem {SPI\_Interface}, \hyperpage{69}
+    \subitem {I2C\_Interface}, \hyperpage{60}
+    \subitem {icm\_plat\_t}, \hyperpage{65}
+    \subitem {Interface\_7Semi}, \hyperpage{68}
+    \subitem {SPI\_Interface}, \hyperpage{70}
   \item {readAccel}
     \subitem {DevLab\_ICM20948}, \hyperpage{41}
   \item {readBit}
@@ -1476,352 +1481,355 @@
   \item {readBits}
     \subitem {BusIO\_7Semi$<$ Bus $>$}, \hyperpage{16, 17}
   \item {readGyro}
-    \subitem {DevLab\_ICM20948}, \hyperpage{41}
+    \subitem {DevLab\_ICM20948}, \hyperpage{42}
   \item {readMag}
     \subitem {DevLab\_ICM20948}, \hyperpage{42}
-  \item {README.md}, \hyperpage{136}
+  \item {README.md}, \hyperpage{138}
   \item {readTemperature}
     \subitem {DevLab\_ICM20948}, \hyperpage{43}
   \item {readWhoAmI}
     \subitem {DevLab\_ICM20948}, \hyperpage{44}
   \item {REG\_BANK\_SEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {REG\_BANK\_SEL\_USER\_BANK\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {REG\_BANK\_SEL\_USER\_BANK\_SHIFT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {REG\_LP\_DMP\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {Regular}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {runSweep}
-    \subitem {gyr\_test.ino}, \hyperpage{74}
-    \subitem {test.ino}, \hyperpage{119}
-    \subitem {test2.ino}, \hyperpage{129}
+    \subitem {gyr\_test.ino}, \hyperpage{76}
+    \subitem {test.ino}, \hyperpage{122}
+    \subitem {test2.ino}, \hyperpage{131}
 
   \indexspace
 
   \item {SCL\_PIN}
-    \subitem {gyr\_test.ino}, \hyperpage{72}
-    \subitem {i2c\_accel.ino}, \hyperpage{81}
-    \subitem {i2c\_basic.ino}, \hyperpage{84}
-    \subitem {i2c\_gyro.ino}, \hyperpage{88}
-    \subitem {i2c\_magneto.ino}, \hyperpage{92}
-    \subitem {interrupt.ino}, \hyperpage{96}
-    \subitem {mag\_test.ino}, \hyperpage{101}
-    \subitem {test.ino}, \hyperpage{117}
-    \subitem {test2.ino}, \hyperpage{127}
+    \subitem {gyr\_test.ino}, \hyperpage{75}
+    \subitem {i2c\_accel.ino}, \hyperpage{82}
+    \subitem {i2c\_basic.ino}, \hyperpage{86}
+    \subitem {i2c\_gyro.ino}, \hyperpage{90}
+    \subitem {i2c\_magneto.ino}, \hyperpage{93}
+    \subitem {interrupt.ino}, \hyperpage{98}
+    \subitem {mag\_test.ino}, \hyperpage{102}
+    \subitem {test.ino}, \hyperpage{120}
+    \subitem {test2.ino}, \hyperpage{130}
   \item {SDA\_PIN}
-    \subitem {gyr\_test.ino}, \hyperpage{73}
-    \subitem {i2c\_accel.ino}, \hyperpage{81}
-    \subitem {i2c\_basic.ino}, \hyperpage{85}
-    \subitem {i2c\_gyro.ino}, \hyperpage{89}
-    \subitem {i2c\_magneto.ino}, \hyperpage{92}
-    \subitem {interrupt.ino}, \hyperpage{96}
-    \subitem {mag\_test.ino}, \hyperpage{101}
-    \subitem {test.ino}, \hyperpage{117}
-    \subitem {test2.ino}, \hyperpage{127}
+    \subitem {gyr\_test.ino}, \hyperpage{75}
+    \subitem {i2c\_accel.ino}, \hyperpage{83}
+    \subitem {i2c\_basic.ino}, \hyperpage{86}
+    \subitem {i2c\_gyro.ino}, \hyperpage{90}
+    \subitem {i2c\_magneto.ino}, \hyperpage{94}
+    \subitem {interrupt.ino}, \hyperpage{98}
+    \subitem {mag\_test.ino}, \hyperpage{102}
+    \subitem {test.ino}, \hyperpage{120}
+    \subitem {test2.ino}, \hyperpage{130}
   \item {selectBank}
-    \subitem {DevLab\_ICM20948}, \hyperpage{44}
+    \subitem {DevLab\_ICM20948}, \hyperpage{45}
   \item {SELF\_TEST\_X\_ACCEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {SELF\_TEST\_X\_GYRO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {SELF\_TEST\_Y\_ACCEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {SELF\_TEST\_Y\_GYRO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {SELF\_TEST\_Z\_ACCEL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {SELF\_TEST\_Z\_GYRO}
-    \subitem {ICM20948\_regs.h}, \hyperpage{202}
+    \subitem {ICM20948\_regs.h}, \hyperpage{205}
   \item {selfTestAccel}
     \subitem {DevLab\_ICM20948}, \hyperpage{45}
   \item {selfTestGyro}
-    \subitem {DevLab\_ICM20948}, \hyperpage{45}
+    \subitem {DevLab\_ICM20948}, \hyperpage{46}
   \item {setAccelAveraging}
     \subitem {DevLab\_ICM20948}, \hyperpage{46}
   \item {setAccelDivRate}
     \subitem {DevLab\_ICM20948}, \hyperpage{47}
   \item {setAccelDLPF}
-    \subitem {DevLab\_ICM20948}, \hyperpage{47}
-  \item {setAccelOffset}
     \subitem {DevLab\_ICM20948}, \hyperpage{48}
+  \item {setAccelOffset}
+    \subitem {DevLab\_ICM20948}, \hyperpage{49}
   \item {setAccelSampleRate}
     \subitem {DevLab\_ICM20948}, \hyperpage{49}
   \item {setAccelScale}
-    \subitem {DevLab\_ICM20948}, \hyperpage{49}
-  \item {setClock}
     \subitem {DevLab\_ICM20948}, \hyperpage{50}
+  \item {setClock}
+    \subitem {DevLab\_ICM20948}, \hyperpage{51}
   \item {setDLPF}
     \subitem {DevLab\_ICM20948}, \hyperpage{51}
   \item {setGyroAveraging}
-    \subitem {DevLab\_ICM20948}, \hyperpage{51}
+    \subitem {DevLab\_ICM20948}, \hyperpage{52}
   \item {setGyroDivRate}
     \subitem {DevLab\_ICM20948}, \hyperpage{52}
   \item {setGyroOffset}
-    \subitem {DevLab\_ICM20948}, \hyperpage{52}
+    \subitem {DevLab\_ICM20948}, \hyperpage{53}
   \item {setGyroSampleRate}
-    \subitem {DevLab\_ICM20948}, \hyperpage{53}
+    \subitem {DevLab\_ICM20948}, \hyperpage{54}
   \item {setGyroScale}
-    \subitem {DevLab\_ICM20948}, \hyperpage{53}
+    \subitem {DevLab\_ICM20948}, \hyperpage{54}
   \item {setLowPower}
-    \subitem {DevLab\_ICM20948}, \hyperpage{54}
-  \item {setMagOpMode}
-    \subitem {DevLab\_ICM20948}, \hyperpage{54}
-  \item {setSensors}
     \subitem {DevLab\_ICM20948}, \hyperpage{55}
+  \item {setMagOpMode}
+    \subitem {DevLab\_ICM20948}, \hyperpage{55}
+  \item {setSensors}
+    \subitem {DevLab\_ICM20948}, \hyperpage{56}
   \item {setup}
-    \subitem {gyr\_test.ino}, \hyperpage{75}
-    \subitem {i2c\_accel.ino}, \hyperpage{81}
-    \subitem {i2c\_basic.ino}, \hyperpage{85}
-    \subitem {i2c\_gyro.ino}, \hyperpage{89}
-    \subitem {i2c\_magneto.ino}, \hyperpage{92}
-    \subitem {interrupt.ino}, \hyperpage{97}
-    \subitem {mag\_test.ino}, \hyperpage{102}
-    \subitem {spi\_accel.ino}, \hyperpage{106}
-    \subitem {spi\_basic.ino}, \hyperpage{109}
-    \subitem {spi\_gyro.ino}, \hyperpage{112}
-    \subitem {test.ino}, \hyperpage{120}
-    \subitem {test2.ino}, \hyperpage{129}
+    \subitem {gyr\_test.ino}, \hyperpage{77}
+    \subitem {i2c\_accel.ino}, \hyperpage{83}
+    \subitem {i2c\_basic.ino}, \hyperpage{87}
+    \subitem {i2c\_gyro.ino}, \hyperpage{90}
+    \subitem {i2c\_magneto.ino}, \hyperpage{94}
+    \subitem {interrupt.ino}, \hyperpage{98}
+    \subitem {mag\_test.ino}, \hyperpage{103}
+    \subitem {spi\_accel.ino}, \hyperpage{107}
+    \subitem {spi\_basic.ino}, \hyperpage{111}
+    \subitem {spi\_gyro.ino}, \hyperpage{115}
+    \subitem {test.ino}, \hyperpage{122}
+    \subitem {test2.ino}, \hyperpage{132}
   \item {sleep}
-    \subitem {DevLab\_ICM20948}, \hyperpage{56}
+    \subitem {DevLab\_ICM20948}, \hyperpage{57}
   \item {softReset}
-    \subitem {DevLab\_ICM20948}, \hyperpage{56}
+    \subitem {DevLab\_ICM20948}, \hyperpage{57}
   \item {speed}
-    \subitem {SPI\_Interface}, \hyperpage{70}
+    \subitem {SPI\_Interface}, \hyperpage{71}
   \item {spi}
-    \subitem {SPI\_Interface}, \hyperpage{70}
+    \subitem {SPI\_Interface}, \hyperpage{71}
   \item {spi\_accel.ino}
-    \subitem {imu}, \hyperpage{107}
-    \subitem {loop}, \hyperpage{105}
-    \subitem {setup}, \hyperpage{106}
-    \subitem {spi\_bus}, \hyperpage{106}
-    \subitem {SPI\_FAST\_SPEED}, \hyperpage{105}
+    \subitem {CS\_PIN}, \hyperpage{107}
+    \subitem {imu}, \hyperpage{108}
+    \subitem {loop}, \hyperpage{107}
+    \subitem {setup}, \hyperpage{107}
+    \subitem {spi\_bus}, \hyperpage{108}
+    \subitem {SPI\_FAST\_SPEED}, \hyperpage{107}
   \item {spi\_basic.ino}
-    \subitem {imu}, \hyperpage{110}
-    \subitem {loop}, \hyperpage{109}
-    \subitem {setup}, \hyperpage{109}
-    \subitem {spi\_bus}, \hyperpage{110}
-    \subitem {SPI\_FAST\_SPEED}, \hyperpage{109}
+    \subitem {CS\_PIN}, \hyperpage{111}
+    \subitem {imu}, \hyperpage{112}
+    \subitem {loop}, \hyperpage{111}
+    \subitem {setup}, \hyperpage{111}
+    \subitem {spi\_bus}, \hyperpage{112}
+    \subitem {SPI\_FAST\_SPEED}, \hyperpage{111}
   \item {spi\_bus}
-    \subitem {spi\_accel.ino}, \hyperpage{106}
-    \subitem {spi\_basic.ino}, \hyperpage{110}
-    \subitem {spi\_gyro.ino}, \hyperpage{113}
+    \subitem {spi\_accel.ino}, \hyperpage{108}
+    \subitem {spi\_basic.ino}, \hyperpage{112}
+    \subitem {spi\_gyro.ino}, \hyperpage{115}
   \item {spi\_cs}
-    \subitem {icm\_plat\_t}, \hyperpage{64}
-  \item {SPI\_FAST\_SPEED}
-    \subitem {spi\_accel.ino}, \hyperpage{105}
-    \subitem {spi\_basic.ino}, \hyperpage{109}
-    \subitem {spi\_gyro.ino}, \hyperpage{112}
-  \item {spi\_gyro.ino}
-    \subitem {imu}, \hyperpage{113}
-    \subitem {loop}, \hyperpage{112}
-    \subitem {setup}, \hyperpage{112}
-    \subitem {spi\_bus}, \hyperpage{113}
-    \subitem {SPI\_FAST\_SPEED}, \hyperpage{112}
-  \item {SPI\_Interface}, \hyperpage{67}
-    \subitem {beginI2C}, \hyperpage{69}
-    \subitem {beginSPI}, \hyperpage{69}
-    \subitem {cs}, \hyperpage{70}
-    \subitem {read}, \hyperpage{69}
-    \subitem {speed}, \hyperpage{70}
-    \subitem {spi}, \hyperpage{70}
-    \subitem {write}, \hyperpage{70}
-  \item {spi\_reg\_rw\_bits}
     \subitem {icm\_plat\_t}, \hyperpage{65}
-  \item {src/7Semi\_I2C\_Interface.h}, \hyperpage{136}
-  \item {src/7Semi\_Interface.h}, \hyperpage{137, 138}
-  \item {src/7Semi\_SPI\_Interface.h}, \hyperpage{139, 140}
-  \item {src/BusIO\_7Semi.h}, \hyperpage{142}
-  \item {src/DevLab\_ICM20948.cpp}, \hyperpage{144}
-  \item {src/DevLab\_ICM20948.h}, \hyperpage{161}, \hyperpage{164}
-  \item {src/ICM20948\_platform.h}, \hyperpage{175}
-  \item {src/ICM20948\_regs.h}, \hyperpage{176}, \hyperpage{206}
+  \item {SPI\_FAST\_SPEED}
+    \subitem {spi\_accel.ino}, \hyperpage{107}
+    \subitem {spi\_basic.ino}, \hyperpage{111}
+    \subitem {spi\_gyro.ino}, \hyperpage{114}
+  \item {spi\_gyro.ino}
+    \subitem {CS\_PIN}, \hyperpage{114}
+    \subitem {imu}, \hyperpage{116}
+    \subitem {loop}, \hyperpage{114}
+    \subitem {setup}, \hyperpage{115}
+    \subitem {spi\_bus}, \hyperpage{115}
+    \subitem {SPI\_FAST\_SPEED}, \hyperpage{114}
+  \item {SPI\_Interface}, \hyperpage{68}
+    \subitem {beginI2C}, \hyperpage{70}
+    \subitem {beginSPI}, \hyperpage{70}
+    \subitem {cs}, \hyperpage{71}
+    \subitem {read}, \hyperpage{70}
+    \subitem {speed}, \hyperpage{71}
+    \subitem {spi}, \hyperpage{71}
+    \subitem {write}, \hyperpage{71}
+  \item {spi\_reg\_rw\_bits}
+    \subitem {icm\_plat\_t}, \hyperpage{66}
+  \item {src/7Semi\_I2C\_Interface.h}, \hyperpage{138, 139}
+  \item {src/7Semi\_Interface.h}, \hyperpage{140, 141}
+  \item {src/7Semi\_SPI\_Interface.h}, \hyperpage{142, 143}
+  \item {src/BusIO\_7Semi.h}, \hyperpage{145}
+  \item {src/DevLab\_ICM20948.cpp}, \hyperpage{147}
+  \item {src/DevLab\_ICM20948.h}, \hyperpage{164}, \hyperpage{167}
+  \item {src/ICM20948\_platform.h}, \hyperpage{178}
+  \item {src/ICM20948\_regs.h}, \hyperpage{179}, \hyperpage{209}
   \item {STOP\_CLOCK}
-    \subitem {DevLab\_ICM20948.h}, \hyperpage{163}
+    \subitem {DevLab\_ICM20948.h}, \hyperpage{166}
   \item {STS\_DMP\_INT1}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {STS\_I2C\_MST\_INT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {STS\_PLL\_RDY\_INT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {STS\_RAW\_DATA\_0\_RDY\_INT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {STS\_WOM\_INT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
 
   \indexspace
 
   \item {TEMP\_CONFIG}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {TEMP\_DLPFCFG\_MASK}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {TEMP\_DLPFCFG\_SHIFT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {TEMP\_OUT\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {TEMP\_OUT\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {test.ino}
-    \subitem {accelAVG}, \hyperpage{120}
-    \subitem {accelCfg}, \hyperpage{120}
-    \subitem {accelDLPF}, \hyperpage{120}
-    \subitem {accelSR}, \hyperpage{121}
-    \subitem {applySettings}, \hyperpage{117}
-    \subitem {configsDLPF}, \hyperpage{121}
-    \subitem {etiquetasAccelAVG}, \hyperpage{121}
-    \subitem {etiquetasAccelCfg}, \hyperpage{121}
-    \subitem {etiquetasAccelDLPFCFG}, \hyperpage{121}
-    \subitem {etiquetasSR}, \hyperpage{121}
-    \subitem {firstStage}, \hyperpage{118}
-    \subitem {I2C\_FREQ}, \hyperpage{117}
-    \subitem {ICM\_ADDR}, \hyperpage{117}
-    \subitem {imu}, \hyperpage{121}
-    \subitem {loop}, \hyperpage{118}
-    \subitem {N\_DLPF}, \hyperpage{121}
-    \subitem {N\_FS}, \hyperpage{122}
-    \subitem {printDobleLinea}, \hyperpage{118}
-    \subitem {printLinea}, \hyperpage{119}
-    \subitem {runSweep}, \hyperpage{119}
-    \subitem {SCL\_PIN}, \hyperpage{117}
-    \subitem {SDA\_PIN}, \hyperpage{117}
-    \subitem {setup}, \hyperpage{120}
-    \subitem {total\_fail}, \hyperpage{122}
-    \subitem {total\_pass}, \hyperpage{122}
-    \subitem {total\_warn}, \hyperpage{122}
+    \subitem {accelAVG}, \hyperpage{123}
+    \subitem {accelCfg}, \hyperpage{123}
+    \subitem {accelDLPF}, \hyperpage{123}
+    \subitem {accelSR}, \hyperpage{123}
+    \subitem {applySettings}, \hyperpage{120}
+    \subitem {configsDLPF}, \hyperpage{123}
+    \subitem {etiquetasAccelAVG}, \hyperpage{124}
+    \subitem {etiquetasAccelCfg}, \hyperpage{124}
+    \subitem {etiquetasAccelDLPFCFG}, \hyperpage{124}
+    \subitem {etiquetasSR}, \hyperpage{124}
+    \subitem {firstStage}, \hyperpage{120}
+    \subitem {I2C\_FREQ}, \hyperpage{120}
+    \subitem {ICM\_ADDR}, \hyperpage{120}
+    \subitem {imu}, \hyperpage{124}
+    \subitem {loop}, \hyperpage{121}
+    \subitem {N\_DLPF}, \hyperpage{124}
+    \subitem {N\_FS}, \hyperpage{124}
+    \subitem {printDobleLinea}, \hyperpage{121}
+    \subitem {printLinea}, \hyperpage{121}
+    \subitem {runSweep}, \hyperpage{122}
+    \subitem {SCL\_PIN}, \hyperpage{120}
+    \subitem {SDA\_PIN}, \hyperpage{120}
+    \subitem {setup}, \hyperpage{122}
+    \subitem {total\_fail}, \hyperpage{124}
+    \subitem {total\_pass}, \hyperpage{124}
+    \subitem {total\_warn}, \hyperpage{125}
   \item {test2.ino}
-    \subitem {accelAVG}, \hyperpage{130}
-    \subitem {accelCfg}, \hyperpage{130}
-    \subitem {accelDLPF}, \hyperpage{130}
-    \subitem {accelSR}, \hyperpage{130}
-    \subitem {applySettings}, \hyperpage{127}
-    \subitem {configsDLPF}, \hyperpage{131}
-    \subitem {etiquetasAccelAVG}, \hyperpage{131}
-    \subitem {etiquetasAccelCfg}, \hyperpage{131}
-    \subitem {etiquetasSR}, \hyperpage{131}
-    \subitem {firstStage}, \hyperpage{128}
-    \subitem {I2C\_FREQ}, \hyperpage{127}
-    \subitem {ICM\_ADDR}, \hyperpage{127}
-    \subitem {imu}, \hyperpage{131}
-    \subitem {loop}, \hyperpage{128}
-    \subitem {N\_AVG}, \hyperpage{131}
-    \subitem {N\_DLPF}, \hyperpage{131}
-    \subitem {N\_FS}, \hyperpage{131}
-    \subitem {printDobleLinea}, \hyperpage{128}
-    \subitem {printLinea}, \hyperpage{129}
-    \subitem {runSweep}, \hyperpage{129}
-    \subitem {SCL\_PIN}, \hyperpage{127}
-    \subitem {SDA\_PIN}, \hyperpage{127}
-    \subitem {setup}, \hyperpage{129}
-    \subitem {total\_fail}, \hyperpage{132}
-    \subitem {total\_pass}, \hyperpage{132}
-    \subitem {total\_warn}, \hyperpage{132}
+    \subitem {accelAVG}, \hyperpage{132}
+    \subitem {accelCfg}, \hyperpage{133}
+    \subitem {accelDLPF}, \hyperpage{133}
+    \subitem {accelSR}, \hyperpage{133}
+    \subitem {applySettings}, \hyperpage{130}
+    \subitem {configsDLPF}, \hyperpage{133}
+    \subitem {etiquetasAccelAVG}, \hyperpage{133}
+    \subitem {etiquetasAccelCfg}, \hyperpage{133}
+    \subitem {etiquetasSR}, \hyperpage{134}
+    \subitem {firstStage}, \hyperpage{130}
+    \subitem {I2C\_FREQ}, \hyperpage{129}
+    \subitem {ICM\_ADDR}, \hyperpage{129}
+    \subitem {imu}, \hyperpage{134}
+    \subitem {loop}, \hyperpage{131}
+    \subitem {N\_AVG}, \hyperpage{134}
+    \subitem {N\_DLPF}, \hyperpage{134}
+    \subitem {N\_FS}, \hyperpage{134}
+    \subitem {printDobleLinea}, \hyperpage{131}
+    \subitem {printLinea}, \hyperpage{131}
+    \subitem {runSweep}, \hyperpage{131}
+    \subitem {SCL\_PIN}, \hyperpage{130}
+    \subitem {SDA\_PIN}, \hyperpage{130}
+    \subitem {setup}, \hyperpage{132}
+    \subitem {total\_fail}, \hyperpage{134}
+    \subitem {total\_pass}, \hyperpage{134}
+    \subitem {total\_warn}, \hyperpage{134}
   \item {TIMEBASE\_CORRECTION\_PLL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {total\_fail}
-    \subitem {test.ino}, \hyperpage{122}
-    \subitem {test2.ino}, \hyperpage{132}
+    \subitem {test.ino}, \hyperpage{124}
+    \subitem {test2.ino}, \hyperpage{134}
   \item {total\_pass}
-    \subitem {test.ino}, \hyperpage{122}
-    \subitem {test2.ino}, \hyperpage{132}
+    \subitem {test.ino}, \hyperpage{124}
+    \subitem {test2.ino}, \hyperpage{134}
   \item {total\_warn}
-    \subitem {test.ino}, \hyperpage{122}
-    \subitem {test2.ino}, \hyperpage{132}
+    \subitem {test.ino}, \hyperpage{125}
+    \subitem {test2.ino}, \hyperpage{134}
 
   \indexspace
 
   \item {user}
-    \subitem {icm\_plat\_t}, \hyperpage{65}
+    \subitem {icm\_plat\_t}, \hyperpage{66}
   \item {USER\_BANK\_0}
-    \subitem {ICM20948\_regs.h}, \hyperpage{203}
+    \subitem {ICM20948\_regs.h}, \hyperpage{206}
   \item {USER\_BANK\_1}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_BANK\_2}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_BANK\_3}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_CTRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_CTRL\_DMP\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_CTRL\_DMP\_RST}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_CTRL\_FIFO\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_CTRL\_I2C\_IF\_DIS}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_CTRL\_I2C\_MST\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_CTRL\_I2C\_MST\_RST}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {USER\_CTRL\_SRAM\_RST}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
 
   \indexspace
 
   \item {WHO\_AM\_I}
-    \subitem {ICM20948\_regs.h}, \hyperpage{204}
+    \subitem {ICM20948\_regs.h}, \hyperpage{207}
   \item {WHO\_AM\_I\_VAL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{205}
+    \subitem {ICM20948\_regs.h}, \hyperpage{208}
   \item {WOF\_DEGLITCH\_EN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{205}
+    \subitem {ICM20948\_regs.h}, \hyperpage{208}
   \item {WOF\_EDGE\_INT}
-    \subitem {ICM20948\_regs.h}, \hyperpage{205}
+    \subitem {ICM20948\_regs.h}, \hyperpage{208}
   \item {wofEn}
-    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{61}
+    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{62}
   \item {womInt}
-    \subitem {ICM20948\_IntStatus}, \hyperpage{63}
+    \subitem {ICM20948\_IntStatus}, \hyperpage{64}
   \item {womIntEn}
-    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{61}
+    \subitem {ICM20948\_IntEnableConfig}, \hyperpage{62}
   \item {write}
     \subitem {BusIO\_7Semi$<$ Bus $>$}, \hyperpage{17, 18}
-    \subitem {I2C\_Interface}, \hyperpage{60}
-    \subitem {icm\_plat\_t}, \hyperpage{65}
-    \subitem {Interface\_7Semi}, \hyperpage{67}
-    \subitem {SPI\_Interface}, \hyperpage{70}
+    \subitem {I2C\_Interface}, \hyperpage{61}
+    \subitem {icm\_plat\_t}, \hyperpage{66}
+    \subitem {Interface\_7Semi}, \hyperpage{68}
+    \subitem {SPI\_Interface}, \hyperpage{71}
   \item {writeBit}
     \subitem {BusIO\_7Semi$<$ Bus $>$}, \hyperpage{19, 20}
   \item {writeBits}
-    \subitem {BusIO\_7Semi$<$ Bus $>$}, \hyperpage{20, 21}
+    \subitem {BusIO\_7Semi$<$ Bus $>$}, \hyperpage{21}
 
   \indexspace
 
   \item {XA\_OFFS\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{205}
+    \subitem {ICM20948\_regs.h}, \hyperpage{208}
   \item {XA\_OFFS\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{205}
+    \subitem {ICM20948\_regs.h}, \hyperpage{208}
   \item {XG\_OFFS\_USRH}
-    \subitem {ICM20948\_regs.h}, \hyperpage{205}
+    \subitem {ICM20948\_regs.h}, \hyperpage{208}
   \item {XG\_OFFS\_USRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{205}
+    \subitem {ICM20948\_regs.h}, \hyperpage{208}
   \item {XGYRO\_CTEN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{205}
+    \subitem {ICM20948\_regs.h}, \hyperpage{208}
 
   \indexspace
 
   \item {YA\_OFFS\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{205}
+    \subitem {ICM20948\_regs.h}, \hyperpage{208}
   \item {YA\_OFFS\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{206}
+    \subitem {ICM20948\_regs.h}, \hyperpage{209}
   \item {YG\_OFFS\_USRH}
-    \subitem {ICM20948\_regs.h}, \hyperpage{206}
+    \subitem {ICM20948\_regs.h}, \hyperpage{209}
   \item {YG\_OFFS\_USRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{206}
+    \subitem {ICM20948\_regs.h}, \hyperpage{209}
   \item {YGYRO\_CTEN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{206}
+    \subitem {ICM20948\_regs.h}, \hyperpage{209}
 
   \indexspace
 
   \item {ZA\_OFFS\_H}
-    \subitem {ICM20948\_regs.h}, \hyperpage{206}
+    \subitem {ICM20948\_regs.h}, \hyperpage{209}
   \item {ZA\_OFFS\_L}
-    \subitem {ICM20948\_regs.h}, \hyperpage{206}
+    \subitem {ICM20948\_regs.h}, \hyperpage{209}
   \item {ZG\_OFFS\_USRH}
-    \subitem {ICM20948\_regs.h}, \hyperpage{206}
+    \subitem {ICM20948\_regs.h}, \hyperpage{209}
   \item {ZG\_OFFS\_USRL}
-    \subitem {ICM20948\_regs.h}, \hyperpage{206}
+    \subitem {ICM20948\_regs.h}, \hyperpage{209}
   \item {ZGYRO\_CTEN}
-    \subitem {ICM20948\_regs.h}, \hyperpage{206}
+    \subitem {ICM20948\_regs.h}, \hyperpage{209}
 
 \end{theindex}

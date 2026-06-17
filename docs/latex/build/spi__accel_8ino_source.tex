@@ -4,141 +4,147 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00001}00001\ \textcolor{comment}{/***************************************************************}}
 \DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ \ \ \ SPI\_Accel.ino}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ SPI\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ on\ ESP32\ +}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ continuous\ accelerometer\ readout.}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00005}00005\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ Features}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ -\/\ SPI\ init\ on\ custom\ pins\ (ESP32\ VSPI)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ IMU\ begin()\ on\ SPI\ (CS\ pin\ user-\/defined)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ Safe\ defaults\ (applyBasicDefaults)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Optional\ sensor\ gating:\ accel\ only}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Accel\ config:\ DLPF,\ full-\/scale,\ ODR,\ DEC3}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00012}00012\ \textcolor{comment}{\ *\ -\/\ Read\ accel\ (g)\ at\ \string~2\ Hz\ print}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00013}00013\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00014}00014\ \textcolor{comment}{*\ Wiring\ (Arduino\ UNO)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ GPIO13}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ MOSI(SDA)\ -\/>\ GPIO12}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ MISO(SDO)\ -\/>\ GPIO11}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ GPIO10\ (changeable)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ Wiring\ (ESP32\ VSPI\ default)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ GPIO18}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ MOSI\ -\/>\ GPIO23}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ MISO\ -\/>\ GPIO19}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00025}00025\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ GPIO5\ (changeable)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00028}00028\ \textcolor{comment}{\ ***************************************************************/}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00031}00031\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00032}00032\ \textcolor{comment}{/**\ @brief\ SPI\ clock\ used\ during\ sensor\ initialization\ and\ reads.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00033}\mbox{\hyperlink{spi__accel_8ino_a785e68f45fbc9e3f0ed8219615c1ed1d}{00033}}\ \textcolor{preprocessor}{\#define\ SPI\_FAST\_SPEED\ 1000000}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00034}00034\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00035}00035\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00036}\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00036}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00037}00037\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00038}00038\ \textcolor{comment}{/**\ @brief\ SPI\ bus\ object\ used\ by\ the\ IMU\ driver.\ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00039}\mbox{\hyperlink{spi__accel_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{00039}}\ SPIClass\ \mbox{\hyperlink{spi__accel_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}}(SPI);\ \ \ \textcolor{comment}{//\ usa\ el\ bus\ SPI\ por\ defecto\ del\ Arduino}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00040}00040\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00041}00041\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00042}00042\ \textcolor{comment}{\ *\ @brief\ Configure\ the\ IMU\ for\ accelerometer-\/only\ operation\ over\ SPI.}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00043}00043\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00044}00044\ \textcolor{comment}{\ *\ @note\ The\ sketch\ expects\ a\ board-\/level\ CS\_PIN\ definition\ to\ select\ the}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00045}00045\ \textcolor{comment}{\ *\ chip-\/select\ pin\ used\ by\ beginSPI().}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00046}00046\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00047}\mbox{\hyperlink{spi__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00047}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00048}00048\ \ \ Serial.begin(115200);}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00049}00049\ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00051}00051\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00052}00052\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18}{beginSPI}}(CS\_PIN,\ \mbox{\hyperlink{spi__accel_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}},\ 1000000))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00053}00053\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}ERROR:\ beginSPI()\ failed"{}});}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00055}00055\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00057}00057\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00058}00058\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @author\ \ 7Semi,Jonathan\ Mejorado\ Lopez}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ SPI\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ on\ ESP32\ +}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ continuous\ accelerometer\ readout.}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ Features}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ SPI\ init\ on\ custom\ pins\ (ESP32\ VSPI)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ IMU\ begin()\ on\ SPI\ (CS\ pin\ user-\/defined)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Safe\ defaults\ (applyBasicDefaults)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Optional\ sensor\ gating:\ accel\ only}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00012}00012\ \textcolor{comment}{\ *\ -\/\ Accel\ config:\ DLPF,\ full-\/scale,\ ODR,\ DEC3}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00013}00013\ \textcolor{comment}{\ *\ -\/\ Read\ accel\ (g)\ at\ \string~2\ Hz\ print}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00014}00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00015}00015\ \textcolor{comment}{*\ Wiring\ (Arduino\ UNO)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ GPIO13}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ MOSI(SDA)\ -\/>\ GPIO12}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ -\/\ MISO(SDO)\ -\/>\ GPIO11}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ GPIO10\ (changeable)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ Wiring\ (ESP32\ VSPI\ default)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ SCK\ \ -\/>\ GPIO18}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ MOSI\ -\/>\ GPIO23}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00025}00025\ \textcolor{comment}{\ *\ -\/\ MISO\ -\/>\ GPIO19}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ CS\ \ \ -\/>\ GPIO5\ (changeable)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00029}00029\ \textcolor{comment}{\ ***************************************************************/}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00032}00032\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00033}00033\ \textcolor{comment}{/**\ @brief\ SPI\ clock\ used\ during\ sensor\ initialization\ and\ reads.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00034}\mbox{\hyperlink{spi__accel_8ino_a785e68f45fbc9e3f0ed8219615c1ed1d}{00034}}\ \textcolor{preprocessor}{\#define\ SPI\_FAST\_SPEED\ 1000000}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00036}\mbox{\hyperlink{spi__accel_8ino_abfcf05153ddbd63d5aff5d018867cc19}{00036}}\ \textcolor{preprocessor}{\#define\ CS\_PIN\ D10\ \ }\textcolor{comment}{//\ Chip-\/select\ pin\ for\ SPI\ (change\ as\ needed)}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00037}00037\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00038}\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00038}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00039}00039\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00040}00040\ \textcolor{comment}{/**\ @brief\ SPI\ bus\ object\ used\ by\ the\ IMU\ driver.\ */}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00041}\mbox{\hyperlink{spi__accel_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{00041}}\ SPIClass\ \mbox{\hyperlink{spi__accel_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}}(SPI);\ \ \ \textcolor{comment}{//\ usa\ el\ bus\ SPI\ por\ defecto\ del\ Arduino}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00042}00042\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00043}00043\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00044}00044\ \textcolor{comment}{\ *\ @brief\ Configure\ the\ IMU\ for\ accelerometer-\/only\ operation\ over\ SPI.}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00045}00045\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00046}00046\ \textcolor{comment}{\ *\ @note\ The\ sketch\ expects\ a\ board-\/level\ CS\_PIN\ definition\ to\ select\ the}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00047}00047\ \textcolor{comment}{\ *\ chip-\/select\ pin\ used\ by\ beginSPI().}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00048}00048\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00049}\mbox{\hyperlink{spi__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00049}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__accel_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00050}00050\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00051}00051\ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00054}00054\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4386f310503153f3e28935cbdda75b18}{beginSPI}}(\mbox{\hyperlink{spi__accel_8ino_abfcf05153ddbd63d5aff5d018867cc19}{CS\_PIN}},\ \mbox{\hyperlink{spi__accel_8ino_a5f08ba3a5b3d8e5b3fa5a22429ecfa2b}{spi\_bus}},\ 1000000))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00055}00055\ \ \ \ \ Serial.println(\textcolor{stringliteral}{"{}ERROR:\ beginSPI()\ failed"{}});}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00057}00057\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00058}00058\ }
 \DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00060}00060\ \ \ \textcolor{comment}{/*\ Optional:\ gate\ sensors}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00061}00061\ \textcolor{comment}{\ \ \ *\ -\/\ setSensors(accel\_on,\ gyro\_on,\ temp\_on)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00062}00062\ \textcolor{comment}{\ \ \ *\ -\/\ Here:\ enable\ only\ accel\ (gyro/temp\ off)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00063}00063\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00064}00064\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{comment}{/*accel*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*gyro*/}\ \textcolor{keyword}{false},\ \textcolor{comment}{/*temp*/}\ \textcolor{keyword}{false}))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00065}00065\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00066}00066\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00067}00067\ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ ACCEL\ DLPF\ Config\ (reference)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00068}00068\ \textcolor{comment}{\ \ \ *\ ACCEL\_DLPFCFG\ (0..7)\ —\ 3dB\ \&\ Noise\ Bandwidth\ (datasheet)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00069}00069\ \textcolor{comment}{\ \ \ *\ DLPF\ path\ ODR\ =\ 1125\ /\ (1\ +\ ACCEL\_SMPLRT\_DIV),\ DIV:\ 0..4095}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00070}00070\ \textcolor{comment}{\ \ \ *}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00071}00071\ \textcolor{comment}{\ \ \ *\ FCHOICE=0\ (Bypass)\ :\ 3dB\ ≈\ 1209\ Hz,\ NBW\ ≈\ 1248\ Hz,\ Rate\ ≈\ 4500\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00072}00072\ \textcolor{comment}{\ \ \ *\ FCHOICE=1\ (DLPF\ on):}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00073}00073\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_0\ :\ 3dB\ ≈\ 246.0\ Hz,\ \ NBW\ ≈\ 265.0\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00074}00074\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_1\ :\ 3dB\ ≈\ 246.0\ Hz,\ \ NBW\ ≈\ 265.0\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00075}00075\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_2\ :\ 3dB\ ≈\ 111.4\ Hz,\ \ NBW\ ≈\ 136.0\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00076}00076\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_3\ :\ 3dB\ ≈\ 50.4\ \ Hz,\ \ NBW\ ≈\ 68.8\ \ Hz\ \ \ ←\ good\ default}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00077}00077\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_4\ :\ 3dB\ ≈\ 23.9\ \ Hz,\ \ NBW\ ≈\ 34.4\ \ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00078}00078\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_5\ :\ 3dB\ ≈\ 11.5\ \ Hz,\ \ NBW\ ≈\ 17.0\ \ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00079}00079\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_6\ :\ 3dB\ ≈\ 5.7\ \ \ Hz,\ \ NBW\ ≈\ 8.3\ \ \ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00080}00080\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_7\ :\ 3dB\ ≈\ 473\ \ \ Hz,\ \ NBW\ ≈\ 499\ \ \ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00081}00081\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00082}00082\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00083}00083\ \ \ \textcolor{comment}{/*\ Configure\ accelerometer}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00084}00084\ \textcolor{comment}{\ \ \ *\ AccelConfigure(DLPF,\ FS\_SEL,\ dlpf\_enable,\ dec3,\ stX,\ stY,\ stZ)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00085}00085\ \textcolor{comment}{\ \ \ *\ -\/\ DLPF\ \ \ \ \ \ \ :\ ACCEL\_DLPFCFG\_0..7\ (use\ 3\ for\ balanced\ setting)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00086}00086\ \textcolor{comment}{\ \ \ *\ -\/\ FS\_SEL\ \ \ \ \ :\ 0..3\ =>\ ±2/±4/±8/±16\ g\ \ (g2=0,\ g4=1,\ g8=2,\ g16=3)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00087}00087\ \textcolor{comment}{\ \ \ *\ -\/\ dlpf\_enable:\ true\ to\ use\ DLPF\ path\ (recommended)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00088}00088\ \textcolor{comment}{\ \ \ *\ -\/\ dec3\ \ \ \ \ \ \ :\ 0..3\ (DEC3\_CFG\ averaging)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00089}00089\ \textcolor{comment}{\ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ =\ ACCEL\_DEC3\_AVG\_1\_OR\_4\ \ (depends\ on\ FCHOICE)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00090}00090\ \textcolor{comment}{\ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ =\ ACCEL\_DEC3\_AVG\_8}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00091}00091\ \textcolor{comment}{\ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ =\ ACCEL\_DEC3\_AVG\_16}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00092}00092\ \textcolor{comment}{\ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ =\ ACCEL\_DEC3\_AVG\_32}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00093}00093\ \textcolor{comment}{\ \ \ *\ -\/\ stX/Y/Z\ \ \ \ :\ enable\ self-\/test\ (false\ here)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00094}00094\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00095}00095\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.AccelConfigure(\mbox{\hyperlink{ICM20948__regs_8h_a981a5bd41894531939c10568f7793069}{ACCEL\_DLPFCFG\_3}},\ \textcolor{comment}{/*FS\_SEL*/}\ \mbox{\hyperlink{ICM20948__regs_8h_a6027928d78526ebc422079967b48e9cd}{g4}},}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*dlpf\_enable*/}\ \textcolor{keyword}{true},\ \ \textcolor{comment}{//\ DLPF\ really\ ON}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*dec3*/}\ \mbox{\hyperlink{ICM20948__regs_8h_aff92127cdfe23d629a401e62cc705f4f}{ACCEL\_DEC3\_AVG\_8}},}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*stX*/}\ \textcolor{keyword}{false},\ \textcolor{comment}{/*stY*/}\ \textcolor{keyword}{false},\ \textcolor{comment}{/*stZ*/}\ \textcolor{keyword}{false}))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00099}00099\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}AccelConfigure\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00100}00100\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00101}00101\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00102}00102\ \ \ \textcolor{comment}{/*\ Set\ accelerometer\ output\ data\ rate\ (ODR)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00103}00103\ \textcolor{comment}{\ \ \ *\ -\/\ Accel\_SMPLRT(rate\_hz)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00104}00104\ \textcolor{comment}{\ \ \ *\ -\/\ Base\ (DLPF\ path)\ =\ 1125\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00105}00105\ \textcolor{comment}{\ \ \ *\ -\/\ Valid\ range:\ 1–1125\ Hz}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00106}00106\ \textcolor{comment}{\ \ \ *\ -\/\ Example:\ 225\ Hz\ }}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00107}00107\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00108}00108\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.Accel\_SMPLRT(225))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00109}00109\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Accel\_SMPLRT\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00110}00110\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00111}00111\ \}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00112}00112\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00113}00113\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00114}00114\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ accelerometer\ data\ in\ g.}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00115}00115\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00116}\mbox{\hyperlink{spi__accel_8ino_afe461d27b9c48d5921c00d521181f12f}{00116}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__accel_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00117}00117\ \ \ \textcolor{keywordtype}{float}\ ax,\ ay,\ az;\ \ \textcolor{comment}{//\ accel\ X/Y/Z\ in\ g}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00118}00118\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00119}00119\ \ \ \textcolor{comment}{/*\ -\/\ readAccel(x,y,z)}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00120}00120\ \textcolor{comment}{\ \ \ *\ -\/\ Returns:}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00121}00121\ \textcolor{comment}{\ \ \ *\ \ \ -\/\ true\ on\ success;}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00122}00122\ \textcolor{comment}{\ \ \ *\ -\/\ Output:}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00123}00123\ \textcolor{comment}{\ \ \ *\ \ \ -\/\ ax/ay/az\ in\ g}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00124}00124\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00125}00125\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b}{readAccel}}(ax,\ ay,\ az))\ \{}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00126}00126\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}ACCEL\ [g]:\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00127}00127\ \ \ \ \ Serial.print(ax,\ 3);}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00128}00128\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00129}00129\ \ \ \ \ Serial.print(ay,\ 3);}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00130}00130\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00131}00131\ \ \ \ \ Serial.println(az,\ 3);}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00132}00132\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00133}00133\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ACCEL\ read\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00134}00134\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00135}00135\ }
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00136}00136\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00137}00137\ \ \ delay(500);}
-\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00138}00138\ \}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00060}00060\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00062}00062\ \ \ \textcolor{comment}{/*\ Optional:\ gate\ sensors}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00063}00063\ \textcolor{comment}{\ \ \ *\ -\/\ setSensors(accel\_on,\ gyro\_on,\ temp\_on)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00064}00064\ \textcolor{comment}{\ \ \ *\ -\/\ Here:\ enable\ only\ accel\ (gyro/temp\ off)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00065}00065\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00066}00066\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{comment}{/*accel*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*gyro*/}\ \textcolor{keyword}{false},\ \textcolor{comment}{/*temp*/}\ \textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00067}00067\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00068}00068\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00069}00069\ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ ACCEL\ DLPF\ Config\ (reference)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00070}00070\ \textcolor{comment}{\ \ \ *\ ACCEL\_DLPFCFG\ (0..7)\ —\ 3dB\ \&\ Noise\ Bandwidth\ (datasheet)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00071}00071\ \textcolor{comment}{\ \ \ *\ DLPF\ path\ ODR\ =\ 1125\ /\ (1\ +\ ACCEL\_SMPLRT\_DIV),\ DIV:\ 0..4095}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00072}00072\ \textcolor{comment}{\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00073}00073\ \textcolor{comment}{\ \ \ *\ FCHOICE=0\ (Bypass)\ :\ 3dB\ ≈\ 1209\ Hz,\ NBW\ ≈\ 1248\ Hz,\ Rate\ ≈\ 4500\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00074}00074\ \textcolor{comment}{\ \ \ *\ FCHOICE=1\ (DLPF\ on):}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00075}00075\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_0\ :\ 3dB\ ≈\ 246.0\ Hz,\ \ NBW\ ≈\ 265.0\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00076}00076\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_1\ :\ 3dB\ ≈\ 246.0\ Hz,\ \ NBW\ ≈\ 265.0\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00077}00077\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_2\ :\ 3dB\ ≈\ 111.4\ Hz,\ \ NBW\ ≈\ 136.0\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00078}00078\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_3\ :\ 3dB\ ≈\ 50.4\ \ Hz,\ \ NBW\ ≈\ 68.8\ \ Hz\ \ \ ←\ good\ default}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00079}00079\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_4\ :\ 3dB\ ≈\ 23.9\ \ Hz,\ \ NBW\ ≈\ 34.4\ \ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00080}00080\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_5\ :\ 3dB\ ≈\ 11.5\ \ Hz,\ \ NBW\ ≈\ 17.0\ \ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00081}00081\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_6\ :\ 3dB\ ≈\ 5.7\ \ \ Hz,\ \ NBW\ ≈\ 8.3\ \ \ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00082}00082\ \textcolor{comment}{\ \ \ *\ -\/\ ACCEL\_DLPFCFG\_7\ :\ 3dB\ ≈\ 473\ \ \ Hz,\ \ NBW\ ≈\ 499\ \ \ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00083}00083\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00085}00085\ \ \ \textcolor{comment}{/*\ Configure\ accelerometer}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00086}00086\ \textcolor{comment}{\ \ \ *\ AccelConfigure(DLPF,\ FS\_SEL,\ dlpf\_enable,\ dec3,\ stX,\ stY,\ stZ)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00087}00087\ \textcolor{comment}{\ \ \ *\ -\/\ DLPF\ \ \ \ \ \ \ :\ ACCEL\_DLPFCFG\_0..7\ (use\ 3\ for\ balanced\ setting)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00088}00088\ \textcolor{comment}{\ \ \ *\ -\/\ FS\_SEL\ \ \ \ \ :\ 0..3\ =>\ ±2/±4/±8/±16\ g\ \ (g2=0,\ g4=1,\ g8=2,\ g16=3)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00089}00089\ \textcolor{comment}{\ \ \ *\ -\/\ dlpf\_enable:\ true\ to\ use\ DLPF\ path\ (recommended)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00090}00090\ \textcolor{comment}{\ \ \ *\ -\/\ dec3\ \ \ \ \ \ \ :\ 0..3\ (DEC3\_CFG\ averaging)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00091}00091\ \textcolor{comment}{\ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ =\ ACCEL\_DEC3\_AVG\_1\_OR\_4\ \ (depends\ on\ FCHOICE)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00092}00092\ \textcolor{comment}{\ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ =\ ACCEL\_DEC3\_AVG\_8}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00093}00093\ \textcolor{comment}{\ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ =\ ACCEL\_DEC3\_AVG\_16}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00094}00094\ \textcolor{comment}{\ \ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ =\ ACCEL\_DEC3\_AVG\_32}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00095}00095\ \textcolor{comment}{\ \ \ *\ -\/\ stX/Y/Z\ \ \ \ :\ enable\ self-\/test\ (false\ here)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00096}00096\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00097}00097\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ac52d80aad738b90aa0f05e9d6404bb85}{setAccelDLPF}}(\mbox{\hyperlink{ICM20948__regs_8h_a981a5bd41894531939c10568f7793069}{ACCEL\_DLPFCFG\_3}},\textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00098}00098\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelDLPF\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00099}00099\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00101}00101\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43}{setAccelScale}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05abda3c606e1ce64e3bda86c1fe6232693}{ICM20948\_Accel\_FullScale::G\_4}}))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00102}00102\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelFS\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00103}00103\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00104}00104\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a619f82390347cc173d1604d4d711b537}{setAccelAveraging}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9a682b1e1305b78c070fc0d38523969924}{ICM20948\_Accel\_Average::AVG\_8}}))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00105}00105\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setAccelAveraging\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00106}00106\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00108}00108\ \ \ \textcolor{comment}{/*\ Set\ accelerometer\ output\ data\ rate\ (ODR)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00109}00109\ \textcolor{comment}{\ \ \ *\ -\/\ Accel\_SMPLRT(rate\_hz)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00110}00110\ \textcolor{comment}{\ \ \ *\ -\/\ Base\ (DLPF\ path)\ =\ 1125\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00111}00111\ \textcolor{comment}{\ \ \ *\ -\/\ Valid\ range:\ 1–1125\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00112}00112\ \textcolor{comment}{\ \ \ *\ -\/\ Example:\ 225\ Hz\ }}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00113}00113\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00114}00114\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_aca0cb8da36b8e9128299b9aeb5bb60ec}{setAccelDivRate}}(4))\ \{\ \textcolor{comment}{//\ 1125\ /\ (1\ +\ 4)\ =\ 225\ Hz}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00115}00115\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Accel\_SMPLRT\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00116}00116\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00118}00118\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00119}00119\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00120}00120\ \textcolor{comment}{\ *\ @brief\ Read\ and\ print\ accelerometer\ data\ in\ g.}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00121}00121\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00122}\mbox{\hyperlink{spi__accel_8ino_afe461d27b9c48d5921c00d521181f12f}{00122}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi__accel_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00123}00123\ \ \ \textcolor{keywordtype}{float}\ ax,\ ay,\ az;\ \ \textcolor{comment}{//\ accel\ X/Y/Z\ in\ g}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00125}00125\ \ \ \textcolor{comment}{/*\ -\/\ readAccel(x,y,z)}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00126}00126\ \textcolor{comment}{\ \ \ *\ -\/\ Returns:}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00127}00127\ \textcolor{comment}{\ \ \ *\ \ \ -\/\ true\ on\ success;}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00128}00128\ \textcolor{comment}{\ \ \ *\ -\/\ Output:}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00129}00129\ \textcolor{comment}{\ \ \ *\ \ \ -\/\ ax/ay/az\ in\ g}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00130}00130\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00131}00131\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{spi__accel_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b}{readAccel}}(ax,\ ay,\ az))\ \{}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00132}00132\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{}ACCEL\ [g]:\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00133}00133\ \ \ \ \ Serial.print(ax,\ 3);}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00134}00134\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00135}00135\ \ \ \ \ Serial.print(ay,\ 3);}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00136}00136\ \ \ \ \ Serial.print(\textcolor{stringliteral}{"{},\ "{}});}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00137}00137\ \ \ \ \ Serial.println(az,\ 3);}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00138}00138\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00139}00139\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ACCEL\ read\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00140}00140\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00142}00142\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00143}00143\ \ \ delay(500);}
+\DoxyCodeLine{\Hypertarget{spi__accel_8ino_source_l00144}00144\ \}}
 
 \end{DoxyCode}

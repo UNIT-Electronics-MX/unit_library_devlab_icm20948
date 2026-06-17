@@ -4,234 +4,235 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{test_8ino_source_l00001}00001\ \textcolor{comment}{/**}}
 \DoxyCodeLine{\Hypertarget{test_8ino_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ test.ino}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ Accelerometer\ DLPF\ validation\ sketch\ for\ the\ 7Semi\ ICM-\/20948.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @details\ Runs\ an\ I2C\ accelerometer\ sweep\ across\ DLPF\ settings,\ prints\ sample}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ data\ to\ Serial,\ and\ is\ intended\ for\ bench\ validation\ with\ the\ sensor\ flat\ and}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ stationary.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00007}00007\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00011}00011\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00012}00012\ \textcolor{comment}{//\ PINES\ I2C\ —\ ESP32C6\ NANO\ Unit\ Electronics}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00013}00013\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00014}00014\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00015}\mbox{\hyperlink{test_8ino_a526d580d324bce60a3e964066fae77e3}{00015}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ \ \ \ \ \ \ 6}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00016}00016\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00017}\mbox{\hyperlink{test_8ino_a06c967e78bcedcee909a70764f879433}{00017}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ \ \ \ \ \ \ 7}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00018}00018\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00019}\mbox{\hyperlink{test_8ino_a8b7500a141450a9df212017430c0df9e}{00019}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ \ \ \ \ \ \ 400000UL\ \ \ }\textcolor{comment}{//\ Fast\ Mode\ 400\ kHz}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00021}00021\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00022}00022\ \textcolor{comment}{//\ DIRECCIONES\ I2C}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00023}00023\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00024}00024\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00025}\mbox{\hyperlink{test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00025}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ \ \ \ \ \ \ 0x69\ \ \ \ \ \ \ }\textcolor{comment}{//\ AD0\ =\ LOW\ (GND)}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00026}00026\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00027}00027\ \textcolor{comment}{/**\ @brief\ Accelerometer\ DLPF\ divider\ and\ timing\ configuration.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00028}00028\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structconfigDLPF}{configDLPF}}\ \{\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00029}00029\ \textcolor{comment}{\ \ /**\ @brief\ Index\ into\ the\ accelDLPF\ lookup\ table.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00030}00030\ \ \ uint8\_t\ \ \ \ \ \mbox{\hyperlink{structconfigDLPF_a3e61183bf0cc5e5fdbfddb96b2adc9c2}{dlpf\_idx}};\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00031}00031\ \textcolor{comment}{\ \ /**\ @brief\ Sample-\/rate\ divider\ written\ to\ the\ IMU\ register.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00032}00032\ \ \ uint16\_t\ \ \ \ \mbox{\hyperlink{structconfigDLPF_a522bdaa9ec30e1a07c1e1c7d1a228946}{div}};\ \ \ \ \ \ \ \textcolor{comment}{//\ el\ valor\ REAL\ del\ registro,\ 0-\/4095,\ sin\ ambigüedad}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00033}00033\ \textcolor{comment}{\ \ /**\ @brief\ Noise\ bandwidth\ in\ hertz\ for\ reporting.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00034}00034\ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \mbox{\hyperlink{structconfigDLPF_a810cc6538484c5984d1ad25e1f554370}{nbw\_hz}};\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00035}00035\ \textcolor{comment}{\ \ /**\ @brief\ Output\ data\ rate\ in\ hertz\ for\ timing\ calculations.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00036}00036\ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \mbox{\hyperlink{structconfigDLPF_a258433764b5ca0dfbc1636b6ac90d27d}{odr\_hz}};\ \ \ \textcolor{comment}{//\ =\ 1125.0f\ /\ (1\ +\ div),\ para\ calcular\ tiempos}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00037}00037\ \textcolor{comment}{\ \ /**\ @brief\ Text\ label\ printed\ with\ each\ captured\ sample.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00038}00038\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structconfigDLPF_a4d1ecadff3d90a4666035aa9ba3dc166}{nombre}};}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00039}00039\ \};}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00040}00040\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00041}00041\ \textcolor{comment}{/**\ @brief\ Accelerometer\ DLPF\ configurations\ exercised\ by\ this\ validation.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00042}\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{00042}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structconfigDLPF}{configDLPF}}\ \mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[]\ =\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00043}00043\ \ \ \textcolor{comment}{//\ idx\ \ div\ \ \ NBW(Hz)\ \ \ ODR(Hz)\ \ \ \ nombre}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00044}00044\ \ \ \{\ \ 0,\ \ \ 0,\ \ \ 265.0f,\ \ 1125.0f,\ \ \textcolor{stringliteral}{"{}DLPF0\_246\ |\ NBW=265Hz\ |\ ODR=1125Hz\ (4.2x)"{}}\ \},}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00045}00045\ \ \ \{\ \ 1,\ \ \ 0,\ \ \ 265.0f,\ \ 1125.0f,\ \ \textcolor{stringliteral}{"{}DLPF\_246\ \ |\ NBW=265Hz\ |\ ODR=1125Hz\ (4.2x)"{}}\ \},}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00046}00046\ \ \ \{\ \ 2,\ \ \ 1,\ \ \ 136.0f,\ \ \ 562.5f,\ \ \textcolor{stringliteral}{"{}DLPF\_111\ \ |\ NBW=136Hz\ |\ ODR=\ 562Hz\ (4.1x)"{}}\ \},}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00047}00047\ \ \ \{\ \ 3,\ \ \ 3,\ \ \ \ 68.8f,\ \ \ 281.3f,\ \ \textcolor{stringliteral}{"{}DLPF\_50\ \ \ |\ NBW=\ 69Hz\ |\ ODR=\ 281Hz\ (4.1x)"{}}\ \},}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00048}00048\ \ \ \{\ \ 4,\ \ \ 7,\ \ \ \ 34.4f,\ \ \ 140.6f,\ \ \textcolor{stringliteral}{"{}DLPF\_24\ \ \ |\ NBW=\ 34Hz\ |\ ODR=\ 141Hz\ (4.1x)"{}}\ \},}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00049}00049\ \ \ \{\ \ 5,\ \ 15,\ \ \ \ 17.0f,\ \ \ \ 70.3f,\ \ \textcolor{stringliteral}{"{}DLPF\_12\ \ \ |\ NBW=\ 17Hz\ |\ ODR=\ \ 70Hz\ (4.1x)"{}}\ \},}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00050}00050\ \ \ \{\ \ 6,\ \ 31,\ \ \ \ \ 8.3f,\ \ \ \ 35.2f,\ \ \textcolor{stringliteral}{"{}DLPF\_6\ \ \ \ |\ NBW=\ \ 8Hz\ |\ ODR=\ \ 35Hz\ (4.2x)"{}}\ \},}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00051}00051\ \ \ \{\ \ 7,\ \ \ 0,\ \ \ 499.0f,\ \ 1125.0f,\ \ \textcolor{stringliteral}{"{}DLPF\_473\ \ |\ NBW=499Hz\ |\ ODR=1125Hz\ (2.3x)"{}}\ \},}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00052}00052\ \};}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00053}00053\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00054}00054\ \textcolor{comment}{//\ \ ARRAYS\ DE\ CONFIGURACIÓN\ }}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00055}00055\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00056}00056\ \textcolor{comment}{/**\ @brief\ Number\ of\ accelerometer\ DLPF\ configurations.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00057}\mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{00057}}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}}\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}})\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[0]);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00058}00058\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00059}00059\ \textcolor{comment}{/**\ @brief\ Accelerometer\ full-\/scale\ ranges\ available\ for\ validation.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00060}\mbox{\hyperlink{test_8ino_afba242a959acc49646be317c43c4bc51}{00060}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05}{ICM20948\_Accel\_FullScale}}\ \mbox{\hyperlink{test_8ino_afba242a959acc49646be317c43c4bc51}{accelCfg}}[]\ =\ \{\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05aade318cc7367b7f1b4127eddc5f4899f}{ICM20948\_Accel\_FullScale::G\_2}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05abda3c606e1ce64e3bda86c1fe6232693}{ICM20948\_Accel\_FullScale::G\_4}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05a7526fbbb8f59b17de642323ac8f156aa}{ICM20948\_Accel\_FullScale::G\_8}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05a0ab58ba0a5550a73055a08e4c20ee549}{ICM20948\_Accel\_FullScale::G\_16}}\};\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00061}00061\ \textcolor{comment}{/**\ @brief\ Text\ labels\ matching\ accelCfg.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00062}\mbox{\hyperlink{test_8ino_a14ebfda2dc5c37c8a8080f828f9fecf8}{00062}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{test_8ino_a14ebfda2dc5c37c8a8080f828f9fecf8}{etiquetasAccelCfg}}[]\ =\ \{\textcolor{stringliteral}{"{}+-\/2G"{}},\textcolor{stringliteral}{"{}+-\/4G"{}},\ \textcolor{stringliteral}{"{}+-\/8G"{}},\ \textcolor{stringliteral}{"{}+-\/16G"{}}\};\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00063}00063\ \textcolor{comment}{/**\ @brief\ Number\ of\ accelerometer\ full-\/scale\ ranges.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00064}\mbox{\hyperlink{test_8ino_a6e9ca5bda437536b80c2d5b592629088}{00064}}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{test_8ino_a6e9ca5bda437536b80c2d5b592629088}{N\_FS}}\ =\ 4;}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00065}00065\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00066}00066\ \textcolor{comment}{/**\ @brief\ Accelerometer\ DLPF\ enum\ values\ matching\ configsDLPF.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00067}\mbox{\hyperlink{test_8ino_a1aaf273f25b97fc05866f455e73b7ba9}{00067}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833}{ICM20948\_Accel\_DLPFCFG}}\ \mbox{\hyperlink{test_8ino_a1aaf273f25b97fc05866f455e73b7ba9}{accelDLPF}}[]\ =\ \{\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833a13cbb7979b56e04b08ae1fce52de8920}{ICM20948\_Accel\_DLPFCFG::DLPF0\_246HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833aeeb64eacdc3d03767db5a3801123bfb4}{ICM20948\_Accel\_DLPFCFG::DLPF\_246HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833afe0dbe8c5c9de890080dc391ebe993c9}{ICM20948\_Accel\_DLPFCFG::DLPF\_111HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833a1b0dedc13cdfd5d62bb48c2ad2fa704b}{ICM20948\_Accel\_DLPFCFG::DLPF\_50HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833a4b000385ff347b34dfec18d96059bd64}{ICM20948\_Accel\_DLPFCFG::DLPF\_24HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833aa94e8735e478a9c88792525ccbcc679a}{ICM20948\_Accel\_DLPFCFG::DLPF\_12HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833afc7f83a30afbfee6d61610e4089ac326}{ICM20948\_Accel\_DLPFCFG::DLPF\_6HZ}},\mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833af80e05f16aaf83801216cef7d6a5446f}{ICM20948\_Accel\_DLPFCFG::DLPF\_473HZ}}\ \};\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00068}00068\ \textcolor{comment}{/**\ @brief\ Text\ labels\ describing\ accelDLPF\ bandwidth\ pairs.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00069}\mbox{\hyperlink{test_8ino_a7d8148db97649efa472bd4ed2470fb4c}{00069}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{test_8ino_a7d8148db97649efa472bd4ed2470fb4c}{etiquetasAccelDLPFCFG}}[]\ =\ \{\ \textcolor{stringliteral}{"{}246/265"{}},\ \textcolor{stringliteral}{"{}246/265"{}},\ \textcolor{stringliteral}{"{}111/136"{}},\ \textcolor{stringliteral}{"{}50.4/68.8"{}},\textcolor{stringliteral}{"{}23.9/34.4"{}},\ \textcolor{stringliteral}{"{}11.5/17.0"{}},\ \textcolor{stringliteral}{"{}5.7/8.3"{}},\textcolor{stringliteral}{"{}473/499"{}}\};}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00070}00070\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00071}00071\ \textcolor{comment}{/**\ @brief\ Accelerometer\ averaging\ settings\ available\ for\ validation.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00072}\mbox{\hyperlink{test_8ino_a44172cfd2be3fc4ff6f7b1fb343d2ec4}{00072}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9}{ICM20948\_Accel\_Average}}\ \mbox{\hyperlink{test_8ino_a44172cfd2be3fc4ff6f7b1fb343d2ec4}{accelAVG}}[]\ =\ \{\mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9aebd0ae3f26f35e0266d46e0b767eeadc}{ICM20948\_Accel\_Average::AVG\_1\_OR\_4}}\ ,\mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9a682b1e1305b78c070fc0d38523969924}{ICM20948\_Accel\_Average::AVG\_8}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9ad52a23a3a06614aefd7b8c55510f95f6}{ICM20948\_Accel\_Average::AVG\_16}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9a5a625254a69fb541caa23fed503c1e2b}{ICM20948\_Accel\_Average::AVG\_32}}\};\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00073}00073\ \textcolor{comment}{/**\ @brief\ Text\ labels\ matching\ accelAVG.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00074}\mbox{\hyperlink{test_8ino_a1e7d1f7dded2d3dfeb778c3cfcc91dea}{00074}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{test_8ino_a1e7d1f7dded2d3dfeb778c3cfcc91dea}{etiquetasAccelAVG}}[]\ =\ \{\textcolor{stringliteral}{"{}1\ OR\ 4"{}},\textcolor{stringliteral}{"{}8"{}},\textcolor{stringliteral}{"{}16"{}},\textcolor{stringliteral}{"{}32"{}}\};}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00075}00075\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00076}00076\ \textcolor{comment}{/**\ @brief\ Raw\ accelerometer\ sample-\/rate\ divider\ values\ for\ experiments.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00077}\mbox{\hyperlink{test_8ino_afa2564ef9650479c8ec39b52d193fbbd}{00077}}\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{test_8ino_afa2564ef9650479c8ec39b52d193fbbd}{accelSR}}[]\ =\ \{0,\ 1,\ 3,\ 5,\ 7\ ,\ 10,\ 15,\ 22,\ 31,\ 63,\ 127,\ 255,\ 513,\ 1022,\ 2044,\ 4095\};\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00078}00078\ \textcolor{comment}{/**\ @brief\ Text\ labels\ matching\ accelSR\ output\ data\ rates.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00079}\mbox{\hyperlink{test_8ino_aab3a263352ee1fbbca9fe5acf2cd19eb}{00079}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{test_8ino_aab3a263352ee1fbbca9fe5acf2cd19eb}{etiquetasSR}}[]\ =\ \{\ \textcolor{stringliteral}{"{}1125.0"{}},\textcolor{stringliteral}{"{}562.5"{}},\ \textcolor{stringliteral}{"{}281.3"{}},\ \textcolor{stringliteral}{"{}187.5"{}},\textcolor{stringliteral}{"{}140.6"{}},\ \textcolor{stringliteral}{"{}102.3"{}},\ \textcolor{stringliteral}{"{}70.3"{}},\ \textcolor{stringliteral}{"{}48.9"{}},\ \textcolor{stringliteral}{"{}35.2"{}},\ \textcolor{stringliteral}{"{}17.6"{}},\ \textcolor{stringliteral}{"{}8.8"{}},\ \textcolor{stringliteral}{"{}4.4"{}},\ \textcolor{stringliteral}{"{}2.2"{}},\ \textcolor{stringliteral}{"{}1.1"{}},\ \textcolor{stringliteral}{"{}0.55"{}},\ \textcolor{stringliteral}{"{}0.27"{}}\};}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00080}00080\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00081}00081\ \textcolor{comment}{//\ \ INSTANCIA\ DEL\ SENSOR}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00082}00082\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00083}00083\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00084}\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00084}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00085}00085\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00086}00086\ \textcolor{comment}{/**\ @brief\ Count\ of\ validation\ passes\ reserved\ for\ future\ checks.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00087}\mbox{\hyperlink{test_8ino_ac52922d562439e55245447f152baaf1b}{00087}}\ uint8\_t\ \mbox{\hyperlink{test_8ino_ac52922d562439e55245447f152baaf1b}{total\_pass}}\ =\ 0;\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00088}00088\ \textcolor{comment}{/**\ @brief\ Count\ of\ validation\ failures\ reserved\ for\ future\ checks.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00089}\mbox{\hyperlink{test_8ino_a1bf762e03a9be2534f36ec8a2611c341}{00089}}\ uint8\_t\ \mbox{\hyperlink{test_8ino_a1bf762e03a9be2534f36ec8a2611c341}{total\_fail}}\ =\ 0;\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00090}00090\ \textcolor{comment}{/**\ @brief\ Count\ of\ validation\ warnings\ reserved\ for\ future\ checks.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00091}\mbox{\hyperlink{test_8ino_ae452872d489cfa87ffe02f8cf8718a43}{00091}}\ uint8\_t\ \mbox{\hyperlink{test_8ino_ae452872d489cfa87ffe02f8cf8718a43}{total\_warn}}\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00093}00093\ \textcolor{comment}{//\ ============================================================}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00094}00094\ \textcolor{comment}{//\ \ UTILIDADES\ DE\ IMPRESIÓN}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00095}00095\ \textcolor{comment}{//\ ============================================================}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00096}00096\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00097}00097\ \textcolor{comment}{/**\ @brief\ Print\ a\ separator\ line\ to\ Serial.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00098}\mbox{\hyperlink{test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{00098}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{printLinea}}()\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00099}00099\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00100}00100\ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00101}00101\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00102}00102\ \textcolor{comment}{/**\ @brief\ Print\ a\ double\ separator\ line\ to\ Serial.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00103}\mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{00103}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}()\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00104}00104\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}============================================================"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00105}00105\ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00106}00106\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00107}00107\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00108}00108\ \textcolor{comment}{\ *\ @brief\ Apply\ one\ accelerometer\ full-\/scale\ and\ DLPF\ configuration.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00109}00109\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00110}00110\ \textcolor{comment}{\ *\ @param\ fs\_idx\ Index\ into\ accelCfg.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00111}00111\ \textcolor{comment}{\ *\ @param\ cfg\ DLPF\ timing\ and\ divider\ configuration.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00112}00112\ \textcolor{comment}{\ *\ @return\ true\ if\ all\ configuration\ writes\ succeeded,\ otherwise\ false.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00113}00113\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00114}\mbox{\hyperlink{test_8ino_a327f4fbd9f22daba4f8a6f3f1c13f729}{00114}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{applySettings}}(uint8\_t\ fs\_idx,\textcolor{keyword}{const}\ \mbox{\hyperlink{structconfigDLPF}{configDLPF}}\ \&cfg)\{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00115}00115\ \ \ uint8\_t\ dlpf\_val\ =\ (uint8\_t)\mbox{\hyperlink{test_8ino_a1aaf273f25b97fc05866f455e73b7ba9}{accelDLPF}}[cfg.\mbox{\hyperlink{structconfigDLPF_a3e61183bf0cc5e5fdbfddb96b2adc9c2}{dlpf\_idx}}];}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00116}00116\ \ \ \textcolor{keywordtype}{bool}\ ok\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00117}00117\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00118}00118\ \ \ ok\ \&=\ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43}{setAccelScale}}(\mbox{\hyperlink{test_8ino_afba242a959acc49646be317c43c4bc51}{accelCfg}}[fs\_idx]);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00119}00119\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00120}00120\ \ \ ok\ \&=\ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ac52d80aad738b90aa0f05e9d6404bb85}{setAccelDLPF}}(dlpf\_val,\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00121}00121\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00122}00122\ \ \ ok\ \&=\ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_aca0cb8da36b8e9128299b9aeb5bb60ec}{setAccelDivRate}}(cfg.\mbox{\hyperlink{structconfigDLPF_a522bdaa9ec30e1a07c1e1c7d1a228946}{div}});}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00123}00123\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00124}00124\ \ \ \textcolor{keywordflow}{return}\ ok;}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00125}00125\ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00126}00126\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00127}00127\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00128}00128\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00129}00129\ \textcolor{comment}{\ *\ @brief\ Verify\ the\ IMU\ identity\ register.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00130}00130\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00131}\mbox{\hyperlink{test_8ino_a1cf9f29034d9373db6498335da3d661c}{00131}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a1cf9f29034d9373db6498335da3d661c}{firstStage}}()\{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00132}00132\ \ \ uint8\_t\ who;}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00133}00133\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who)\ ||\ who\ !=\ 0xEA)\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00134}00134\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ WHO\_AM\_I\ mismatch"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00136}00136\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00137}00137\ \ \ Serial.print(F(\textcolor{stringliteral}{"{}WHO\_AM\_I\ =\ 0x"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00138}00138\ \ \ Serial.println(who,\ HEX);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00139}00139\ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00140}00140\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00141}00141\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00142}00142\ \textcolor{comment}{\ *\ @brief\ Run\ the\ accelerometer\ DLPF\ validation\ sweep\ and\ print\ samples.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00143}00143\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00144}\mbox{\hyperlink{test_8ino_a59a0400232b9ffe7d4395b166f74593a}{00144}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a59a0400232b9ffe7d4395b166f74593a}{runSweep}}()\{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00145}00145\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00146}00146\ \ \ Serial.println(\textcolor{stringliteral}{"{}Acelerometro\ ICM-\/200948\ |\ UNIT\ Electronics"{}});}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00147}00147\ \ \ Serial.printf(\textcolor{stringliteral}{"{}\%d\ DLPFS\ x\ \%d\ FS\ =\ \%d\ combinaciones\(\backslash\)n"{}},\mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}},\mbox{\hyperlink{test_8ino_a6e9ca5bda437536b80c2d5b592629088}{N\_FS}},\mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}}\ *\ \mbox{\hyperlink{test_8ino_a6e9ca5bda437536b80c2d5b592629088}{N\_FS}});}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00148}00148\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Coloque\ el\ sensor\ plano\ y\ quieto\ mirando\ hacia\ arriba"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00149}00149\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00150}00150\ \ \ \textcolor{keywordflow}{for}(uint8\_t\ d\ =\ 0;\ d\ <\ \mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}};\ d++)\{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00151}00151\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ BLOQUE\ \%d/\%d:\ \%s\(\backslash\)n"{}},\ d+1,\ \mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}},\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].nombre);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00152}00152\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ ODR\ =\ \%.1fHz\ |\ Delay\ =\ \%lums\ |\ Periodo=\ \%.1fms\(\backslash\)n"{}},\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz,max((uint32\_t)(10000.0f/\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz),(uint32\_t)50),}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1000.0f/\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00154}00154\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00155}00155\ \ \ \textcolor{keywordtype}{bool}\ cfg\_ok\ =\ \mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{applySettings}}(\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].dlpf\_idx,\ \mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d]);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00156}00156\ \ \ \textcolor{keywordflow}{if}\ (!cfg\_ok)\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00157}00157\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ ERROR:\ applySettings()\ fallo"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00159}00159\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00160}00160\ \ \ \textcolor{comment}{//\ Esperar\ que\ el\ filtro\ estabilice\ (10\ periodos\ del\ ODR,\ min\ 50ms)}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00161}00161\ \ \ \ \ uint32\_t\ settle\_ms\ =\ max((uint32\_t)(10000.0f\ /\ \mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz),}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)50);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00163}00163\ \ \ \ \ delay(settle\_ms);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @author\ Jonathan\ Mejorado\ Lopez}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @brief\ Accelerometer\ DLPF\ validation\ sketch\ for\ the\ 7Semi\ ICM-\/20948.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ @details\ Runs\ an\ I2C\ accelerometer\ sweep\ across\ DLPF\ settings,\ prints\ sample}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ data\ to\ Serial,\ and\ is\ intended\ for\ bench\ validation\ with\ the\ sensor\ flat\ and}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ stationary.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00008}00008\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00012}00012\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00013}00013\ \textcolor{comment}{//\ PINES\ I2C\ —\ ESP32C6\ NANO\ Unit\ Electronics}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00014}00014\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00015}00015\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00016}\mbox{\hyperlink{test_8ino_a526d580d324bce60a3e964066fae77e3}{00016}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ \ \ \ \ \ \ 6}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00017}00017\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00018}\mbox{\hyperlink{test_8ino_a06c967e78bcedcee909a70764f879433}{00018}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ \ \ \ \ \ \ 7}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00019}00019\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00020}\mbox{\hyperlink{test_8ino_a8b7500a141450a9df212017430c0df9e}{00020}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ \ \ \ \ \ \ 400000UL\ \ \ }\textcolor{comment}{//\ Fast\ Mode\ 400\ kHz}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00022}00022\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00023}00023\ \textcolor{comment}{//\ DIRECCIONES\ I2C}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00024}00024\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00025}00025\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00026}\mbox{\hyperlink{test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00026}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ \ \ \ \ \ \ 0x69\ \ \ \ \ \ \ }\textcolor{comment}{//\ AD0\ =\ LOW\ (GND)}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00027}00027\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00028}00028\ \textcolor{comment}{/**\ @brief\ Accelerometer\ DLPF\ divider\ and\ timing\ configuration.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00029}00029\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structconfigDLPF}{configDLPF}}\ \{\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00030}00030\ \textcolor{comment}{\ \ /**\ @brief\ Index\ into\ the\ accelDLPF\ lookup\ table.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00031}00031\ \ \ uint8\_t\ \ \ \ \ \mbox{\hyperlink{structconfigDLPF_a3e61183bf0cc5e5fdbfddb96b2adc9c2}{dlpf\_idx}};\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00032}00032\ \textcolor{comment}{\ \ /**\ @brief\ Sample-\/rate\ divider\ written\ to\ the\ IMU\ register.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00033}00033\ \ \ uint16\_t\ \ \ \ \mbox{\hyperlink{structconfigDLPF_a522bdaa9ec30e1a07c1e1c7d1a228946}{div}};\ \ \ \ \ \ \ \textcolor{comment}{//\ el\ valor\ REAL\ del\ registro,\ 0-\/4095,\ sin\ ambigüedad}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00034}00034\ \textcolor{comment}{\ \ /**\ @brief\ Noise\ bandwidth\ in\ hertz\ for\ reporting.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00035}00035\ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \mbox{\hyperlink{structconfigDLPF_a810cc6538484c5984d1ad25e1f554370}{nbw\_hz}};\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00036}00036\ \textcolor{comment}{\ \ /**\ @brief\ Output\ data\ rate\ in\ hertz\ for\ timing\ calculations.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00037}00037\ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \mbox{\hyperlink{structconfigDLPF_a258433764b5ca0dfbc1636b6ac90d27d}{odr\_hz}};\ \ \ \textcolor{comment}{//\ =\ 1125.0f\ /\ (1\ +\ div),\ para\ calcular\ tiempos}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00038}00038\ \textcolor{comment}{\ \ /**\ @brief\ Text\ label\ printed\ with\ each\ captured\ sample.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00039}00039\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structconfigDLPF_a4d1ecadff3d90a4666035aa9ba3dc166}{nombre}};}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00040}00040\ \};}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00041}00041\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00042}00042\ \textcolor{comment}{/**\ @brief\ Accelerometer\ DLPF\ configurations\ exercised\ by\ this\ validation.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00043}\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{00043}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structconfigDLPF}{configDLPF}}\ \mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00044}00044\ \ \ \textcolor{comment}{//\ idx\ \ div\ \ \ NBW(Hz)\ \ \ ODR(Hz)\ \ \ \ nombre}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00045}00045\ \ \ \{\ \ 0,\ \ \ 0,\ \ \ 265.0f,\ \ 1125.0f,\ \ \textcolor{stringliteral}{"{}DLPF0\_246\ |\ NBW=265Hz\ |\ ODR=1125Hz\ (4.2x)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00046}00046\ \ \ \{\ \ 1,\ \ \ 0,\ \ \ 265.0f,\ \ 1125.0f,\ \ \textcolor{stringliteral}{"{}DLPF\_246\ \ |\ NBW=265Hz\ |\ ODR=1125Hz\ (4.2x)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00047}00047\ \ \ \{\ \ 2,\ \ \ 1,\ \ \ 136.0f,\ \ \ 562.5f,\ \ \textcolor{stringliteral}{"{}DLPF\_111\ \ |\ NBW=136Hz\ |\ ODR=\ 562Hz\ (4.1x)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00048}00048\ \ \ \{\ \ 3,\ \ \ 3,\ \ \ \ 68.8f,\ \ \ 281.3f,\ \ \textcolor{stringliteral}{"{}DLPF\_50\ \ \ |\ NBW=\ 69Hz\ |\ ODR=\ 281Hz\ (4.1x)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00049}00049\ \ \ \{\ \ 4,\ \ \ 7,\ \ \ \ 34.4f,\ \ \ 140.6f,\ \ \textcolor{stringliteral}{"{}DLPF\_24\ \ \ |\ NBW=\ 34Hz\ |\ ODR=\ 141Hz\ (4.1x)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00050}00050\ \ \ \{\ \ 5,\ \ 15,\ \ \ \ 17.0f,\ \ \ \ 70.3f,\ \ \textcolor{stringliteral}{"{}DLPF\_12\ \ \ |\ NBW=\ 17Hz\ |\ ODR=\ \ 70Hz\ (4.1x)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00051}00051\ \ \ \{\ \ 6,\ \ 31,\ \ \ \ \ 8.3f,\ \ \ \ 35.2f,\ \ \textcolor{stringliteral}{"{}DLPF\_6\ \ \ \ |\ NBW=\ \ 8Hz\ |\ ODR=\ \ 35Hz\ (4.2x)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00052}00052\ \ \ \{\ \ 7,\ \ \ 0,\ \ \ 499.0f,\ \ 1125.0f,\ \ \textcolor{stringliteral}{"{}DLPF\_473\ \ |\ NBW=499Hz\ |\ ODR=1125Hz\ (2.3x)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00053}00053\ \};}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00054}00054\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00055}00055\ \textcolor{comment}{//\ \ ARRAYS\ DE\ CONFIGURACIÓN\ }}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00056}00056\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00057}00057\ \textcolor{comment}{/**\ @brief\ Number\ of\ accelerometer\ DLPF\ configurations.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00058}\mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{00058}}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}}\ =\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}})\ /\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[0]);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00059}00059\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00060}00060\ \textcolor{comment}{/**\ @brief\ Accelerometer\ full-\/scale\ ranges\ available\ for\ validation.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00061}\mbox{\hyperlink{test_8ino_afba242a959acc49646be317c43c4bc51}{00061}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05}{ICM20948\_Accel\_FullScale}}\ \mbox{\hyperlink{test_8ino_afba242a959acc49646be317c43c4bc51}{accelCfg}}[]\ =\ \{\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05aade318cc7367b7f1b4127eddc5f4899f}{ICM20948\_Accel\_FullScale::G\_2}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05abda3c606e1ce64e3bda86c1fe6232693}{ICM20948\_Accel\_FullScale::G\_4}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05a7526fbbb8f59b17de642323ac8f156aa}{ICM20948\_Accel\_FullScale::G\_8}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a7d56bdd11158e2d05da5c9317fadee05a0ab58ba0a5550a73055a08e4c20ee549}{ICM20948\_Accel\_FullScale::G\_16}}\};\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00062}00062\ \textcolor{comment}{/**\ @brief\ Text\ labels\ matching\ accelCfg.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00063}\mbox{\hyperlink{test_8ino_a14ebfda2dc5c37c8a8080f828f9fecf8}{00063}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{test_8ino_a14ebfda2dc5c37c8a8080f828f9fecf8}{etiquetasAccelCfg}}[]\ =\ \{\textcolor{stringliteral}{"{}+-\/2G"{}},\textcolor{stringliteral}{"{}+-\/4G"{}},\ \textcolor{stringliteral}{"{}+-\/8G"{}},\ \textcolor{stringliteral}{"{}+-\/16G"{}}\};\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00064}00064\ \textcolor{comment}{/**\ @brief\ Number\ of\ accelerometer\ full-\/scale\ ranges.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00065}\mbox{\hyperlink{test_8ino_a6e9ca5bda437536b80c2d5b592629088}{00065}}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{test_8ino_a6e9ca5bda437536b80c2d5b592629088}{N\_FS}}\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00066}00066\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00067}00067\ \textcolor{comment}{/**\ @brief\ Accelerometer\ DLPF\ enum\ values\ matching\ configsDLPF.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00068}\mbox{\hyperlink{test_8ino_a1aaf273f25b97fc05866f455e73b7ba9}{00068}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833}{ICM20948\_Accel\_DLPFCFG}}\ \mbox{\hyperlink{test_8ino_a1aaf273f25b97fc05866f455e73b7ba9}{accelDLPF}}[]\ =\ \{\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833a13cbb7979b56e04b08ae1fce52de8920}{ICM20948\_Accel\_DLPFCFG::DLPF0\_246HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833aeeb64eacdc3d03767db5a3801123bfb4}{ICM20948\_Accel\_DLPFCFG::DLPF\_246HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833afe0dbe8c5c9de890080dc391ebe993c9}{ICM20948\_Accel\_DLPFCFG::DLPF\_111HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833a1b0dedc13cdfd5d62bb48c2ad2fa704b}{ICM20948\_Accel\_DLPFCFG::DLPF\_50HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833a4b000385ff347b34dfec18d96059bd64}{ICM20948\_Accel\_DLPFCFG::DLPF\_24HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833aa94e8735e478a9c88792525ccbcc679a}{ICM20948\_Accel\_DLPFCFG::DLPF\_12HZ}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833afc7f83a30afbfee6d61610e4089ac326}{ICM20948\_Accel\_DLPFCFG::DLPF\_6HZ}},\mbox{\hyperlink{DevLab__ICM20948_8h_a62506f4660c8cca0e4f2d55cc6cea833af80e05f16aaf83801216cef7d6a5446f}{ICM20948\_Accel\_DLPFCFG::DLPF\_473HZ}}\ \};\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00069}00069\ \textcolor{comment}{/**\ @brief\ Text\ labels\ describing\ accelDLPF\ bandwidth\ pairs.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00070}\mbox{\hyperlink{test_8ino_a7d8148db97649efa472bd4ed2470fb4c}{00070}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{test_8ino_a7d8148db97649efa472bd4ed2470fb4c}{etiquetasAccelDLPFCFG}}[]\ =\ \{\ \textcolor{stringliteral}{"{}246/265"{}},\ \textcolor{stringliteral}{"{}246/265"{}},\ \textcolor{stringliteral}{"{}111/136"{}},\ \textcolor{stringliteral}{"{}50.4/68.8"{}},\textcolor{stringliteral}{"{}23.9/34.4"{}},\ \textcolor{stringliteral}{"{}11.5/17.0"{}},\ \textcolor{stringliteral}{"{}5.7/8.3"{}},\textcolor{stringliteral}{"{}473/499"{}}\};}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00071}00071\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00072}00072\ \textcolor{comment}{/**\ @brief\ Accelerometer\ averaging\ settings\ available\ for\ validation.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00073}\mbox{\hyperlink{test_8ino_a44172cfd2be3fc4ff6f7b1fb343d2ec4}{00073}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9}{ICM20948\_Accel\_Average}}\ \mbox{\hyperlink{test_8ino_a44172cfd2be3fc4ff6f7b1fb343d2ec4}{accelAVG}}[]\ =\ \{\mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9aebd0ae3f26f35e0266d46e0b767eeadc}{ICM20948\_Accel\_Average::AVG\_1\_OR\_4}}\ ,\mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9a682b1e1305b78c070fc0d38523969924}{ICM20948\_Accel\_Average::AVG\_8}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9ad52a23a3a06614aefd7b8c55510f95f6}{ICM20948\_Accel\_Average::AVG\_16}},\ \mbox{\hyperlink{DevLab__ICM20948_8h_a792c56c75cabcab23c273bd9a48aefa9a5a625254a69fb541caa23fed503c1e2b}{ICM20948\_Accel\_Average::AVG\_32}}\};\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00074}00074\ \textcolor{comment}{/**\ @brief\ Text\ labels\ matching\ accelAVG.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00075}\mbox{\hyperlink{test_8ino_a1e7d1f7dded2d3dfeb778c3cfcc91dea}{00075}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{test_8ino_a1e7d1f7dded2d3dfeb778c3cfcc91dea}{etiquetasAccelAVG}}[]\ =\ \{\textcolor{stringliteral}{"{}1\ OR\ 4"{}},\textcolor{stringliteral}{"{}8"{}},\textcolor{stringliteral}{"{}16"{}},\textcolor{stringliteral}{"{}32"{}}\};}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00076}00076\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00077}00077\ \textcolor{comment}{/**\ @brief\ Raw\ accelerometer\ sample-\/rate\ divider\ values\ for\ experiments.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00078}\mbox{\hyperlink{test_8ino_afa2564ef9650479c8ec39b52d193fbbd}{00078}}\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{test_8ino_afa2564ef9650479c8ec39b52d193fbbd}{accelSR}}[]\ =\ \{0,\ 1,\ 3,\ 5,\ 7\ ,\ 10,\ 15,\ 22,\ 31,\ 63,\ 127,\ 255,\ 513,\ 1022,\ 2044,\ 4095\};\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00079}00079\ \textcolor{comment}{/**\ @brief\ Text\ labels\ matching\ accelSR\ output\ data\ rates.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00080}\mbox{\hyperlink{test_8ino_aab3a263352ee1fbbca9fe5acf2cd19eb}{00080}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{test_8ino_aab3a263352ee1fbbca9fe5acf2cd19eb}{etiquetasSR}}[]\ =\ \{\ \textcolor{stringliteral}{"{}1125.0"{}},\textcolor{stringliteral}{"{}562.5"{}},\ \textcolor{stringliteral}{"{}281.3"{}},\ \textcolor{stringliteral}{"{}187.5"{}},\textcolor{stringliteral}{"{}140.6"{}},\ \textcolor{stringliteral}{"{}102.3"{}},\ \textcolor{stringliteral}{"{}70.3"{}},\ \textcolor{stringliteral}{"{}48.9"{}},\ \textcolor{stringliteral}{"{}35.2"{}},\ \textcolor{stringliteral}{"{}17.6"{}},\ \textcolor{stringliteral}{"{}8.8"{}},\ \textcolor{stringliteral}{"{}4.4"{}},\ \textcolor{stringliteral}{"{}2.2"{}},\ \textcolor{stringliteral}{"{}1.1"{}},\ \textcolor{stringliteral}{"{}0.55"{}},\ \textcolor{stringliteral}{"{}0.27"{}}\};}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00081}00081\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00082}00082\ \textcolor{comment}{//\ \ INSTANCIA\ DEL\ SENSOR}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00083}00083\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00084}00084\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00085}\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00085}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00086}00086\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00087}00087\ \textcolor{comment}{/**\ @brief\ Count\ of\ validation\ passes\ reserved\ for\ future\ checks.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00088}\mbox{\hyperlink{test_8ino_ac52922d562439e55245447f152baaf1b}{00088}}\ uint8\_t\ \mbox{\hyperlink{test_8ino_ac52922d562439e55245447f152baaf1b}{total\_pass}}\ =\ 0;\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00089}00089\ \textcolor{comment}{/**\ @brief\ Count\ of\ validation\ failures\ reserved\ for\ future\ checks.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00090}\mbox{\hyperlink{test_8ino_a1bf762e03a9be2534f36ec8a2611c341}{00090}}\ uint8\_t\ \mbox{\hyperlink{test_8ino_a1bf762e03a9be2534f36ec8a2611c341}{total\_fail}}\ =\ 0;\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00091}00091\ \textcolor{comment}{/**\ @brief\ Count\ of\ validation\ warnings\ reserved\ for\ future\ checks.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00092}\mbox{\hyperlink{test_8ino_ae452872d489cfa87ffe02f8cf8718a43}{00092}}\ uint8\_t\ \mbox{\hyperlink{test_8ino_ae452872d489cfa87ffe02f8cf8718a43}{total\_warn}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00094}00094\ \textcolor{comment}{//\ ============================================================}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00095}00095\ \textcolor{comment}{//\ \ UTILIDADES\ DE\ IMPRESIÓN}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00096}00096\ \textcolor{comment}{//\ ============================================================}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00097}00097\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00098}00098\ \textcolor{comment}{/**\ @brief\ Print\ a\ separator\ line\ to\ Serial.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00099}\mbox{\hyperlink{test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{00099}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{printLinea}}()\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00100}00100\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00102}00102\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00103}00103\ \textcolor{comment}{/**\ @brief\ Print\ a\ double\ separator\ line\ to\ Serial.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00104}\mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{00104}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}()\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00105}00105\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}============================================================"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00107}00107\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00108}00108\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00109}00109\ \textcolor{comment}{\ *\ @brief\ Apply\ one\ accelerometer\ full-\/scale\ and\ DLPF\ configuration.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00110}00110\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00111}00111\ \textcolor{comment}{\ *\ @param\ fs\_idx\ Index\ into\ accelCfg.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00112}00112\ \textcolor{comment}{\ *\ @param\ cfg\ DLPF\ timing\ and\ divider\ configuration.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00113}00113\ \textcolor{comment}{\ *\ @return\ true\ if\ all\ configuration\ writes\ succeeded,\ otherwise\ false.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00114}00114\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00115}\mbox{\hyperlink{test_8ino_a327f4fbd9f22daba4f8a6f3f1c13f729}{00115}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{applySettings}}(uint8\_t\ fs\_idx,\textcolor{keyword}{const}\ \mbox{\hyperlink{structconfigDLPF}{configDLPF}}\ \&cfg)\{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00116}00116\ \ \ uint8\_t\ dlpf\_val\ =\ (uint8\_t)\mbox{\hyperlink{test_8ino_a1aaf273f25b97fc05866f455e73b7ba9}{accelDLPF}}[cfg.\mbox{\hyperlink{structconfigDLPF_a3e61183bf0cc5e5fdbfddb96b2adc9c2}{dlpf\_idx}}];}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00117}00117\ \ \ \textcolor{keywordtype}{bool}\ ok\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00119}00119\ \ \ ok\ \&=\ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a1a2aa0019d5e1c6ba8ce4a3c1d9fcb43}{setAccelScale}}(\mbox{\hyperlink{test_8ino_afba242a959acc49646be317c43c4bc51}{accelCfg}}[fs\_idx]);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00121}00121\ \ \ ok\ \&=\ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ac52d80aad738b90aa0f05e9d6404bb85}{setAccelDLPF}}(dlpf\_val,\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00123}00123\ \ \ ok\ \&=\ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_aca0cb8da36b8e9128299b9aeb5bb60ec}{setAccelDivRate}}(cfg.\mbox{\hyperlink{structconfigDLPF_a522bdaa9ec30e1a07c1e1c7d1a228946}{div}});}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00125}00125\ \ \ \textcolor{keywordflow}{return}\ ok;}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00128}00128\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00129}00129\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00130}00130\ \textcolor{comment}{\ *\ @brief\ Verify\ the\ IMU\ identity\ register.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00131}00131\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00132}\mbox{\hyperlink{test_8ino_a1cf9f29034d9373db6498335da3d661c}{00132}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a1cf9f29034d9373db6498335da3d661c}{firstStage}}()\{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00133}00133\ \ \ uint8\_t\ who;}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00134}00134\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a8bef7eafb3b67eb736f491d0df453b9e}{readWhoAmI}}(who)\ ||\ who\ !=\ 0xEA)\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00135}00135\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ WHO\_AM\_I\ mismatch"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00137}00137\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00138}00138\ \ \ Serial.print(F(\textcolor{stringliteral}{"{}WHO\_AM\_I\ =\ 0x"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00139}00139\ \ \ Serial.println(who,\ HEX);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00140}00140\ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00141}00141\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00142}00142\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00143}00143\ \textcolor{comment}{\ *\ @brief\ Run\ the\ accelerometer\ DLPF\ validation\ sweep\ and\ print\ samples.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00144}00144\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00145}\mbox{\hyperlink{test_8ino_a59a0400232b9ffe7d4395b166f74593a}{00145}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a59a0400232b9ffe7d4395b166f74593a}{runSweep}}()\{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00146}00146\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00147}00147\ \ \ Serial.println(\textcolor{stringliteral}{"{}Acelerometro\ ICM-\/200948\ |\ UNIT\ Electronics"{}});}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00148}00148\ \ \ Serial.printf(\textcolor{stringliteral}{"{}\%d\ DLPFS\ x\ \%d\ FS\ =\ \%d\ combinaciones\(\backslash\)n"{}},\mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}},\mbox{\hyperlink{test_8ino_a6e9ca5bda437536b80c2d5b592629088}{N\_FS}},\mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}}\ *\ \mbox{\hyperlink{test_8ino_a6e9ca5bda437536b80c2d5b592629088}{N\_FS}});}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00149}00149\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Coloque\ el\ sensor\ plano\ y\ quieto\ mirando\ hacia\ arriba"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00150}00150\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00151}00151\ \ \ \textcolor{keywordflow}{for}(uint8\_t\ d\ =\ 0;\ d\ <\ \mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}};\ d++)\{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00152}00152\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ BLOQUE\ \%d/\%d:\ \%s\(\backslash\)n"{}},\ d+1,\ \mbox{\hyperlink{test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\_DLPF}},\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].nombre);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00153}00153\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ ODR\ =\ \%.1fHz\ |\ Delay\ =\ \%lums\ |\ Periodo=\ \%.1fms\(\backslash\)n"{}},\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz,max((uint32\_t)(10000.0f/\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz),(uint32\_t)50),}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1000.0f/\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00155}00155\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00156}00156\ \ \ \textcolor{keywordtype}{bool}\ cfg\_ok\ =\ \mbox{\hyperlink{mag__test_8ino_af42a493b8d96759f43d866fbe725cf3d}{applySettings}}(\mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].dlpf\_idx,\ \mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d]);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00157}00157\ \ \ \textcolor{keywordflow}{if}\ (!cfg\_ok)\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00158}00158\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ ERROR:\ applySettings()\ fallo"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00159}00159\ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00160}00160\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00161}00161\ \ \ \textcolor{comment}{//\ Esperar\ que\ el\ filtro\ estabilice\ (10\ periodos\ del\ ODR,\ min\ 50ms)}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00162}00162\ \ \ \ \ uint32\_t\ settle\_ms\ =\ max((uint32\_t)(10000.0f\ /\ \mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz),}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)50);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00164}00164\ \ \ \ \ delay(settle\_ms);}
 \DoxyCodeLine{\Hypertarget{test_8ino_source_l00165}00165\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00166}00166\ \ \ \ \ \textcolor{comment}{//\ Tomar\ 3\ lecturas\ espaciadas\ por\ el\ periodo\ del\ ODR}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00167}00167\ \ \ \ \ uint32\_t\ periodo\_ms\ =\ max((uint32\_t)(1000.0f\ /\ \mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz),}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)1);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00169}00169\ \ \ \ \ \textcolor{keywordtype}{float}\ ax,\ ay,\ az;}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ r\ =\ 0;\ r\ <\ 3;\ r++)\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00171}00171\ \ \ \ \ \ \ delay(periodo\_ms);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00172}00172\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b}{readAccel}}(ax,\ ay,\ az))\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00173}00173\ \ \ \ \ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ \ [\%d]\ Ax=\%+.3f\ \ Ay=\%+.3f\ \ Az=\%+.3f\ g\(\backslash\)n"{}},}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r+1,\ ax,\ ay,\ az);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00175}00175\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00176}00176\ \ \ \ \ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ [?]\ readAccel()\ fallo"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00177}00177\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00178}00178\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00179}00179\ \ \ \mbox{\hyperlink{test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{printLinea}}();}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00180}00180\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00181}00181\ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00182}00182\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00183}00183\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00184}00184\ \textcolor{comment}{\ *\ @brief\ Initialize\ I2C,\ reset/wake\ the\ IMU,\ enable\ sensors,\ and\ start\ sweep.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00185}00185\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00186}\mbox{\hyperlink{test_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00186}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00187}00187\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00188}00188\ \ \ Serial.begin(115200);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00189}00189\ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00190}00190\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ —\ I2C\ Basic"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00191}00191\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00192}00192\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ ICM-\/20948\ VALIDACION\ ACELEROMETRO"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00193}00193\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00194}00194\ \ \ \textcolor{comment}{//\ I2C\ init\ (UNO/ESP32\ defaults).\ For\ ESP32\ custom\ pins:\ Wire.begin(SDA,SCL);}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00195}00195\ \ \ Wire.begin(\mbox{\hyperlink{test_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\mbox{\hyperlink{test_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00196}00196\ \ \ \textcolor{comment}{//\ Attach\ IMU}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00197}00197\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},Wire,\mbox{\hyperlink{test_8ino_a8b7500a141450a9df212017430c0df9e}{I2C\_FREQ}}))\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00198}00198\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ begin(I2C)\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00200}00200\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00201}00201\ \ \ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00202}00202\ \ \ \mbox{\hyperlink{test_8ino_a1cf9f29034d9373db6498335da3d661c}{firstStage}}();}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00203}00203\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00204}00204\ \ \ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a0d6774b76298645ee45ec0e9065a8891}{softReset}}();}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00205}00205\ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00206}00206\ \ \ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4210e842050486637a5967b2a9ef7b57}{sleep}}(\textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00207}00207\ \ \ delay(50);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00208}00208\ \ \ \textcolor{comment}{/*\ Enable\ all\ sensors.\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00209}00209\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true}))\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00210}00210\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ setSensors\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00211}00211\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00212}00212\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Sensor\ listo.\(\backslash\)n"{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00213}00213\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Sensor\ PLANO\ y\ QUIETO\ sobre\ la\ mesa."{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00214}00214\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Iniciando\ en\ 5\ segundos..."{}}));}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00215}00215\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 5;\ i\ >\ 0;\ i-\/-\/)\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00216}00216\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ \ \%d...\(\backslash\)n"{}},\ i);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00217}00217\ \ \ \ \ delay(1000);}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00218}00218\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00219}00219\ \ \ \mbox{\hyperlink{test_8ino_a59a0400232b9ffe7d4395b166f74593a}{runSweep}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00220}00220\ \}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00221}00221\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00222}00222\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00223}00223\ \textcolor{comment}{\ *\ @brief\ Optional\ post-\/sweep\ loop\ for\ manual\ accelerometer\ reads.}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00224}00224\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00225}\mbox{\hyperlink{test_8ino_afe461d27b9c48d5921c00d521181f12f}{00225}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00226}00226\ \ \ \textcolor{comment}{/*float\ ax,\ ay,\ az;}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00227}00227\ \textcolor{comment}{\ \ if\ (imu.readAccel(ax,\ ay,\ az))\ \{}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00228}00228\ \textcolor{comment}{\ \ \ \ Serial.printf("{}X:\%.3f\ \ Y:\%.3f\ \ Z:\%.3f\(\backslash\)n"{},\ ax,\ ay,\ az);}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00229}00229\ \textcolor{comment}{\ \ \}}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00230}00230\ \textcolor{comment}{\ \ delay(200);*/}}
-\DoxyCodeLine{\Hypertarget{test_8ino_source_l00231}00231\ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00167}00167\ \ \ \ \ \textcolor{comment}{//\ Tomar\ 3\ lecturas\ espaciadas\ por\ el\ periodo\ del\ ODR}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00168}00168\ \ \ \ \ uint32\_t\ periodo\_ms\ =\ max((uint32\_t)(1000.0f\ /\ \mbox{\hyperlink{test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configsDLPF}}[d].odr\_hz),}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (uint32\_t)1);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00170}00170\ \ \ \ \ \textcolor{keywordtype}{float}\ ax,\ ay,\ az;}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00171}00171\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ r\ =\ 0;\ r\ <\ 3;\ r++)\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00172}00172\ \ \ \ \ \ \ delay(periodo\_ms);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00173}00173\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a3b58edd0915cff118ca81daa6944a27b}{readAccel}}(ax,\ ay,\ az))\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00174}00174\ \ \ \ \ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ \ [\%d]\ Ax=\%+.3f\ \ Ay=\%+.3f\ \ Az=\%+.3f\ g\(\backslash\)n"{}},}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r+1,\ ax,\ ay,\ az);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00176}00176\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00177}00177\ \ \ \ \ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ [?]\ readAccel()\ fallo"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00178}00178\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00180}00180\ \ \ \mbox{\hyperlink{test_8ino_a8765c1cf679c82cf73a0a13af44b983b}{printLinea}}();}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00181}00181\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00182}00182\ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00183}00183\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00184}00184\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00185}00185\ \textcolor{comment}{\ *\ @brief\ Initialize\ I2C,\ reset/wake\ the\ IMU,\ enable\ sensors,\ and\ start\ sweep.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00186}00186\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00187}\mbox{\hyperlink{test_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00187}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00189}00189\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00190}00190\ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00191}00191\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ —\ I2C\ Basic"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00192}00192\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00193}00193\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ ICM-\/20948\ VALIDACION\ ACELEROMETRO"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00194}00194\ \ \ \mbox{\hyperlink{test_8ino_a42633dcf8fe2689c57c8113825f74c66}{printDobleLinea}}();}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00195}00195\ \ \ \textcolor{comment}{//\ I2C\ init\ (UNO/ESP32\ defaults).\ For\ ESP32\ custom\ pins:\ Wire.begin(SDA,SCL);}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00196}00196\ \ \ Wire.begin(\mbox{\hyperlink{test_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\mbox{\hyperlink{test_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00197}00197\ \ \ \textcolor{comment}{//\ Attach\ IMU}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00198}00198\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},Wire,\mbox{\hyperlink{test_8ino_a8b7500a141450a9df212017430c0df9e}{I2C\_FREQ}}))\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00199}00199\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ begin(I2C)\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00201}00201\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00202}00202\ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00203}00203\ \ \ \mbox{\hyperlink{test_8ino_a1cf9f29034d9373db6498335da3d661c}{firstStage}}();}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00205}00205\ \ \ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a0d6774b76298645ee45ec0e9065a8891}{softReset}}();}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00207}00207\ \ \ \mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a4210e842050486637a5967b2a9ef7b57}{sleep}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00208}00208\ \ \ delay(50);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00209}00209\ \ \ \textcolor{comment}{/*\ Enable\ all\ sensors.\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00210}00210\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{keyword}{true},\ \textcolor{keyword}{true},\ \textcolor{keyword}{true}))\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00211}00211\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ setSensors\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00212}00212\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00213}00213\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Sensor\ listo.\(\backslash\)n"{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00214}00214\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Sensor\ PLANO\ y\ QUIETO\ sobre\ la\ mesa."{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00215}00215\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}\ \ Iniciando\ en\ 5\ segundos..."{}}));}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00216}00216\ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 5;\ i\ >\ 0;\ i-\/-\/)\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00217}00217\ \ \ \ \ Serial.printf(\textcolor{stringliteral}{"{}\ \ \%d...\(\backslash\)n"{}},\ i);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00218}00218\ \ \ \ \ delay(1000);}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00219}00219\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00220}00220\ \ \ \mbox{\hyperlink{test_8ino_a59a0400232b9ffe7d4395b166f74593a}{runSweep}}();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00221}00221\ \}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00222}00222\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00223}00223\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00224}00224\ \textcolor{comment}{\ *\ @brief\ Optional\ post-\/sweep\ loop\ for\ manual\ accelerometer\ reads.}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00225}00225\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00226}\mbox{\hyperlink{test_8ino_afe461d27b9c48d5921c00d521181f12f}{00226}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{test_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}}()\ \{}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00227}00227\ \ \ \textcolor{comment}{/*float\ ax,\ ay,\ az;}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00228}00228\ \textcolor{comment}{\ \ if\ (imu.readAccel(ax,\ ay,\ az))\ \{}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00229}00229\ \textcolor{comment}{\ \ \ \ Serial.printf("{}X:\%.3f\ \ Y:\%.3f\ \ Z:\%.3f\(\backslash\)n"{},\ ax,\ ay,\ az);}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00230}00230\ \textcolor{comment}{\ \ \}}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00231}00231\ \textcolor{comment}{\ \ delay(200);*/}}
+\DoxyCodeLine{\Hypertarget{test_8ino_source_l00232}00232\ \}}
 
 \end{DoxyCode}

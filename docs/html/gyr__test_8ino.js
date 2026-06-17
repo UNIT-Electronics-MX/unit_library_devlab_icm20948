@@ -12,7 +12,7 @@ var gyr__test_8ino =
     [ "printLinea", "gyr__test_8ino.html#a8765c1cf679c82cf73a0a13af44b983b", null ],
     [ "runSweep", "gyr__test_8ino.html#a59a0400232b9ffe7d4395b166f74593a", null ],
     [ "setup", "gyr__test_8ino.html#a4fc01d736fe50cf5b977f755b675f11d", null ],
-    [ "configsDLPF", "gyr__test_8ino.html#a7765094f7f58284a9f1ed69787fd11de", null ],
+    [ "configsDLPF", "gyr__test_8ino.html#a9ef8fe0f793376a22cc3d83386c3b86a", null ],
     [ "etiquetasGyroAVGCfg", "gyr__test_8ino.html#aded31576e106714b5b4d358a997a7ce8", null ],
     [ "etiquetasGyroFSCfg", "gyr__test_8ino.html#ac00ecbbc3aaaa24d969fe7187c3cdbb7", null ],
     [ "gyroAVGCfg", "gyr__test_8ino.html#a463898670c43b15f342a38ee2baa2b38", null ],

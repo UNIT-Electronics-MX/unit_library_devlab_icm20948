@@ -2,7 +2,7 @@
 \hypertarget{gyr__test_8ino}{}\label{gyr__test_8ino}\index{examples/gyr\_test/gyr\_test.ino@{examples/gyr\_test/gyr\_test.ino}}
 
 
-Gyroscope DLPF and full-\/scale sweep for the 7Semi ICM-\/20948.  
+Gyroscope DLPF and full-\/scale sweep for the Dev\+Lab ICM-\/20948.  
 
 
 {\ttfamily \#include $<$Wire.\+h$>$}\newline
@@ -51,9 +51,9 @@ void \mbox{\hyperlink{gyr__test_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} (
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const \mbox{\hyperlink{structconfigDLPF}{config\+DLPF}} \mbox{\hyperlink{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}{configs\+DLPF}} \mbox{[}$\,$\mbox{]}
+const \mbox{\hyperlink{structconfigDLPF}{config\+DLPF}} \mbox{\hyperlink{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}} \mbox{[}$\,$\mbox{]}
 \item 
-const uint8\+\_\+t \mbox{\hyperlink{gyr__test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\+\_\+\+DLPF}} = sizeof(\mbox{\hyperlink{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}{configs\+DLPF}}) / sizeof(\mbox{\hyperlink{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}{configs\+DLPF}}\mbox{[}0\mbox{]})
+const uint8\+\_\+t \mbox{\hyperlink{gyr__test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}{N\+\_\+\+DLPF}} = sizeof(\mbox{\hyperlink{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}}) / sizeof(\mbox{\hyperlink{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}}\mbox{[}0\mbox{]})
 \begin{DoxyCompactList}\small\item\em Number of gyroscope DLPF configurations. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{DevLab__ICM20948_8h_a409a608f5c864bb503bf1a65b164de7d}{ICM20948\+\_\+\+Gyro\+\_\+\+Full\+Scale}} \mbox{\hyperlink{gyr__test_8ino_a96719cfcca29e73648c7a8876b7ca3a2}{gyro\+FSCfg}} \mbox{[}$\,$\mbox{]}
 \begin{DoxyCompactList}\small\item\em Gyroscope full-\/scale ranges exercised by the sweep. \end{DoxyCompactList}\item 
@@ -74,8 +74,11 @@ const uint8\+\_\+t \mbox{\hyperlink{gyr__test_8ino_a0d5bdf34da5950970f04fcb4d629
 
 
 \doxysubsection{Detailed Description}
-Gyroscope DLPF and full-\/scale sweep for the 7Semi ICM-\/20948. 
+Gyroscope DLPF and full-\/scale sweep for the Dev\+Lab ICM-\/20948. 
 
+\begin{DoxyAuthor}{Author}
+Jonathan Mejorado Lopez
+\end{DoxyAuthor}
 Applies each gyroscope filter/full-\/scale configuration over I2C and prints repeated samples for validation and noise comparison. 
 
 Definition in file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
@@ -95,7 +98,7 @@ I2C bus speed in hertz.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00018}{18}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00019}{19}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}\label{gyr__test_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb} 
 \index{gyr\_test.ino@{gyr\_test.ino}!ICM\_ADDR@{ICM\_ADDR}}
@@ -109,7 +112,7 @@ ICM-\/20948 I2C address selected by the AD0 pin.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00020}{20}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00021}{21}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a06c967e78bcedcee909a70764f879433}\label{gyr__test_8ino_a06c967e78bcedcee909a70764f879433} 
 \index{gyr\_test.ino@{gyr\_test.ino}!SCL\_PIN@{SCL\_PIN}}
@@ -123,7 +126,7 @@ I2C SCL pin used by the example board.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00016}{16}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00017}{17}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a526d580d324bce60a3e964066fae77e3}\label{gyr__test_8ino_a526d580d324bce60a3e964066fae77e3} 
 \index{gyr\_test.ino@{gyr\_test.ino}!SDA\_PIN@{SDA\_PIN}}
@@ -137,7 +140,7 @@ I2C SDA pin used by the example board.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00014}{14}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00015}{15}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 
 
@@ -164,7 +167,7 @@ true if all configuration writes succeeded, otherwise false.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00133}{133}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00124}{124}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -186,7 +189,7 @@ Verify the IMU identity register.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00117}{117}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00108}{108}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -216,7 +219,7 @@ Empty loop; this sketch runs the gyroscope sweep once in \doxylink{gyr__test_8in
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00248}{248}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00239}{239}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a42633dcf8fe2689c57c8113825f74c66}\label{gyr__test_8ino_a42633dcf8fe2689c57c8113825f74c66} 
 \index{gyr\_test.ino@{gyr\_test.ino}!printDobleLinea@{printDobleLinea}}
@@ -230,7 +233,7 @@ Print a double separator line to Serial.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00112}{112}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00103}{103}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -252,7 +255,7 @@ Print a separator line to Serial.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00110}{110}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00101}{101}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a59a0400232b9ffe7d4395b166f74593a}\label{gyr__test_8ino_a59a0400232b9ffe7d4395b166f74593a} 
 \index{gyr\_test.ino@{gyr\_test.ino}!runSweep@{runSweep}}
@@ -266,7 +269,7 @@ Run the gyroscope validation sweep and print each captured sample.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00158}{158}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00149}{149}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -296,7 +299,7 @@ Initialize I2C, reset/wake the IMU, enable gyro, and start the sweep.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00203}{203}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00194}{194}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -309,11 +312,11 @@ Here is the call graph for this function\+:
 
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}\label{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de} 
+\Hypertarget{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}\label{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a} 
 \index{gyr\_test.ino@{gyr\_test.ino}!configsDLPF@{configsDLPF}}
 \index{configsDLPF@{configsDLPF}!gyr\_test.ino@{gyr\_test.ino}}
 \doxysubsubsection{\texorpdfstring{configsDLPF}{configsDLPF}}
-{\footnotesize\ttfamily \texorpdfstring{$\ast$}{*}const \mbox{\hyperlink{structconfigDLPF}{config\+DLPF}} configs\+DLPF}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structconfigDLPF}{config\+DLPF}} configs\+DLPF\mbox{[}$\,$\mbox{]}}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
@@ -331,7 +334,7 @@ Here is the call graph for this function\+:
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00041}{41}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00042}{42}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_aded31576e106714b5b4d358a997a7ce8}\label{gyr__test_8ino_aded31576e106714b5b4d358a997a7ce8} 
 \index{gyr\_test.ino@{gyr\_test.ino}!etiquetasGyroAVGCfg@{etiquetasGyroAVGCfg}}
@@ -345,7 +348,7 @@ Text labels matching gyro\+AVGCfg.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00102}{102}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00093}{93}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_ac00ecbbc3aaaa24d969fe7187c3cdbb7}\label{gyr__test_8ino_ac00ecbbc3aaaa24d969fe7187c3cdbb7} 
 \index{gyr\_test.ino@{gyr\_test.ino}!etiquetasGyroFSCfg@{etiquetasGyroFSCfg}}
@@ -359,7 +362,7 @@ Text labels matching gyro\+FSCfg.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00073}{73}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00064}{64}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a463898670c43b15f342a38ee2baa2b38}\label{gyr__test_8ino_a463898670c43b15f342a38ee2baa2b38} 
 \index{gyr\_test.ino@{gyr\_test.ino}!gyroAVGCfg@{gyroAVGCfg}}
@@ -387,7 +390,7 @@ Gyroscope averaging settings available for experiments.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00090}{90}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00081}{81}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a716a28065e18db7cab02f68d1d68b418}\label{gyr__test_8ino_a716a28065e18db7cab02f68d1d68b418} 
 \index{gyr\_test.ino@{gyr\_test.ino}!gyroDLPF@{gyroDLPF}}
@@ -415,7 +418,7 @@ Gyroscope DLPF enum values matching configs\+DLPF.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00078}{78}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00069}{69}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a96719cfcca29e73648c7a8876b7ca3a2}\label{gyr__test_8ino_a96719cfcca29e73648c7a8876b7ca3a2} 
 \index{gyr\_test.ino@{gyr\_test.ino}!gyroFSCfg@{gyroFSCfg}}
@@ -439,7 +442,7 @@ Gyroscope full-\/scale ranges exercised by the sweep.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00065}{65}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00056}{56}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}\label{gyr__test_8ino_aa8226278adaa3f7fb2ad8b966f7787a1} 
 \index{gyr\_test.ino@{gyr\_test.ino}!imu@{imu}}
@@ -453,7 +456,7 @@ Global ICM-\/20948 driver instance.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00107}{107}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00098}{98}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a0d5bdf34da5950970f04fcb4d629a48a}\label{gyr__test_8ino_a0d5bdf34da5950970f04fcb4d629a48a} 
 \index{gyr\_test.ino@{gyr\_test.ino}!N\_AVG@{N\_AVG}}
@@ -467,13 +470,13 @@ Number of gyroscope averaging settings.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00104}{104}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00095}{95}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a7a9c77b04f25920366c8b7b1e13d4854}\label{gyr__test_8ino_a7a9c77b04f25920366c8b7b1e13d4854} 
 \index{gyr\_test.ino@{gyr\_test.ino}!N\_DLPF@{N\_DLPF}}
 \index{N\_DLPF@{N\_DLPF}!gyr\_test.ino@{gyr\_test.ino}}
 \doxysubsubsection{\texorpdfstring{N\_DLPF}{N\_DLPF}}
-{\footnotesize\ttfamily const uint8\+\_\+t N\+\_\+\+DLPF = sizeof(\mbox{\hyperlink{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}{configs\+DLPF}}) / sizeof(\mbox{\hyperlink{gyr__test_8ino_a7765094f7f58284a9f1ed69787fd11de}{configs\+DLPF}}\mbox{[}0\mbox{]})}
+{\footnotesize\ttfamily const uint8\+\_\+t N\+\_\+\+DLPF = sizeof(\mbox{\hyperlink{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}}) / sizeof(\mbox{\hyperlink{gyr__test_8ino_a9ef8fe0f793376a22cc3d83386c3b86a}{configs\+DLPF}}\mbox{[}0\mbox{]})}
 
 
 
@@ -481,7 +484,7 @@ Number of gyroscope DLPF configurations.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00062}{62}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00053}{53}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 
 \Hypertarget{gyr__test_8ino_a6e9ca5bda437536b80c2d5b592629088}\label{gyr__test_8ino_a6e9ca5bda437536b80c2d5b592629088} 
 \index{gyr\_test.ino@{gyr\_test.ino}!N\_FS@{N\_FS}}
@@ -495,5 +498,5 @@ Number of gyroscope full-\/scale ranges.
 
 
 
-Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00075}{75}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
+Definition at line \mbox{\hyperlink{gyr__test_8ino_source_l00066}{66}} of file \mbox{\hyperlink{gyr__test_8ino_source}{gyr\+\_\+test.\+ino}}.
 

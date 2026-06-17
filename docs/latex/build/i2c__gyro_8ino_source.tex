@@ -4,122 +4,122 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00001}00001\ \textcolor{comment}{/***************************************************************}}
 \DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00002}00002\ \textcolor{comment}{\ *\ @file\ \ \ \ I2C\_Gyro.ino}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ I2C\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ on\ ESP32/UNO\ +}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ continuous\ gyroscope\ readout.}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00005}00005\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00006}00006\ \textcolor{comment}{\ *\ Features}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ -\/\ I2C\ init\ on\ default/custom\ pins}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ IMU\ begin()\ on\ I2C\ (addr\ 0x68/0x69)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ Safe\ defaults\ (applyBasicDefaults)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Optional\ sensor\ gating:\ gyro\ only}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Gyro\ config:\ DLPF,\ full-\/scale,\ ODR,\ AVG}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00012}00012\ \textcolor{comment}{\ *\ -\/\ Read\ gyro\ (dps)\ at\ \string~2\ Hz\ print}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00013}00013\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00014}00014\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO,\ I2C)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ A4}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ A5}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3\ (or\ 5V\ if\ your\ board\ supports\ it)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00019}00019\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00020}00020\ \textcolor{comment}{\ *\ Wiring\ (ESP32,\ I2C)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ GPIO21\ (default)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ GPIO22\ (default)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00025}00025\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00026}00026\ \textcolor{comment}{\ *\ Address}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ Default\ ICM-\/20948\ I2C\ address\ is\ 0x68\ (AD0=LOW).\ If\ AD0=HIGH,\ use\ 0x69.}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00028}00028\ \textcolor{comment}{\ ***************************************************************/}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00030}00030\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00033}00033\ \textcolor{comment}{/*\ ======================\ User\ Config\ =======================}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00034}00034\ \textcolor{comment}{\ *\ -\/\ Edit\ pins/addr\ if\ needed}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00035}00035\ \textcolor{comment}{\ *\ -\/\ UNO\ uses\ fixed\ SDA=A4,\ SCL=A5\ (no\ need\ to\ call\ Wire.begin\ with\ pins)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00036}00036\ \textcolor{comment}{\ *\ -\/\ ESP32\ can\ use\ default\ Wire\ (SDA=21,\ SCL=22)\ or\ custom\ pins\ via\ Wire.begin(sda,scl)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00037}00037\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00039}00039\ \textcolor{comment}{/*\ ======================\ User\ Config\ =======================\ */}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00040}00040\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00041}\mbox{\hyperlink{i2c__gyro_8ino_a526d580d324bce60a3e964066fae77e3}{00041}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00042}00042\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00043}\mbox{\hyperlink{i2c__gyro_8ino_a06c967e78bcedcee909a70764f879433}{00043}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00044}00044\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00045}\mbox{\hyperlink{i2c__gyro_8ino_a8b7500a141450a9df212017430c0df9e}{00045}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00046}00046\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00047}\mbox{\hyperlink{i2c__gyro_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00047}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00048}00048\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00049}00049\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00050}\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00050}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00051}00051\ \textcolor{comment}{}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00052}00052\ \textcolor{comment}{/**}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00053}00053\ \textcolor{comment}{\ *\ @brief\ Configure\ the\ IMU\ for\ gyroscope-\/only\ operation\ over\ I2C.}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00054}00054\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00055}00055\ \textcolor{comment}{\ *\ The\ function\ initializes\ the\ I2C\ interface,\ applies\ safe\ defaults,\ enables}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00056}00056\ \textcolor{comment}{\ *\ the\ gyroscope,\ and\ configures\ DLPF,\ full-\/scale\ range,\ and\ output\ data\ rate.}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00057}00057\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00058}\mbox{\hyperlink{i2c__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00059}00059\ \ \ Serial.begin(115200);}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00060}00060\ \ \ delay(200);}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00061}00061\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ —\ I2C\ Basic"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00062}00062\ \ \ Wire.begin(\mbox{\hyperlink{i2c__gyro_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\ \mbox{\hyperlink{i2c__gyro_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00063}00063\ \ \ \textcolor{comment}{/*\ Initialize\ IMU.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00064}00064\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{i2c__gyro_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ 400000))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00065}00065\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ beginI2C()\ failed"{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00067}00067\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00069}00069\ \ \ \textcolor{comment}{/*\ Apply\ safe\ defaults.\ */}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00070}00070\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a31460c48549b1d3081e253706f8b15e6}{applyBasicDefaults}}())\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00071}00071\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ applyBasicDefaults()\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00073}00073\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00075}00075\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00077}00077\ \ \ \textcolor{comment}{/*\ Optional:\ gate\ sensors}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00078}00078\ \textcolor{comment}{\ \ \ *\ -\/\ setSensors(accel\_on,\ gyro\_on,\ temp\_on)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00079}00079\ \textcolor{comment}{\ \ \ *\ -\/\ Here:\ enable\ only\ gyro\ (accel/temp\ off)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00080}00080\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00081}00081\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{comment}{/*accel*/}\ \textcolor{keyword}{false},\ \textcolor{comment}{/*gyro*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*temp*/}\ \textcolor{keyword}{false}))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00082}00082\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00083}00083\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00085}00085\ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ GYRO\ DLPF\ Config\ (reference)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00086}00086\ \textcolor{comment}{\ \ \ *\ GyroConfig(DLPFCFG,\ FS\_SEL,\ FCHOICE,\ XGYRO,\ YGYRO,\ ZGYRO,\ AVGCFG)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00087}00087\ \textcolor{comment}{\ \ \ *\ -\/\ DLPF\ \ \ \ \ :\ GYRO\_DLPFCFG\_0..7\ (use\ 3\ or\ 4\ for\ balanced\ settings)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00088}00088\ \textcolor{comment}{\ \ \ *\ -\/\ FS\_SEL\ \ \ :\ dps250\ /\ dps500\ /\ dps1000\ /\ dps2000}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00089}00089\ \textcolor{comment}{\ \ \ *\ -\/\ FCHOICE\ \ :\ false\ →\ DLPF\ path\ (recommended),\ true\ →\ bypass\ (very\ wide\ BW)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00090}00090\ \textcolor{comment}{\ \ \ *\ -\/\ XGYRO/YGYRO/ZGYRO\ :\ per-\/axis\ enable\ (true\ =\ enable\ axis)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00091}00091\ \textcolor{comment}{\ \ \ *\ -\/\ AVGCFG\ \ \ :\ 0..7\ internal\ averaging\ (higher\ =\ more\ smoothing,\ more\ delay)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00092}00092\ \textcolor{comment}{\ \ \ *\ FCHOICE=0\ (DLPF\ on):}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00093}00093\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_1\ :\ 3dB\ ≈\ 196.6\ Hz,\ NBW\ ≈\ 229.8\ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00094}00094\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_2\ :\ 3dB\ ≈\ 151.8\ Hz,\ NBW\ ≈\ 187.6\ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00095}00095\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_3\ :\ 3dB\ ≈\ 119.5\ Hz,\ NBW\ ≈\ 154.3\ Hz\ \ \ ←\ good\ default}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00096}00096\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_4\ :\ 3dB\ ≈\ 51.2\ \ Hz,\ NBW\ ≈\ 73.3\ \ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00097}00097\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_5\ :\ 3dB\ ≈\ 23.9\ \ Hz,\ NBW\ ≈\ 35.9\ \ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00098}00098\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_6\ :\ 3dB\ ≈\ 5.7\ \ \ Hz,\ NBW\ ≈\ 8.3\ \ \ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00099}00099\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_7\ :\ 3dB\ ≈\ 473\ \ \ Hz,\ NBW\ ≈\ 499\ \ \ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00100}00100\ \textcolor{comment}{\ \ \ *}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00101}00101\ \textcolor{comment}{\ \ \ *\ FCHOICE=1\ (Bypass)\ :\ very\ wide\ (use\ with\ care;\ highest\ noise)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00102}00102\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00103}00103\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.GyroConfig(\textcolor{comment}{/*DLPFCFG*/}\ \mbox{\hyperlink{ICM20948__regs_8h_a6ec833d2b53c943952ae9c1c4e548356}{GYRO\_DLPFCFG\_4}},}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*FS\_SEL*/}\ \ \ \mbox{\hyperlink{ICM20948__regs_8h_aa7f66cc9e98bb2743e0dade1f35f6e4e}{dps2000}},}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*FCHOICE*/}\ \ \textcolor{keyword}{true},\ \ \ \ \ \ \ \textcolor{comment}{//\ DLPF\ ON\ (recommended)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*X*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*Y*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*Z*/}\ \textcolor{keyword}{true},}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*AVGCFG*/}\ \ \ 0))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00108}00108\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}GyroConfig\ failed."{}}));}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00109}00109\ \ \ \}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00110}00110\ }
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00111}00111\ \ \ \textcolor{comment}{/*\ Set\ gyroscope\ output\ data\ rate\ (ODR)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00112}00112\ \textcolor{comment}{\ \ \ *\ -\/\ Gyro\_SMPLRT(rate\_hz)}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00113}00113\ \textcolor{comment}{\ \ \ *\ -\/\ Base\ (DLPF\ path)\ =\ 1100\ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00114}00114\ \textcolor{comment}{\ \ \ *\ -\/\ Valid\ range:\ \string~4.3–1100\ Hz}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00115}00115\ \textcolor{comment}{\ \ \ *\ -\/\ Example:\ 1000\ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00003}00003\ \textcolor{comment}{\ *\ @author\ \ 7Semi,Jonathan\ Mejorado\ Lopez\ }}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00004}00004\ \textcolor{comment}{\ *\ @brief\ \ \ Minimal\ I2C\ bring-\/up\ for\ 7Semi\ ICM-\/20948\ on\ ESP32/UNO\ +}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00005}00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ continuous\ gyroscope\ readout.}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00007}00007\ \textcolor{comment}{\ *\ Features}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00008}00008\ \textcolor{comment}{\ *\ -\/\ I2C\ init\ on\ default/custom\ pins}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00009}00009\ \textcolor{comment}{\ *\ -\/\ IMU\ begin()\ on\ I2C\ (addr\ 0x68/0x69)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00010}00010\ \textcolor{comment}{\ *\ -\/\ Safe\ defaults\ (applyBasicDefaults)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00011}00011\ \textcolor{comment}{\ *\ -\/\ Optional\ sensor\ gating:\ gyro\ only}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00012}00012\ \textcolor{comment}{\ *\ -\/\ Gyro\ config:\ DLPF,\ full-\/scale,\ ODR,\ AVG}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00013}00013\ \textcolor{comment}{\ *\ -\/\ Read\ gyro\ (dps)\ at\ \string~2\ Hz\ print}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00014}00014\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00015}00015\ \textcolor{comment}{\ *\ Wiring\ (Arduino\ UNO,\ I2C)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00016}00016\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ A4}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00017}00017\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ A5}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00018}00018\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3\ (or\ 5V\ if\ your\ board\ supports\ it)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00019}00019\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00020}00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00021}00021\ \textcolor{comment}{\ *\ Wiring\ (ESP32,\ I2C)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ SDA\ \ -\/>\ GPIO21\ (default)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ SCL\ \ -\/>\ GPIO22\ (default)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ VCC\ \ -\/>\ 3V3}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00025}00025\ \textcolor{comment}{\ *\ -\/\ GND\ \ -\/>\ GND}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00026}00026\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00027}00027\ \textcolor{comment}{\ *\ Address}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ Default\ ICM-\/20948\ I2C\ address\ is\ 0x68\ (AD0=LOW).\ If\ AD0=HIGH,\ use\ 0x69.}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00029}00029\ \textcolor{comment}{\ ***************************************************************/}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00031}00031\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{DevLab__ICM20948_8h}{DevLab\_ICM20948.h}}>}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00034}00034\ \textcolor{comment}{/*\ ======================\ User\ Config\ =======================}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00035}00035\ \textcolor{comment}{\ *\ -\/\ Edit\ pins/addr\ if\ needed}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00036}00036\ \textcolor{comment}{\ *\ -\/\ UNO\ uses\ fixed\ SDA=A4,\ SCL=A5\ (no\ need\ to\ call\ Wire.begin\ with\ pins)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00037}00037\ \textcolor{comment}{\ *\ -\/\ ESP32\ can\ use\ default\ Wire\ (SDA=21,\ SCL=22)\ or\ custom\ pins\ via\ Wire.begin(sda,scl)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00038}00038\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00040}00040\ \textcolor{comment}{/*\ ======================\ User\ Config\ =======================\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00041}00041\ \textcolor{comment}{/**\ @brief\ I2C\ SDA\ pin\ used\ by\ the\ example\ board.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00042}\mbox{\hyperlink{i2c__gyro_8ino_a526d580d324bce60a3e964066fae77e3}{00042}}\ \textcolor{preprocessor}{\#define\ SDA\_PIN\ \ \ 6}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00043}00043\ \textcolor{comment}{/**\ @brief\ I2C\ SCL\ pin\ used\ by\ the\ example\ board.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00044}\mbox{\hyperlink{i2c__gyro_8ino_a06c967e78bcedcee909a70764f879433}{00044}}\ \textcolor{preprocessor}{\#define\ SCL\_PIN\ \ \ 7}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00045}00045\ \textcolor{comment}{/**\ @brief\ I2C\ bus\ speed\ in\ hertz.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00046}\mbox{\hyperlink{i2c__gyro_8ino_a8b7500a141450a9df212017430c0df9e}{00046}}\ \textcolor{preprocessor}{\#define\ I2C\_FREQ\ \ 400000UL}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00047}00047\ \textcolor{comment}{/**\ @brief\ ICM-\/20948\ I2C\ address\ selected\ by\ the\ AD0\ pin.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00048}\mbox{\hyperlink{i2c__gyro_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{00048}}\ \textcolor{preprocessor}{\#define\ ICM\_ADDR\ \ 0x69}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00049}00049\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00050}00050\ \textcolor{comment}{/**\ @brief\ Global\ ICM-\/20948\ driver\ instance.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00051}\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{00051}}\ \mbox{\hyperlink{classDevLab__ICM20948}{DevLab\_ICM20948}}\ \mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}};}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00052}00052\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00053}00053\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00054}00054\ \textcolor{comment}{\ *\ @brief\ Configure\ the\ IMU\ for\ gyroscope-\/only\ operation\ over\ I2C.}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00055}00055\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00056}00056\ \textcolor{comment}{\ *\ The\ function\ initializes\ the\ I2C\ interface,\ applies\ safe\ defaults,\ enables}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00057}00057\ \textcolor{comment}{\ *\ the\ gyroscope,\ and\ configures\ DLPF,\ full-\/scale\ range,\ and\ output\ data\ rate.}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00058}00058\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00059}\mbox{\hyperlink{i2c__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d}{00059}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c__gyro_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}}()\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00060}00060\ \ \ Serial.begin(115200);}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00061}00061\ \ \ delay(200);}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00062}00062\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ —\ I2C\ Basic"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00063}00063\ \ \ Wire.begin(\mbox{\hyperlink{i2c__gyro_8ino_a526d580d324bce60a3e964066fae77e3}{SDA\_PIN}},\ \mbox{\hyperlink{i2c__gyro_8ino_a06c967e78bcedcee909a70764f879433}{SCL\_PIN}});}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00064}00064\ \ \ \textcolor{comment}{/*\ Initialize\ IMU.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00065}00065\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a91147b3cd4c45bffc8e024f985be7b21}{beginI2C}}(\mbox{\hyperlink{i2c__gyro_8ino_a8fb98755bd25ab9d5bf8739e15df6eeb}{ICM\_ADDR}},\ Wire,\ 400000))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00066}00066\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ beginI2C()\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00068}00068\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00070}00070\ \ \ \textcolor{comment}{/*\ Apply\ safe\ defaults.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00071}00071\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a31460c48549b1d3081e253706f8b15e6}{applyBasicDefaults}}())\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00072}00072\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ERROR:\ applyBasicDefaults()\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ delay(200);}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00074}00074\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00076}00076\ \ \ Serial.println(F(\textcolor{stringliteral}{"{}ICM-\/20948\ ready."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00078}00078\ \ \ \textcolor{comment}{/*\ Optional:\ gate\ sensors}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00079}00079\ \textcolor{comment}{\ \ \ *\ -\/\ setSensors(accel\_on,\ gyro\_on,\ temp\_on)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00080}00080\ \textcolor{comment}{\ \ \ *\ -\/\ Here:\ enable\ only\ gyro\ (accel/temp\ off)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00081}00081\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00082}00082\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_ae9c088334d6ec706bb08b47ef29bd186}{setSensors}}(\textcolor{comment}{/*accel*/}\ \textcolor{keyword}{false},\ \textcolor{comment}{/*gyro*/}\ \textcolor{keyword}{true},\ \textcolor{comment}{/*temp*/}\ \textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00083}00083\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setSensors\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00084}00084\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00086}00086\ \ \ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ GYRO\ DLPF\ Config\ (reference)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00087}00087\ \textcolor{comment}{\ \ \ *\ GyroConfig(DLPFCFG,\ FS\_SEL,\ FCHOICE,\ XGYRO,\ YGYRO,\ ZGYRO,\ AVGCFG)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00088}00088\ \textcolor{comment}{\ \ \ *\ -\/\ DLPF\ \ \ \ \ :\ GYRO\_DLPFCFG\_0..7\ (use\ 3\ or\ 4\ for\ balanced\ settings)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00089}00089\ \textcolor{comment}{\ \ \ *\ -\/\ FS\_SEL\ \ \ :\ dps250\ /\ dps500\ /\ dps1000\ /\ dps2000}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00090}00090\ \textcolor{comment}{\ \ \ *\ -\/\ FCHOICE\ \ :\ false\ →\ DLPF\ path\ (recommended),\ true\ →\ bypass\ (very\ wide\ BW)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00091}00091\ \textcolor{comment}{\ \ \ *\ -\/\ XGYRO/YGYRO/ZGYRO\ :\ per-\/axis\ enable\ (true\ =\ enable\ axis)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00092}00092\ \textcolor{comment}{\ \ \ *\ -\/\ AVGCFG\ \ \ :\ 0..7\ internal\ averaging\ (higher\ =\ more\ smoothing,\ more\ delay)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00093}00093\ \textcolor{comment}{\ \ \ *\ FCHOICE=0\ (DLPF\ on):}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00094}00094\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_1\ :\ 3dB\ ≈\ 196.6\ Hz,\ NBW\ ≈\ 229.8\ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00095}00095\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_2\ :\ 3dB\ ≈\ 151.8\ Hz,\ NBW\ ≈\ 187.6\ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00096}00096\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_3\ :\ 3dB\ ≈\ 119.5\ Hz,\ NBW\ ≈\ 154.3\ Hz\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00097}00097\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_4\ :\ 3dB\ ≈\ 51.2\ \ Hz,\ NBW\ ≈\ 73.3\ \ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00098}00098\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_5\ :\ 3dB\ ≈\ 23.9\ \ Hz,\ NBW\ ≈\ 35.9\ \ Hz\ \ ←\ good\ default}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00099}00099\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_6\ :\ 3dB\ ≈\ 5.7\ \ \ Hz,\ NBW\ ≈\ 8.3\ \ \ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00100}00100\ \textcolor{comment}{\ \ \ *\ -\/\ GYRO\_DLPFCFG\_7\ :\ 3dB\ ≈\ 473\ \ \ Hz,\ NBW\ ≈\ 499\ \ \ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00101}00101\ \textcolor{comment}{\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00102}00102\ \textcolor{comment}{\ \ \ *\ FCHOICE=1\ (Bypass)\ :\ very\ wide\ (use\ with\ care;\ highest\ noise)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00103}00103\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00104}00104\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a0bea2c662c285120253851c80289e077}{setDLPF}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a9f4d08566440cf9c577724b075c59aa1af0563928829b8e022a67761651b4ccd3}{ICM20948\_Gyro\_DLPF::DLPF\_23HZ}},\ \textcolor{keyword}{false}))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00105}00105\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setDLPF\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00106}00106\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00107}00107\ \ \ \textcolor{comment}{/*\ Set\ gyroscope\ full-\/scale\ range.\ */}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00108}00108\ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a6a06dbd14558e50d40595de82502d632}{setGyroScale}}(\mbox{\hyperlink{DevLab__ICM20948_8h_a409a608f5c864bb503bf1a65b164de7da7a03fe4c8dae7b2cc724db90de97f53f}{ICM20948\_Gyro\_FullScale::DPS\_2000}}))\ \{}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00109}00109\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setGyroScale\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00110}00110\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00112}00112\ \ \ \textcolor{comment}{/*\ Set\ gyroscope\ output\ data\ rate\ (ODR)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00113}00113\ \textcolor{comment}{\ \ \ *\ -\/\ Gyro\_DIV\_RATE\ =\ 1100\ /\ (1\ +\ DIV\_RATE)}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00114}00114\ \textcolor{comment}{\ \ \ *\ -\/\ DIV\_RATE\ =\ 0..255}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00115}00115\ \textcolor{comment}{\ \ \ *\ -\/\ Example:\ DIV\_RATE=5\ →\ ODR\ ≈\ 183.33\ Hz}}
 \DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00116}00116\ \textcolor{comment}{\ \ \ */}}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00117}00117\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.Gyro\_SMPLRT(1000))\ \{}
-\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00118}00118\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}Gyro\_SMPLRT\ failed."{}}));}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00117}00117\ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{i2c__gyro_8ino_aa8226278adaa3f7fb2ad8b966f7787a1}{imu}}.\mbox{\hyperlink{classDevLab__ICM20948_a16cc9db132bb7a2b706275c9f5a03773}{setGyroDivRate}}(5))\ \{\ \textcolor{comment}{//\ 1100\ /\ (1\ +\ 5)\ =\ 183.33\ Hz}}
+\DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00118}00118\ \ \ \ \ Serial.println(F(\textcolor{stringliteral}{"{}setGyroDivRate\ failed."{}}));}
 \DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00119}00119\ \ \ \}}
 \DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00120}00120\ \}}
 \DoxyCodeLine{\Hypertarget{i2c__gyro_8ino_source_l00121}00121\ \textcolor{comment}{}}

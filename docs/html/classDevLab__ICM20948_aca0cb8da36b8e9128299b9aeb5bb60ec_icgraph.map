@@ -1,7 +1,9 @@
 <map id="DevLab_ICM20948::setAccelDivRate" name="DevLab_ICM20948::setAccelDivRate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="164,23,371,63"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="164,47,371,87"/>
 <area shape="rect" id="Node000002" href="$test_8ino.html#a327f4fbd9f22daba4f8a6f3f1c13f729" title="Apply one accelerometer full&#45;scale and DLPF configuration." alt="" coords="5,5,116,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,32,116,27,117,22,150,26"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,47,114,33,115,28,171,41"/>
 <area shape="rect" id="Node000003" href="$test2_8ino.html#a73c1d2766fc4db839bb9adf5cab93c80" title="Apply one accelerometer full&#45;scale, DLPF, and averaging configuration." alt="" coords="5,55,116,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,60,117,64,116,58,150,54"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,70,116,70,116,65,150,65"/>
+<area shape="rect" id="Node000004" href="$spi__accel_8ino.html#a4fc01d736fe50cf5b977f755b675f11d" title="Configure the IMU for accelerometer&#45;only operation over SPI." alt="" coords="31,104,90,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="170,93,91,112,89,107,169,88"/>
 </map>
